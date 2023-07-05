@@ -10,7 +10,7 @@ Laura Cavo: Soy profesora de matemáticas y desde el año 2020 me encuentro trab
 
 Noelia Ramos: Soy Maestra en Educación Especial y acompañante terapéutico. Deje de ejercerlo hace un año y me metí en este mundo de la programación, donde me estoy perfeccionando y sumando conocimientos. Es una rama muy distinta a mi título actualmente, pero me encanta. Por lo que mi intención es seguir por este camino y poder desempeñarme laboralmente de esto.
 
-Tomás Di Estefano: A finales del 2022 terminé la Licenciatura en Diseño y Animación Digital, y a principios de 2023 empecé a estudiar programación. Actualmente también estoy trabajando. 
+Tomás Di Estefano: A finales del 2022 terminé la Licenciatura en Diseño y Animación Digital, y a principios de 2023 empecé a estudiar programación. Actualmente también estoy trabajando.
 Si el camino que queda por delante es largo, con dedicación, todo es posible. En un futuro busco poder aplicar lo aprendido a lo largo de estos años, y seguir capacitándome para ampliar mis habilidades.
 
 Bernardita Ferreira: Estoy terminando la secundaria en bachiller de Economía y Sistema de Información Contable, lo que me gusta es programar con front, ya sea html, css y boostrap, jugar al fútbol. Actualmente soy presidente de Interact que pertenece a Rotary ayudando a la comunidad. Quise entrar a este curso para poder avanzar con mi nivel como Programadora y hacer algo más avanzado y aunque me está costando me gusta mucho todo lo que se da. Quiero estudiar Ingeniería en Sistemas y Contador Publico.
@@ -20,8 +20,9 @@ Leandro Ortiz: Soy emprendedor en marketing digital desde 2017, en 2019 continú
 Carolina Pérez: Soy una apasionada analista de sistemas con experiencia en backend y bases de datos. Fuera del trabajo, encuentro alegría en la cocina y la lectura, y me esfuerzo por equilibrar mi pasión por la tecnología con actividades creativas y enriquecedoras para mi mente y espíritu.
 
 Listado Referentes.
- 1) https://www.tomy.com.ar/libreria?gclid=Cj0KCQjwho-lBhC_ARIsAMpgModuq_t61v9JXU2us_d5JjDw_XKMGNZ3uYXIM9wdeDvqy_6WPnbXlDEaAtDzEALw_wcB
- 2) http://www.libreriaargentum.com.ar/
- 3) https://www.cuspide.com/
- 4) hhttp://www.lklibrerias.com.ar/
- 5) https://www.libreriaserma.com.ar/
+
+1.  https://www.tomy.com.ar/libreria?gclid=Cj0KCQjwho-lBhC_ARIsAMpgModuq_t61v9JXU2us_d5JjDw_XKMGNZ3uYXIM9wdeDvqy_6WPnbXlDEaAtDzEALw_wcB
+2.  http://www.libreriaargentum.com.ar/
+3.  https://www.cuspide.com/
+4.  http://www.lklibrerias.com.ar/
+5.  https://www.libreriaserma.com.ar/
