@@ -188,7 +188,8 @@ main section article {
   flex-direction: column;
   justify-content: center;
 }
-section div.articulos {
+section div.articulos,
+section div.info_prod {
   justify-content: space-around;
 }
 #productos_nuevos {
@@ -207,4 +208,7 @@ section div.articulos {
 }
 #mas_vendidos {
   margin-top: 50px;
+}
+#mas_vendidos div#descripcion {
+  width: 100%;
 }
