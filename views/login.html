@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Luminis</title>
+  </head>
+
+  <body>
+    <header class="efecto_glass">
+      <div id="encabezado" class="display_flex">
+        <img src="../public/img/logo_lumins.png" alt="Logo" id="logo" />
+        <h1 class="display_flex">Luminis</h1>
+      </div>
+      <div>
+        <nav class="display_flex">
+          <ul class="display_flex">
+            <li><a href="">PRODUCTOS</a></li>
+            <li><a href="">NOSOTROS</a></li>
+            <li><a href="">NEWS</a></li>
+            <li><a href="">AYUDA</a></li>
+          </ul>
+          <button id="sign_up">
+            Sign up
+            <div class="arrow-wrapper">
+              <div class="arrow"></div>
+            </div>
+          </button>
+          <button id="login">
+            Login
+            <div class="arrow-wrapper">
+              <div class="arrow"></div>
+            </div>
+          </button>
+        </nav>
+      </div>
+      <div>
+        <div>
+          <button class="button">
+            <span class="button-content">COMPRAR</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="formularios">
+      <section id="formulario_inicio" class="efecto_glass">
+        <div>
+          <form>
+            <h3>INGRESAR</h3>
+            <label for="email">Correo electronico:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required />
+            <div id="recordarme">
+              <label for="recordarme">Recordarme:</label>
+              <input type="checkbox" name="recordarme" />
+            </div>
+
+            <input type="submit" value="Iniciar sesión" />
+            <br />
+            <p>¿No estás registrado? Registrate <a href="#">aqui.</a></p>
+          </form>
+        </div>
+      </section>
+      <div id="placa_derecha">
+        <p>¡HOLA DE NUEVO!</p>
+      </div>
+    </main>
+  </body>
+  <footer></footer>
+</html>
