@@ -7,16 +7,21 @@
 .display_flex {
   display: flex;
 }
+.oculto {
+  display: none;
+}
 .efecto_glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1));
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur (20px);
-  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-  border: solid rgba(255, 255, 255, 0.18);
-  border-radius: 32px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 /* ----------------------BODY----------------------------------- */
 body {
+  background-color: #264653;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%238a2fa9'/%3E%3Cstop offset='1' stop-color='%238a2fa9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232170b3'/%3E%3Cstop offset='1' stop-color='%232170b3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23e441f3'/%3E%3Cstop offset='1' stop-color='%23e441f3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23264653'/%3E%3Cstop offset='1' stop-color='%23264653' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E76F51'/%3E%3Cstop offset='1' stop-color='%23E76F51' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23307CFF'/%3E%3Cstop offset='1' stop-color='%23307CFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
@@ -25,7 +30,7 @@ body {
 header {
   margin: 20px auto;
   width: 95vw;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
 }
 #encabezado {
   padding: 30px 0px 0px 30px;
@@ -59,8 +64,14 @@ nav ul a {
   margin-top: 25px;
   justify-content: space-around;
 }
-#contenedor_libreria div {
-  width: 50%;
+#contenedor_libreria div#introduccion {
+  width: 90%;
+}
+#contenedor_libreria div#introduccion p,
+#contenedor_libreria div#introduccion h2 {
+  text-align: center;
+}
+#contenedor_libreria div.boton {
   justify-content: center;
 }
 #foto_libreria {
@@ -70,6 +81,33 @@ nav ul a {
 }
 
 /* ------------------BOTONES NAV ---------------------- */
+
+/* ------------------OFFCANVAS MENU---------------------- */
+#collapse_button {
+  background-color: #2a9d8e;
+  border-color: #2a9d8e;
+  margin-left: 150px;
+
+}
+
+#collapse_menu {
+  background-color: rgb(121, 43, 43);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.collapse_navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+
+
+/* ------------------OFFCANVAS MENU---------------------- */
 #sign_up {
   --primary-color: #e46f50;
   --secondary-color: #fff;
@@ -80,7 +118,7 @@ nav ul a {
   --secondary-color: #fff;
   --hover-color: #264653;
 }
-button {
+button.flecha {
   --arrow-width: 10px;
   --arrow-stroke: 2px;
   box-sizing: border-box;
@@ -97,13 +135,13 @@ button {
   font-weight: bold;
 }
 
-button .arrow-wrapper {
+button.flecha .arrow-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-button .arrow {
+button.flecha .arrow {
   margin-top: 1px;
   width: var(--arrow-width);
   background: var(--primary-color);
@@ -112,7 +150,7 @@ button .arrow {
   transition: 0.2s;
 }
 
-button .arrow::before {
+button.flecha .arrow::before {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -126,19 +164,20 @@ button .arrow::before {
   transform: rotate(-45deg);
 }
 
-button:hover {
+button.flecha:hover {
   background-color: var(--hover-color);
 }
 
-button:hover .arrow {
+button.flecha:hover .arrow {
   background: var(--secondary-color);
 }
 
-button:hover .arrow:before {
+button.flecha:hover .arrow:before {
   right: 0;
 }
 
 .button {
+  border: 0;
   position: relative;
   overflow: hidden;
   height: 3rem;
@@ -147,7 +186,6 @@ button:hover .arrow:before {
   background: #3d3a4e;
   background-size: 400%;
   color: #fff;
-  border: none;
 }
 
 .button:hover::before {
@@ -182,23 +220,27 @@ main {
   margin: auto;
 }
 main section article {
-  width: 25%;
+  width: 75%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 0px auto 40px auto;
   flex-direction: column;
-  justify-content: center;
 }
-section div.articulos,
+.articulos_ocultos {
+  display: none;
+}
+section div.articulos {
+  justify-content: space-around;
+  flex-direction: column;
+}
 section div.info_prod {
   justify-content: space-around;
 }
+section h3 {
+  text-align: center;
+  color: white;
+}
 #productos_nuevos {
   margin-top: 20px;
-}
-#productos_nuevos h3 {
-  text-align: center;
-  padding-bottom: 10px;
-  color: white;
 }
 #productos_nuevos img,
 #mas_vendidos img {
@@ -207,7 +249,7 @@ section div.info_prod {
   margin: auto;
 }
 #mas_vendidos {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 #mas_vendidos div#descripcion {
   width: 100%;
@@ -216,7 +258,7 @@ section div.info_prod {
 /* -----------------FORMULARIO LOGIN------------------------- */
 #formulario_inicio {
   width: 50%;
-  margin: 20px;
+  margin-right: 10px;
   padding: 20px;
 }
 
@@ -267,4 +309,34 @@ input[type="submit"] {
   display: flex;
   justify-content: space-between;
   margin-right: 0;
+}
+#mas_vendidos div#descripcion p,
+#mas_vendidos h3 {
+  justify-items: center;
+}
+div.boton {
+  margin: auto;
+}
+
+/* ----------------MEDIA QUERIES------------------- */
+@media (min-width: 768px) {
+  #carouselExampleIndicators {
+    display: none;
+  }
+  .articulos_ocultos {
+    display: flex;
+  }
+  .oculto {
+    display: block;
+  }
+  section div.articulos {
+    flex-direction: row;
+  }
+  main section article {
+    width: 25%;
+  }
+  #contenedor_libreria div#introduccion {
+    width: 50%;
+    justify-content: center;
+  }
 }

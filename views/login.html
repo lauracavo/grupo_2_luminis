@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Luminis</title>
   </head>
 
@@ -18,29 +19,43 @@
       <div id="encabezado" class="display_flex">
         <img src="../public/img/logo_lumins.png" alt="Logo" id="logo" />
         <h1 class="display_flex">Luminis</h1>
+        <p>
+          <button id="collapse_button" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+            Menu
+          </button>
+        </p>
       </div>
       <div>
-        <nav class="display_flex">
-          <ul class="display_flex">
-            <li><a href="">PRODUCTOS</a></li>
-            <li><a href="">NOSOTROS</a></li>
-            <li><a href="">NEWS</a></li>
-            <li><a href="">AYUDA</a></li>
-          </ul>
-          <button id="sign_up">
-            Sign up
-            <div class="arrow-wrapper">
-              <div class="arrow"></div>
+        
+          <div class="collapse collapse-horizontal" id="collapseWidthExample" style="float: right;">
+            <div id="collapse_menu" class="card card-body" style="width: 200px;">
+              <div>
+                <nav class="collapse_navbar">
+                  <ul>
+                    <li><a href="">PRODUCTOS</a></li>
+                    <li><a href="">NOSOTROS</a></li>
+                    <li><a href="">NEWS</a></li>
+                    <li><a href="">AYUDA</a></li>
+                  </ul>
+                  <button id="sign_up" class="flecha">
+                    Sign up
+                    <div class="arrow-wrapper">
+                      <div class="arrow"></div>
+                    </div>
+                  </button>
+                  <button id="login" class="flecha">
+                    Login
+                    <div class="arrow-wrapper">
+                      <div class="arrow"></div>
+                    </div>
+                  </button>
+                </nav>
+              </div>
             </div>
-          </button>
-          <button id="login">
-            Login
-            <div class="arrow-wrapper">
-              <div class="arrow"></div>
-            </div>
-          </button>
-        </nav>
+          </div>
+        
       </div>
+      <br>
       <div>
         <div>
           <button class="button">
@@ -74,6 +89,7 @@
         <p>¡HOLA DE NUEVO!</p>
       </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
   <footer></footer>
 </html>
