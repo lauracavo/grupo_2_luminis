@@ -82,32 +82,6 @@ nav ul a {
 
 /* ------------------BOTONES NAV ---------------------- */
 
-/* ------------------OFFCANVAS MENU---------------------- */
-#collapse_button {
-  background-color: #2a9d8e;
-  border-color: #2a9d8e;
-  margin-left: 150px;
-
-}
-
-#collapse_menu {
-  background-color: rgb(121, 43, 43);
-  border-color: rgba(0, 0, 0, 0);
-}
-
-.collapse_navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-
-
-
-
-
-/* ------------------OFFCANVAS MENU---------------------- */
 #sign_up {
   --primary-color: #e46f50;
   --secondary-color: #fff;
@@ -182,6 +156,7 @@ button.flecha:hover .arrow:before {
   overflow: hidden;
   height: 3rem;
   padding: 0 2rem;
+  margin-left: 2rem;
   border-radius: 1.5rem;
   background: #3d3a4e;
   background-size: 400%;
@@ -255,61 +230,6 @@ section h3 {
   width: 100%;
 }
 
-/* -----------------FORMULARIO LOGIN------------------------- */
-#formulario_inicio {
-  width: 50%;
-  margin-right: 10px;
-  padding: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 8px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-}
-
-#recordarme {
-  display: flex;
-  gap: 5px;
-  align-content: center;
-}
-
-input[type="submit"] {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  padding: 10px;
-  background-color: #2a9d8f;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-#placa_derecha {
-  background-color: #2a9d8f;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  font-size: 20px;
-  border-radius: 50px 0 0 50px;
-}
-
-.formularios {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 0;
-}
 #mas_vendidos div#descripcion p,
 #mas_vendidos h3 {
   justify-items: center;
