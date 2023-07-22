@@ -1,62 +1,251 @@
-
-/* ------------------FULLSCREEN MENU---------------------- */
-
-/* ------------------OFFCANVAS MENU---------------------- */
-
 /* -----------------FORMULARIO LOGIN------------------------- */
-#formulario_inicio {
-    width: 50%;
-    margin-right: 10px;
-    padding: 20px;
+#formulario_inicio_login {
+  width: 70%;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+#header {
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#luminis {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#lema {
+  float: left;
+  width: 50%;
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+#checkbox_recordarme {
+  width: 20px;
+  accent-color: #2a9d8f;
+}
+
+
+
+#recordarme {
+  display: flex;
+  gap: 5px;
+  align-content: center;
+  margin-top: 10px;
+}
+
+#iniciar_sesion, #ayuda_login, #trabaja_login {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#trabaja_login {
+  font-size: 10px;
+}
+
+#placa_derecha {
+  padding-left: 20px;
+  background-color: #2a9d8f;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  font-size: 20px;
+  border-radius: 50px 0 0 50px;
+}
+
+.formularios_login {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0;
+}
+
+.nombre_campos,
+.texto_footer {
+  font-size: 16px;
+}
+
+/* -----------------FOOTER------------------------- */
+
+#footer {
+  margin: 20px 0 0 0;
+  padding: 10px;
+  height: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0;
+}
+
+p {
+  text-align: center;
+}
+
+#ayuda,
+#busca_trabajo,
+#redes {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#busca_trabajo {
+  justify-content: center;
+  border-left: 2px solid #2a9d8f;
+  border-right: 2px solid #2a9d8f;
+  padding: 0 10px 0 10px;
+  height: 100%;
+}
+
+#redes_icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fa-facebook-square,
+.fa-instagram,
+.fa-twitter,
+.fa-linkedin {
+  font-size: 25px;
+}
+
+.texto_footer {
+  display: flex;
+  justify-content: center;
+}
+
+.fa-instagram {
+  color: transparent;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background: -webkit-radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@media (min-width: 426px) {
+  #trabaja {
+    font-size: 18px;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 5px;
+
+  #luminis {
+    font-size: 60px;
+    margin-top: 55px;
   }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+
+  #lema {
+    font-size: 25px;
+    width: 70%;
   }
-  
-  #recordarme {
-    display: flex;
-    gap: 5px;
-    align-content: center;
+
+  #iniciar_sesion, #ayuda_login, #trabaja_login {
+    font-size: 18px;
   }
-  
-  input[type="submit"] {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 10px;
-    background-color: #2a9d8f;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
+
   #placa_derecha {
-    
-    background-color: #2a9d8f;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
+    font-size: 25px;
+    padding-right: 10px;
+  }
+
+  .nombre_campos,
+  .texto_footer {
     font-size: 20px;
-    border-radius: 50px 0 0 50px;
   }
-  
-  .formularios {
-    
-    display: flex;
-    justify-content: space-between;
-    margin-right: 0;
+
+  #redes_icons {
+    gap: 25px;
   }
+
+  .fa-facebook-square,
+  .fa-instagram,
+  .fa-twitter,
+  .fa-linkedin {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 769px) {
+  #luminis {
+    font-size: 100px;
+    margin-top: 110px;
+  }
+
+  #lema {
+    font-size: 40px;
+    width: 70%;
+  }
+
+  #trabaja {
+    font-size: 22px;
+  }
+
+  #iniciar_sesion, #ayuda_login, #trabaja_login {
+    font-size: 22px;
+  }
+
+  #placa_derecha {
+    font-size: 35px;
+    padding-right: 10px;
+  }
+
+  .nombre_campos,
+  .texto_footer {
+    font-size: 25px;
+  }
+
+  #redes_icons {
+    gap: 50px;
+  }
+
+  .fa-facebook-square,
+  .fa-instagram,
+  .fa-twitter,
+  .fa-linkedin {
+    font-size: 50px;
+  }
+}
