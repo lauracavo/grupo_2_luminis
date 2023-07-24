@@ -1,0 +1,111 @@
+@import url(../css/login.css);
+@import url(../css/register.css);
+@import url(../css/home.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*----- MAIN ------*/
+main{
+    width: 100%;
+    height: auto;
+}
+h6 {
+    margin-left: 5px;
+}
+/*----- BARRA DE BUSQUEDA ------*/
+.busqueda{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10%;
+}
+.busqueda i {
+    width: 15%;
+    left: 0;
+}
+.search-box{
+    width: 90%;
+    max-width: 300px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+}
+
+.search-box input{
+    flex: 1;
+    padding: 15px 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font-size: 20px;
+}
+.search-box button i{
+    width: 30px;
+}
+.search-box button{
+    padding: 10px 12px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+/*----- GRID DE LIBROS ------*/
+.itemTarjeta > img{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000 ;
+    transition: .3s;
+}
+img:hover{
+    transform: scale(0.9);
+}
+.itemTarjeta{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fill,minmax(130px, 1fr));
+        gap:32px;
+}
+
+/*-------- SLIDER AUTOMATICO ---------*/
+.slider{
+    /* background-color: rgba(42, 157, 143 0.3); */
+    width: 90vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+.slider .slide-track{
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(100px * 14);
+}
+.slider .slide{
+    width: 100px;
+}
+.slider .slide img{
+    width: 100%;
+}
+@keyframes scroll{
+    0%{
+        -webkit-transform: translateX(0); 
+        transform: translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-200px *7)); 
+        transform: translateX(calc(-200px *7));
+    }
+}
