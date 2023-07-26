@@ -242,7 +242,12 @@ a:active {
   border-radius: 20px;
   cursor: pointer;
 }
+/* aca si queres poner los botoes de ayuda y trabaja en color naranja podes poner:
+#ayuda_boton, #trabaja_boton{
+  background-color: #e46f50
+ } */
 
+ 
 /* #trabaja_register {
   font-size: 10px;
 } */
