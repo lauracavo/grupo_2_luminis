@@ -28,14 +28,11 @@ body {
 header {
   margin: 20px auto;
   width: 95vw;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
-#encabezado {
-  padding: 30px 0px 0px 30px;
-  align-items: center;
-}
+
 #logo {
-  width: 10%;
+  width: 15%;
 }
 #encabezado h1 {
   padding-left: 2%;
@@ -79,6 +76,7 @@ nav ul a {
 }
 
 /* ------------------BOTONES NAV ---------------------- */
+
 #sign_up {
   --primary-color: #e46f50;
   --secondary-color: #fff;
@@ -147,12 +145,19 @@ button.flecha:hover .arrow:before {
   right: 0;
 }
 
+#button_comprar {
+  display: flex;
+  justify-content: end;
+  margin: 10px 10px 0 0;
+}
+
 .button {
   border: 0;
   position: relative;
   overflow: hidden;
   height: 3rem;
   padding: 0 2rem;
+  margin-left: 2rem;
   border-radius: 1.5rem;
   background: #3d3a4e;
   background-size: 400%;
@@ -225,6 +230,7 @@ section h3 {
 #mas_vendidos div#descripcion {
   width: 100%;
 }
+
 #mas_vendidos div#descripcion p,
 #mas_vendidos h3 {
   justify-items: center;

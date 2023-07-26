@@ -26,3 +26,6 @@ Listado Referentes.
 3.  https://www.cuspide.com/
 4.  http://www.lklibrerias.com.ar/
 5.  https://www.libreriaserma.com.ar/
+
+Enlace del Trello
+https://trello.com/invite/b/VLYNNu6b/ATTIfdaee5fdd2ebae63ceb8de6c07eb7a242DC68284/kanban-template

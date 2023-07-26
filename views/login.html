@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/home.css" />
+    <link rel="stylesheet" href="../public/css/login.css" />
+    <link rel="stylesheet" href="../public/css/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Luminis</title>
+  </head>
+
+  <body>
+    <div class="outer-menu">
+      <input class="checkbox-toggle" type="checkbox" />
+      <div class="hamburger">
+        <div></div>
+      </div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="">PRODUCTOS</a></li>
+              <li><a href="">NOSOTROS</a></li>
+              <li><a href="">NEWS</a></li>
+              <li><a href="">AYUDA</a></li>
+              <button id="sign_up" class="flecha">
+                Sign up
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+              <button id="login" class="flecha">
+                Login
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="header" class="efecto_glass">
+      <header>
+        <div id="encabezado" class="display_flex">
+          <img src="../public/img/logo2.svg" alt="Logo" id="logo" />
+          <h1 id="luminis">Luminis</h1>
+        </div>
+
+        <div>
+          <h2 id="lema" class="animation">
+            "Acompañando a los alumnos y docentes en cada paso"
+          </h2>
+          <div id="button_comprar">
+            <button class="button">
+              <span class="button-content">COMPRAR</span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <main class="formularios_login">
+      <section id="formulario_inicio_login" class="efecto_glass">
+        <div>
+          <form>
+            <h3>INGRESAR</h3>
+            <label class="nombre_campos" for="email">Correo electronico:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label class="nombre_campos" for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required />
+            <div id="recordarme">
+              <label class="nombre_campos" for="recordarme">Recordarme:</label>
+              <input id="checkbox_recordarme" type="checkbox" name="recordarme" />
+            </div>
+
+            <input id="iniciar_sesion" type="submit" value="Iniciar sesión" />
+            <br />
+            <p class="nombre_campos">
+              ¿No estás registrado? Registrate
+              <a class="nombre_campos" href="#">aqui.</a>
+            </p>
+          </form>
+        </div>
+      </section>
+      <div id="placa_derecha">
+        <p>¡HOLA DE NUEVO!</p>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <footer>
+    <section id="footer" class="efecto_glass">
+      <div id="ayuda">
+        <input id="ayuda_login" type="button" value="Ayuda" />
+        <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
+        <a class="texto_footer" href="">Contactanos</a>
+      </div>
+      <div id="busca_trabajo">
+        <p class="texto_footer">¿Buscás trabajo?</p>
+        <input id="trabaja_login" type="button" value="¡Trabajá con nosotros!" />
+      </div>
+      <div id="redes">
+        <p class="texto_footer">Seguinos en nuestras redes sociales</p>
+        <div id="redes_icons">
+          <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter" style="color: #00acee"></i>
+          <i class="fab fa-linkedin" style="color: #0e76a8"></i>
+        </div>
+      </div>
+    </section>
+  </footer>
+</html>

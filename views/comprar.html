@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Carrito.</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../public/css/comprar.css">
+	<link rel="stylesheet" href="../public/css/login.css">
+</head>
+<body>
+	<header class="efecto_glass">
+		<div id="encabezado" class="display_flex">
+			<img src="../public/img/logo2.svg" alt="Logo" id="logo" />
+			<h1 class="display_flex">Luminis</h1>
+		</div>
+	</header>
+	<main>
+		<div class="contenedor"></div>
+			<form action="" method="post">
+				<label class="datos"> DATOS PERSONALES </label><br>
+					<label for="email">Correo Electronico</label>
+					<input type="text" name="email" id="email"><br>
+					
+					<label for="nombre-apellido"> Nombre y apellido</label>
+					<input type="text" name="nombre y apellido" id="nombre-apellido"><br>
+					<label for="dni"> DNI</label>
+					<input type="text" name="dni" id="DNI"><br>
+					<label for="telefono"> Telefono</label>
+					<input type="text" name="telefono" id="telefono">
+			</form>
+			<br>
+			<br>
+			<form action="" method="post">
+				<label>DOMICILIO Y ENTREGA</label><br>
+				<br>
+					<label for="codigopostal">Codigo postal</label>
+					<input type="text" name="codigopostal" id="codigopostal"><br>
+					<label for="calle">Calle</label>
+					<input type="text" name="calle" id="calle">
+					<label for="numero">Numero</label>
+					<input type="text" name="numero" id="numero">
+			</form>
+			<form action="" method="get">
+				<label> Provincia </label>
+					<select name="Provincia">
+						<option value="buenosaires">Buenos Aires</option>
+						<option value="chubut">Chubut</option>
+						<option value="SantaFe">Santa Fe</option>
+						<option value="Cordoba">Cordoba</option>
+					</select>
+				<label> Localidad</label>
+					<select name="ciudad">
+						<option value="Sannicolas">San Nicolas</option>
+						<option value="rosario">Rosario</option>
+						<option value="Trelew">Trelew</option>
+						<option value="carlospaz">Carlos Paz</option>
+					</select>
+			</form>
+			<br>
+			<form action="" method="get">
+				<label>ELIJA EL TIPO DE ENTREGA</label><br>
+				<br>
+					<input type="radio" name="medio" id="medio">
+					<label for="medio">Retiro por sucursal - Gratis.</label><br>
+					<input type="radio" name="medio" id="medio">
+					<label for="medio">Envio a domicilio - $1200</label>
+			</form>
+			<br>
+			<form action="" method="get">
+				<label>PAGO</label><br>
+
+					<input type="radio" name="pago" id="pago">
+					<label for="pago">Efectivo</label><br>
+					<input type="radio" name="pago" id="pago">
+					<label for="pago">Tarjeta de Debito</label><br>
+					<input type="radio" name="pago" id="pago">
+					<label for="pago">Tarjeta de Credito</label><br>
+					<button>ENVIAR</button>
+			</form>
+		</div>
+	</main>
+	<div class="contenedor">
+
+		<!-- Tarjeta -->
+		<section class="tarjeta" id="tarjeta">
+			<div class="delantera">
+				<div class="logo-marca" id="logo-marca">
+					
+				</div>
+				<img src="../public/img/chip-tarjeta.png" class="chip" alt="">
+				<div class="datos">
+					<div class="grupo" id="numero">
+						<p class="label">Número Tarjeta</p>
+						<p class="numero">#### #### #### ####</p>
+					</div>
+					<div class="flexbox">
+						<div class="grupo" id="nombre">
+							<p class="label">Nombre Tarjeta</p>
+							<p class="nombre">Tal cual figura en su plastico</p>
+						</div>
+
+						<div class="grupo" id="expiracion">
+							<p class="label">Expiracion</p>
+							<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="trasera">
+				<div class="barra-magnetica"></div>
+				<div class="datos">
+					<div class="grupo" id="firma">
+						<p class="label">Firma</p>
+						<div class="firma"><p></p></div>
+					</div>
+					<div class="grupo" id="ccv">
+						<p class="label">CCV</p>
+						<p class="ccv"></p>
+					</div>
+				</div>
+				<p class="leyenda">Tarjeta valida en todo el territorio Argentino.</p>
+			</div>
+		</section>
+
+		<!-- Contenedor Boton Abrir Formulario -->
+		<div class="contenedor-btn">
+			<button class="btn-abrir-formulario" id="btn-abrir-formulario">
+				<i class="fas fa-plus"></i>
+			</button>
+		</div>
+
+		<!-- Formulario -->
+		<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+			<div class="grupo">
+				<label for="inputNumero">Número Tarjeta</label>
+				<input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+			</div>
+			<div class="grupo">
+				<label for="inputNombre">Nombre</label>
+				<input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+			</div>
+			<div class="flexbox">
+				<div class="grupo expira">
+					<label for="selectMes">Expiracion</label>
+					<div class="flexbox">
+						<div class="grupo-select">
+							<select name="mes" id="selectMes">
+								<option disabled selected>Mes</option>
+							</select>
+							<i class="fas fa-angle-down"></i>
+						</div>
+						<div class="grupo-select">
+							<select name="year" id="selectYear">
+								<option disabled selected>Año</option>
+							</select>
+							<i class="fas fa-angle-down"></i>
+						</div>
+					</div>
+				</div>
+
+				<div class="grupo ccv">
+					<label for="inputCCV">CCV</label>
+					<input type="text" id="inputCCV" maxlength="3">
+				</div>
+			</div>
+			<button type="submit" class="btn-enviar">Enviar</button>
+		</form>
+	</div>
+
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	<script src="../public/comprar.js"></script>
+	<footer>
+		<section id="footer" class="efecto_glass">
+			<div id="ayuda">
+			  <input id="ayuda_login" type="button" value="Ayuda" />
+			  <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
+			  <a class="texto_footer" href="">Contactanos</a>
+			</div>
+			<div id="busca_trabajo">
+			  <p class="texto_footer">¿Buscás trabajo?</p>
+			  <input id="trabaja_login" type="button" value="¡Trabajá con nosotros!" />
+			</div>
+			<div id="redes">
+			  <p class="texto_footer">Seguinos en nuestras redes sociales</p>
+			  <div id="redes_icons">
+				<i class="fab fa-facebook-square" style="color: #3b5998"></i>
+				<i class="fab fa-instagram"></i>
+				<i class="fab fa-twitter" style="color: #00acee"></i>
+				<i class="fab fa-linkedin" style="color: #0e76a8"></i>
+			  </div>
+			</div>
+		  </section>
+
+	</footer>
+</body>
+</html>
