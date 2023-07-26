@@ -1,5 +1,7 @@
 /* ------------------FULLSCREEN MENU---------------------- */
-a,
+
+/* ACÁ LO MISMO, LO COMENTÉ PARA QUE NO SE PISE CON EL GENERAL PERO DESPUES BORRALO */
+/* a,
 a:visited,
 a:hover,
 a:active {
@@ -199,7 +201,7 @@ a:active {
   height: 2px;
   background: #e46f50;
   transition: width 0.4s ease;
-}
+} */ 
 
 /* ------------------REGISTER---------------------- */
 
@@ -228,7 +230,7 @@ a:active {
   border-radius:  0 50px 50px 0;
 }
 
-#registrarme, #ayuda_register, #trabaja_register {
+#registrarme /* , #ayuda_register, #trabaja_register  */{
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -241,9 +243,9 @@ a:active {
   cursor: pointer;
 }
 
-#trabaja_register {
+/* #trabaja_register {
   font-size: 10px;
-}
+} */
 
 #soy_docente {
   display: flex;
@@ -257,7 +259,7 @@ a:active {
   accent-color: #e46f50;
 }
 
-#ayuda,
+/* #ayuda,
 #busca_trabajo_register,
 #redes_register {
   width: 30%;
@@ -275,14 +277,14 @@ a:active {
   border-right: 2px solid #e46f50;
   padding: 0 10px 0 10px;
   height: 100%;
-}
+} */
 
 @media (min-width: 426px) {
   #placa_izquierda {
     font-size: 25px;
   }
 
-  #registrarme, #ayuda_register, #trabaja_register {
+  #registrarme/* , #ayuda_register, #trabaja_register */ {
     font-size: 18px;
   }
 }
@@ -292,7 +294,7 @@ a:active {
     font-size: 35px;
   }
 
-  #registrarme, #ayuda_register, #trabaja_register {
+  #registrarme/* , #ayuda_register, #trabaja_register */ {
     font-size: 22px;
   }
 }

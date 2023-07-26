@@ -1,195 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Dosis;
-}
-.display_flex {
-  display: flex;
-}
-.oculto {
-  display: none;
-}
-.efecto_glass {
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.33);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.6px);
-  -webkit-backdrop-filter: blur(6.6px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-/* ----------------------BODY----------------------------------- */
-body {
-  background-color: #e76f51;
-  /*   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg %3E%3Cpolygon fill='%23113340' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%231c3c49' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%23113340' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%231c3c49' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23264653' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%23006f63' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%23008678' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%232A9D8F' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%23008678' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%23006f63' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%232A9D8F' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%23006f63' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%232A9D8F' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%23008678' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%232A9D8F' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E"); */
-}
-/* ----------------------- HEADER-------------------------- */
-header {
-  margin: 20px auto;
-  width: 95vw;
-  padding-bottom: 10px;
-}
 
-#logo {
-  width: 15%;
-}
-#encabezado h1 {
-  padding-left: 2%;
-  width: fit-content;
-  align-content: baseline;
-  font-weight: 800;
-}
-header nav ul li {
-  list-style: none;
-  width: fit-content;
-  padding: 5px;
-  margin: 10px;
-}
-nav {
-  justify-content: flex-end;
-  align-items: center;
-}
-nav ul a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
+/* ----------------------- HEADER-------------------------- */
 #contenedor_libreria {
   margin-top: 25px;
   justify-content: space-around;
 }
-#contenedor_libreria div#introduccion {
-  width: 90%;
-}
+
 #contenedor_libreria div#introduccion p,
 #contenedor_libreria div#introduccion h2 {
   text-align: center;
 }
-#contenedor_libreria div.boton {
+div#button_comprar {
   justify-content: center;
 }
 #foto_libreria {
-  width: 25%;
   height: 250px;
   border-radius: 0 0 0 50px;
 }
 
-/* ------------------BOTONES NAV ---------------------- */
-
-#sign_up {
-  --primary-color: #e46f50;
-  --secondary-color: #fff;
-  --hover-color: #f2a160;
-}
-#login {
-  --primary-color: #2a9d8e;
-  --secondary-color: #fff;
-  --hover-color: #264653;
-}
-button.flecha {
-  --arrow-width: 10px;
-  --arrow-stroke: 2px;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 20px;
-  color: var(--secondary-color);
-  padding: 1em 1.8em;
-  margin: 10px;
-  background: var(--primary-color);
-  display: flex;
-  transition: 0.2s background;
-  align-items: center;
-  gap: 0.6em;
-  font-weight: bold;
-}
-
-button.flecha .arrow-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button.flecha .arrow {
-  margin-top: 1px;
-  width: var(--arrow-width);
-  background: var(--primary-color);
-  height: var(--arrow-stroke);
-  position: relative;
-  transition: 0.2s;
-}
-
-button.flecha .arrow::before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  border: solid var(--secondary-color);
-  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
-  display: inline-block;
-  top: -3px;
-  right: 3px;
-  transition: 0.2s;
-  padding: 3px;
-  transform: rotate(-45deg);
-}
-
-button.flecha:hover {
-  background-color: var(--hover-color);
-}
-
-button.flecha:hover .arrow {
-  background: var(--secondary-color);
-}
-
-button.flecha:hover .arrow:before {
-  right: 0;
-}
-
-#button_comprar {
-  display: flex;
-  justify-content: end;
-  margin: 10px 10px 0 0;
-}
-
-.button {
-  border: 0;
-  position: relative;
-  overflow: hidden;
-  height: 3rem;
-  padding: 0 2rem;
-  margin-left: 2rem;
-  border-radius: 1.5rem;
-  background: #3d3a4e;
-  background-size: 400%;
-  color: #fff;
-}
-
-.button:hover::before {
-  transform: scaleX(1);
-}
-
-.button-content {
-  position: relative;
-  z-index: 1;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  width: 100%;
-  height: inherit;
-  border-radius: inherit;
-  background: linear-gradient(
-    82.3deg,
-    rgba(150, 93, 233, 1) 10.8%,
-    rgba(99, 88, 238, 1) 94.3%
-  );
-  transition: all 0.2s;
-}
 /* -----------------MAIN------------------------- */
 main {
   width: 95vw;
