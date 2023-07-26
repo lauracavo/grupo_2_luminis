@@ -1,4 +1,6 @@
-
+.oculto{
+  display: none;
+}
 /* ----------------------- HEADER-------------------------- */
 #contenedor_libreria {
   margin-top: 25px;
@@ -63,7 +65,7 @@ section h3 {
   justify-items: center;
 }
 div.boton {
-  margin: auto;
+  border: solid red 2px;
 }
 
 /* ----------------MEDIA QUERIES------------------- */

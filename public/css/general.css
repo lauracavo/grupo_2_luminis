@@ -428,6 +428,9 @@ p {
     border-radius: 20px;
     cursor: pointer;
   }
+  #trabaja_boton {
+  font-size: 10px;
+  }
   .fa-facebook-square,
   .fa-instagram,
   .fa-twitter,
@@ -482,7 +485,7 @@ p {
       width: 70%;
     }
   
-    #iniciar_sesion, #ayuda, #trabaja {
+    #ayuda_boton, #trabaja_boton {
       font-size: 18px;
     }
     #redes_icons {
@@ -508,7 +511,7 @@ p {
       width: 70%;
     }
   
-    #iniciar_sesion, #ayuda_boton, #trabaja_boton {
+    #ayuda_boton, #trabaja_boton {
       font-size: 22px;
     }
 
