@@ -4,8 +4,8 @@
   margin-right: 20px;
   padding: 20px;
 }
-
-#header {
+/* lo que está abajo te lo comenté para no borrarlo, pero esto ya estaria en el general.css */
+/* #header {
   border-radius: 0;
   margin-bottom: 20px;
   padding: 10px;
@@ -24,7 +24,7 @@
   font-size: 18px;
   font-style: italic;
   text-align: center;
-}
+} */
 
 label {
   display: block;
@@ -54,7 +54,7 @@ input[type="password"] {
   margin-top: 10px;
 }
 
-#iniciar_sesion, #ayuda_login, #trabaja_login {
+#iniciar_sesion /*  #ayuda_login, #trabaja_login */ {
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -67,9 +67,9 @@ input[type="password"] {
   cursor: pointer;
 }
 
-#trabaja_login {
+/* #trabaja_login {
   font-size: 10px;
-}
+} */
 
 #placa_derecha {
   padding-left: 20px;
@@ -95,8 +95,8 @@ input[type="password"] {
 }
 
 /* -----------------FOOTER------------------------- */
-
-#footer {
+/* ESTO TAMBIEN LO PASÉ AL GENERAL.CSS */
+/* #footer {
   margin: 20px 0 0 0;
   padding: 10px;
   height: 250px;
@@ -166,10 +166,10 @@ p {
   );
   background-clip: text;
   -webkit-background-clip: text;
-}
+} */
 
 @media (min-width: 426px) {
-  #trabaja {
+/*   #trabaja {
     font-size: 18px;
   }
 
@@ -181,9 +181,9 @@ p {
   #lema {
     font-size: 25px;
     width: 70%;
-  }
+  } */
 
-  #iniciar_sesion, #ayuda_login, #trabaja_login {
+  #iniciar_sesion /* #ayuda_login, #trabaja_login */ {
     font-size: 18px;
   }
 
@@ -197,7 +197,7 @@ p {
     font-size: 20px;
   }
 
-  #redes_icons {
+/*   #redes_icons {
     gap: 25px;
   }
 
@@ -206,11 +206,11 @@ p {
   .fa-twitter,
   .fa-linkedin {
     font-size: 35px;
-  }
+  } */
 }
 
 @media (min-width: 769px) {
-  #luminis {
+/*   #luminis {
     font-size: 100px;
     margin-top: 110px;
   }
@@ -222,9 +222,9 @@ p {
 
   #trabaja {
     font-size: 22px;
-  }
+  } */
 
-  #iniciar_sesion, #ayuda_login, #trabaja_login {
+  #iniciar_sesion /*  #ayuda_login, #trabaja_login */ {
     font-size: 22px;
   }
 
@@ -238,7 +238,7 @@ p {
     font-size: 25px;
   }
 
-  #redes_icons {
+/*   #redes_icons {
     gap: 50px;
   }
 
@@ -247,5 +247,5 @@ p {
   .fa-twitter,
   .fa-linkedin {
     font-size: 50px;
-  }
+  } */
 }

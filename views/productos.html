@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/css/grid.css" />
+   
+    <link rel="stylesheet" href="../public/css/productos.css" />
+   
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,8 +77,7 @@
      
         <h6>Inicio -> Productos</h6>
         <!------   BARRA DE BUSQUEDA   ------>
-        <div class="busqueda">
-            <i class="fa-light fa-filter"></i>
+        <div class="busqueda">            
             <form class="search-box">                
                 <input type="text" placeholder="Busque su libro aqui">
                 <button class="submit">
@@ -88,28 +89,7 @@
            <section class="banner">
 
            </section>
-           <div class="contenedorF">
-                <div class="filtros">
-                    <form action="" class="filtro" method="get">
-                        <select name="categoria" id="categoria">
-
-                        </select>
-                        <select name="" id=""></select>
-                            <option type="checkbox" value="categorias">
-                                
-                            </option>
-                    </form>
-                </div>
-                <div class="ordenarPor">
-                    <select name="ordenarpor" id="ordenarpor">
-                        <option type="radio" value="masVendido">Los mas Vendidos</option>
-                        <option type="radio" value="menorPrecio">Menor Precio</option>
-                        <option type="radio" value="mayorPrecio">Mayor Precio</option>
-                        <option type="radio" value="ofertas">Ofertas</option>
-                        <option type="radio" value="masRecientes">Mas recientes</option>                        
-                    </select>
-                </div>
-           </div>
+           
         <!------   GRID DE IMAGENES   ------>
 
 
@@ -181,29 +161,31 @@
             </div>
         </section>
     </main>
-    
-</body>
+
+
 <footer>
     <section id="footer" class="efecto_glass">
         <div id="ayuda">
             <input id="ayuda_login" type="button" value="Ayuda" />
             <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
             <a class="texto_footer" href="">Contactanos</a>
-        </div>
-        <div id="busca_trabajo">
+          </div>
+          <div id="busca_trabajo">
             <p class="texto_footer">¿Buscás trabajo?</p>
-            <input id="trabaja_login" type="button" value="¡Trabajá con nosotros!" />
-        </div>
-        <div id="redes">
+            <input id="trabaja_boton" type="button" value="¡Trabajá con nosotros!" />
+          </div>
+          <div id="redes">
             <p class="texto_footer">Seguinos en nuestras redes sociales</p>
             <div id="redes_icons">
-                <i class="fab fa-facebook-square" style="color: #3b5998"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter" style="color: #00acee"></i>
-                <i class="fab fa-linkedin" style="color: #0e76a8"></i>
+              <i class="fab fa-facebook-square"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-linkedin"></i>
             </div>
-        </div>
-    </section>
-</footer>
+          </div>
+        </section>
+      </footer>
+</body>
+
 
 </html>

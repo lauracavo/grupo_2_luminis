@@ -1,7 +1,4 @@
-@import url(../css/login.css);
-@import url(../css/register.css);
-@import url(../css/home.css);
-
+@import url(general.css);
 *{
     padding: 0;
     margin: 0;
