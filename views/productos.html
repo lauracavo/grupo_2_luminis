@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/css/productos.css" />
+    <link rel="stylesheet" href="../public/css/grid.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -72,10 +72,7 @@
 
     <!------   MAIN   ------>
     <main class="efecto_glass">
-        <!------   BANNER DE PROMOCIONES   ------>
-        <section class="banner">
-
-        </section>
+     
         <h6>Inicio -> Productos</h6>
         <!------   BARRA DE BUSQUEDA   ------>
         <div class="busqueda">
@@ -87,7 +84,32 @@
                 </button>
             </form>
         </div>
+           <!------   BANNER DE PROMOCIONES   ------>
+           <section class="banner">
 
+           </section>
+           <div class="contenedorF">
+                <div class="filtros">
+                    <form action="" class="filtro" method="get">
+                        <select name="categoria" id="categoria">
+
+                        </select>
+                        <select name="" id=""></select>
+                            <option type="checkbox" value="categorias">
+                                
+                            </option>
+                    </form>
+                </div>
+                <div class="ordenarPor">
+                    <select name="ordenarpor" id="ordenarpor">
+                        <option type="radio" value="masVendido">Los mas Vendidos</option>
+                        <option type="radio" value="menorPrecio">Menor Precio</option>
+                        <option type="radio" value="mayorPrecio">Mayor Precio</option>
+                        <option type="radio" value="ofertas">Ofertas</option>
+                        <option type="radio" value="masRecientes">Mas recientes</option>                        
+                    </select>
+                </div>
+           </div>
         <!------   GRID DE IMAGENES   ------>
 
 
@@ -159,7 +181,7 @@
             </div>
         </section>
     </main>
-
+    
 </body>
 <footer>
     <section id="footer" class="efecto_glass">
