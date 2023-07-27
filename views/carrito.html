@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../public/css/general.css" />
-    <!-- Holiss soy Lau jaja acá te importé el link nuevo donde están los estilos del header y el footer -->
-    <link rel="stylesheet" href="../public/css/home.css" />
-    <link rel="stylesheet" href="../public/css/login.css" />
-    <link rel="stylesheet" href="../public/css/register.css" />
+    <link rel="stylesheet" href="../public/css/carrito.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +23,6 @@
     />
     <title>Luminis</title>
   </head>
-
   <body>
     <div class="outer-menu">
       <input class="checkbox-toggle" type="checkbox" />
@@ -78,36 +74,82 @@
       </header>
     </section>
 
-    <main class="formularios_login">
-      <section id="formulario_inicio_login" class="efecto_glass">
-        <div>
-          <form>
-            <h3>INGRESAR</h3>
-            <label class="nombre_campos" for="email">Correo electronico:</label>
-            <input type="text" id="username" name="username" required />
-
-            <label class="nombre_campos" for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required />
-            <div id="recordarme">
-              <label class="nombre_campos" for="recordarme">Recordarme:</label>
+    <main>
+      <p id="titulo">Carrito de Compras</p>
+      <table id="tabla">
+        <thead id="encabezado_tabla">
+          <tr>
+            <th class="titulos_tabla">Producto</th>
+            <th class="titulos_tabla"></th>
+            <th class="titulos_tabla">Cantidad</th>
+            <th class="titulos_tabla">Precio Individual</th>
+            <th class="titulos_tabla">Precio Total</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo_tabla">
+          <tr>
+            <td class="contenido_tabla">Producto 1</td>
+            <td class="contenido_tabla">
+              <button class="eliminar">Eliminar</button>
+            </td>
+            <td class="contenido_tabla">
               <input
-                id="checkbox_recordarme"
-                type="checkbox"
-                name="recordarme"
+                class="cantidad_producto"
+                type="number"
+                value="1"
+                min="1"
+                max="10"
               />
-            </div>
+            </td>
+            <td class="contenido_tabla">$50.00</td>
+            <td class="contenido_tabla">$50.00</td>
+          </tr>
+          <tr>
+            <td class="contenido_tabla">Producto 2</td>
+            <td class="contenido_tabla">
+              <button class="eliminar">Eliminar</button>
+            </td>
+            <td class="contenido_tabla">
+              <input
+                class="cantidad_producto"
+                type="number"
+                value="2"
+                min="1"
+                max="10"
+              />
+            </td>
+            <td class="contenido_tabla">$30.00</td>
+            <td class="contenido_tabla">$60.00</td>
+          </tr>
+        </tbody>
+        <tfoot id="pie_tabla">
+          <tr>
+            <td colspan="3" align="right"><strong>Total a pagar:</strong></td>
+            <td><strong>$110.00</strong></td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
 
-            <input id="iniciar_sesion" type="submit" value="Iniciar sesión" />
-            <br />
-            <p class="nombre_campos">
-              ¿No estás registrado? Registrate
-              <a class="nombre_campos" href="#">aqui.</a>
-            </p>
-          </form>
+      <div class="display_flex" id="bajo_tabla">
+        <div class="display_flex" id="envios_pais">
+          <p id="titulo_envio">ENVIOS A TODO EL PAÍS</p>
+          <label for="envio"
+            >Inserte su codigo postal:
+            <input
+              type="text"
+              name="envio"
+              id="envio"
+              placeholder="Código Postal"
+          /></label>
         </div>
-      </section>
-      <div id="placa_derecha">
-        <p>¡HOLA DE NUEVO!</p>
+        <div>
+          <div id="button_comprar">
+            <button class="button">
+              <span class="button-content">COMPRAR</span>
+            </button>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -137,10 +179,5 @@
         </div>
       </section>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
