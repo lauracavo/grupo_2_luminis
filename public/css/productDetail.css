@@ -1,19 +1,22 @@
-/* En esta parte del css vamos a poner el estilo del header y el footer ya que todos lo necesitamos, por lo tanto deben TODOS linkear este para tener los estilos */
-
-/* ---------------------------CONFIGURACIONES GENERALES------------------------- */
+/* ------------------FULLSCREEN MENU---------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Dosis;
-}
-.display_flex {
+   }
+
+.display_flex{
   display: flex;
+}
+/* --------------------CSS HEADER-NAV----------------- */
+
+.oculto {
+  display: none;
 }
 .efecto_glass {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.33);
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.6px);
   -webkit-backdrop-filter: blur(6.6px);
@@ -26,36 +29,65 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-/* -----------------HEADER------------------------- */
-#header {
-  border-radius: 0;
-  margin-bottom: 20px;
-  padding: 10px;
+/* ----------------------- HEADER-------------------------- */
+header {
+  margin: 20px auto;
+  width: 95vw;
+  padding-bottom: 10px;
 }
 
+
 #logo {
-  width: 15%;
+  width: 30%;
 }
 #encabezado h1 {
+  
   padding-left: 2%;
   width: fit-content;
   align-content: baseline;
   font-weight: 800;
+  display: flex;
+  align-items: flex-end;
 }
 
-#luminis {
-  font-size: 50px;
-  color: black;
-  text-align: center;
-  margin-top: 20px;
+#encabezado {
+  display: flex;
+  align-items: flex-end;
 }
 
-#lema {
-  float: left;
-  width: 50%;
-  font-size: 18px;
-  font-style: italic;
+header nav ul li {
+  list-style: none;
+  width: fit-content;
+  padding: 5px;
+  margin: 10px;
+}
+nav {
+  justify-content: flex-end;
+  align-items: center;
+}
+nav ul a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+#contenedor_libreria {
+  margin-top: 25px;
+  justify-content: space-around;
+}
+#contenedor_libreria div#introduccion {
+  width: 90%;
+}
+#contenedor_libreria div#introduccion p,
+#contenedor_libreria div#introduccion h2 {
   text-align: center;
+}
+#contenedor_libreria div.boton {
+  justify-content: center;
+}
+#foto_libreria {
+  width: 25%;
+  height: 250px;
+  border-radius: 0 0 0 50px;
 }
 
 /* ------------------BOTONES NAV ---------------------- */
@@ -140,6 +172,7 @@ button.flecha:hover .arrow:before {
   overflow: hidden;
   height: 3rem;
   padding: 0 2rem;
+  margin-left: 2rem;
   border-radius: 1.5rem;
   background: #3d3a4e;
   background-size: 400%;
@@ -171,9 +204,21 @@ button.flecha:hover .arrow:before {
     rgba(99, 88, 238, 1) 94.3%
   );
   transition: all 0.2s;
+ }
+
+ main {
+  width: 95vw;
+  margin: auto;
 }
 
-/* ------------------FULLSCREEN MENU---------------------- */
+main section article {
+  width: 75%;
+  padding: 10px;
+  margin: 0px auto 40px auto;
+  flex-direction: column; 
+
+} 
+
 a,
 a:visited,
 a:hover,
@@ -181,6 +226,8 @@ a:active {
   color: inherit;
   text-decoration: none;
 }
+
+
 
 .outer-menu {
   position: sticky;
@@ -375,9 +422,196 @@ a:active {
   background: #e46f50;
   transition: width 0.4s ease;
 }
-/* -----------------FOOTER------------------------- */
 
-#footer {
+/* ------------------REGISTER---------------------- */
+
+/* #formulario_inicio_register {
+  width: 70%;
+  margin-left: 20px;
+  padding: 20px;
+} */
+
+/* .formularios_register {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-left: 0;
+}
+
+#placa_izquierda {
+  padding: 5px;
+  background-color: #e46f50;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  font-size: 20px;
+  border-radius:  0 50px 50px 0;
+} */
+
+#registrarme, #ayuda_register, #trabaja_register {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+} 
+
+#trabaja_register {
+  font-size: 10px;
+}
+
+#soy_docente {
+  display: flex;
+  gap: 5px;
+  align-content: center;
+  margin-top: 10px;
+}
+
+#checkbox_docente {
+  width: 20px;
+  accent-color: #e46f50;
+}
+
+#ayuda,
+#busca_trabajo_register,
+#redes_register {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#busca_trabajo_register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid #2a9d8f;
+  border-right: 2px solid #2a9d8f;
+  padding: 0 10px 0 10px;
+  height: 100%;
+}
+
+.container_productDetails {
+  display: flex;
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 4%;
+  
+}
+
+.container_carousel-image {
+  display: flex;
+  padding-top: 5%;
+  align-items: center;
+}
+
+.image_container {
+  display: none;
+  width: 100%;
+  padding: 10%;
+  align-items: center;
+  
+  
+} 
+/* -----Color flechas carosel */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+/* ------------Css image */
+#uno {
+padding: 2%;
+width: 75%;
+}
+
+#dos {
+  padding: 2%;
+  width: 75%;
+  }
+
+#tres {
+   padding: 2%;
+   width: 75%;
+   }
+
+.details__title {
+  font-size: 20px;
+  text-align: center;
+  
+} 
+
+#ok {
+  color: green;
+  padding-top: 4px;
+  
+}
+
+#envio {
+  color: blue;
+  padding-top: 4px;
+}
+
+.details_products {
+  display: flex;
+  text-align: center;
+  font-size: 18px;
+  justify-content: space-around;
+}  
+
+.details__button {
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 15px;
+  background: #7d2ae8;
+  transition: all 0.2s ease;
+  font-size: 10px;
+
+}
+
+.details__button:active {
+  transform: scale(0.96);
+}
+
+.details__prices {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details__now {
+  font-weight: bold;
+}
+
+.details__stock {
+  display: flex;
+  justify-content: space-around;
+  
+}
+.details__envio {
+  display: flex;
+  justify-content: space-around;
+}
+
+.details__product-quantity{
+  display: flex;
+  justify-content: space-around;
+}
+/* -------------------FOOTER---- */
+
+/* #footer {
   margin: 20px 0 0 0;
   padding: 10px;
   height: 250px;
@@ -415,37 +649,13 @@ p {
   gap: 10px;
 }
 
-#ayuda_boton,
-#trabaja_boton {
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  padding: 10px;
-  background-color: #2a9d8f;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-#trabaja_boton {
-  font-size: 10px;
-}
 .fa-facebook-square,
 .fa-instagram,
 .fa-twitter,
 .fa-linkedin {
   font-size: 25px;
 }
-.fa-facebook-square {
-  color: #3b5998;
-}
-.fa-twitter {
-  color: #00acee;
-}
-.fa-linkedin {
-  color: #0e76a8;
-}
+
 .texto_footer {
   display: flex;
   justify-content: center;
@@ -471,71 +681,270 @@ p {
   );
   background-clip: text;
   -webkit-background-clip: text;
+   } */
+
+/* --------------------Inicio descripcion producto */
+.container_productDescription {
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 4%;
 }
 
-/* ------------------------MEDIA QUERIES DE HEADER Y FOOTER --------------------*/
-@media (min-width: 426px) {
-  #luminis {
-    font-size: 60px;
-    margin-top: 55px;
+.details_productName {
+  text-align: center;
+}
+
+.container_productName {
+  display: flex;
+}
+
+.details__description {
+  font-size: 10px;
+}
+
+ul{
+  list-style: none;
+}
+
+.details_description-P{
+  font-size: 24px;
+}
+
+.fa-star {
+  padding-right:  10px;
+}
+
+.fa-heart {
+  padding-right:  10px;
+}
+
+.ul_details_description {
+  font-size: 16px;
+}
+
+
+
+/* --------------------------Fin Descripcion producto */
+
+/* -----------------------------------------Slider */
+.slider{
+  /* background-color: rgba(42, 157, 143 0.3); */
+  width: 90vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+.slider .slide-track{
+  display: flex;
+  animation: scroll 40s linear infinite;
+  -webkit-animation: scroll 40s linear infinite;
+  width: calc(100px * 14);
+}
+.slider .slide{
+  width: 100px;
+}
+.slider .slide img{
+  width: 100%;
+}
+@keyframes scroll{
+  0%{
+      -webkit-transform: translateX(0); 
+      transform: translateX(0);
+  }
+  100%{
+      -webkit-transform: translateX(calc(-200px *7)); 
+      transform: translateX(calc(-200px *7));
+  }
+}
+/* ---------------------Fin Slider */
+
+
+/* --------------Media query */
+
+@media (max-width: 426px) {
+  .display_flex_None {
+    display: none;
+  } 
+.container_carousel-image {
+  justify-content: flex-start;
+  padding-top: 10%;
+  
+}
+
+#redes_icons {
+  flex-direction: column;
+}
+  
   }
 
-  #lema {
-    font-size: 25px;
-    width: 70%;
-  }
-
-  #ayuda_boton {
+  #registrarme, #ayuda_register, #trabaja_register {
     font-size: 18px;
   }
-  #trabaja_boton {
-    font-size: 10px;
-  }
-  #redes_icons i {
-    font-size: 28px;
-    gap: 5px;
+
+  
+@media (min-width: 426px) {
+  #placa_izquierda {
+    font-size: 25px;
   }
 
-  .fa-facebook-square,
-  .fa-instagram,
-  .fa-twitter,
-  .fa-linkedin {
-    font-size: 35px;
+
+
+
+  #registrarme, #ayuda_register, #trabaja_register {
+    font-size: 18px;
   }
 }
 
-@media (min-width: 769px) {
-  #luminis {
-    font-size: 100px;
-    margin-top: 110px;
-  }
 
-  #lema {
-    font-size: 40px;
-    width: 70%;
-  }
 
-  #ayuda_boton,
-  #trabaja_boton {
-    font-size: 22px;
-  }
+@media (min-width: 768px) {
+.display_flex{
+  display: flex;
+}
+/* .header_nav {
+  display: flex;
+ } */
+#encabezado {
+  display: flex;
+  align-items: flex-end;
+} 
 
-  #redes_icons i {
-    font-size: 45px;
-    margin: 3px;
-  }
-
-  .fa-facebook-square,
-  .fa-instagram,
-  .fa-twitter,
-  .fa-linkedin {
-    font-size: 50px;
-  }
+.outer-menu{
+  display: none;
 }
 
-@media (min-width: 1024px) {
-  #redes_icons i {
-    font-size: 45px;
-    margin: 10px;
-  }
+  #logo {
+    width: 18%;
 }
+  .image_container {
+    display: flex;
+    width: 50%;
+    padding: 10%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .details__prices {
+    display: flex;
+    align-items: flex-start;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  
+  .display_flex {
+    justify-content: flex-start;
+    align-items: center;
+  }
+.details_products{  
+  font-size: 2rem;
+}
+.details__title{
+  font-size: 2rem;
+}
+.details__button {
+  font-size: 1.8rem;
+}
+
+.container_productName{
+  display: flex;
+  flex-direction: row;
+}
+
+#luminis {
+font-size: 80px;
+font-weight: 800;
+}
+
+ }
+
+ @media (min-width: 1024px) {
+#luminis {
+    font-size: 80px;
+    font-weight: 800;
+    }
+
+#logo {
+      width: 10%;
+     }
+
+.display_flex_None {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+#nav_ul {
+  font-size: 30px;
+}
+
+#sign_up  {
+  font-size: 20px;
+}
+#login  {
+  font-size: 20px;
+}
+.fa-cart-shopping {
+  font-size: 30px;
+  
+}
+
+.details__title {
+  font-size: 50px;
+}
+.details__now {
+  font-size: 70px;
+}
+
+.datails__stock {
+  font-size: 50px;
+}
+
+.details__button {
+  font-size: 50px;
+}
+#ok {
+  font-size: 70px;
+}
+#envio{
+  font-size: 70px;
+}
+.datails__envio{
+  font-size: 50px;
+}
+.details__button {
+  font-size: 50px;
+}
+
+.details_products {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container_productName {
+  
+  justify-content: space-around;
+  font-size: 50px;
+}
+.details_description-P {
+  font-size: 40px;
+}
+.ul_details_description {
+  font-size: 40px;
+}
+
+#h2 {
+  font-size: 50px;
+}
+}
+
+
+   
+
+
