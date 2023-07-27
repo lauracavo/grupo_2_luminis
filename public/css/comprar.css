@@ -378,3 +378,8 @@ header {
     border-radius: 50px;
 }
 
+@media (min-width: 320px) {
+	.contenedor {
+		display: none;
+	}
+}
