@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/general.css" />
+    <!-- <link rel="stylesheet" href="../public/css/login.css" /> -->
+    <link rel="stylesheet" href="../public/css/productDetail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Luminis</title>
+  </head>
+
+  <body>
+    
+    <!-- --------------------------------------Menu Hamburguesa-------------------------------------- -->
+    <div class="outer-menu">
+      <input class="checkbox-toggle" type="checkbox" />
+      <div class="hamburger">
+        <div></div>
+      </div>
+      <div class="menu">
+        <div>
+          <div>
+            <ul>
+              <li><a href="">PRODUCTOS</a></li>
+              <li><a href="">NOSOTROS</a></li>
+              <li><a href="">NEWS</a></li>
+              <li><a href="">AYUDA</a></li>
+              <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+
+              <button id="sign_up" class="flecha">
+                Sign up
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+              <button id="login" class="flecha">
+                Login
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="header" class="efecto_glass">
+      <header class="header_nav">
+        <div id="encabezado">
+          <img src="../public/img/logo2.svg" alt="Logo" id="logo" />
+          <h1 id="luminis">Luminis</h1>
+        </div>
+        <!-- -----------------------------------BARRA DE NAVEGACION---------------------------------- -->
+        <div class="display_flex_None">
+          <nav class="display_flex">
+            <ul id="nav_ul" class="display_flex">
+              <a href=""><li>PRODUCTOS</li></a>
+              <a href=""><li>NOSOTROS</li></a>
+              <a href=""><li>NEWS</li></a>
+              <a href=""><li>AYUDA</li></a>
+            </ul>
+          
+          <div class="display_flex">
+            <button id="sign_up" class="flecha">
+              Sign up
+              <div class="arrow-wrapper">
+                <div class="arrow"></div>
+              </div>
+            </button>
+            <button id="login" class="flecha">
+              Login
+              <div class="arrow-wrapper">
+                <div class="arrow"></div>
+              </div>
+            </button>
+            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <div>
+            </div>
+          </div>
+        </nav>       
+        </div>
+      </header>
+    </section>
+    <!-- -----------------------------------------------------MAIN----------------------------------------------------- -->
+
+    
+   <main>  
+     <section class="container_productDetails">
+      <!-- Carrusel------------------------------------------ -->
+      <article class="container_carousel-image">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../public/img/mochila 1.jpg" class="img-fluid"  alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../public/img/mochila 2.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="../public/img/mochila 5.jpg" class="img-fluid" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- Fin Carrusel--------------------------------------- -->
+        <!-- -----Inicio image container-------------------------------- -->
+       <div class="image_container">
+        <img id="uno"  src="../public/img/mochila 1.jpg" alt="thumnail">
+        <img id="dos"  src="../public/img/mochila4.jpg" alt="thumnail">
+        <img id="tres"  src="../public/img/mochila 5.jpg" alt="thumnail">
+       </div>
+      </article>
+       <!-- ----------------Fin image container--------------------------------- -->
+       <!-- ---------------------Inicio nombre producto--------------------------------- -->
+     <article class="details_products">
+      <h2 class="details__title"> MOCHILA URBANA NOTEBOOK MUJER HOMBRE </h2>
+      <div class="details__prices">
+        <p class="details__now">$14.900</p>
+        <button class="details__button">
+          <span>Ver cuotas</span>
+        </button>
+      </div>
+      <div class="details__stock">
+        <i id="ok" class="fa-solid fa-check"></i>
+        <p class="datails__stock"> Stock disponible</p>
+      </div>
+      <div class="details__envio">
+        <i id= "envio" class="fa-solid fa-truck-moving"></i>
+        <p class="datails__envio">Envio al todo el Pais</p>
+      </div>
+      <div class="details__product-quantity">
+        <button class="details__button"> <i class="fa-solid fa-cart-shopping"></i> Sumar al carrito</button>
+      </div>
+        </article>
+        <!-- ------------------FIN nombreproducto-------------------------------  -->
+    </section>
+        <!-- -----------------------Inicio Descripcion Producto------------------------ -->
+    <section class="container_productDescription">
+      <div class="details_productName">
+      <H2 id="h2"><u>DESCRIPCION DEL PRODUCTO</u></H2>
+      </div>
+      <article class="container_productName">
+        <div class="details__description">
+        <p class="details_description-P">Mochila urbana-Escolar Bagcherry 36.430261</p>
+        <ul class="ul_details_description">
+
+          <li><i class="fa-regular fa-star"></i>Confeccionado en tela poliéster</li>
+          <li><i class="fa-regular fa-star"></i>Compartimento amplio con porta notebook</li>
+          <li><i class="fa-regular fa-star"></i>Segundo compartimento amplio</li>
+          <li><i class="fa-regular fa-star"></i>2 bolsillos frontales</li>
+          <li><i class="fa-regular fa-star"></i>2 bolsillos laterales con red</li>
+          <li><i class="fa-regular fa-star"></i>Tiras regulables</li>
+          <li><i class="fa-regular fa-star"></i>Espalda acolchonada</li>
+          <li><i class="fa-regular fa-star"></i>Tela impermeable </li>
+          
+          
+        </ul>
+        </div>
+
+        <div class="oter__descripton">
+          <p class="details_description-P" > Segunda Descripción</p>
+          <ul>
+          <li><i class="fa-regular fa-heart"></i></i>2 bolsillos laterales con red</li>
+          <li><i class="fa-regular fa-heart"></i></i>Tiras regulables</li>
+          <li><i class="fa-regular fa-heart"></i></i>Espalda acolchonada</li>
+          <li><i class="fa-regular fa-heart"></i></i>Tela impermeable </li>
+        </ul>
+        </div>
+      </article>
+    </section>
+      <!-- -------------------------------------FIN Descripcion producto------------------------ -->
+       <!-- ----------------------------------------Inicio Slider--------------------------------------- -->
+       <!------   GRID DE IMAGENES   ------>
+
+
+       <div class="itemTarjeta">
+        <img src="../public/img/libros/1.jpg" alt="">
+
+        <img src="../public/img/libros/2.jpg" alt="">
+
+        <img src="../public/img/libros/3.jpg" alt="">
+
+        <img src="../public/img/libros/4.jpg" alt="">
+
+        <img src="../public/img/libros/5.png" alt="">
+
+        <img src="../public/img/libros/6.jpg" alt="">
+
+        <img src="../public/img/libros/7.jpg" alt="">
+
+        <img src="../public/img/libros/8.jpg" alt="">
+
+    </div>
+    <!------   SLIDER DE EDITORIALES   ------>
+
+    <section class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="../public/img/slider/1.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/2.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/3.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/4.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/5.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/6.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/7.png" alt="">
+            </div>
+
+            <div class="slide">
+                <img src="../public/img/slider/1.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/2.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/3.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/4.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/5.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/6.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="../public/img/slider/7.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------------Fin Slider------------- -->
+
+    
+
+   </main>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  
+  </body>
+  <!-- -----------------------------------------------FOOTER------------------------------------------------- -->
+
+  <footer>
+    <section id="footer" class="efecto_glass">
+      <div id="ayuda">
+        <input id="ayuda_register" type="button" value="Ayuda" />
+        <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
+        <a class="texto_footer" href="">Contactanos</a>
+      </div>
+      <div id="busca_trabajo_register">
+        <p class="texto_footer">¿Buscás trabajo?</p>
+        <input id="trabaja_register" type="button" value="¡Trabajá con nosotros!" />
+      </div>
+      <div id="redes_register">
+        <p class="texto_footer">Seguinos en nuestras redes sociales</p>
+        <div id="redes_icons">
+          <i class="fab fa-facebook-square" style="color: #3b5998"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-twitter" style="color: #00acee"></i>
+          <i class="fab fa-linkedin" style="color: #0e76a8"></i>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <!-- d-block w-100 -->
+</html>
