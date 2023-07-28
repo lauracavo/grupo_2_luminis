@@ -21,6 +21,11 @@ input[type="password"] {
 #checkbox_recordarme {
   width: 20px;
   accent-color: #2a9d8f;
+  transition: all 0.5s ease;
+}
+
+#checkbox_recordarme:hover {
+  transform: rotate(360deg);
 }
 
 #recordarme {
@@ -41,6 +46,11 @@ input[type="password"] {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#iniciar_sesion:hover {
+  background-color:#e46f50;
 }
 
 #placa_derecha {

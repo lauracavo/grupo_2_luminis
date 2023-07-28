@@ -48,11 +48,20 @@ body {
   color: black;
   text-align: center;
   margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#luminis:hover {
+  color: rgb(255, 251, 239);
+  text-shadow: 0 0 5px #f36624,
+  0 0 15px #f8882d,
+  0 0 30px #f2a160,
+  0 0 50px #f1c056,
+  0 0 100px #ffeabd
 }
 
 #lema {
-  float: left;
-  width: 50%;
   font-size: 18px;
   font-style: italic;
   text-align: center;
@@ -376,6 +385,10 @@ a:active {
   transition: width 0.4s ease;
 }
 /* -----------------FOOTER------------------------- */
+footer {
+  position: relative;
+  top: 38px;
+}
 
 #footer {
   margin: 20px 0 0 0;
@@ -403,8 +416,6 @@ p {
 
 #busca_trabajo {
   justify-content: center;
-  border-left: 2px solid #2a9d8f;
-  border-right: 2px solid #2a9d8f;
   padding: 0 10px 0 10px;
   height: 100%;
 }
@@ -427,7 +438,13 @@ p {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
+
+#ayuda_boton:hover, #trabaja_boton:hover {
+  background-color: #e46f50;
+}
+
 #trabaja_boton {
   font-size: 10px;
 }
@@ -436,7 +453,15 @@ p {
 .fa-twitter,
 .fa-linkedin {
   font-size: 25px;
+  transition: all 0.5s ease;
 }
+.fa-facebook-square:hover,
+.fa-instagram:hover,
+.fa-twitter:hover,
+.fa-linkedin:hover {
+  transform: scale(1.3);
+}
+
 .fa-facebook-square {
   color: #3b5998;
 }
