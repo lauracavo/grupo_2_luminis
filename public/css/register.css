@@ -15,7 +15,7 @@
 
 #placa_izquierda {
   padding: 5px;
-  background-color: #e46f50;
+  background-color: #2a9d8f;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -31,11 +31,17 @@
   margin-bottom: 10px;
   width: 100%;
   padding: 10px;
-  background-color: #e46f50;
+  background-color: #2a9d8f;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#registrarme:hover {
+  background-color:#e46f50;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 #soy_docente {
@@ -47,7 +53,12 @@
 
 #checkbox_docente {
   width: 20px;
-  accent-color: #e46f50;
+  accent-color: #2a9d8f;
+  transition: all 0.5s ease;
+}
+
+#checkbox_docente:hover {
+  transform: rotate(360deg);
 }
 
 @media (min-width: 426px) {
