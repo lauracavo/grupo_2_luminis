@@ -54,11 +54,8 @@ body {
 
 #luminis:hover {
   color: rgb(255, 251, 239);
-  text-shadow: 0 0 5px #f36624,
-  0 0 15px #f8882d,
-  0 0 30px #f2a160,
-  0 0 50px #f1c056,
-  0 0 100px #ffeabd
+  text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+    0 0 50px #f1c056, 0 0 100px #ffeabd;
 }
 
 #lema {
@@ -441,7 +438,8 @@ p {
   transition: all 0.5s ease;
 }
 
-#ayuda_boton:hover, #trabaja_boton:hover {
+#ayuda_boton:hover,
+#trabaja_boton:hover {
   background-color: #e46f50;
 }
 
@@ -563,4 +561,12 @@ p {
     font-size: 45px;
     margin: 10px;
   }
+
+  .outer-menu {
+    display: none;
+  }
+
+  /*  #nav_desktop {
+    display: flex;
+  } */
 }
