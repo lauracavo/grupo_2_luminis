@@ -65,6 +65,9 @@ body {
   font-style: italic;
   text-align: center;
 }
+.user_button {
+  text-decoration: none;
+}
 
 /* ------------------BOTONES NAV ---------------------- */
 
@@ -94,7 +97,6 @@ button.flecha {
   gap: 0.6em;
   font-weight: bold;
 }
-
 button.flecha .arrow-wrapper {
   display: flex;
   justify-content: center;
@@ -512,7 +514,7 @@ p {
 }
 
 .fa-whatsapp {
-  color:#25d366;
+  color: #25d366;
   font-size: 25px;
   margin-left: 20px;
   transition: all 0.5s ease;
@@ -607,29 +609,47 @@ p {
   }
   #header {
     margin: 0;
-    padding: 10px;
   }
   #barra_navegacion {
     margin: 0;
     display: flex;
     width: 100%;
-  }
-  #logo {
-    width: 50px;
-    border: solid red 2px;
-  }
-  #luminis {
-    font-size: 20px;
-    border: solid blue 2px;
+    align-items: center;
+    justify-content: space-between;
   }
   #nav_bar {
     display: block;
   }
+  #encabezado {
+    align-items: flex-end;
+  }
+  #logo {
+    width: 50px;
+    margin: 0;
+  }
+  #luminis {
+    margin: 0;
+    font-size: 40px;
+  }
+
   #nav_bar ul {
-    border: solid red 1px;
     display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
   }
   #nav_bar ul li {
-    border: solid blue 1px;
+    height: 25px;
+    margin: 15px;
+    list-style: none;
+    font-size: 18px;
+  }
+  #nav_bar ul li:hover {
+    color: rgb(255, 251, 239);
+    text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+      0 0 50px #f1c056, 0 0 100px #ffeabd;
+  }
+  #nav_bar ul li a {
+    text-decoration: none;
   }
 }
