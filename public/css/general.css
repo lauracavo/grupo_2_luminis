@@ -42,7 +42,9 @@ body {
   align-content: baseline;
   font-weight: 800;
 }
-
+#nav_bar {
+  display: none;
+}
 #luminis {
   font-size: 50px;
   color: black;
@@ -561,12 +563,34 @@ p {
     font-size: 45px;
     margin: 10px;
   }
-
   .outer-menu {
     display: none;
   }
-
-  /*  #nav_desktop {
+  #header {
+    margin: 0;
+    padding: 10px;
+  }
+  #barra_navegacion {
+    margin: 0;
     display: flex;
-  } */
+    width: 100%;
+  }
+  #logo {
+    width: 50px;
+    border: solid red 2px;
+  }
+  #luminis {
+    font-size: 20px;
+    border: solid blue 2px;
+  }
+  #nav_bar {
+    display: block;
+  }
+  #nav_bar ul {
+    border: solid red 1px;
+    display: flex;
+  }
+  #nav_bar ul li {
+    border: solid blue 1px;
+  }
 }
