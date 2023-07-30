@@ -68,6 +68,12 @@ body {
 .user_button {
   text-decoration: none;
 }
+.fa-shopping-cart,
+.fa-user-circle {
+  color: black;
+  margin: 10px;
+  font-size: 25px;
+}
 
 /* ------------------BOTONES NAV ---------------------- */
 
