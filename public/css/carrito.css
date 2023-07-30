@@ -1,0 +1,80 @@
+#lema {
+  float: inherit;
+  width: 100%;
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+}
+
+header #button_comprar {
+  display: none;
+}
+main {
+  width: 90vw;
+  margin: auto;
+}
+#titulo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#tabla {
+  width: 90vw;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.titulos_tabla,
+.contenido_tabla {
+  color: black;
+  border: 1px solid white;
+  padding: 8px;
+  text-align: center;
+}
+
+#encabezado_tabla {
+  background-color: white;
+}
+
+#pie_tabla {
+  background-color: white;
+}
+
+.cantidad_producto[type="number"] {
+  width: 40px;
+}
+
+input#envio {
+  border-radius: 15px;
+  height: 30px;
+  padding-left: 30px;
+}
+#titulo_envio {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+#envios_pais {
+  flex-direction: column;
+}
+#envios_pais label {
+  display: flex;
+  flex-direction: column;
+}
+#bajo_tabla {
+  justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  #envios_pais label {
+    display: flex;
+    flex-direction: row;
+  }
+  #lema {
+    font-size: 40px;
+  }
+}

@@ -93,9 +93,7 @@ div.boton {
     justify-content: center;
   }
 }
-<<<<<<< HEAD
 
-=======
 @media (min-width: 1024px) {
   #foto_libreria {
     width: 500px;
@@ -104,4 +102,3 @@ div.boton {
     width: 20%;
   }
 }
->>>>>>> 7f040c886ea6143d857a167ea1677f29f490d9b6
