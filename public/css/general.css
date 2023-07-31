@@ -35,14 +35,11 @@ body {
 #logo {
   width: 15%;
 }
-#encabezado h1 {
+#luminis {
   padding-left: 2%;
   width: fit-content;
   align-content: baseline;
   font-weight: 800;
-}
-
-#luminis {
   font-size: 50px;
   color: black;
   text-align: center;
@@ -536,8 +533,16 @@ p {
 /* ------------------------MEDIA QUERIES DE HEADER Y FOOTER --------------------*/
 @media (min-width: 426px) {
   #luminis {
+    padding-left: 2%;
+    width: fit-content;
+    align-content: baseline;
+    font-weight: 800;
     font-size: 60px;
+    color: black;
+    text-align: center;
     margin-top: 60px;
+    cursor: pointer;
+    transition: all 0.5s ease;
   }
 
   #logo {
@@ -617,6 +622,7 @@ p {
     margin: 0;
   }
   #logo_busqueda {
+    display: flex;
     width: 100%;
     justify-content: space-between;
   }
@@ -646,13 +652,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 49%;
+    width: 40%;
   }
   #busqueda {
     justify-content: center;
   }
   #busqueda form {
-    width: 500px;
+    width: 400px;
     padding: 10px;
     border-radius: 15px;
     background-color: #ebebeb;
@@ -703,6 +709,6 @@ p {
   #botones_usuario {
     display: flex;
     justify-content: end;
-    width: 26%;
+    width: 35%;
   }
 }
