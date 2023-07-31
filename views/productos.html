@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-    <link rel="stylesheet" href="../public/css/productos.css" />
+    <link rel="stylesheet" href="css/productos.css" />
+    <link rel="stylesheet" href="/css/general.css">
    
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,61 +24,70 @@
     <div class="outer-menu">
         <input class="checkbox-toggle" type="checkbox" />
         <div class="hamburger">
-            <div></div>
+          <div></div>
         </div>
         <div class="menu">
+          <div>
             <div>
-                <div>
-                    <ul>
-                        <li><a href="">PRODUCTOS</a></li>
-                        <li><a href="">NOSOTROS</a></li>
-                        <li><a href="">NEWS</a></li>
-                        <li><a href="">AYUDA</a></li>
-                        <button id="sign_up" class="flecha">
-                            Sign up
-                            <div class="arrow-wrapper">
-                                <div class="arrow"></div>
-                            </div>
-                        </button>
-                        <button id="login" class="flecha">
-                            Login
-                            <div class="arrow-wrapper">
-                                <div class="arrow"></div>
-                            </div>
-                        </button>
-                    </ul>
-                </div>
+              <ul>
+                <li><a href="/productos">PRODUCTOS</a></li>
+                <li><a href="">NOSOTROS</a></li>
+                <li><a href="">NEWS</a></li>
+                <li><a href="">AYUDA</a></li>
+                <a href="/register">
+                  <button id="sign_up" class="flecha">
+                    Registrate
+                    <div class="arrow-wrapper">
+                      <div class="arrow"></div>
+                    </div>
+                  </button>
+                </a>
+                <button id="login" class="flecha">
+                  Inicia Sesión
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
+              </ul>
             </div>
+          </div>
         </div>
-    </div>
-
-    <!------   HEADER   ------>
-    <section id="header" class="efecto_glass">
+      </div>
+      <section id="header" class="efecto_glass">
         <header>
+          <div id="barra_navegacion">
             <div id="encabezado" class="display_flex">
-                <img src="../public/img/logo2.svg" alt="Logo" id="logo" />
-                <h1 id="luminis">Luminis</h1>
+              <img src="/img/logo2.svg" alt="Logo" id="logo" />
+              <h1 id="luminis">Luminis</h1>
             </div>
-
-            <div>
-                <h2 id="lema" class="animation">
-                    "Acompañando a los alumnos y docentes en cada paso"
-                </h2>
-                <div id="button_comprar">
-                    <button class="button">
-                        <span class="button-content">COMPRAR</span>
-                    </button>
-                </div>
+            <div id="nav_bar">
+              <ul>
+                <li><a href="/productos">PRODUCTOS</a></li>
+                <li><a href="">NOSOTROS</a></li>
+                <li><a href="">NEWS</a></li>
+                <li><a href="">AYUDA</a></li>
+                <a href="/register" class="user_button">
+                  <button id="sign_up" class="flecha">
+                    Registrate
+                    <div class="arrow-wrapper">
+                      <div class="arrow"></div>
+                    </div>
+                  </button>
+                </a href="/login" class="user_button">
+                <button id="login" class="flecha">
+                  Inicia Sesión
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user-circle"></i>
+              </ul>
             </div>
+          </div>
         </header>
-    </section>
-
-    <!------   MAIN   ------>
-    <main class="efecto_glass">
-     
-        <h6>Inicio -> Productos</h6>
-        <!------   BARRA DE BUSQUEDA   ------>
-        <div class="busqueda">            
+         <!------   BARRA DE BUSQUEDA   ------>
+         <div class="busqueda">            
             <form class="search-box">                
                 <input type="text" placeholder="Busque su libro aqui">
                 <button class="submit">
@@ -85,6 +95,28 @@
                 </button>
             </form>
         </div>
+      </section>
+  
+
+    <!------   MAIN   ------>
+    <main class="efecto_glass" >     
+        
+        <!------   BOTONES FILTRAR     ------>
+        <div class="filtros">
+            <a href="#" class="btn">
+                <span>
+                    <i class="fa-duotone fa-right-left"></i>
+                </span>
+                Ordenar por
+            </a>
+            <a href="#" class="btn">
+                <span>
+                    <i class="fa-solid fa-sliders"></i>
+                </span>
+                Filtrar
+            </a>
+        </div>
+        
            <!------   BANNER DE PROMOCIONES   ------>
            <section class="banner">
 
@@ -93,22 +125,22 @@
         <!------   GRID DE IMAGENES   ------>
 
 
-        <div class="itemTarjeta">
-            <img src="../public/img/libros/1.jpg" alt="">
+        <div class="itemTarjeta" >
+            <img src="/img/libros/1.jpg"  alt="">
 
-            <img src="../public/img/libros/2.jpg" alt="">
+            <img src="/img/libros/2.jpg" alt="">
 
-            <img src="../public/img/libros/3.jpg" alt="">
+            <img src="/img/libros/3.jpg" alt="">
 
-            <img src="../public/img/libros/4.jpg" alt="">
+            <img src="/img/libros/4.jpg" alt="">
 
-            <img src="../public/img/libros/5.png" alt="">
+            <img src="/img/libros/5.png" alt="">
 
-            <img src="../public/img/libros/6.jpg" alt="">
+            <img src="/img/libros/6.jpg" alt="">
 
-            <img src="../public/img/libros/7.jpg" alt="">
+            <img src="/img/libros/7.jpg" alt="">
 
-            <img src="../public/img/libros/8.jpg" alt="">
+            <img src="/img/libros/8.jpg" alt="">
 
         </div>
         <!------   SLIDER DE EDITORIALES   ------>
@@ -116,47 +148,47 @@
         <section class="slider">
             <div class="slide-track">
                 <div class="slide">
-                    <img src="../public/img/slider/1.png" alt="">
+                    <img src="/img/slider/1.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/2.png" alt="">
+                    <img src="/img/slider/2.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/3.png" alt="">
+                    <img src="/img/slider/3.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/4.png" alt="">
+                    <img src="/img/slider/4.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/5.png" alt="">
+                    <img src="/img/slider/5.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/6.png" alt="">
+                    <img src="/img/slider/6.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/7.png" alt="">
+                    <img src="/img/slider/7.png" alt="">
                 </div>
 
-                <div class="slide">
-                    <img src="../public/img/slider/1.png" alt="">
+                <div class="slide1">
+                    <img src="/img/slider/1.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/2.png" alt="">
+                    <img src="/img/slider/2.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/3.png" alt="">
+                    <img src="/img/slider/3.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/4.png" alt="">
+                    <img src="/img/slider/4.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/5.png" alt="">
+                    <img src="/img/slider/5.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/6.png" alt="">
+                    <img src="/img/slider/6.png" alt="">
                 </div>
                 <div class="slide">
-                    <img src="../public/img/slider/7.png" alt="">
+                    <img src="/img/slider/7.png" alt="">
                 </div>
             </div>
         </section>
@@ -166,24 +198,28 @@
 <footer>
     <section id="footer" class="efecto_glass">
         <div id="ayuda">
-            <input id="ayuda_login" type="button" value="Ayuda" />
-            <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
-            <a class="texto_footer" href="">Contactanos</a>
+          <input id="ayuda_boton" type="button" value="Ayuda" />
+          <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
+          <a class="texto_footer" href="">Contactanos</a>
+        </div>
+        <div id="busca_trabajo">
+          <p class="texto_footer">¿Buscás trabajo?</p>
+          <input
+            id="trabaja_boton"
+            type="button"
+            value="¡Trabajá con nosotros!"
+          />
+        </div>
+        <div id="redes">
+          <p class="texto_footer">Seguinos en nuestras redes sociales</p>
+          <div id="redes_icons">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
           </div>
-          <div id="busca_trabajo">
-            <p class="texto_footer">¿Buscás trabajo?</p>
-            <input id="trabaja_boton" type="button" value="¡Trabajá con nosotros!" />
-          </div>
-          <div id="redes">
-            <p class="texto_footer">Seguinos en nuestras redes sociales</p>
-            <div id="redes_icons">
-              <i class="fab fa-facebook-square"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-twitter"></i>
-              <i class="fab fa-linkedin"></i>
-            </div>
-          </div>
-        </section>
+        </div>
+      </section>
       </footer>
 </body>
 

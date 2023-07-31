@@ -1,30 +1,21 @@
-@import url(general.css);
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-/*----- MAIN ------*/
-main{
-    width: 100%;
-    height: auto;
-}
-h6 {
-    margin-left: 5px;
-}
+
 /*----- BARRA DE BUSQUEDA ------*/
 .busqueda{
     width: 80%;
-    height: 50%;
+    height: 30%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10%;
+    justify-content: right;
+    
 }
 .busqueda i {
-    width: 15%;
+    width: 25%;
     left: 0;
+    font-size: 18px;
+    color: rgb(90, 81, 81);
 }
+
+
 .search-box{
     width: 90%;
     max-width: 300px;
@@ -32,7 +23,7 @@ h6 {
     display: flex;
     align-items: center;
     border-radius: 10px;
-    height: 50px;
+    height: 30px;
     position: relative;
     overflow: hidden;
     background-color: white;
@@ -44,7 +35,8 @@ h6 {
     border: 0;
     outline: 0;
     background: transparent;
-    font-size: 20px;
+    font-size: 16px;
+    color:darkgrey;
 }
 .search-box button i{
     width: 30px;
@@ -57,6 +49,41 @@ h6 {
     cursor: pointer;
 }
 
+/*----- MAIN ------*/
+main{
+    width: 100%;
+    height: auto;
+}
+
+/*----- BOTONES FILTRAR ------*/
+.filtros{
+    display: flex;
+}
+
+.btn{
+    color: white;   
+    display: inline-block;
+    justify-content: center;
+    font-size: 20px;
+    margin: 20px;
+    padding:10px;
+    width: 200px;
+   text-align: center;
+   text-decoration: none;
+   
+}
+.btn:hover{
+    color: rgb(255, 251, 239);
+  text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+    0 0 50px #f1c056, 0 0 100px #ffeabd;
+}
+
+.btn .span i{
+   margin-right: 10px;
+   color: white;
+}
+
+
 /*----- GRID DE LIBROS ------*/
 .itemTarjeta > img{
     border-radius: 8px;
@@ -64,11 +91,14 @@ h6 {
     height: auto;
     box-shadow: 0px 0px 30px #000 ;
     transition: .3s;
+    margin: auto;
 }
 img:hover{
     transform: scale(0.9);
 }
 .itemTarjeta{
+    margin: 10X;
+    padding: 10px;
     margin-top: 50px;
     display: grid;
     grid-template-columns: 
@@ -84,25 +114,37 @@ img:hover{
     margin: auto;
     overflow: hidden;
 }
+/* .slide,
+.slide1{
+    flex-shrink: 0;
+} */
 .slider .slide-track{
     display: flex;
+    list-style: none;
     animation: scroll 40s linear infinite;
-    -webkit-animation: scroll 40s linear infinite;
+    
     width: calc(100px * 14);
 }
-.slider .slide{
+.slider .slide1{
+    animation-delay: 20s;
+}
+.slider .slide,
+.slider .slide1{
     width: 100px;
 }
 .slider .slide img{
     width: 100%;
 }
+.slider .slide1 img{
+    width: 100%;
+}
 @keyframes scroll{
     0%{
-        -webkit-transform: translateX(0); 
+       
         transform: translateX(0);
     }
     100%{
-        -webkit-transform: translateX(calc(-200px *7)); 
-        transform: translateX(calc(-200px *7));
+        
+        transform: translateX(-100%);
     }
 }
