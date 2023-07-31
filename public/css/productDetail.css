@@ -35,15 +35,9 @@ main section article {
   transition: all 300ms;
 }
 
-.image_container img {
-  transition: all 300ms;
-  position: relative;
-}
 
-.image_container img:hover {
-  transform: scale(2);
   
-}
+
 /* -----Color flechas carosel */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -204,22 +198,13 @@ main section article {
 }
 /* ---------------------Fin Slider */
 
-/* --------------Media query */ /* BORRAR QUE YA ESTA EN EL GENERAL */
-
-@media (max-width: 426px) {
-  
-   }
-  .container_carousel-image {
-    justify-content: flex-start;
-    padding-top: 10%;
-  }
 @media (min-width: 426px) {
 }
 @media (min-width: 768px) {
   .display_flex {
     display: flex;
   }
-  }
+
   .image_container {
     display: flex;
     width: 50%;
@@ -258,6 +243,15 @@ main section article {
     justify-content: space-around;
   }
 
+  .image_container img {
+    display: flex;
+    transition: all 300ms;
+    position: relative;
+  }
+  .image_container img:hover {
+    transform: scale(2);
+   }
+ }
 @media (min-width: 1024px) {
   .display_flex_None {
     display: flex;
