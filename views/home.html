@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/css/home.css" />
-    <link rel="stylesheet" href="../public/css/general.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/general.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,18 +33,20 @@
         <div>
           <div>
             <ul>
-              <li><a href="">PRODUCTOS</a></li>
+              <li><a href="/productos">PRODUCTOS</a></li>
               <li><a href="">NOSOTROS</a></li>
               <li><a href="">NEWS</a></li>
               <li><a href="">AYUDA</a></li>
-              <button id="sign_up" class="flecha">
-                Sign up
-                <div class="arrow-wrapper">
-                  <div class="arrow"></div>
-                </div>
-              </button>
+              <a href="/register">
+                <button id="sign_up" class="flecha">
+                  Registrate
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
+              </a>
               <button id="login" class="flecha">
-                Login
+                Inicia Sesión
                 <div class="arrow-wrapper">
                   <div class="arrow"></div>
                 </div>
@@ -56,44 +58,67 @@
     </div>
     <section id="header" class="efecto_glass">
       <header>
-        <div id="encabezado" class="display_flex">
-          <img src="../public/img/logo2.svg" alt="Logo" id="logo" />
-          <h1 id="luminis">Luminis</h1>
-        </div>
-        <div id="contenedor_libreria" class="display_flex">
-          <div id="introduccion">
-            <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              eaque corrupti, quo at consequuntur provident, ducimus fugit
-              possimus esse quae sapiente sint reprehenderit repellendus.
-              Dolorem doloremque voluptatum modi itaque numquam! At quasi
-              similique corrupti ut provident nobis a et ullam. Similique,
-              aliquam beatae autem doloremque facilis repudiandae ipsam eos eum
-              officiis excepturi nulla officia incidunt, adipisci tenetur quia.
-              Eaque, iure.
-            </p>
+        <div id="barra_navegacion">
+          <div id="encabezado" class="display_flex">
+            <img src="/img/logo2.svg" alt="Logo" id="logo" />
+            <h1 id="luminis">Luminis</h1>
           </div>
-          <img
-            src="../public/img/libreria.jpg"
-            alt="foto libreria"
-            id="foto_libreria"
-            class="oculto"
-          />
-        </div>
-        <div id="button_comprar" class="display_flex">
-          <button class="button">
-            <span class="button-content">COMPRAR</span>
-          </button>
+          <div id="nav_bar">
+            <ul>
+              <li><a href="/productos">PRODUCTOS</a></li>
+              <li><a href="">NOSOTROS</a></li>
+              <li><a href="">NEWS</a></li>
+              <li><a href="">AYUDA</a></li>
+              <a href="/register" class="user_button">
+                <button id="sign_up" class="flecha">
+                  Registrate
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
+              </a href="/login" class="user_button">
+              <button id="login" class="flecha">
+                Inicia Sesión
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-user-circle"></i>
+            </ul>
+          </div>
         </div>
       </header>
     </section>
+
     <main>
+      <div id="contenedor_libreria" class="display_flex">
+        <div id="introduccion">
+          <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            eaque corrupti, quo at consequuntur provident, ducimus fugit
+            possimus esse quae sapiente sint reprehenderit repellendus. Dolorem
+            doloremque voluptatum modi itaque numquam! At quasi similique
+            corrupti ut provident nobis a et ullam. Similique, aliquam beatae
+            autem doloremque facilis repudiandae ipsam eos eum officiis
+            excepturi nulla officia incidunt, adipisci tenetur quia. Eaque,
+            iure.
+          </p>
+        </div>
+        <img
+          src="/img/libreria.jpg"
+          alt="foto libreria"
+          id="foto_libreria"
+          class="oculto"
+        />
+      </div>
+
       <section id="productos_nuevos">
         <h3>PRODUCTOS NUEVOS</h3>
         <div class="articulos_ocultos">
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto1.png" />
+            <img src="/img/producto1.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -105,7 +130,7 @@
             </div>
           </article>
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto1.png" />
+            <img src="/img/producto1.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -117,7 +142,7 @@
             </div>
           </article>
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto2.png" />
+            <img src="/img/producto2.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -129,7 +154,7 @@
             </div>
           </article>
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto3.png" />
+            <img src="/img/producto3.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -174,7 +199,7 @@
             <div class="carousel-item active carrusel_prod">
               <div class="d-block w-100">
                 <article class="efecto_glass display_flex">
-                  <img src="../public/img/producto1.png" />
+                  <img src="/img/producto1.png" />
                   <div class="display_flex info_prod">
                     <p>Nombre</p>
                     <p>Precio</p>
@@ -189,7 +214,7 @@
             </div>
             <div class="carousel-item">
               <article class="efecto_glass display_flex">
-                <img src="../public/img/producto1.png" />
+                <img src="/img/producto1.png" />
                 <div class="display_flex info_prod">
                   <p>Nombre</p>
                   <p>Precio</p>
@@ -203,7 +228,7 @@
             </div>
             <div class="carousel-item">
               <article class="efecto_glass display_flex">
-                <img src="../public/img/producto1.png" />
+                <img src="/img/producto1.png" />
                 <div class="display_flex info_prod">
                   <p>Nombre</p>
                   <p>Precio</p>
@@ -217,7 +242,7 @@
             </div>
             <div class="carousel-item">
               <article class="efecto_glass display_flex">
-                <img src="../public/img/producto1.png" />
+                <img src="/img/producto1.png" />
                 <div class="display_flex info_prod">
                   <p>Nombre</p>
                   <p>Precio</p>
@@ -254,7 +279,7 @@
         <h3>LOS MÁS VENDIDOS</h3>
         <div class="articulos_ocultos">
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto1.png" />
+            <img src="/img/producto1.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -266,7 +291,7 @@
             </div>
           </article>
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto1.png" />
+            <img src="/img/producto1.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -278,7 +303,7 @@
             </div>
           </article>
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto2.png" />
+            <img src="/img/producto2.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -290,7 +315,7 @@
             </div>
           </article>
           <article class="efecto_glass display_flex">
-            <img src="../public/img/producto3.png" />
+            <img src="/img/producto3.png" />
             <div class="display_flex info_prod">
               <p>Nombre</p>
               <p>Precio</p>
@@ -335,7 +360,7 @@
             <div class="carousel-item active carrusel_prod">
               <div class="d-block w-100">
                 <article class="efecto_glass display_flex">
-                  <img src="../public/img/producto1.png" />
+                  <img src="/img/producto1.png" />
                   <div class="display_flex info_prod">
                     <p>Nombre</p>
                     <p>Precio</p>
@@ -350,7 +375,7 @@
             </div>
             <div class="carousel-item">
               <article class="efecto_glass display_flex">
-                <img src="../public/img/producto1.png" />
+                <img src="/img/producto1.png" />
                 <div class="display_flex info_prod">
                   <p>Nombre</p>
                   <p>Precio</p>
@@ -364,7 +389,7 @@
             </div>
             <div class="carousel-item">
               <article class="efecto_glass display_flex">
-                <img src="../public/img/producto1.png" />
+                <img src="/img/producto1.png" />
                 <div class="display_flex info_prod">
                   <p>Nombre</p>
                   <p>Precio</p>
@@ -378,7 +403,7 @@
             </div>
             <div class="carousel-item">
               <article class="efecto_glass display_flex">
-                <img src="../public/img/producto1.png" />
+                <img src="/img/producto1.png" />
                 <div class="display_flex info_prod">
                   <p>Nombre</p>
                   <p>Precio</p>

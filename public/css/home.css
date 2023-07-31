@@ -1,10 +1,11 @@
 .oculto {
   display: none;
 }
-/* ----------------------- HEADER-------------------------- */
+/* ----------------------- DECRIPCION CON FOTO DE LIBRERIA ------------------------- */
 #contenedor_libreria {
   margin-top: 25px;
   justify-content: space-around;
+  align-items: center;
 }
 
 #contenedor_libreria div#introduccion p,
@@ -93,6 +94,7 @@ div.boton {
     justify-content: center;
   }
 }
+
 @media (min-width: 1024px) {
   #foto_libreria {
     width: 500px;

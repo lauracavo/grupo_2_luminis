@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/css/general.css"> <!-- Holiss soy Lau jaja acá te importé el link nuevo donde están los estilos del header y el footer -->
-    <link rel="stylesheet" href="../public/css/home.css" />
-    <link rel="stylesheet" href="../public/css/login.css" />
-    <link rel="stylesheet" href="../public/css/register.css" />
+    <link rel="stylesheet" href="/css/general.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/register.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -60,7 +60,7 @@
     <section id="header" class="efecto_glass">
       <header>
         <div id="encabezado" class="display_flex">
-          <img src="../public/img/logo2.svg" alt="Logo" id="logo" />
+          <img src="/img/logo2.svg" alt="Logo" id="logo" />
           <h1 id="luminis">Luminis</h1>
         </div>
 
@@ -68,11 +68,6 @@
           <h2 id="lema" class="animation">
             "Acompañando a los alumnos y docentes en cada paso"
           </h2>
-          <div id="button_comprar">
-            <button class="button">
-              <span class="button-content">COMPRAR</span>
-            </button>
-          </div>
         </div>
       </header>
     </section>
@@ -89,7 +84,11 @@
             <input type="password" id="password" name="password" required />
             <div id="recordarme">
               <label class="nombre_campos" for="recordarme">Recordarme:</label>
-              <input id="checkbox_recordarme" type="checkbox" name="recordarme" />
+              <input
+                id="checkbox_recordarme"
+                type="checkbox"
+                name="recordarme"
+              />
             </div>
 
             <input id="iniciar_sesion" type="submit" value="Iniciar sesión" />
@@ -111,11 +110,17 @@
         <div id="ayuda">
           <input id="ayuda_boton" type="button" value="Ayuda" />
           <p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
-          <a class="texto_footer" href="">Contactanos</a>
+          <div id="contacto_footer">
+            <p class="texto_footer">Contactanos</p><i class="fab fa-whatsapp"></i>
+          </div>
         </div>
         <div id="busca_trabajo">
           <p class="texto_footer">¿Buscás trabajo?</p>
-          <input id="trabaja_boton" type="button" value="¡Trabajá con nosotros!" />
+          <input
+            id="trabaja_boton"
+            type="button"
+            value="¡Trabajá con nosotros!"
+          />
         </div>
         <div id="redes">
           <p class="texto_footer">Seguinos en nuestras redes sociales</p>
@@ -134,5 +139,4 @@
       crossorigin="anonymous"
     ></script>
   </body>
-
 </html>
