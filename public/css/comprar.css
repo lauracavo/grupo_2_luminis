@@ -27,6 +27,7 @@ select {
   width: 200px;
   padding: 5px;
   margin-bottom: 10px;
+  border-radius: 15px;
 }
 
 .datos {
@@ -43,6 +44,7 @@ select {
   border: 1px solid white;
   margin: 20px;
   text-align: center;
+  
 }
 
 h2{
@@ -376,3 +378,16 @@ button:hover {
     display: block;
   }
 } 
+
+@media (min-width: 768px) {
+  .display_flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .display_flex_None {
+    display: flex;
+    justify-content: space-around;
+  }
+}
