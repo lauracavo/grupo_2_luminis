@@ -9,10 +9,13 @@
 	<link rel="stylesheet" href="../public/css/general.css">
 	<link rel="stylesheet" href="../public/css/comprar.css">
 	<link rel="stylesheet" href="../public/css/login.css">
-	<link rel="stylesheet" href="/css/general.css"> <!-- Holiss soy Lau jaja acá te importé el link nuevo donde están los estilos del header y el footer -->
-	<link rel="stylesheet" href="/css/comprar.css">
-	<!-- <link rel="stylesheet" href="/css/login.css"> --> <!-- borrar este de acá -->
-
+	<link rel="stylesheet" href="../css/general.css"> 
+	<link rel="stylesheet" href="../css/comprar.css">
+	<link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+	
 </head>
 <body>
 	<div class="outer-menu">
@@ -48,7 +51,7 @@
 	  <section id="header" class="efecto_glass">
 		<header>
 		  <div id="encabezado" class="display_flex">
-			<img src="/img/logo2.svg" alt="Logo" id="logo" />
+			<img src="img/logo2.svg" alt="Logo" id="logo" />
 			<h1 id="luminis">Luminis</h1>
 		  </div>
   
@@ -62,7 +65,8 @@
 	<main>
 		<div class="contenedor"></div>
 			<form action="" method="post">
-				<label class="datos"> DATOS PERSONALES </label><br>
+				<div class="efecto_glass" id="diseño">
+				<h2> DATOS PERSONALES </h2><br>
 					<label for="email">Correo Electronico</label>
 					<input type="text" name="email" id="email"><br>
 					
@@ -72,11 +76,13 @@
 					<input type="text" name="dni" id="DNI"><br>
 					<label for="telefono"> Telefono</label>
 					<input type="text" name="telefono" id="telefono">
+				</div>
 			</form>
 			<br>
 			<br>
 			<form action="" method="post">
-				<label>DOMICILIO Y ENTREGA</label><br>
+				<div class="efecto_glass" id="diseño">
+				<h2>DOMICILIO Y ENTREGA</h2><br>
 				<br>
 					<label for="codigopostal">Codigo postal</label>
 					<input type="text" name="codigopostal" id="codigopostal"><br>
@@ -84,9 +90,11 @@
 					<input type="text" name="calle" id="calle">
 					<label for="numero">Numero</label>
 					<input type="text" name="numero" id="numero">
+				</div>
 			</form>
 			<form action="" method="get">
-				<label> Provincia </label>
+				<div class="efecto_glass" id="diseño">
+				<h2> PROVINCIA</h2><br>
 					<select name="Provincia">
 						<option value="buenosaires">Buenos Aires</option>
 						<option value="chubut">Chubut</option>
@@ -100,27 +108,35 @@
 						<option value="Trelew">Trelew</option>
 						<option value="carlospaz">Carlos Paz</option>
 					</select>
+				</div>
 			</form>
 			<br>
 			<form action="" method="get">
-				<label>ELIJA EL TIPO DE ENTREGA</label><br>
+				<div class="efecto_glass" id="diseño">
+				<h2>ELIJA EL TIPO DE ENTREGA</h2><br>
 				<br>
 					<input type="radio" name="medio" id="medio">
-					<label for="medio">Retiro por sucursal - Gratis.</label><br>
+					<label for="medio">Retiro por sucursal - Gratis.</label>
 					<input type="radio" name="medio" id="medio">
 					<label for="medio">Envio a domicilio - $1200</label>
+				</div>
 			</form>
 			<br>
 			<form action="" method="get">
-				<label>PAGO</label><br>
-
+				<div class="efecto_glass" id="diseño">
+				<h2>PAGO</h2><br>
 					<input type="radio" name="pago" id="pago">
 					<label for="pago">Efectivo</label><br>
 					<input type="radio" name="pago" id="pago">
 					<label for="pago">Tarjeta de Debito</label><br>
 					<input type="radio" name="pago" id="pago">
 					<label for="pago">Tarjeta de Credito</label><br>
-					<button>ENVIAR</button>
+					<div>
+						<div id="button_comprar">
+							<button class="button"><span class="button-content">Finalizar compra</span></button>
+						</div>
+					</div>
+				</div>
 			</form>
 		</div>
 	</main>
@@ -238,6 +254,6 @@
 
 	  
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-	<script src="/comprar.js"></script>
+	<script src="comprar.js"></script>
 </body>
 </html>
