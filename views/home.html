@@ -37,20 +37,20 @@
               <li><a href="">NOSOTROS</a></li>
               <li><a href="">NEWS</a></li>
               <li><a href="">AYUDA</a></li>
-              <a href="/register">
+              <a href="/register" class="user_button">
                 <button id="sign_up" class="flecha">
-                  Sign up
+                  Registrate
                   <div class="arrow-wrapper">
                     <div class="arrow"></div>
-                  </div>
-                </button>
-              </a>
-              <button id="login" class="flecha">
-                Login
-                <div class="arrow-wrapper">
-                  <div class="arrow"></div>
-                </div>
-              </button>
+                  </div></button
+              ></a>
+              <a href="/login" class="user_button">
+                <button id="login" class="flecha">
+                  Inicia Sesión
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div></button
+              ></a>
             </ul>
           </div>
         </div>
@@ -58,40 +58,76 @@
     </div>
     <section id="header" class="efecto_glass">
       <header>
-        <div id="encabezado" class="display_flex">
-          <img src="/img/logo2.svg" alt="Logo" id="logo" />
-          <h1 id="luminis">Luminis</h1>
-        </div>
-        <div id="contenedor_libreria" class="display_flex">
-          <div id="introduccion">
-            <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              eaque corrupti, quo at consequuntur provident, ducimus fugit
-              possimus esse quae sapiente sint reprehenderit repellendus.
-              Dolorem doloremque voluptatum modi itaque numquam! At quasi
-              similique corrupti ut provident nobis a et ullam. Similique,
-              aliquam beatae autem doloremque facilis repudiandae ipsam eos eum
-              officiis excepturi nulla officia incidunt, adipisci tenetur quia.
-              Eaque, iure.
-            </p>
+        <div id="barra_navegacion">
+          <div id="logo_busqueda">
+            <div id="encabezado" class="display_flex">
+              <img src="/img/logo2.svg" alt="Logo" id="logo" />
+              <h1 id="luminis">Luminis</h1>
+            </div>
+            <div id="form_busqueda">
+              <div id="busqueda" class="display_flex">
+                <form id="search_box" class="display_flex">
+                  <input type="text" placeholder="Buscar" />
+                  <button type="submit">
+                    <i class="fas fa-search" id="search-icon"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="display_flex" id="botones_usuario">
+              <a href="/register" class="user_button">
+                <button id="sign_up" class="flecha">
+                  Registrate
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div></button
+              ></a>
+              <a href="/login" class="user_button">
+                <button id="login" class="flecha">
+                  Inicia Sesión
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div></button
+              ></a>
+            </div>
           </div>
-          <img
-            src="/img/libreria.jpg"
-            alt="foto libreria"
-            id="foto_libreria"
-            class="oculto"
-          />
-        </div>
-        <div id="button_comprar" class="display_flex">
-          <button class="button">
-            <span class="button-content">COMPRAR</span>
-          </button>
+          <div id="nav_bar">
+            <ul>
+              <li><a href="/productos">PRODUCTOS</a></li>
+              <li><a href="">NOSOTROS</a></li>
+              <li><a href="">NEWS</a></li>
+              <li><a href="">AYUDA</a></li>
+              <!--               <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-user-circle"></i> -->
+            </ul>
+          </div>
         </div>
       </header>
     </section>
 
     <main>
+      <div id="contenedor_libreria" class="display_flex">
+        <div id="introduccion">
+          <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            eaque corrupti, quo at consequuntur provident, ducimus fugit
+            possimus esse quae sapiente sint reprehenderit repellendus. Dolorem
+            doloremque voluptatum modi itaque numquam! At quasi similique
+            corrupti ut provident nobis a et ullam. Similique, aliquam beatae
+            autem doloremque facilis repudiandae ipsam eos eum officiis
+            excepturi nulla officia incidunt, adipisci tenetur quia. Eaque,
+            iure.
+          </p>
+        </div>
+        <img
+          src="/img/libreria.jpg"
+          alt="foto libreria"
+          id="foto_libreria"
+          class="oculto"
+        />
+      </div>
+
       <section id="productos_nuevos">
         <h3>PRODUCTOS NUEVOS</h3>
         <div class="articulos_ocultos">
