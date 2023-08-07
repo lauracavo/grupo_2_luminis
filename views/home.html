@@ -37,20 +37,20 @@
               <li><a href="">NOSOTROS</a></li>
               <li><a href="">NEWS</a></li>
               <li><a href="">AYUDA</a></li>
-              <a href="/register">
+              <a href="/register" class="user_button">
                 <button id="sign_up" class="flecha">
                   Registrate
                   <div class="arrow-wrapper">
                     <div class="arrow"></div>
-                  </div>
-                </button>
-              </a>
-              <button id="login" class="flecha">
-                Inicia Sesión
-                <div class="arrow-wrapper">
-                  <div class="arrow"></div>
-                </div>
-              </button>
+                  </div></button
+              ></a>
+              <a href="/login" class="user_button">
+                <button id="login" class="flecha">
+                  Inicia Sesión
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div></button
+              ></a>
             </ul>
           </div>
         </div>
@@ -59,9 +59,37 @@
     <section id="header" class="efecto_glass">
       <header>
         <div id="barra_navegacion">
-          <div id="encabezado" class="display_flex">
-            <img src="/img/logo2.svg" alt="Logo" id="logo" />
-            <h1 id="luminis">Luminis</h1>
+          <div id="logo_busqueda">
+            <div id="encabezado" class="display_flex">
+              <img src="/img/logo2.svg" alt="Logo" id="logo" />
+              <h1 id="luminis">Luminis</h1>
+            </div>
+            <div id="form_busqueda">
+              <div id="busqueda" class="display_flex">
+                <form id="search_box" class="display_flex">
+                  <input type="text" placeholder="Buscar" />
+                  <button type="submit">
+                    <i class="fas fa-search" id="search-icon"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="display_flex" id="botones_usuario">
+              <a href="/register" class="user_button">
+                <button id="sign_up" class="flecha">
+                  Registrate
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div></button
+              ></a>
+              <a href="/login" class="user_button">
+                <button id="login" class="flecha">
+                  Inicia Sesión
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div></button
+              ></a>
+            </div>
           </div>
           <div id="nav_bar">
             <ul>
@@ -69,22 +97,8 @@
               <li><a href="">NOSOTROS</a></li>
               <li><a href="">NEWS</a></li>
               <li><a href="">AYUDA</a></li>
-              <a href="/register" class="user_button">
-                <button id="sign_up" class="flecha">
-                  Registrate
-                  <div class="arrow-wrapper">
-                    <div class="arrow"></div>
-                  </div>
-                </button>
-              </a href="/login" class="user_button">
-              <button id="login" class="flecha">
-                Inicia Sesión
-                <div class="arrow-wrapper">
-                  <div class="arrow"></div>
-                </div>
-              </button>
-              <i class="fas fa-shopping-cart"></i>
-              <i class="fas fa-user-circle"></i>
+              <!--               <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-user-circle"></i> -->
             </ul>
           </div>
         </div>
