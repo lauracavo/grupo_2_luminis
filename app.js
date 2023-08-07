@@ -32,4 +32,4 @@ app.get("/productDetail", (req, res) => {
   res.sendFile(__dirname + "/views/productDetail.html");
 });
 
-app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`));
+app.listen(port, () => console.log('Servidor corriendo en el puerto ${port}'));
