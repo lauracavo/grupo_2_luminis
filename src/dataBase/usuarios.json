@@ -1,0 +1,20 @@
+{
+    "usuarios" : [
+        {
+            "id": 1,
+            "email": "perezcarolinasn@gmail.com",
+            "pass": "dh123",
+            "nombre": "carolina",
+            "apellido": "perez",
+            "direccion": "roca 649"            
+        },
+        {
+            "id": 2,
+            "email": "tomystafano@gmail.com",
+            "pass": "dh1234",
+            "nombre": "tomas",
+            "apellido": "stefano",
+            "direccion": "mitre 125"   
+        }
+    ]
+}

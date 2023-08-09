@@ -129,10 +129,11 @@
       </article>
        <!-- ----------------Fin image container--------------------------------- -->
        <!-- ---------------------Inicio nombre producto--------------------------------- -->
+
      <article class="details_products">
-      <h2 class="details__title"> MOCHILA URBANA NOTEBOOK MUJER HOMBRE </h2>
+      <h2 class="details__title">   <%= libroSelect.nombre %></h2>
       <div class="details__prices">
-        <p class="details__now">$14.900</p>
+        <p class="details__now">$   <%= libroSelect.precio %></p>
         <button class="button">
           <span class="button-content">Ver cuotas</span>
         </button>
@@ -154,19 +155,19 @@
         <!-- -----------------------Inicio Descripcion Producto------------------------ -->
     <section class="container_productDescription">
       <div class="details_productName">
-      <H2 id="h2"><u>DESCRIPCION DEL PRODUCTO</u></H2>
+      <H2 id="h2"><u>  <%= libroSelect.descripcion %></u></H2>
       </div>
       <article class="container_productName">
         <div class="details__description">
         <p class="details_description-P">Primera Descripcion</p>
         <ul class="ul_details_description">
 
-          <li></i>Confeccionado en tela poliéster</li>
-          <li></i>Compartimento amplio con porta notebook</li>
-          <li></i>Segundo compartimento amplio</li>
-          <li></i>2 bolsillos frontales</li>
-          <li></i>2 bolsillos laterales con red</li>
-          <li></i>Tiras regulables</li>
+          <li></i>  <%= libroSelect.caracteristica %></li>
+          <li></i><%= libroSelect.autor %></li>
+          <li></i><%= libroSelect.editorial %></li>
+          <li></i><%= libroSelect.categoria %></li>
+          <li></i><%= libroSelect.fechaPublicacion %></li>
+          <li></i><%= libroSelect.puntuacion %></li>
           <li></i>Espalda acolchonada</li>
           <li></i>Tela impermeable </li>
           
