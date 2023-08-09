@@ -1,0 +1,137 @@
+
+
+/*----- MAIN ------*/
+main{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: block;
+    margin-top: 15px;
+}
+
+/*----- BOTONES FILTRAR ------*/
+.filtros{
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 0.116);
+    border-radius: 5px; 
+    padding: 2px;
+    width: 100vp;
+   
+}
+
+.filtros .separador{
+      
+    width: 1px;
+    border-right: 2px solid rgba(255, 255, 255, 0.116);
+    
+}
+
+
+.filtros .btn{
+    color: white; 
+
+    display: inline-block;
+    justify-content: center;
+    font-size: 16px;
+    margin: 20px;
+    padding:10px;
+    width: 50%;
+   text-align: center;
+   text-decoration: none;
+   
+   
+}
+.btn:hover{
+    color: rgb(255, 251, 239);
+  text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+    0 0 50px #f1c056, 0 0 100px #ffeabd;
+}
+
+.filtros .btn .span i{
+   margin-right: 15px;
+   color: white;
+}
+
+
+/*----- GRID DE LIBROS ------*/
+.itemTarjeta > img{
+    border-radius: 8px;
+    width: 70%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000 ;
+    transition: .3s;
+    margin: auto;
+}
+img:hover{
+    transform: scale(0.9);
+}
+.itemTarjeta{
+    margin: 10X;
+    padding: 10px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fill,minmax(130px, 1fr));
+        gap:32px;
+}
+ .boton{
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+}
+  
+  
+
+
+/*-------- SLIDER AUTOMATICO ---------*/
+@keyframes slider {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+}
+.logos{
+    overflow: hidden;
+    padding: 20px 0;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 10px ;
+    background-color: white;
+    opacity: 0.8;
+}
+
+
+.logos:hover .logo-slide{
+    animation-play-state: paused;
+}
+.logo-slide{
+    display: inline-block;    
+    animation: 10s slider infinite linear;
+   
+}
+.logo-slide img{
+    height: 70px;
+    margin: 0 10px;
+    filter: grayscale(100%);
+}
+.banner{
+    display: none;
+}
+.aside .publicidad .publi img {
+    display: none;
+    visibility: hidden;
+}
+
+/*-------- MEDIA QUERIES ----------*/
+
+@media (min-width: 769px){
+ 
+
+}
+@media (min-width: 1024px){
+}
