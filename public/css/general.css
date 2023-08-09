@@ -32,10 +32,15 @@ body {
   margin-bottom: 20px;
   padding: 10px;
 }
+#encabezado {
+  align-items: end;
+}
 #logo {
-  width: 15%;
+  width: 60px;
+  margin: 0;
 }
 #luminis {
+  margin: 0;
   padding-left: 2%;
   width: fit-content;
   align-content: baseline;
@@ -43,7 +48,6 @@ body {
   font-size: 50px;
   color: black;
   text-align: center;
-  margin-top: 25px;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -53,9 +57,8 @@ body {
     0 0 50px #f1c056, 0 0 100px #ffeabd;
 }
 #lema {
-  font-size: 18px;
+  font-size: 14px;
   font-style: italic;
-  text-align: center;
 }
 .user_button {
   text-decoration: none;
@@ -68,9 +71,39 @@ body {
 }
 /* ------------------BARRA DE NAVEGACION-------------------- */
 #nav_bar,
-#form_busqueda,
 #botones_usuario {
   display: none;
+}
+#form_busqueda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#busqueda {
+  height: 40px;
+  margin-top: 10px;
+}
+#busqueda form {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ebebeb;
+}
+#busqueda form input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+}
+#busqueda form input:focus {
+  outline: none;
+}
+#busqueda form button {
+  background-color: transparent;
+  border: 0;
+}
+#busqueda form button:hover {
+  cursor: pointer;
 }
 /* ------------------BOTONES NAV ---------------------- */
 
@@ -540,21 +573,22 @@ p {
     font-size: 60px;
     color: black;
     text-align: center;
-    margin-top: 60px;
     cursor: pointer;
     transition: all 0.5s ease;
   }
 
   #logo {
-    width: 19%;
-    margin-top: 30px;
+    width: 80px;
   }
 
   #lema {
-    font-size: 30px;
+    font-size: 16px;
     width: 100%;
+    display: flex;
   }
-
+  #busqueda form {
+    width: 350px;
+  }
   #ayuda_boton {
     font-size: 18px;
   }
@@ -576,21 +610,29 @@ p {
 }
 
 @media (min-width: 769px) {
+  #encabezado {
+    width: 50%;
+  }
   #luminis {
-    font-size: 100px;
-    margin-top: 110px;
+    font-size: 65px;
   }
-
   #logo {
-    width: 9%;
-    margin-top: 60px;
+    width: 100px;
   }
-
   #lema {
-    font-size: 40px;
+    font-size: 16px;
+    display: flex;
+  }
+  #barra_navegacion {
     width: 100%;
   }
-
+  #logo_busqueda {
+    display: flex;
+  }
+  #form_busqueda {
+    width: 50%;
+    margin-top: 35px;
+  }
   #ayuda_boton,
   #trabaja_boton {
     font-size: 22px;
@@ -625,6 +667,7 @@ p {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
   }
   #barra_navegacion {
     margin: 0;
@@ -647,10 +690,16 @@ p {
     margin: 0;
     font-size: 40px;
   }
+  #div_lema {
+    margin-top: 10px;
+    width: 100%;
+  }
+  #lema {
+    margin: 0;
+  }
   /* BARRA DE BUSQUEDA */
   #form_busqueda {
-    display: flex;
-    align-items: center;
+    margin: 0;
     justify-content: flex-end;
     width: 40%;
   }
@@ -659,25 +708,6 @@ p {
   }
   #busqueda form {
     width: 400px;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: #ebebeb;
-  }
-  #busqueda form input {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: 0;
-  }
-  #busqueda form input:focus {
-    outline: none;
-  }
-  #busqueda form button {
-    background-color: transparent;
-    border: 0;
-  }
-  #busqueda form button:hover {
-    cursor: pointer;
   }
   /* BARRA DE NAVEGACION - PARTE DE ABAJO DONDE ESTAN LOS BOTONES */
   #nav_bar {
