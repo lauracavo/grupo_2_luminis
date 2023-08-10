@@ -4,8 +4,12 @@ const arrLibros = require('../dataBase/libros.json');
 
 const productsController = {
     getAll: (req,res)=>{
-        const { results } = arrLibros;
-        res.render('product', { libros: results });    
+        console.log(arrLibros);
+        //  const { results } = arrLibros;
+
+        //  console.log(results)
+
+        // res.render('product', { libros: results });    
     },   
     byId: (req,res)=>{
         const {id} = req.params;
