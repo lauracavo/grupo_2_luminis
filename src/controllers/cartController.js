@@ -1,9 +1,9 @@
-const arrLibros = require('../dataBase/libros.json');
-
+const path = require('path');
 
 const cartController = {
-    home: (req,res)=>{        
+    cart: (req,res)=>{        
         
         res.render('cart');   
     }
 }
+module.exports = cartController;
