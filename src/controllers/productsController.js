@@ -1,12 +1,11 @@
 const path = require('path');
-const dataBaseU = require('../dataBase/usuarios.json');
 const arrLibros = require('../dataBase/libros.json');
 
 
 const productsController = {
     getAll: (req,res)=>{
         const { results } = arrLibros;
-        res.render('productos', { libros: results });    
+        res.render('product', { libros: results });    
     },   
     byId: (req,res)=>{
         const {id} = req.params;
