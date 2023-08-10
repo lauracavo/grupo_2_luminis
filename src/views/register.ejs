@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/login.css" />
   </head>
 
   <body>
-    <%- include('./partials/menu') %>
-    <%- include('./partials/header') %>
+    <%- include('./partials/menu') %> <%- include('./partials/header') %>
     <main class="formularios_register">
       <section id="formulario_inicio_register" class="efecto_glass">
         <div>
@@ -20,17 +20,23 @@
             <input type="text" id="email" name="email" required />
 
             <div id="soy_docente">
-              <label class="nombre_campos" for="soy_docente">Soy docente:</label>
-              <input id="checkbox_docente" type="checkbox" name="soy_docente"/>
+              <label class="nombre_campos" for="soy_docente"
+                >Soy docente:</label
+              >
+              <input id="checkbox_docente" type="checkbox" name="soy_docente" />
             </div>
 
-            <label class="nombre_campos" for="code">Código de verificacíon:</label>
-            <input type="text" id="code" name="code"/>
+            <label class="nombre_campos" for="code"
+              >Código de verificacíon:</label
+            >
+            <input type="text" id="code" name="code" />
 
             <label class="nombre_campos" for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required />
 
-            <label class="nombre_campos" for="password">Repetir contraseña:</label>
+            <label class="nombre_campos" for="password"
+              >Repetir contraseña:</label
+            >
             <input type="password" id="password" name="password" required />
 
             <input id="registrarme" type="submit" value="Registrarme" />
@@ -47,10 +53,6 @@
       </div>
     </main>
 
-    <%- include('./partials/footer') %>
-    <%- include('./partials/script') %>
-    
-   
+    <%- include('./partials/footer') %> <%- include('./partials/script') %>
   </body>
-
 </html>
