@@ -6,55 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/general.css">
+    <%- include('./partials/head') %>
     <title>Administrador Luminis</title>
 </head>
 <body>
+  <%- include('./partials/menu') %> <%- include('./partials/header') %>
 <!-- Formulario para agregar un nuevo producto -->
-<h2>Agregar Nuevo Producto</h2>
-<form action="agregar_producto.php" method="POST" enctype="multipart/form-data">
-    <label for="name">Nombre del producto:</label>
-    <input type="text" name="name" required><br>
+<main class="formularios_login">
+  <section id="formulario_inicio_login" class="efecto_glass">
+      <h2>Agregar Nuevo Producto</h2>
+    <form action="agregar_producto.php" method="POST" enctype="multipart/form-data">
+        <label class="nombre_campos" for="name">Nombre del producto:</label><br>
+        <input type="text" name="name" required><br>
     
-    <label for="description">Descripción:</label>
-    <textarea name="description" required></textarea><br>
+        <label class="nombre_campos" for="description">Descripción:</label><br>
+        <textarea name="description" required></textarea><br>
     
-    <label for="image">Imagen:</label>
-    <input type="file" name="image" accept="image/*" required><br>
+        <label class="nombre_campos" for="image">Imagen:</label><br>
+        <input type="file" name="image" accept="image/*" required><br>
     
-    <label for="category">Categoría:</label>
-    <input type="text" name="category" required><br>
+        <label class="nombre_campos" for="">Categorias</label><br>
+        <select id="opcion" name="opcion">
+            <option value="opcion1">Categoria 1</option>
+            <option value="opcion2">Categoria 2</option>
+            <option value="opcion3">Categoria 3</option>
+        </select>
+        <br>
+        <label  class="nombre_campos" for="price">Precio:</label><br>
+        <input type="number" step="0.01" name="price" required><br>
     
-    <label for="price">Precio:</label>
-    <input type="number" step="0.01" name="price" required><br>
-    
-    <button type="submit">Agregar Producto</button>
-</form>
-
+        <button class="agregar_producto" type="submit">Agregar Producto</button>
+    </form>
+    <br>
+  </section>
+  <section>
 <!-- Tabla para mostrar y editar productos existentes -->
-<h2>Productos Existente</h2>
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Imagen</th>
-        <th>Categoría</th>
-        <th>Precio</th>
-        <th>Acciones</th>
-    </tr>
+        <h2>Productos Existente</h2>
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Imagen</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+      </tr>
     <!-- Aquí puedes cargar los productos existentes desde la base de datos y generar las filas de la tabla -->
-</table>
-</body>
-</body>
-</html>
-=======
-  <head>
-    <%- include('./partials/head') %>
-    <link rel="stylesheet" href="css/admin.css" />
-  </head>
-  <body>
-    <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main></main>
+      </table>
+  </section>
+</main>
+   
+    
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
   </body>
 </html>
