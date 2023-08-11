@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const mainRoute = require("./src/routes/main");
 const productsRoute = require("./src/routes/products");
-
+const cartRoute = require("./src/routes/cart");
 const app = express();
 
 const port = process.env.PORT || 2020;
@@ -20,3 +20,4 @@ app.set("views", "./src/views");
 
 app.use("/", mainRoute);
 app.use("/product", productsRoute);
+app.use("/cart", cartRoute);

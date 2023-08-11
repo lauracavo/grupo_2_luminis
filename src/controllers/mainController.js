@@ -16,7 +16,7 @@ const mainController = {
     },   
     admin: (req,res) =>{
         res.render('administrador');
-    }
+    },
 }
 
 module.exports = mainController;
