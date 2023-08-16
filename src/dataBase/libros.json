@@ -10,7 +10,7 @@
             "puntuacion": 5,
             "caracteristica": "tapaBlanda",
             "categoria": "infantil",
-            "img": "../img/libros/1.jpg"
+            "img": "1.jpg"
 
         },
         {
@@ -23,7 +23,7 @@
         "puntuacion": 3,
         "caracteristica": "tapaBlanda",
         "categoria": "infantil",
-        "img": "../img/libros/2.jpg"
+        "img": "2.jpg"
        },
 
        {
@@ -36,7 +36,7 @@
         "puntuacion": 1,
         "caracteristica": "cuentos clasicos",
         "categoria": "infantil",
-        "img": "../img/libros/3.jpg"
+        "img": "3.jpg"
        },
        {
         "id": 4,
@@ -48,7 +48,7 @@
         "puntuacion": 5,
         "caracteristica": "tapaDura",
         "categoria": "infantil",
-        "img": "../img/libros/4.jpg"
+        "img": "4.jpg"
        }
     ]
 }
