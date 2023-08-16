@@ -1,21 +1,21 @@
-const path = require('path');
-const dataLibros = require('../dataBase/libros.json');
-
+const path = require("path");
+const dataBaseU = require("../dataBase/usuarios.json");
+const dataProductos = require("../dataBase/libros.json");
 
 const mainController = {
-    home: (req,res)=>{        
-        
-    },
- 
-    register: (req,res)=>{
-        res.render('register');    
-    },   
-    login: (req,res)=>{
-        res.render('login');    
-    },   
-    admin: (req,res) =>{
-        res.render('administrador');
-    },
-}
+  home: (req, res) => {
+    const { libros } = dataProductos;
+    res.render("home", { data: libros });
+  },
+  register: (req, res) => {
+    res.render("register");
+  },
+  login: (req, res) => {
+    res.render("login");
+  },
+  admin: (req, res) => {
+    res.render("administrador");
+  },
+};
 
 module.exports = mainController;

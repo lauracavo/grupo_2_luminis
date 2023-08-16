@@ -1,4 +1,7 @@
 /* -----------------FORMULARIO LOGIN------------------------- */
+main {
+  margin: 40px;
+}
 #formulario_inicio_login {
   width: 70%;
   margin-right: 20px;
@@ -57,7 +60,7 @@ input[type="password"]:focus-within {
 }
 
 #iniciar_sesion:hover {
-  background-color:#e46f50;
+  background-color: #e46f50;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -85,7 +88,6 @@ input[type="password"]:focus-within {
 }
 
 @media (min-width: 426px) {
-
   #iniciar_sesion {
     font-size: 18px;
   }
@@ -102,7 +104,6 @@ input[type="password"]:focus-within {
 }
 
 @media (min-width: 769px) {
-
   #iniciar_sesion {
     font-size: 22px;
   }

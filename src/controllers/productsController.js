@@ -1,22 +1,19 @@
-const path = require('path');
-const arrLibros = require('../dataBase/libros.json');
-
+const path = require("path");
+const dataLibros = require("../dataBase/libros.json");
 
 const productsController = {
-    getAll: (req,res)=>{
-          console.log(arrLibros);
-          const { libros } = arrLibros;        
+  getAll: (req, res) => {
+    const { libros } = dataLibros;
+    res.render("product", { data: libros });
+  },
+  byId: (req, res) => {
+    const { id } = req.params;
+    const { libros } = dataLibros;
 
-          res.render('product', { libros: libros });    
-    },   
-    byId: (req,res)=>{
-        const {id} = req.params;
-    
-        const findLibro = arrLibros.find((libro) =>  libro.id == id);
+    const productId = libros.find((prod) => prod.id === id);
 
-        res.render('productDetail', { libroSelect: findLibro })
-    } 
-};    
-
+    res.render("productDetail", { libroSelect: productId });
+  },
+};
 
 module.exports = productsController;

@@ -1,66 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/productos.css" />
+  </head>
 
-<head>  
-  <%- include('./partials/head') %>
-  <link rel="stylesheet" href="/css/productos.css">   
-</head>
-
-<body>
-
-  <%- include('./partials/menu') %>
-  <%- include('./partials/header') %> 
+  <body>
+    <%- include('./partials/menu') %> <%- include('./partials/header') %>
 
     <!------   MAIN   ------>
-    <main>     
-        <aside>
+    <main>
+      <aside>
         <!------   BOTONES FILTRAR     ------>
         <div class="filtros efecto_glass">
-            <a href="#" class="btn">
-                <span><i class="fa-duotone fa-right-left"></i></span>
-                ORDENAR POR
-            </a>            
-            <span class="separador"></span>
-            <a href="#" class="btn">
-                <span><i class="fa-solid fa-sliders"></i></span>
-                FILTRAR
-            </a>
+          <a href="#" class="btn">
+            <span><i class="fa-duotone fa-right-left"></i></span>
+            ORDENAR POR
+          </a>
+          <span class="separador"></span>
+          <a href="#" class="btn">
+            <span><i class="fa-solid fa-sliders"></i></span>
+            FILTRAR
+          </a>
         </div>
-       <!-- <div class="publicidad">
+        <!-- <div class="publicidad">
             <div class="publi">
               <img src="img/publicidad1.jpg" alt="">
             </div>
        </div> -->
       </aside>
-           <!------   BANNER DE PROMOCIONES   ------>
-           <section class="banner">
+      <!------   BANNER DE PROMOCIONES   ------>
+      <section class="banner"></section>
 
-           </section>
-           
-        <!------   GRID DE IMAGENES   ------>
+      <!------   GRID DE IMAGENES   ------>
 
+      <div class="itemTarjeta efecto_glass">
+        <% data.map(item => { %>
+        <img src="../img/libros/<%= item.img %>" alt="<%= item.nombre %>" />
+        <% }); %>
+      </div>
 
-        <div class="itemTarjeta efecto_glass">
-          <% libros.map(item => { %>
-              <img src="/img/libros/<%= item.img %>" alt="<%= item.nombre %>">
-          <% }); %>
-        </div>
-            
-        
-        
-        <div class="boton">
-          <button class="button">
-            <span class="button-content">VER MAS PRODUCTOS</span>
-          </button>
-        </div>
-        <%- include('./partials/slider') %>
+      <div class="boton">
+        <button class="button">
+          <span class="button-content">VER MAS PRODUCTOS</span>
+        </button>
+      </div>
+      <%- include('./partials/slider') %>
     </main>
 
-
     <%- include('./partials/footer') %>
-    
-    
-</body>
-
-
+  </body>
 </html>

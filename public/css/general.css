@@ -70,6 +70,9 @@ body {
   font-size: 25px;
 }
 /* ------------------BARRA DE NAVEGACION-------------------- */
+#boton_luminis {
+  text-decoration: none;
+}
 #nav_bar,
 #botones_usuario {
   display: none;

@@ -1,67 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Carrito.</title>
-	<link href="https://fonts.googleapis.com/css?family=Lato|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../public/css/general.css">
+	<%- include('./partials/head') %>
 	<link rel="stylesheet" href="../public/css/comprar.css">
-	<link rel="stylesheet" href="../public/css/login.css">
-	<link rel="stylesheet" href="../css/general.css"> 
-	<link rel="stylesheet" href="../css/comprar.css">
-	<link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
 	
 </head>
 <body>
-	<div class="outer-menu">
-		<input class="checkbox-toggle" type="checkbox" />
-		<div class="hamburger">
-		  <div></div>
-		</div>
-		<div class="menu">
-		  <div>
-			<div>
-			  <ul>
-				<li><a href="">PRODUCTOS</a></li>
-				<li><a href="">NOSOTROS</a></li>
-				<li><a href="">NEWS</a></li>
-				<li><a href="">AYUDA</a></li>
-				<button id="sign_up" class="flecha">
-				  Sign up
-				  <div class="arrow-wrapper">
-					<div class="arrow"></div>
-				  </div>
-				</button>
-				<button id="login" class="flecha">
-				  Login
-				  <div class="arrow-wrapper">
-					<div class="arrow"></div>
-				  </div>
-				</button>
-			  </ul>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <section id="header" class="efecto_glass">
-		<header>
-		  <div id="encabezado" class="display_flex">
-			<img src="img/logo2.svg" alt="Logo" id="logo" />
-			<h1 id="luminis">Luminis</h1>
-		  </div>
-  
-		  <div>
-			<h2 id="lema" class="animation">
-			  "Acompañando a los alumnos y docentes en cada paso"
-			</h2>
-		  </div>
-		</header>
-	  </section>
+	<%- include('./partials/menu') %> <%- include('./partials/header') %>
 	<main>
 		<div class="contenedor"></div>
 			<form action="" method="post">
@@ -229,31 +174,6 @@
 		</form>
 	</div>
 
-    <footer>
-		<section id="footer" class="efecto_glass">
-		  <div id="ayuda">
-			<input id="ayuda_boton" type="button" value="Ayuda" />
-			<p class="texto_footer">¿Tenés alguna sugerencia o comentario?</p>
-			<a class="texto_footer" href="">Contactanos</a>
-		  </div>
-		  <div id="busca_trabajo">
-			<p class="texto_footer">¿Buscás trabajo?</p>
-			<input id="trabaja_boton" type="button" value="¡Trabajá con nosotros!" />
-		  </div>
-		  <div id="redes">
-			<p class="texto_footer">Seguinos en nuestras redes sociales</p>
-			<div id="redes_icons">
-			  <i class="fab fa-facebook-square"></i>
-			  <i class="fab fa-instagram"></i>
-			  <i class="fab fa-twitter"></i>
-			  <i class="fab fa-linkedin"></i>
-			</div>
-		  </div>
-		</section>
-	  </footer>
-
-	  
-	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-	<script src="comprar.js"></script>
+    <%- include('./partials/footer') %> <%- include('./partials/script') %>
 </body>
 </html>
