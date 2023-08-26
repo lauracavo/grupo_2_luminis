@@ -1,65 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/carrito.css">
     <%- include('./partials/head') %>
-    <title>Administrador Luminis</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
-<!-- Tabla para mostrar y editar productos existentes -->
+
+  <!-- Tabla para mostrar y editar productos existentes -->
 <main>
-      
   <p id="titulo">Productos</p>
+  <button>AGREGAR +</button>
   <table id="tabla" class="redondeada">
     <thead id="encabezado_tabla" class="efecto_glass">
       <tr>
-        <td class="titulos_tabla">Producto</th>
-        <td class="titulos_tabla">Nombre</th>
-        <td class="titulos_tabla">Descripciín</th>
-        <td class="titulos_tabla">Editorial</th>
-        <td class="titulos_tabla">Autor</th>
-        <td class="titulos_tabla">Precio</th>
+        <td class="titulos_tabla">ID</th>
+        <td class="titulos_tabla">NOMBRE</th>
+        <td class="titulos_tabla">PRECIO DE COMPRA</th>
+        <td class="titulos_tabla">PRECIO DE VENTA</th>
+        <td class="titulos_tabla">STOCK</th>
+        <td class="titulos_tabla">EDITAR</th>
+        <td class="titulos_tabla">ELIMINAR</th>
       </tr>
     </thead>
+    <% data.map(item => { %>
     <tbody id="cuerpo_tabla">
       <!-- Contenido de la tabla -->
       <tr>
-        <td class="contenido_tabla"><button class="login-button">
-          <i class="fa fa-trash" ></i>
-        </button> Producto 1</td>
-        <td class="contenido_tabla">El Principito</td>
-        <td class="contenido_tabla">
-          <input class="cantidad_producto" type="number" value="1" min="1" max="10" />
-        </td> 
-        <td class="contenido_tabla">$50.00</td>
-      </tr>
-      <tr>
-        <td class="contenido_tabla"><button class="login-button">
-          <i class="fa fa-trash" ></i>
-        </button> Producto 2</td>
-        <td class="contenido_tabla">$30.00</td>
-        <td class="contenido_tabla">
-          <input class="cantidad_producto" type="number" value="2" min="1" max="10" />
-        </td>
-        <td class="contenido_tabla">$60.00</td>
+        <td class="contenido_tabla"><%= item.id %></td>
+        <td class="contenido_tabla"><%= item.nombre %></td>
+        <td class="contenido_tabla"><%= item.precio %></td>
+        <td class="contenido_tabla"><%= item.precio %></td>
+        <td class="contenido_tabla"><input class="cantidad_producto" type="number" value="1" min="1" max="10" /></td>
+        <td class="contenido_tabla"><button>Editar</button></td>
+        <td class="contenido_tabla"><button>Eliminar</button></td>
       </tr>
     </tbody>
-    <tfoot id="pie_tabla">
-      <!-- Pie de tabla -->
-      <tr>
-        <td colspan="3"><strong>Total a pagar:</strong></td>
-        <td><strong>$110.00</strong></td>
-      </tr>
-    </tfoot>
+    <% }); %>
   </table>
-   
-    
-    <%- include('./partials/footer') %> <%- include('./partials/script') %>
+  <%- include('./partials/footer') %> <%- include('./partials/script') %>
   </body>
 </html>
->>>>>>> 464ab437b41f800db7f5704e69675addbf1f0829

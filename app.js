@@ -5,6 +5,7 @@ const path = require("path");
 const mainRoute = require("./src/routes/main");
 const productsRoute = require("./src/routes/products");
 const cartRoute = require("./src/routes/cart");
+const adminRoute = require("./src/routes/admin");
 const app = express();
 
 const port = process.env.PORT || 2020;
@@ -20,7 +21,7 @@ app.set("views", "./src/views");
 // nos permite trabajar los formularios
 //app.use(express.urlencoded,{( extended: false)});
 
-
 app.use("/", mainRoute);
 app.use("/product", productsRoute);
 app.use("/cart", cartRoute);
+app.use("/administrador", adminRoute);
