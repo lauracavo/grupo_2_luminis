@@ -8,6 +8,9 @@ const cartRoute = require("./src/routes/cart");
 const adminRoute = require("./src/routes/admin");
 const app = express();
 
+const methodOverride = require ("method-override");
+app.use(methodOverride("_method"));
+
 const port = process.env.PORT || 2020;
 
 app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`));
