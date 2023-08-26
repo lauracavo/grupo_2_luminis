@@ -45,7 +45,9 @@
             </div>
             <div class="boton">
               <button class="button">
-                <span class="button-content">COMPRAR</span>
+                <a href="/product/productDetail/<%= item.id %>"
+                  ><span class="button-content">VER MÁS</span></a
+                >
               </button>
             </div>
           </article>
@@ -163,54 +165,20 @@
       <section id="mas_vendidos">
         <h3>LOS MÁS VENDIDOS</h3>
         <div class="articulos_ocultos">
+          <% data.map(item => { %>
           <article class="efecto_glass display_flex">
-            <img src="/img/producto1.png" />
+            <img src="/img/libros/<%= item.img %>" />
             <div class="display_flex info_prod">
-              <p>Nombre</p>
-              <p>Precio</p>
+              <p><%= item.nombre %></p>
+              <p><%= item.precio %></p>
             </div>
             <div class="boton">
               <button class="button">
-                <span class="button-content">COMPRAR</span>
+                <span class="button-content">VER MÁS</span>
               </button>
             </div>
           </article>
-          <article class="efecto_glass display_flex">
-            <img src="/img/producto1.png" />
-            <div class="display_flex info_prod">
-              <p>Nombre</p>
-              <p>Precio</p>
-            </div>
-            <div class="boton">
-              <button class="button">
-                <span class="button-content">COMPRAR</span>
-              </button>
-            </div>
-          </article>
-          <article class="efecto_glass display_flex">
-            <img src="/img/producto2.png" />
-            <div class="display_flex info_prod">
-              <p>Nombre</p>
-              <p>Precio</p>
-            </div>
-            <div class="boton">
-              <button class="button">
-                <span class="button-content">COMPRAR</span>
-              </button>
-            </div>
-          </article>
-          <article class="efecto_glass display_flex">
-            <img src="/img/producto3.png" />
-            <div class="display_flex info_prod">
-              <p>Nombre</p>
-              <p>Precio</p>
-            </div>
-            <div class="boton">
-              <button class="button">
-                <span class="button-content">COMPRAR</span>
-              </button>
-            </div>
-          </article>
+          <% }); %>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide">
           <div class="carousel-indicators">

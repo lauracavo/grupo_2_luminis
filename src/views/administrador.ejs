@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/general.css">
+  <<<<<<< HEAD
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/general.css" />
     <%- include('./partials/head') %>
     <title>Administrador Luminis</title>
-</head>
-<body>
-  <%- include('./partials/menu') %> <%- include('./partials/header') %>
-<!-- Formulario para agregar un nuevo producto -->
-<main class="formularios_login">
-  <section id="formulario_inicio_login" class="efecto_glass">
-      <h2>Agregar Nuevo Producto</h2>
-    <form action="agregar_producto.php" method="POST" enctype="multipart/form-data">
-        <label class="nombre_campos" for="name">Nombre del producto:</label><br>
-        <input type="text" name="name" required><br>
-    
-        <label class="nombre_campos" for="description">Descripción:</label><br>
-        <textarea name="description" required></textarea><br>
-    
-        <label class="nombre_campos" for="image">Imagen:</label><br>
-        <input type="file" name="image" accept="image/*" required><br>
-    
-        <label class="nombre_campos" for="">Categorias</label><br>
-        <select id="opcion" name="opcion">
+  </head>
+  <body>
+    <%- include('./partials/menu') %> <%- include('./partials/header') %>
+    <!-- Formulario para agregar un nuevo producto -->
+    <main class="formularios_login">
+      <section id="formulario_inicio_login" class="efecto_glass">
+        <h2>Agregar Nuevo Producto</h2>
+        <form
+          action="agregar_producto.php"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <label class="nombre_campos" for="name">Nombre del producto:</label
+          ><br />
+          <input type="text" name="name" required /><br />
+
+          <label class="nombre_campos" for="description">Descripción:</label
+          ><br />
+          <textarea name="description" required></textarea><br />
+
+          <label class="nombre_campos" for="image">Imagen:</label><br />
+          <input type="file" name="image" accept="image/*" required /><br />
+
+          <label class="nombre_campos" for="">Categorias</label><br />
+          <select id="opcion" name="opcion">
             <option value="opcion1">Categoria 1</option>
             <option value="opcion2">Categoria 2</option>
             <option value="opcion3">Categoria 3</option>
-        </select>
-        <br>
-        <label  class="nombre_campos" for="price">Precio:</label><br>
-        <input type="number" step="0.01" name="price" required><br>
-    
-        <button class="agregar_producto" type="submit">Agregar Producto</button>
-    </form>
-    <br>
-  </section>
-  <section>
-<!-- Tabla para mostrar y editar productos existentes -->
+          </select>
+          <br />
+          <label class="nombre_campos" for="price">Precio:</label><br />
+          <input type="number" step="0.01" name="price" required /><br />
+
+          <button class="agregar_producto" type="submit">
+            Agregar Producto
+          </button>
+        </form>
+        <br />
+      </section>
+      <section>
+        <!-- Tabla para mostrar y editar productos existentes -->
         <h2>Productos Existente</h2>
-      <table border="1">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Imagen</th>
-          <th>Categoría</th>
-          <th>Precio</th>
-          <th>Acciones</th>
-      </tr>
-    <!-- Aquí puedes cargar los productos existentes desde la base de datos y generar las filas de la tabla -->
-      </table>
-  </section>
-</main>
-   
-    
+        <table border="1">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+          <!-- Aquí puedes cargar los productos existentes desde la base de datos y generar las filas de la tabla -->
+        </table>
+      </section>
+    </main>
+
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
   </body>
 </html>
