@@ -52,6 +52,43 @@
       "precio": 580.04,
       "img": "4.jpg"
     },
-    {}
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "id": "10",
+      "nombre": "kjbklvb",
+      "editorial": "vjlhvkjv",
+      "autor": "vjjvj",
+      "fechaPublicacion": "jvjv",
+      "detalle": "jvjv",
+      "caracteristica": "jvjv",
+      "categoria": "opcion1",
+      "precio": "53231"
+    },
+    {
+      "id": "25654",
+      "nombre": "kjvkjvkh",
+      "editorial": "kvjhjhv",
+      "autor": "hjvjh",
+      "fechaPublicacion": "mvhjhv",
+      "detalle": "jkbkjhvb",
+      "caracteristica": "m,n ,m",
+      "categoria": "opcion1",
+      "precio": "554547"
+    },
+    {
+      "id": "351651",
+      "nombre": "kjvkgcgckgj",
+      "editorial": "ckckhgckhg",
+      "autor": "hckhgckhgckhg",
+      "fechaPublicacion": "ckhckhgckhc",
+      "detalle": "ckhgcjhgc",
+      "caracteristica": "hckhgckcg",
+      "categoria": "opcion1",
+      "precio": "654531"
+    }
   ]
 }

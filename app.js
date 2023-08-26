@@ -13,6 +13,7 @@ const port = process.env.PORT || 2020;
 app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`));
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, "public")));
 //linea para que use el ejs
 app.set("view engine", "ejs");

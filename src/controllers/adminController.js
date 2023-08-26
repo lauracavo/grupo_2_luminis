@@ -1,30 +1,20 @@
 const path = require("path");
+const fs = require("fs");
 const dataLibros = require("../dataBase/libros.json");
-let { libros } = dataLibros;
-const fs = require ('fs');
-//const dataFile = path.join(__dirname, "..", "dataBase", "libros.json");
 
 const adminController = {
   getAll: (req, res) => {
-   //const { libros } = dataLibros;
-    console.log({libros});
+    const { libros } = dataLibros;
     res.render("administrador", { data: libros });
   },
+
   create: (req, res) => {
-    const { id } = req.params;
-    //const { data } = dataBase;
-    
-
-    const productId = libros.find((prod) => prod.id === id);
-
-    res.render("formCreate", { libroSelect: productId });
+    res.render("formCreate"); // Renderiza la página de creación de productos
   },
- store: (req, res) => {
-    console.log("metodo subir");
-    const nombre = req.body.nombre
-    console.log(nombre);
-    //const { id, nombre, editorial, autor, fechaPublicacion, detalle, caracteristica, categoria, precio, img } = req.body;
-    const nuevoProducto = { 
+
+  store: (req, res) => {
+    //definimos los datos que queremos obtener del formulario
+    const {
       id,
       nombre,
       editorial,
@@ -34,13 +24,32 @@ const adminController = {
       caracteristica,
       categoria,
       precio,
-      img
-     };
-     console.log(nuevoProducto);
-    dataLibros.libros.push(nuevoProducto);
-    fs.writeFileSync(path.join(__dirname, "../dataBase/libros.json"), JSON.stringify(dataLibros, null, 2));
-    res.redirect("/administrador")
-  }
+    } = req.body;
+
+    // Crear un nuevo producto
+    const newProduct = {
+      id,
+      nombre,
+      editorial,
+      autor,
+      fechaPublicacion,
+      detalle,
+      caracteristica,
+      categoria,
+      precio,
+    };
+
+    // Agregar el nuevo producto a la lista de productos
+    dataLibros.libros.push(newProduct);
+
+    // Guardar la información actualizada en el archivo JSON
+    fs.writeFileSync(
+      path.join(__dirname, "../dataBase/libros.json"),
+      JSON.stringify(dataLibros, null, 2)
+    );
+
+    res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
+  },
 };
 
 module.exports = adminController;

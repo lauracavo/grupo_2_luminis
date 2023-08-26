@@ -6,6 +6,6 @@ const adminController = require("../controllers/adminController");
 /* localhost:2020/administrador */
 route.get("/", adminController.getAll);
 route.get("/formCreate", adminController.create);
-route.post("/formCreate", adminController.store);
+route.post("/store", adminController.store); // Cambiado a ruta "/store"
 
 module.exports = route;
