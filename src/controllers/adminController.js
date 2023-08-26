@@ -50,6 +50,48 @@ const adminController = {
 
     res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
   },
-};
+  edit: (req,res) => {   
+    const { libros } = dataLibros; 
+      const productoId=libros.find((element)=>{
+          return element.id == req.params.id
+      });
+      res.render("formEdit", {data:productoId})
+  },
+  
+  editar:(req,res) => {    
+      
+    const {      
+      nombre,
+      editorial,
+      autor,
+      fechaPublicacion,
+      detalle,
+      caracteristica,
+      categoria,
+      precio,
+    } = req.body;
+      const {id} = req.params;
+      const productoId=libros.find((element)=>{
+          return element.id == id
+      });
+      
+      nombre ? productoId.nombre = nombre: productoId.nombre;
+      editorial ? productoId.editorial = editorial: productoId.editorial;
+      autor ? productoId.autor = autor: productoId.autor;
+      fechaPublicacion ? productoId.fechaPublicacion = fechaPublicacion: productoId.fechaPublicacion;
+      detalle ? productoId.detalle  = detalle : productoId.detalle ;
+      caracteristica ? productoId.caracteristica = caracteristica: productoId.caracteristica;
+      categoria ? productoId.categoria = categoria: productoId.categoria;
+      precio ? productoId.precio = precio: productoId.precio;
+
+      fs.writeFileSync(
+        path.join(__dirname, "../dataBase/libros.json"),
+        JSON.stringify(dataLibros, null, 2)
+      );
+  
+      res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
+  },
+}
+
 
 module.exports = adminController;

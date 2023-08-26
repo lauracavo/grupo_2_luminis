@@ -89,6 +89,17 @@
       "caracteristica": "hckhgckcg",
       "categoria": "opcion1",
       "precio": "654531"
+    },
+    {
+      "id": "D",
+      "nombre": "SD",
+      "editorial": "FSDF",
+      "autor": "DFSD",
+      "fechaPublicacion": "DSFSD",
+      "detalle": "DFSDFS",
+      "caracteristica": "SDFSDF",
+      "categoria": "opcion1",
+      "precio": "244"
     }
   ]
 }
