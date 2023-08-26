@@ -52,8 +52,8 @@ const adminController = {
   },
   eliminar: (req,res)=>{
     console.log ("eliminando");
-    const {id} = id.params;
-    console.log (id.params.id);
+    const {id} = req.params;
+    console.log (req.params.id);
     const {libros} = dataLibros
 
     // const productoId= libros.find((element)=>{
