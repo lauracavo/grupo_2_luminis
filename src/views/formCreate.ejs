@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Producto</title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/formCreate.css">
 </head>
 <body>
-    <main class="formularios_login">
-    <section id="formulario_inicio_login" class="efecto_glass"></section>
-    <h2>Agregar Nuevo Producto</h2>
-    <form action="/administrador/store" method="post">
-
-        <label class="nombre_campos" for="id">ID:</label>
-        <input type="text" name="id" id="id" required>
-
-        <label class="nombre_campos" for="nombre">Nombre del producto:</label>
-        <input type="text" name="nombre" required>
+    <%- include('./partials/menu') %> <%- include('./partials/header') %>
+    <main class="formulario_create">
+    <section id="form_create" class="efecto_glass">
+        <h2>Agregar Nuevo Producto</h2>
+            <form action="/administrador/store" method="post">
     
-        <label class="nombre_campos" for="editorial">Editorial/Marca:</label>
-        <input type="text" name="editorial" required></input>
-
-        <label class="nombre_campos" for="autor">Autor:</label>
-        <input type="text" name="autor">
-
-        <label class="nombre_campos" for="fechaPublicacion">Fecha de publicación:</label>
-        <input type="text" name="fechaPublicacion" required></input>
-
-        <label class="nombre_campos" for="detalle">Detalle:</label>
-        <textarea name="detalle" cols="30" rows="10" required></textarea>
-
-        <label class="nombre_campos" for="caracteristica">Caracteristica:</label>
-        <input type="text" name="caracteristica" required></input>
+                <label class="nombre_campos" for="id">ID:</label>
+                <input type="text" name="id" id="id" required>
     
-        <label class="nombre_campos" for="categoria">Categorias</label>
-        <select id="opcion" name="categoria">
-            <option value="opcion1">Infantíl</option>
-            <option value="opcion2">Drama</option>
-            <option value="opcion3">Utiles escolares</option>
-        </select>
+                <label class="nombre_campos" for="nombre">Nombre del producto:</label>
+                <input type="text" name="nombre" required>
         
-        <label  class="nombre_campos" for="precio">Precio:</label>
-        <input type="number" step="0.01" name="precio" required>
+                <label class="nombre_campos" for="editorial">Editorial/Marca:</label>
+                <input type="text" name="editorial" required></input>
+    
+                <label class="nombre_campos" for="autor">Autor:</label>
+                <input type="text" name="autor">
+    
+                <label class="nombre_campos" for="fechaPublicacion">Fecha de publicación:</label>
+                <input type="text" name="fechaPublicacion" required></input>
+    
+                <label class="nombre_campos" for="detalle">Detalle:</label>
+                <textarea name="detalle" cols="30" rows="10" required></textarea>
+    
+                <label class="nombre_campos" for="caracteristica">Caracteristica:</label>
+                <input type="text" name="caracteristica" required></input>
         
-        <label class="nombre_campos" for="img">Imagen:</label>
-        <input type="file" name="img" accept="image/*">
-
-        <button class="agregar_producto" type="submit">Agregar Producto</button>
-    </form>
-    </section>
+                <label class="nombre_campos" for="categoria">Categorias</label>
+                <select id="opcion" name="categoria">
+                    <option value="opcion1">Infantíl</option>
+                    <option value="opcion2">Drama</option>
+                    <option value="opcion3">Utiles escolares</option>
+                </select>
+            
+                <label  class="nombre_campos" for="precio">Precio:</label>
+                <input type="number" step="0.01" name="precio" required>
+            
+                <label class="nombre_campos" for="img">Imagen:</label>
+                <input type="file" name="img" accept="image/*">
+    
+                <button class="agregar_producto" type="submit">Agregar Producto</button>
+            </form>
+        </section>
     </main>
+    <%- include('./partials/footer') %> <%- include('./partials/script') %>
 </body>
 </html>
