@@ -1,54 +1,57 @@
 {
-    "libros": [
-        {
-            "id": 1,
-            "nombre": "el principito",
-            "editorial": "Gran Travesía",
-            "autor": "Antoine de Saint-Exupéry",
-            "fechaPublicacion": 2021,
-            "detalle": "El principito es considerado como uno de los mejores libros de todos los tiempos y como un clásico contemporáneo de la literatura universal. Debido a su estilo sencillo y directo, se lo ha considerado un libro para niños. No obstante, su carácter reflexivo sobre la vida, la sociedad y el amor, lo convierten en una narración de interés para todos.",
-            "puntuacion": 5,
-            "caracteristica": "tapaBlanda",
-            "categoria": "infantil",
-            "img": "../img/libros/1.jpg"
+  "libros": [
+    {
+      "id": "1",
+      "nombre": "el principito",
+      "editorial": "Gran Travesía",
+      "autor": "Antoine de Saint-Exupéry",
+      "fechaPublicacion": 2021,
+      "detalle": "El principito es considerado como uno de los mejores libros de todos los tiempos y como un clásico contemporáneo de la literatura universal. Debido a su estilo sencillo y directo, se lo ha considerado un libro para niños. No obstante, su carácter reflexivo sobre la vida, la sociedad y el amor, lo convierten en una narración de interés para todos.",
+      "puntuacion": 5,
+      "caracteristica": "tapaBlanda",
+      "categoria": "infantil",
+      "precio": 580.04,
+      "img": "1.jpg"
+    },
+    {
+      "id": "2",
+      "nombre": "Los tres chanchitos",
+      "editorial": "Unaluna",
+      "autor": "Mariana Ruiz Johnson",
+      "fechaPublicacion": 2014,
+      "detalle": "En el corazón del bosque vivían los tres cerditos, que eran hermanos. Resulta que estos cerditos siempre eran perseguidos por un lobo que se los quería comer. Para escapar de este lobo, los cerditos decidieron hacerse una casa. El pequeño la hizo de paja, para acabar antes y poder irse a jugar.",
+      "puntuacion": 3,
+      "caracteristica": "tapaBlanda",
+      "categoria": "infantil",
+      "precio": 580.04,
+      "img": "2.jpg"
+    },
 
-        },
-        {
-        "id": 2,
-        "nombre": "Los tres chanchitos",
-        "editorial": "Unaluna",
-        "autor": "Mariana Ruiz Johnson",
-        "fechaPublicacion": 2014,
-        "detalle": "En el corazón del bosque vivían los tres cerditos, que eran hermanos. Resulta que estos cerditos siempre eran perseguidos por un lobo que se los quería comer. Para escapar de este lobo, los cerditos decidieron hacerse una casa. El pequeño la hizo de paja, para acabar antes y poder irse a jugar.",
-        "puntuacion": 3,
-        "caracteristica": "tapaBlanda",
-        "categoria": "infantil",
-        "img": "../img/libros/2.jpg"
-       },
-
-       {
-        "id": 3,
-        "nombre": "Caperucita Roja",
-        "editorial": "Picarona",
-        "autor": "FILIPEK, NINA",
-        "fechaPublicacion": 2014,
-        "detalle": "Caperucita Roja es una niña que quería mucho a su abuela; un día su madre le da una cesta con comida para que se la lleve a la abuela, que está enferma y vive en una casa algo lejos de ellas. ​ En el camino se encuentra con el Lobo Feroz que la reta a una carrera hasta la casa de la abuela.",
-        "puntuacion": 1,
-        "caracteristica": "cuentos clasicos",
-        "categoria": "infantil",
-        "img": "../img/libros/3.jpg"
-       },
-       {
-        "id": 4,
-        "nombre": "El mounstro de los colores",
-        "editorial": "Flamboyant",
-        "autor": "Anna Llenas",
-        "fechaPublicacion": 2012,
-        "detalle": "La historia nos muestra un monstruo hecho un lio de multitud de colores y desorientado por que no sabe cómo se siente por suerte tiene una amiga que le ayudará deshacer el lio de emociones que tiene y le enseñará a ponerlas por separado para identificarlas correctamente según el momento.",
-        "puntuacion": 5,
-        "caracteristica": "tapaDura",
-        "categoria": "infantil",
-        "img": "../img/libros/4.jpg"
-       }
-    ]
+    {
+      "id": "3",
+      "nombre": "Caperucita Roja",
+      "editorial": "Picarona",
+      "autor": "FILIPEK, NINA",
+      "fechaPublicacion": 2014,
+      "detalle": "Caperucita Roja es una niña que quería mucho a su abuela; un día su madre le da una cesta con comida para que se la lleve a la abuela, que está enferma y vive en una casa algo lejos de ellas. ​ En el camino se encuentra con el Lobo Feroz que la reta a una carrera hasta la casa de la abuela.",
+      "puntuacion": 1,
+      "caracteristica": "cuentos clasicos",
+      "categoria": "infantil",
+      "precio": 580.04,
+      "img": "3.jpg"
+    },
+    {
+      "id": "4",
+      "nombre": "El mounstro de los colores",
+      "editorial": "Flamboyant",
+      "autor": "Anna Llenas",
+      "fechaPublicacion": 2012,
+      "detalle": "La historia nos muestra un monstruo hecho un lio de multitud de colores y desorientado por que no sabe cómo se siente por suerte tiene una amiga que le ayudará deshacer el lio de emociones que tiene y le enseñará a ponerlas por separado para identificarlas correctamente según el momento.",
+      "puntuacion": 5,
+      "caracteristica": "tapaDura",
+      "categoria": "infantil",
+      "precio": 580.04,
+      "img": "4.jpg"
+    }
+  ]
 }

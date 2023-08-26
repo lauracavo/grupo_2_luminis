@@ -17,6 +17,9 @@ app.use(express.static(path.resolve(__dirname, "public")));
 app.set("view engine", "ejs");
 //linea para ubicar la carpeta views
 app.set("views", "./src/views");
+// nos permite trabajar los formularios
+//app.use(express.urlencoded,{( extended: false)});
+
 
 app.use("/", mainRoute);
 app.use("/product", productsRoute);
