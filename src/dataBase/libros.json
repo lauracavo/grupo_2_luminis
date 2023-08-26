@@ -26,7 +26,6 @@
       "precio": 580.04,
       "img": "2.jpg"
     },
-
     {
       "id": "3",
       "nombre": "Caperucita Roja",
@@ -52,6 +51,7 @@
       "categoria": "infantil",
       "precio": 580.04,
       "img": "4.jpg"
-    }
+    },
+    {}
   ]
 }
