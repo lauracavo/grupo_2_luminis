@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <main class="formularios_login">
+   
+    <section id="formulario_inicio_login" class="efecto_glass"></section>
+    <h2>Editar Producto : <%= data.nombre %></h2>
+    <form action="/formEdit" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="<%= data.nombre %>" required><br>
+        
+        <label for="editorial">Editorial:</label>
+        <input type="text" id="editorial" name="editorial" value="<%= data.editorial %>" required><br>
+        
+        <label for="autor">Autor:</label>
+        <input type="text" id="autor" name="autor" value="<%= data.autor %>" required><br>
+        
+        <label for="fechaPublicacion">Fecha de Publicación:</label>
+        <input type="number" id="fechaPublicacion" name="fechaPublicacion" value="<%= data.fechaPublicacion %>" required><br>
+        
+        <label for="detalle">Detalle:</label>
+        <textarea id="detalle" name="detalle" rows="4" required><%= data.detalle %></textarea><br>
+        
+        <label for="caracteristica">Característica:</label>
+        <input type="text" id="caracteristica" name="caracteristica" value="<%= data.caracteristica %>" required><br>
+        
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria" name="categoria" value="<%= data.categoria %>" required><br>
+        
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" value="<%= data.precio %>" required><br>
+        
+        <button type="submit">Guardar Cambios</button>
+      </form>
+    </section>
+    
+    </main>
+</body>
+</html>
