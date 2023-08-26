@@ -50,6 +50,28 @@ const adminController = {
 
     res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
   },
-};
+  eliminar: (req,res)=>{
+    console.log ("eliminando");
+    const {id} = id.params;
+    console.log (id.params.id);
+    const {libros} = dataLibros
+
+    // const productoId= libros.find((element)=>{
+    //   return element.id == id
+    // });
+
+      dataLibros.libros = dataLibros.libros.filter((element)=>{
+        return element.id != id
+    })
+    
+ fs.writeFileSync(
+        path.join(__dirname, "../dataBase/libros.json"),
+        JSON.stringify(dataLibros, null, 2)
+      );
+  
+      res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
+  },
+
+  };
 
 module.exports = adminController;

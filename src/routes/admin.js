@@ -7,5 +7,6 @@ const adminController = require("../controllers/adminController");
 route.get("/", adminController.getAll);
 route.get("/formCreate", adminController.create);
 route.post("/store", adminController.store); // Cambiado a ruta "/store"
+route.delete ("/delete/:id", adminController.eliminar);
 
 module.exports = route;
