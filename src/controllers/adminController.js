@@ -50,10 +50,53 @@ const adminController = {
 
     res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
   },
+
+  edit: (req,res)=>{
+    const libroId = req.params.id;
+    const libro = dataLibros.libros.find(libro => libro.id === libroId);
+
+    res.render('formEdit', { data: libro });
+  },
+
+  editProduct: (req,res) =>{
+    console.log ("entraste a editar");
+    const {id} = req.params;
+    const {
+      nombre,
+      editorial,
+      autor,
+      fechaPublicacion,
+      detalle,
+      caracteristica,
+      categoria,
+      precio,
+    } = req.body;
+    const productoId=dataLibros.libros.find((element)=>{
+      return element.id == id
+  });
+
+        nombre ? productoId.nombre = nombre: productoId.nombre;
+        editorial ? productoId.editorial = editorial: productoId.editorial;
+        autor ? productoId.autor = autor: productoId.autor;
+        fechaPublicacion ? productoId.fechaPublicacion = fechaPublicacion: productoId.fechaPublicacion;
+        detalle ? productoId.detalle = detalle: productoId.detalle;
+        caracteristica ? productoId.caracteristica = caracteristica: productoId.caracteristica;
+        categoria ? productoId.categoria = categoria: productoId.categoria;
+        precio ? productoId.precio = precio: productoId.precio;
+
+        fs.writeFileSync(
+          path.join(__dirname, "../dataBase/libros.json"),
+          JSON.stringify(dataLibros, null, 2)
+        );
+    
+        res.redirect("/administrador");
+  },
+
+
   eliminar: (req,res)=>{
     console.log ("eliminando");
-    const {id} = id.params;
-    console.log (id.params.id);
+    const {id} = req.params;
+    console.log (req.params.id);
     const {libros} = dataLibros
 
     // const productoId= libros.find((element)=>{

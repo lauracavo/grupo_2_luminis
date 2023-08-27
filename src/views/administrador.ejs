@@ -33,10 +33,16 @@
         <td class="contenido_tabla"><%= item.precio %></td>
         <td class="contenido_tabla"><%= item.precio %></td>
         <td class="contenido_tabla"><input class="cantidad_producto" type="number" value="1" min="1" max="10" /></td>
-        <td class="contenido_tabla"><button>Editar</button></td>
-        <form action="/administrador/delete/<%= item.id %>?_method=DELETE" method="post" class="formulario" >
-          <button type="submit" class="button-form">Eliminar</button> 
-        </form>
+        <td class="contenido_tabla">
+          <form action="/administrador/editar/<%= item.id %>" method="get" class="formulario" >
+            <button type="submit" class="button-form">Editar</button> 
+          </form>
+        </td>
+        <td class="contenido_tabla">
+          <form action="/administrador/delete/<%= item.id %>?_method=DELETE" method="post" class="formulario" >
+            <button type="submit" class="button-form">Eliminar</button> 
+          </form>
+        </td>
       </tr>
     </tbody>
     <% }); %>

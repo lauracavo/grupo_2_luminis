@@ -1,32 +1,6 @@
 {
   "libros": [
     {
-      "id": "1",
-      "nombre": "el principito",
-      "editorial": "Gran Travesía",
-      "autor": "Antoine de Saint-Exupéry",
-      "fechaPublicacion": 2021,
-      "detalle": "El principito es considerado como uno de los mejores libros de todos los tiempos y como un clásico contemporáneo de la literatura universal. Debido a su estilo sencillo y directo, se lo ha considerado un libro para niños. No obstante, su carácter reflexivo sobre la vida, la sociedad y el amor, lo convierten en una narración de interés para todos.",
-      "puntuacion": 5,
-      "caracteristica": "tapaBlanda",
-      "categoria": "infantil",
-      "precio": 580.04,
-      "img": "1.jpg"
-    },
-    {
-      "id": "2",
-      "nombre": "Los tres chanchitos",
-      "editorial": "Unaluna",
-      "autor": "Mariana Ruiz Johnson",
-      "fechaPublicacion": 2014,
-      "detalle": "En el corazón del bosque vivían los tres cerditos, que eran hermanos. Resulta que estos cerditos siempre eran perseguidos por un lobo que se los quería comer. Para escapar de este lobo, los cerditos decidieron hacerse una casa. El pequeño la hizo de paja, para acabar antes y poder irse a jugar.",
-      "puntuacion": 3,
-      "caracteristica": "tapaBlanda",
-      "categoria": "infantil",
-      "precio": 580.04,
-      "img": "2.jpg"
-    },
-    {
       "id": "3",
       "nombre": "Caperucita Roja",
       "editorial": "Picarona",
@@ -51,12 +25,7 @@
       "categoria": "infantil",
       "precio": 580.04,
       "img": "4.jpg"
-    },
-    {},
-    {},
-    {},
-    {},
-    {},
+    },    
     {
       "id": "10",
       "nombre": "kjbklvb",
