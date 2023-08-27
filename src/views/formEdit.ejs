@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Producto</title>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/formCreate.css">
 </head>
 <body>
-    <main class="formularios_login">
-   
-    <section id="formulario_inicio_login" class="efecto_glass"></section>
-    <h2>Editar Producto : <%= data.nombre %></h2>
-    <form action="/administrador/editar/<%= data.id %>" method="POST">
+    <%- include('./partials/menu') %> <%- include('./partials/header') %>
+    <main class="formulario_create">
+    <section id="form_create" class="efecto_glass">
+        <h2>Editar Producto: <%= data.nombre %></h2>
+    <form action="/administrador/editar/<%= data.id %>?_method=PUT" method="POST">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" value="<%= data.nombre %>" required><br>
         
@@ -35,12 +34,14 @@
         <label for="precio">Precio:</label>
         <input type="number" id="precio" name="precio" step="0.01" value="<%= data.precio %>" required><br>
         
-        <input type="hidden" name="_method" value="PUT">
-        <button type="submit">Guardar Cambios</button>
         
-      </form>
+        <button class="editar_producto" type="submit">Guardar Cambios</button>
+    </form>
+        
+      
     </section>
     
     </main>
+    <%- include('./partials/footer') %> <%- include('./partials/script') %>
 </body>
 </html>

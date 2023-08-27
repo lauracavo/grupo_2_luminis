@@ -1,19 +1,6 @@
 {
   "libros": [
     {
-      "id": "3",
-      "nombre": "Caperucita Roja",
-      "editorial": "Picarona",
-      "autor": "FILIPEK, NINA",
-      "fechaPublicacion": 2014,
-      "detalle": "Caperucita Roja es una niña que quería mucho a su abuela; un día su madre le da una cesta con comida para que se la lleve a la abuela, que está enferma y vive en una casa algo lejos de ellas. ​ En el camino se encuentra con el Lobo Feroz que la reta a una carrera hasta la casa de la abuela.",
-      "puntuacion": 1,
-      "caracteristica": "cuentos clasicos",
-      "categoria": "infantil",
-      "precio": 580.04,
-      "img": "3.jpg"
-    },
-    {
       "id": "4",
       "nombre": "El mounstro de los colores",
       "editorial": "Flamboyant",
@@ -25,7 +12,7 @@
       "categoria": "infantil",
       "precio": 580.04,
       "img": "4.jpg"
-    },    
+    },
     {
       "id": "10",
       "nombre": "kjbklvb",
@@ -36,39 +23,6 @@
       "caracteristica": "jvjv",
       "categoria": "opcion1",
       "precio": "53231"
-    },
-    {
-      "id": "25654",
-      "nombre": "kjvkjvkh",
-      "editorial": "kvjhjhv",
-      "autor": "hjvjh",
-      "fechaPublicacion": "mvhjhv",
-      "detalle": "jkbkjhvb",
-      "caracteristica": "m,n ,m",
-      "categoria": "opcion1",
-      "precio": "554547"
-    },
-    {
-      "id": "351651",
-      "nombre": "kjvkgcgckgj",
-      "editorial": "ckckhgckhg",
-      "autor": "hckhgckhgckhg",
-      "fechaPublicacion": "ckhckhgckhc",
-      "detalle": "ckhgcjhgc",
-      "caracteristica": "hckhgckcg",
-      "categoria": "opcion1",
-      "precio": "654531"
-    },
-    {
-      "id": "D",
-      "nombre": "SD",
-      "editorial": "FSDF",
-      "autor": "DFSD",
-      "fechaPublicacion": "DSFSD",
-      "detalle": "DFSDFS",
-      "caracteristica": "SDFSDF",
-      "categoria": "opcion1",
-      "precio": "244"
     }
   ]
 }

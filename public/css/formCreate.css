@@ -28,7 +28,8 @@ option:focus-within {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.agregar_producto {
+.agregar_producto,
+.editar_producto {
     font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
