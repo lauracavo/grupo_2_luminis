@@ -95,6 +95,54 @@
         "precioAlMayor":"$1100",
         "precioUnidad":"$1500",
         "stock":"4"
+      },
+      {
+        "id": "09",
+        "nombre":"Sin noticias de Gurbo",
+        "editorial":"Seix Barral",
+        "autor":"  Eduardo Mendoza Garriga",
+        "detalle":"Historia de Comedia",
+        "caracteristica":"Gurb0 es un municipio de la comarca de Osona",
+        "categoria":"Comedia",
+        "precioAlMayor":"$1100",
+        "precioUnidad":"$1500",
+        "stock":"4"
+      },
+      {
+        "id": "10",
+        "nombre":" El inimitable Jeeves",
+        "editorial":"Anagrama",
+        "autor":"Wodehouse, P.G.",
+        "detalle":"Historia de Comedia",
+        "caracteristica":"Jeeves representa la imagen ideal de lo que debe ser el criado de un caballero",
+        "categoria":"Comedia",
+        "precioAlMayor":"$1100",
+        "precioUnidad":"$1500",
+        "stock":"4"
+      },
+      {
+        "id": "11",
+        "nombre":"Reír es la única salida",
+        "editorial":"Harpercollins",
+        "autor":"Andreu Buenafuente",
+        "detalle":"Historia de Comedia",
+        "caracteristica":"Esta escrito a puño y ademas animado con dibujos reales",
+        "categoria":"Comedia",
+        "precioAlMayor":"$1100",
+        "precioUnidad":"$1500",
+        "stock":"4"
+      },
+      {
+        "id": "12",
+        "nombre":"La conjura de los necios",
+        "editorial":"Anagrama",
+        "autor":"John Kennedy Toole",
+        "detalle":"Historia de Comedia",
+        "caracteristica":"La estructura es lineal; en capítulos que se dividen en subcapítulos.",
+        "categoria":"Comedia",
+        "precioAlMayor":"$1100",
+        "precioUnidad":"$1500",
+        "stock":"4"
       }
     ]
   }
