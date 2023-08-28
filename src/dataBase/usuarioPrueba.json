@@ -1,0 +1,36 @@
+{
+  "usuarios": [
+    {
+      "name": 1,
+      "email": "perezcarolinasn@gmail.com",
+      "docente": "dh123",
+      "code": "carolina",
+      "password": "perez",
+      "paswordR": "roca 649"
+    },
+    {
+      "name": "Lamberto Aldo",
+      "email": "aldoeze@hotmail.com",
+      "docente": "on",
+      "code": "1234",
+      "password": "123456",
+      "passwordR": "123456"
+    },
+    {
+      "name": "Pedro",
+      "email": "Juan@gmail.com",
+      "docente": "on",
+      "code": "1234",
+      "password": "123456",
+      "passwordR": "123456"
+    },
+    {
+      "name": "Tomas Disteffano",
+      "email": "tomas@gmail.com",
+      "docente": "on",
+      "code": "1234",
+      "password": "12345",
+      "passwordR": "12345"
+    }
+  ]
+}
