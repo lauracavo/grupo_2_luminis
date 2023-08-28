@@ -5,12 +5,12 @@
       "nombre": "El mounstro de los colores",
       "editorial": "Flamboyant",
       "autor": "Anna Llenas",
-      "fechaPublicacion": 2012,
+      "fechaPublicacion": "2012",
       "detalle": "La historia nos muestra un monstruo hecho un lio de multitud de colores y desorientado por que no sabe cómo se siente por suerte tiene una amiga que le ayudará deshacer el lio de emociones que tiene y le enseñará a ponerlas por separado para identificarlas correctamente según el momento.",
       "puntuacion": 5,
       "caracteristica": "tapaDura",
       "categoria": "infantil",
-      "precio": 580.04,
+      "precio": "580.04",
       "img": "4.jpg"
     },
     {
@@ -18,10 +18,10 @@
       "nombre": "kjbklvb",
       "editorial": "vjlhvkjv",
       "autor": "vjjvj",
-      "fechaPublicacion": "jvjv",
+      "fechaPublicacion": "2021",
       "detalle": "jvjv",
       "caracteristica": "jvjv",
-      "categoria": "opcion1",
+      "categoria": "opcion3",
       "precio": "53231"
     }
   ]
