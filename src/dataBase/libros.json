@@ -1,26 +1,52 @@
 {
   "libros": [
     {
-      "id": "25654",
-      "nombre": "kjvkjvkh",
-      "editorial": "kvjhjhv",
-      "autor": "hjvjh",
-      "fechaPublicacion": "mvhjhv",
-      "detalle": "jkbkjhvb",
-      "caracteristica": "m,n ,m",
-      "categoria": "opcion1",
-      "precio": "554547"
+      "id": "D",
+      "nombre": "Dumbo",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
     },
     {
       "id": "D",
-      "nombre": "SD",
-      "editorial": "FSDF",
-      "autor": "DFSD",
-      "fechaPublicacion": "DSFSD",
-      "detalle": "DFSDFS",
-      "caracteristica": "SDFSDF",
-      "categoria": "opcion1",
-      "precio": "244"
+      "nombre": "Ratatouille",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
+    },
+    {
+      "id": "D",
+      "nombre": "Bambi",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
+    },
+    {
+      "id": "D",
+      "nombre": "Aladin",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
     }
   ]
 }
