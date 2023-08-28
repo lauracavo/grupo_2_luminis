@@ -1,7 +1,7 @@
 {
     "libros": [
       {
-        "id": "D",
+        "id": "01",
         "nombre": "Dumbo",
         "editorial": "Salvat",
         "autor": "Andrea Borrell",
@@ -13,7 +13,7 @@
         "stock": "4"
       },
       {
-        "id": "D",
+        "id": "02",
         "nombre": "Ratatouille",
         "editorial": "Salvat",
         "autor": "Andrea Borrell",
@@ -25,7 +25,7 @@
         "stock": "4"
       },
       {
-        "id": "D",
+        "id": "03",
         "nombre": "Bambi",
         "editorial": "Salvat",
         "autor": "Andrea Borrell",
@@ -37,7 +37,7 @@
         "stock": "4"
       },
       {
-        "id": "D",
+        "id": "04",
         "nombre": "Aladin",
         "editorial": "Salvat",
         "autor": "Andrea Borrell",
@@ -49,7 +49,7 @@
         "stock": "4"
       },
       {
-        "id": "T",
+        "id": "05",
         "nombre":"El Hobbit",
         "editorial":"Minotauro",
         "autor":"J. R. R. Tolkien",
@@ -61,7 +61,7 @@
         "stock":"4"
       },
       {
-        "id": "T",
+        "id": "06",
         "nombre":"El Señor de los Anillos: La Comunidad del Anillo",
         "editorial":"Minotauro",
         "autor":"J. R. R. Tolkien",
@@ -73,7 +73,7 @@
         "stock":"4"
       },
       {
-        "id": "T",
+        "id": "07",
         "nombre":"El Señor de los Anillos: Las Dos Torres",
         "editorial":"Minotauro",
         "autor":"J. R. R. Tolkien",
@@ -85,7 +85,7 @@
         "stock":"4"
       },
       {
-        "id": "T",
+        "id": "08",
         "nombre":"El Señor de los Anillos: El Retorno del Rey",
         "editorial":"Minotauro",
         "autor":"J. R. R. Tolkien",
