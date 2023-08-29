@@ -143,6 +143,54 @@
         "precioAlMayor":"$1100",
         "precioUnidad":"$1500",
         "stock":"4"
+      },
+      {
+        "id": "13",
+        "nombre":"Mochila urbana azul",
+        "editorial":"Heritage",
+        "autor":" ",
+        "detalle":"Diseño de tela lisa",
+        "caracteristica":"Altura: 45cm, Ancho: 31cm, Sin ruedas, Sin genero, Capacidad: 21L",
+        "categoria":"Urbana",
+        "precioAlMayor":"$30000",
+        "precioUnidad":"$37000",
+        "stock":"4"
+      },
+      {
+        "id": "14",
+        "nombre":"Mochila Camping Tactica ",
+        "editorial":"Trekking",
+        "autor":" ",
+        "detalle":"Diseño Militar",
+        "caracteristica":"Altura: 47cm, Ancho: 35cm, Sin ruedas, Sin genero, Capacidad: 25L",
+        "categoria":"Militar",
+        "precioAlMayor":"$32000",
+        "precioUnidad":"$38000",
+        "stock":"4"
+      },
+      {
+        "id": "15",
+        "nombre":"Mochila escolar celeste",
+        "editorial":"South Port",
+        "autor":" ",
+        "detalle":"Mochila Bolso Múltiples Compartimentos Bolsillos Laterales",
+        "caracteristica":"Altura: 30cm, Ancho: 27cm, Sin ruedas, Sin genero, Capacidad: 18L",
+        "categoria":"Escolar",
+        "precioAlMayor":"$27000",
+        "precioUnidad":"$30000",
+        "stock":"4"
+      },
+      {
+        "id": "16",
+        "nombre":"Mochila urbana roja",
+        "editorial":"Heritage",
+        "autor":" ",
+        "detalle":"Diseño de tela lisa",
+        "caracteristica":"Altura: 45cm, Ancho: 31cm, Sin ruedas, Sin genero, Capacidad: 21L",
+        "categoria":"Urbana",
+        "precioAlMayor":"$28000",
+        "precioUnidad":"$31000",
+        "stock":"4"
       }
     ]
   }
