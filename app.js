@@ -6,6 +6,7 @@ const mainRoute = require("./src/routes/main");
 const productsRoute = require("./src/routes/products");
 const cartRoute = require("./src/routes/cart");
 const adminRoute = require("./src/routes/admin");
+const usersRoute = require("./src/routes/users");
 const app = express();
 
 const methodOverride = require ("method-override");
@@ -29,3 +30,4 @@ app.use("/", mainRoute);
 app.use("/product", productsRoute);
 app.use("/cart", cartRoute);
 app.use("/administrador", adminRoute);
+app.use("/users", usersRoute);
