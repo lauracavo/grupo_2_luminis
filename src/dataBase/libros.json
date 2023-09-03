@@ -1,28 +1,52 @@
 {
   "libros": [
     {
-      "id": "4",
-      "nombre": "El mounstro de los colores",
-      "editorial": "Flamboyant",
-      "autor": "Anna Llenas",
-      "fechaPublicacion": "2012",
-      "detalle": "La historia nos muestra un monstruo hecho un lio de multitud de colores y desorientado por que no sabe cómo se siente por suerte tiene una amiga que le ayudará deshacer el lio de emociones que tiene y le enseñará a ponerlas por separado para identificarlas correctamente según el momento.",
-      "puntuacion": 5,
-      "caracteristica": "tapaDura",
-      "categoria": "infantil",
-      "precio": "580.04",
-      "img": "4.jpg"
+      "id": "D",
+      "nombre": "Dumbo",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
     },
     {
-      "id": "10",
-      "nombre": "kjbklvb",
-      "editorial": "vjlhvkjv",
-      "autor": "vjjvj",
-      "fechaPublicacion": "2021",
-      "detalle": "jvjv",
-      "caracteristica": "jvjv",
-      "categoria": "opcion3",
-      "precio": "53231"
+      "id": "D",
+      "nombre": "Ratatouille",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
+    },
+    {
+      "id": "D",
+      "nombre": "Bambi",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
+    },
+    {
+      "id": "D",
+      "nombre": "Aladin",
+      "editorial": "Salvat",
+      "autor": "Andrea Borrell",
+      "detalle": "Cuento Infantil",
+      "caracteristica": "Cuentos de Disney",
+      "categoria": "Infantiles",
+      "precioAlMayor": "$899",
+      "precioUnidad": "$1100",
+      "stock": "4"
     }
   ]
 }
