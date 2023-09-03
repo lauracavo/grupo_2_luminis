@@ -10,7 +10,8 @@
         "categoria": "Infantiles",
         "precioAlMayor": "$899",
         "precioUnidad": "$1100",
-        "stock": "4"
+        "stock": "4",
+        "img": "01.jpg"
       },
       {
         "id": "02",
@@ -22,19 +23,21 @@
         "categoria": "Infantiles",
         "precioAlMayor": "$899",
         "precioUnidad": "$1100",
-        "stock": "4"
+        "stock": "4",
+        "img": "02.jpg"
       },
       {
         "id": "03",
         "nombre": "Bambi",
-        "editorial": "Salvat",
+        "editorial": "Everest",
         "autor": "Andrea Borrell",
         "detalle": "Cuento Infantil",
         "caracteristica": "Cuentos de Disney",
         "categoria": "Infantiles",
         "precioAlMayor": "$899",
         "precioUnidad": "$1100",
-        "stock": "4"
+        "stock": "4",
+        "img": "03.jpg"
       },
       {
         "id": "04",
@@ -46,7 +49,8 @@
         "categoria": "Infantiles",
         "precioAlMayor": "$899",
         "precioUnidad": "$1100",
-        "stock": "4"
+        "stock": "4",
+        "img": "04.jpg"
       },
       {
         "id": "05",
@@ -58,7 +62,8 @@
         "categoria":"Ficcion",
         "precioAlMayor":"$1100",
         "precioUnidad":"$1500",
-        "stock":"4"
+        "stock":"4",
+        "img": "05.jpg"
       },
       {
         "id": "06",
