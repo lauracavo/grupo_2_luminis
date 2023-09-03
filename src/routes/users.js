@@ -1,6 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const usersController = require("../controllers/usersController");
+const upload = require('../routes/main');
 
 
 route.get("/register", usersController.register);    //localhost2020:/users/register
