@@ -19,8 +19,7 @@ const usersController = {
       email,
       docente,
       code,
-      password,
-      passwordR,
+      profile_image
     } = req.body;
 
     // Crear un nuevo producto
@@ -29,7 +28,7 @@ const usersController = {
       email,
       docente,
       code,
-      password,
+      profile_image,
       
     };
 
