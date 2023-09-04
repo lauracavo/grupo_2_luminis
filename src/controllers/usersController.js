@@ -1,9 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 const dataBaseU = require("../dataBase/usuarios.json");
-
-
-
+const { validationResult } = require("express-validator");
+const session = require ("express-session")
 
 const usersController = {
   register: (req, res) => {
@@ -12,6 +11,35 @@ const usersController = {
   login: (req, res) => {
     res.render("login");
   },
+
+  processLogin: (req,res) => {
+    const errors = validationResult (req);
+    if (errors.isEmpty()) {
+      const usersJson = fs.readFileSync ("usuarios.json", {usuarios})
+      let users;
+      if (usersJson == ""){
+        users = [];
+      }else {
+        users = JSON.parse (usersJson);
+      }
+      for (let i=0; i < users.length; i++) {
+      if (users[i].email == req.body.email){
+        const usuarioALoguearse = users[i]
+      }
+    }
+     if (usuarioALoguearse == undefined) {
+      res.render ("login", {
+        errors: [{msg:"El correo ingresado es invalido"}]
+      })
+     }else {
+      req.session.usuarioLogueado = usuarioALoguearse;
+     }
+
+  }else {
+    res.render ("login")
+  }
+},
+
   store: (req, res) => {
     //definimos los datos que queremos obtener del formulario
     const {
@@ -45,5 +73,6 @@ const usersController = {
   },
 
 };
+
 
 module.exports = usersController;
