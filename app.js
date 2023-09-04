@@ -13,7 +13,7 @@ const methodOverride = require ("method-override");
 app.use(methodOverride("_method"));
 
 const session = require ("express-session");
-app.use (session ({secret: "mensaje"}))
+app.use (session ({secret: "mensaje"}));
 
 const port = process.env.PORT || 2020;
 
