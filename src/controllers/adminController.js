@@ -61,6 +61,7 @@ const adminController = {
   editProduct: (req,res) =>{
     console.log ("entraste a editar");
     const {id} = req.params;
+    console.log(req.params.id)
     const {
       nombre,
       editorial,
