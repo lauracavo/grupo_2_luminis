@@ -3,6 +3,7 @@ const fs = require("fs");
 const dataBaseU = require("../dataBase/usuarios.json");
 const session = require("express-session");
 const { validationResult } = require("express-validator");
+const bcrypt = require ('bcryptjs')
 
 
 const usersController = {
@@ -28,7 +29,7 @@ const usersController = {
       email,
       docente,
       code,
-      password,
+      password: bcrypt.hashSync(req.body.password,10),
 
     };
 
