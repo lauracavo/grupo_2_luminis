@@ -16,7 +16,7 @@ app.use(methodOverride("_method"));
 const session = require("express-session");
 app.use(
   session({
-    secret: "secreto",
+    secret: "Luminis",
     resave: false, // Para las versiones mas recientes pedia poner el resave y el saveUninitialized
     saveUninitialized: true, //
   })

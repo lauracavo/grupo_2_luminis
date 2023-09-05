@@ -11,17 +11,25 @@
     <main class="formularios_login">
       <section id="formulario_inicio_login" class="efecto_glass">
         <div>
-          <form>
+          <form action="/users/processLogin" method="post">
             <h3>INGRESAR</h3>
             <label class="nombre_campos" for="email">Correo electronico:</label>
             <input type="email" id="email" name="email"/>
-            <% if (locals.errors && errors.name){ %>
+            <% if (locals.errors && errors.email){ %>
               <div> <%= errors.email.msg %> </div>
-              <% } %>
+            <% } %>
+
+            <% if (locals.errors) { %>
+              <div>
+                <% for (let i = 0; i < errors.length; i++) { %>
+                  <p><%= errors[i].msg %></p>
+                <% } %>
+              </div>
+            <% } %>
 
             <label class="nombre_campos" for="password">Contraseña:</label>
             <input type="password" id="password" name="password"/>
-            <% if (locals.errors && errors.name){ %>
+            <% if (locals.errors && errors.password){ %>
               <div> <%= errors.password.msg %> </div>
               <% } %>
 

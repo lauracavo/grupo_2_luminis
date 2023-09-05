@@ -3,7 +3,8 @@ const fs = require("fs");
 const dataBaseU = require("../dataBase/usuarios.json");
 const session = require("express-session");
 const { validationResult } = require("express-validator");
-const bcrypt = require ('bcryptjs')
+const bcrypt = require ('bcryptjs');
+const { log } = require("console");
 
 
 const usersController = {
@@ -53,31 +54,33 @@ const usersController = {
 
   processLogin: (req, res) => {
     let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      const usersJson = fs.readFileSync("usuarios.json", { usuarios });
-      let users;
-      if (usersJson == "") {
-        users = [];
-      } else {
-        users = JSON.parse(usersJson);
-      }
+    if (errors.isEmpty()){
+      const {usuarios} = dataBaseU;
+      let users = usuarios;
+      //console.log(users);
+      let usuarioALoguearse;
       for (let i = 0; i < users.length; i++) {
         if (users[i].email == req.body.email) {
-          const usuarioALoguearse = users[i];
+          usuarioALoguearse = users[i];
+          console.log('CORREO ENCONTRADO');
         }
       }
       if (usuarioALoguearse == undefined) {
-        res.render("login", {
-          errors: [{ msg: "El correo ingresado es invalido" }],
+        console.log('CORREO NO ENCONTRADO');
+        res.render("login", {errors: [{ msg: "El correo ingresado no es válido" }],
         });
       } else {
         req.session.usuarioLogueado = usuarioALoguearse;
+        res.redirect("userProfile")
       }
-    } else {
+      console.log("DATOS INGRESADOS");
+    }else{
       res.render("login", { errors: errors.mapped()});
-      console.log(errors.mapped());
     }
   },
+  userProfile: (req,res) => {
+    res.render("userProfile");
+  }
 };
 
 module.exports = usersController;
