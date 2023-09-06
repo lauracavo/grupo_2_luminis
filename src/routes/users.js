@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const route = express.Router();
 const usersController = require("../controllers/usersController");
 const upload = require("../middlewares/multerConfig");
@@ -26,7 +25,7 @@ route.post("/store", validarRegistro, usersController.store); //localhost2020:/u
 route.post("/processLogin", validarLogin, usersController.processLogin); //localhost:2020/users/processLogin
 /* app.post("/store", upload.single("profile_image"), (req, res) => {
   res.redirect("/");
-}); */
+}); */ 
 route.get("/userProfile", usersController.userProfile);
 
 module.exports = route;
