@@ -42,7 +42,7 @@ const usersController = {
       path.join(__dirname, "../dataBase/usuarios.json"),
       JSON.stringify(dataBaseU, null, 2)
     );
-    res.redirect("/"); // Redirigir al home
+    res.redirect("login"); // Redirigir al login
     } else {
       res.render("register", { errors: errors.mapped(), old: req.body });
     }
@@ -61,19 +61,23 @@ const usersController = {
       let usuarioALoguearse;
       for (let i = 0; i < users.length; i++) {
         if (users[i].email == req.body.email) {
-          usuarioALoguearse = users[i];
-          console.log('CORREO ENCONTRADO');
+          const contrasenaCorrecta = bcrypt.compareSync(req.body.password, users[i].password);
+          if (contrasenaCorrecta){
+            usuarioALoguearse = users[i];
+            //console.log('CORREO ENCONTRADO');
+            //console.log(usuarioALoguearse);
+          }
         }
-      }
+      };
       if (usuarioALoguearse == undefined) {
-        console.log('CORREO NO ENCONTRADO');
-        res.render("login", {errors: [{ msg: "El correo ingresado no es válido" }],
+        //console.log('CORREO NO ENCONTRADO');
+        res.render("login", {errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }],
         });
       } else {
         req.session.usuarioLogueado = usuarioALoguearse;
         res.redirect("userProfile")
-      }
-      console.log("DATOS INGRESADOS");
+      };
+      //console.log("DATOS INGRESADOS");
     }else{
       res.render("login", { errors: errors.mapped()});
     }
