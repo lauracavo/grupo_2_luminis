@@ -1,7 +1,7 @@
 {
   "libros": [
     {
-      "id": "D",
+      "id": "01",
       "nombre": "Dumbo",
       "editorial": "Salvat",
       "autor": "Andrea Borrell",
@@ -10,10 +10,11 @@
       "categoria": "Infantiles",
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
-      "stock": "4"
+      "stock": "4",
+      "img": "01.jpg"
     },
     {
-      "id": "D",
+      "id": "02",
       "nombre": "Ratatouille",
       "editorial": "Salvat",
       "autor": "Andrea Borrell",
@@ -22,22 +23,24 @@
       "categoria": "Infantiles",
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
-      "stock": "4"
+      "stock": "4",
+      "img": "02.jpg"
     },
     {
-      "id": "D",
+      "id": "03",
       "nombre": "Bambi",
-      "editorial": "Salvat",
+      "editorial": "Everest",
       "autor": "Andrea Borrell",
       "detalle": "Cuento Infantil",
       "caracteristica": "Cuentos de Disney",
       "categoria": "Infantiles",
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
-      "stock": "4"
+      "stock": "4",
+      "img": "03.jpg"
     },
     {
-      "id": "D",
+      "id": "04",
       "nombre": "Aladin",
       "editorial": "Salvat",
       "autor": "Andrea Borrell",
@@ -46,7 +49,153 @@
       "categoria": "Infantiles",
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
-      "stock": "4"
+      "stock": "4",
+      "img": "04.jpg"
+    },
+    {
+      "id": "05",
+      "nombre":"El Hobbit",
+      "editorial":"Minotauro",
+      "autor":"J. R. R. Tolkien",
+      "detalle":"Historia Ficticia",
+      "caracteristica":"Libro de tapa dura",
+      "categoria":"Ficcion",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4",
+      "img": "05.jpg"
+    },
+    {
+      "id": "06",
+      "nombre":"El Señor de los Anillos: La Comunidad del Anillo",
+      "editorial":"Minotauro",
+      "autor":"J. R. R. Tolkien",
+      "detalle":"Historia Ficticia",
+      "caracteristica":"Libro de tapa dura",
+      "categoria":"Ficcion",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "07",
+      "nombre":"El Señor de los Anillos: Las Dos Torres",
+      "editorial":"Minotauro",
+      "autor":"J. R. R. Tolkien",
+      "detalle":"Historia Ficticia",
+      "caracteristica":"Libro de tapa dura",
+      "categoria":"Ficcion",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "08",
+      "nombre":"El Señor de los Anillos: El Retorno del Rey",
+      "editorial":"Minotauro",
+      "autor":"J. R. R. Tolkien",
+      "detalle":"Historia Ficticia",
+      "caracteristica":"Libro de tapa dura",
+      "categoria":"Ficcion",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "09",
+      "nombre":"Sin noticias de Gurbo",
+      "editorial":"Seix Barral",
+      "autor":"  Eduardo Mendoza Garriga",
+      "detalle":"Historia de Comedia",
+      "caracteristica":"Gurb0 es un municipio de la comarca de Osona",
+      "categoria":"Comedia",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "10",
+      "nombre":" El inimitable Jeeves",
+      "editorial":"Anagrama",
+      "autor":"Wodehouse, P.G.",
+      "detalle":"Historia de Comedia",
+      "caracteristica":"Jeeves representa la imagen ideal de lo que debe ser el criado de un caballero",
+      "categoria":"Comedia",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "11",
+      "nombre":"Reír es la única salida",
+      "editorial":"Harpercollins",
+      "autor":"Andreu Buenafuente",
+      "detalle":"Historia de Comedia",
+      "caracteristica":"Esta escrito a puño y ademas animado con dibujos reales",
+      "categoria":"Comedia",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "12",
+      "nombre":"La conjura de los necios",
+      "editorial":"Anagrama",
+      "autor":"John Kennedy Toole",
+      "detalle":"Historia de Comedia",
+      "caracteristica":"La estructura es lineal; en capítulos que se dividen en subcapítulos.",
+      "categoria":"Comedia",
+      "precioAlMayor":"$1100",
+      "precioUnidad":"$1500",
+      "stock":"4"
+    },
+    {
+      "id": "13",
+      "nombre":"Mochila urbana azul",
+      "editorial":"Heritage",
+      "autor":" ",
+      "detalle":"Diseño de tela lisa",
+      "caracteristica":"Altura: 45cm, Ancho: 31cm, Sin ruedas, Sin genero, Capacidad: 21L",
+      "categoria":"Urbana",
+      "precioAlMayor":"$30000",
+      "precioUnidad":"$37000",
+      "stock":"4"
+    },
+    {
+      "id": "14",
+      "nombre":"Mochila Camping Tactica ",
+      "editorial":"Trekking",
+      "autor":" ",
+      "detalle":"Diseño Militar",
+      "caracteristica":"Altura: 47cm, Ancho: 35cm, Sin ruedas, Sin genero, Capacidad: 25L",
+      "categoria":"Militar",
+      "precioAlMayor":"$32000",
+      "precioUnidad":"$38000",
+      "stock":"4"
+    },
+    {
+      "id": "15",
+      "nombre":"Mochila escolar celeste",
+      "editorial":"South Port",
+      "autor":" ",
+      "detalle":"Mochila Bolso Múltiples Compartimentos Bolsillos Laterales",
+      "caracteristica":"Altura: 30cm, Ancho: 27cm, Sin ruedas, Sin genero, Capacidad: 18L",
+      "categoria":"Escolar",
+      "precioAlMayor":"$27000",
+      "precioUnidad":"$30000",
+      "stock":"4"
+    },
+    {
+      "id": "16",
+      "nombre":"Mochila urbana roja",
+      "editorial":"Heritage",
+      "autor":" ",
+      "detalle":"Diseño de tela lisa",
+      "caracteristica":"Altura: 45cm, Ancho: 31cm, Sin ruedas, Sin genero, Capacidad: 21L",
+      "categoria":"Urbana",
+      "precioAlMayor":"$28000",
+      "precioUnidad":"$31000",
+      "stock":"4"
     }
   ]
 }

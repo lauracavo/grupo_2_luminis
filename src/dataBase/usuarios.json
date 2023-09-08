@@ -1,20 +1,25 @@
 {
-    "usuarios" : [
-        {
-            "id": 1,
-            "email": "perezcarolinasn@gmail.com",
-            "pass": "dh123",
-            "nombre": "carolina",
-            "apellido": "perez",
-            "direccion": "roca 649"            
-        },
-        {
-            "id": 2,
-            "email": "tomystafano@gmail.com",
-            "pass": "dh1234",
-            "nombre": "tomas",
-            "apellido": "stefano",
-            "direccion": "mitre 125"   
-        }
-    ]
+  "usuarios": [
+    {
+      "name": "Lamberto Aldo",
+      "email": "aldoeze@hotmail.com",
+      "docente": "on",
+      "code": "1234",
+      "password": "123456"
+    },
+    {
+      "name": "Laura Cavo",
+      "email": "lau97cavo@gmail.com",
+      "docente": "on",
+      "code": "646465",
+      "password": "$2a$10$4ZwHgoNQvUucrqJBEseOMumUKLUuPuBSBs.XXiumAmqe/Wtal1AzW"
+    },
+    {
+      "name": "Laura Cavo",
+      "email": "lau97cavo@gmail.com",
+      "docente": "on",
+      "code": "5445",
+      "password": "$2a$10$Gye1U0IM7QB2SCtPdf0HEuAmTetcON.DBUoo0hyYcm.BwCS.crkU2"
+    }
+  ]
 }
