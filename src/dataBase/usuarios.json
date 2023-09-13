@@ -9,31 +9,17 @@
     },
     {
       "name": "Laura Cavo",
-      "email": "laura.cavo@outlook.com",
+      "email": "lau97cavo@gmail.com",
       "docente": "on",
-      "code": "545454",
-      "password": "123456"
+      "code": "646465",
+      "password": "$2a$10$4ZwHgoNQvUucrqJBEseOMumUKLUuPuBSBs.XXiumAmqe/Wtal1AzW"
     },
     {
       "name": "Laura Cavo",
-      "email": "laura.cavo@outlook.com",
+      "email": "lau97cavo@gmail.com",
       "docente": "on",
-      "code": "68786",
-      "password": "123456"
-    },
-    {
-      "name": "Laura Cavo",
-      "email": "laura.cavo@outlook.com",
-      "docente": "on",
-      "code": "545454",
-      "password": "123456"
-    },
-    {
-      "name": "Laura Cavo",
-      "email": "laura.cavo@outlook.com",
-      "docente": "on",
-      "code": "44545",
-      "password": "$2a$10$1i7UbpEfa4W/G6C4YQE7VeNW3Pnd6z3J/p4oPAGflZZ5V71WiQakK"
+      "code": "5445",
+      "password": "$2a$10$Gye1U0IM7QB2SCtPdf0HEuAmTetcON.DBUoo0hyYcm.BwCS.crkU2"
     }
   ]
 }
