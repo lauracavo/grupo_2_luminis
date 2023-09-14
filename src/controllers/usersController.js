@@ -22,6 +22,7 @@ const usersController = {
       code,
       password,
       passwordR,
+      profile_image,
     } = req.body;
 
     // Crear un nuevo producto
@@ -31,7 +32,7 @@ const usersController = {
       docente,
       code,
       password: bcrypt.hashSync(req.body.password,10),
-
+      
     };
 
     // Agregar el nuevo producto a la lista de productos
