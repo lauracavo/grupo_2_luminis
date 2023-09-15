@@ -11,7 +11,7 @@
     <main class="formularios_register">
       <section id="formulario_inicio_register" class="efecto_glass">
         <div>
-          <form method="POST" action="/users/store">
+          <form method="POST" action="/users/store" enctype="multipart/form-data">
             <h3>REGISTRAR USUARIO</h3>
             <label class="nombre_campos" for="name">Nombre y Apellido:</label>
             <input type="text" id="name" name="name" value="<%= locals.errors && old.name ? old.name : '' %>"/>
