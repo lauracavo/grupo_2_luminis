@@ -11,7 +11,7 @@
   <!-- Tabla para mostrar y editar productos existentes -->
 <main>
   <p id="titulo">Productos</p>
-  <a class="fcc-btn" href="/administrador/formCreate"><button>AGREGAR</button></a>
+  <a href="/administrador/formCreate"><button class="fcc-btn">AGREGAR</button></a>
   <table id="tabla" class="redondeada">
     <thead id="encabezado_tabla" class="efecto_glass">
       <tr>
@@ -40,9 +40,7 @@
         </td>
         <td class="contenido_tabla">
           <form action="/administrador/delete/<%= item.id %>?_method=DELETE" method="post" class="formulario" >
-            <button type="submit" class="button-form">
-              <i class="fas fa-trash" ></i>
-            </button> 
+              <i class="fas fa-trash"></i> 
           </form>
         </td>
       </tr>
