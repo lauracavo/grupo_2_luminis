@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const session = require("express-session");
 const cookieParser = require('cookie-parser');
 
 const fs = require("fs");
@@ -14,7 +15,6 @@ const usersRoute = require("./src/routes/users");
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
-const session = require("express-session");
 app.use(
   session({
     secret: "Luminis",
@@ -23,11 +23,19 @@ app.use(
   })
 );
 
-app.use(cookieParser());
-
 const port = process.env.PORT || 2020;
 
 app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`));
+
+//Middlewares de cookies
+app.use(cookieParser());
+
+const autoLogin = require('./src/middlewares/autoLogin');
+app.use(autoLogin);
+
+const loginMiddleware = require('./src/middlewares/loginMiddleware');
+app.use(loginMiddleware);
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
