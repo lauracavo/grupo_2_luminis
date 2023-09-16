@@ -14,13 +14,14 @@
           <form method="POST" action="/users/store" enctype="multipart/form-data">
             <h3>REGISTRAR USUARIO</h3>
             <label class="nombre_campos" for="name">Nombre y Apellido:</label>
-            <input type="text" id="name" name="name" value="<%= locals.errors && old.name ? old.name : '' %>"/>
+            <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
               <% if (locals.errors && errors.name){ %>
                 <div> <%= errors.name.msg %> </div>
                 <% } %>
             <label class="nombre_campos" for="email">Correo electronico:</label>
-            <input type="text" id="email" name="email" value="<%= locals.errors && old.email ? old.email : '' %>"/>
-            <% if (locals.errors && errors.name){ %>
+            <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
+            <% if (locals.errors && errors.email){ %> 
+              <!-- era error."el valor que pasamos por name" -->
               <div> <%= errors.email.msg %> </div>
               <% } %>
 
@@ -36,7 +37,7 @@
 
             <label class="nombre_campos" for="password">Contraseña:</label>
             <input type="password" id="password" name="password" />
-            <% if (locals.errors && errors.name){ %>
+            <% if (locals.errors && errors.password){ %>
               <div> <%= errors.password.msg %> </div>
               <% } %>
 
@@ -44,7 +45,7 @@
               >Repetir contraseña:</label
             >
             <input type="password" id="password" name="passwordR" />
-            <% if (locals.errors && errors.name){ %>
+            <% if (locals.errors && errors.passwordR){ %>
               <div> <%= errors.passwordR.msg %> </div>
               <% } %>
                 

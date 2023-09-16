@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cookieParser = require('cookie-parser');
 
 const fs = require("fs");
 const path = require("path");
@@ -21,6 +22,8 @@ app.use(
     saveUninitialized: true, //
   })
 );
+
+app.use(cookieParser());
 
 const port = process.env.PORT || 2020;
 

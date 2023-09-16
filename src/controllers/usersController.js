@@ -31,30 +31,24 @@ const usersController = {
   
       const hashPassword = bcrypt.hashSync(password , 10);
 
-      if(bcrypt.compareSync(passwordR , hashPassword)){
-        // Crear un nuevo usuario
-        const newUser = {
-          name,
-          email,
-          docente,
-          code,
-          password: hashPassword,
-          profile_image
-        };
-        console.log(req.body);
-        // Agregar el nuevo usuario a la lista de usuarios
-        dataBaseU.usuarios.push(newUser);
-    
-        // Guardar la información actualizada en el archivo JSON
-        fs.writeFileSync(
-          path.join(__dirname, "../dataBase/usuarios.json"),
-          JSON.stringify(dataBaseU, null, 2)
-        );
-        res.redirect("login"); // Redirigir al login
-      }/* else{
-        errors.mapped().passwordR.msg = "incorrecto"
-        res.render("register", {errors});
-      } */
+      const newUser = {
+        name,
+        email,
+        docente,
+        code,
+        password: hashPassword,
+        profile_image
+      };
+
+      dataBaseU.usuarios.push(newUser);
+  
+      // Guardar la información actualizada en el archivo JSON
+      fs.writeFileSync(
+        path.join(__dirname, "../dataBase/usuarios.json"),
+        JSON.stringify(dataBaseU, null, 2)
+      );
+      res.redirect("login"); // Redirigir al login
+
       } else {
         res.render("register", { errors: errors.mapped(), old: req.body });
       }
@@ -88,6 +82,8 @@ const usersController = {
         });
       } else {
         req.session.usuarioLogueado = usuarioALoguearse;
+        const email = req.body.email
+        res.cookie ("email", email, {maxAge: ((1000 * 60) * 60) * 24})
         res.redirect("userProfile")
       };
       //console.log("DATOS INGRESADOS");
