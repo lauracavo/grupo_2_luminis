@@ -14,6 +14,14 @@
       "code": "1214745",
       "password": "$2a$10$D87/ubnVMG5Ezb4jLTBPB.nPuPPrPGRQlU1IhIKYShBswEfO4AG76",
       "profile_image": "avatar-1694779426356.jpg"
+    },
+    {
+      "name": "Tomás Di Stefano",
+      "email": "tomidistefano@hotmail.com",
+      "docente": "on",
+      "code": "123456",
+      "password": "$2a$10$wlhQi1c8Z.lTk170cx5YquyHTcpyUe8VtXd0/u7Oe.XMfgUt2sFpi",
+      "profile_image": null
     }
   ]
 }
