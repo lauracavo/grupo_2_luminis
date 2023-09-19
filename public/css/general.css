@@ -56,6 +56,16 @@ body {
   text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
     0 0 50px #f1c056, 0 0 100px #ffeabd;
 }
+.linksNavbar {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+.linksNavBar:hover{
+  text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+    0 0 50px #f1c056, 0 0 100px #ffeabd;
+}
 #lema {
   font-size: 14px;
   font-style: italic;

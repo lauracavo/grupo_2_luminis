@@ -39,11 +39,31 @@ section div.articulos {
   flex-direction: column;
 }
 section div.info_prod {
-  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+}
+.imagenProducto{
+  width: 100px;
+  height: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+.imagenProducto:hover{
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.nombreProducto {
+  font-size: 25px;
+  font-weight: bold;
+}
+.precios {
+  font-size: 20px;
 }
 section h3 {
   text-align: center;
-  color: white;
+  color: black;
+  font-weight: bold;
 }
 #productos_nuevos {
   margin-top: 35px;
@@ -68,6 +88,10 @@ section h3 {
 div.boton {
   display: flex;
   justify-content: center;
+}
+.verMas {
+  text-decoration: none;
+  color: white;
 }
 
 /* ----------------MEDIA QUERIES------------------- */

@@ -38,14 +38,15 @@
         <div class="articulos_ocultos">
           <% data.map(item => { %>
           <article class="efecto_glass display_flex">
-            <img src="/img/libros/<%= item.img %>" />
+            <img class="imagenProducto" src="/img/libros/<%= item.img %>" />
             <div class="display_flex info_prod">
-              <p><%= item.nombre %></p>
-              <p>$ <%= item.precio %></p>
+              <p class="nombreProducto"><%= item.nombre %></p>
+              <p class="precios">Precio por unidad: <%= item.precioUnidad %></p>
+              <p class="precios">Precio al por mayor: <%= item.precioAlMayor %></p>
             </div>
             <div class="boton">
               <button class="button">
-                <a href="/product/productDetail/<%= item.id %>"
+                <a class="verMas" href="/product/productDetail/<%= item.id %>"
                   ><span class="button-content">VER MÁS</span></a
                 >
               </button>
@@ -167,11 +168,12 @@
         <div class="articulos_ocultos">
           <% data.map(item => { %>
           <article class="efecto_glass display_flex">
-            <img src="/img/libros/<%= item.img %>" />
+            <img class="imagenProducto" src="/img/libros/<%= item.img %>" />
             <div class="display_flex info_prod">
-              <p><%= item.nombre %></p>
-              <p><%= item.precio %></p>
-            </div>
+              <p class="nombreProducto"><%= item.nombre %></p>
+              <p class="precios">Precio por unidad: <%= item.precioUnidad %></p>
+              <p class="precios">Precio al por mayor: <%= item.precioAlMayor %></p>
+              </div>
             <div class="boton">
               <button class="button">
                 <span class="button-content">VER MÁS</span>

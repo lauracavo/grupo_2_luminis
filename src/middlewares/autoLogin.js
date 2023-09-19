@@ -11,5 +11,5 @@ const autoLogin = (req, res, next) =>{
 
     next()
 }
-console.log(usuarios);
+
 module.exports = autoLogin;

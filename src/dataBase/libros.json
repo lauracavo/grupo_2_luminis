@@ -11,7 +11,7 @@
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
       "stock": "4",
-      "img": "01.jpg"
+      "img": "dumbo.jpg"
     },
     {
       "id": "02",
@@ -24,7 +24,7 @@
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
       "stock": "4",
-      "img": "02.jpg"
+      "img": "ratatouille.jpg"
     },
     {
       "id": "03",
@@ -37,7 +37,7 @@
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
       "stock": "4",
-      "img": "03.jpg"
+      "img": "bambi.jpg"
     },
     {
       "id": "04",
@@ -50,7 +50,7 @@
       "precioAlMayor": "$899",
       "precioUnidad": "$1100",
       "stock": "4",
-      "img": "04.jpg"
+      "img": "aladdin.jpg"
     },
     {
       "id": "05",
@@ -63,7 +63,7 @@
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
       "stock":"4",
-      "img": "05.jpg"
+      "img": "elHobbit.jpg"
     },
     {
       "id": "06",
@@ -75,7 +75,8 @@
       "categoria":"Ficcion",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"señorComunidadAnillo.jpg"
     },
     {
       "id": "07",
@@ -87,7 +88,8 @@
       "categoria":"Ficcion",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"señorAnillosTorres.jpg"
     },
     {
       "id": "08",
@@ -99,19 +101,21 @@
       "categoria":"Ficcion",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"señorAnillosRey.jpg"
     },
     {
       "id": "09",
-      "nombre":"Sin noticias de Gurbo",
+      "nombre":"Sin noticias de Gurb",
       "editorial":"Seix Barral",
-      "autor":"  Eduardo Mendoza Garriga",
+      "autor":"Eduardo Mendoza Garriga",
       "detalle":"Historia de Comedia",
-      "caracteristica":"Gurb0 es un municipio de la comarca de Osona",
+      "caracteristica":"Gurb es un municipio de la comarca de Osona",
       "categoria":"Comedia",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"sinNoticiasGurb.jpg"
     },
     {
       "id": "10",
@@ -123,7 +127,8 @@
       "categoria":"Comedia",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"inimitableJeeves.jpeg"
     },
     {
       "id": "11",
@@ -135,7 +140,8 @@
       "categoria":"Comedia",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"reirSalida.jpg"
     },
     {
       "id": "12",
@@ -147,7 +153,8 @@
       "categoria":"Comedia",
       "precioAlMayor":"$1100",
       "precioUnidad":"$1500",
-      "stock":"4"
+      "stock":"4",
+      "img":"conjuraNecios.jpeg"
     },
     {
       "id": "13",
@@ -159,7 +166,8 @@
       "categoria":"Urbana",
       "precioAlMayor":"$30000",
       "precioUnidad":"$37000",
-      "stock":"4"
+      "stock":"4",
+      "img":"mochilaUrbanaAzul.png"
     },
     {
       "id": "14",
@@ -171,7 +179,8 @@
       "categoria":"Militar",
       "precioAlMayor":"$32000",
       "precioUnidad":"$38000",
-      "stock":"4"
+      "stock":"4",
+      "img":"mochilaCampingTactica.png"
     },
     {
       "id": "15",
@@ -183,7 +192,8 @@
       "categoria":"Escolar",
       "precioAlMayor":"$27000",
       "precioUnidad":"$30000",
-      "stock":"4"
+      "stock":"4",
+      "img":"mochilaEscolarCeleste.png"
     },
     {
       "id": "16",
@@ -195,7 +205,8 @@
       "categoria":"Urbana",
       "precioAlMayor":"$28000",
       "precioUnidad":"$31000",
-      "stock":"4"
+      "stock":"4",
+      "img":"mochilaUrbanaRoja.png"
     }
   ]
 }
