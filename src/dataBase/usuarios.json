@@ -22,6 +22,13 @@
       "code": "123456",
       "password": "$2a$10$wlhQi1c8Z.lTk170cx5YquyHTcpyUe8VtXd0/u7Oe.XMfgUt2sFpi",
       "profile_image": null
+    },
+    {
+      "name": "Laura Cavo",
+      "email": "lau97cavo@gmail.com",
+      "code": "",
+      "password": "$2a$10$PAzlYA6Bjm.I5x1DH1gk7OY.6zhAsNbgCa8oZjyEJPFLWsI1dZ5QW",
+      "profile_image": null
     }
   ]
 }

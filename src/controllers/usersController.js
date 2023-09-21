@@ -62,41 +62,74 @@ const usersController = {
   processLogin: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()){
-      const {usuarios} = dataBaseU;
-      let users = usuarios;
-      //console.log(users);
-      let usuarioALoguearse;
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].email == req.body.email) {
-          const contrasenaCorrecta = bcrypt.compareSync(req.body.password, users[i].password);
-          if (contrasenaCorrecta){
-            usuarioALoguearse = users[i];
-            //console.log('CORREO ENCONTRADO');
-            //console.log(usuarioALoguearse);
-          }
-        }
-      };
-      if (usuarioALoguearse == undefined) {
-        //console.log('CORREO NO ENCONTRADO');
-        res.render("login", {errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }],
-        });
-      } else {
-        req.session.usuarioLogueado = usuarioALoguearse;
-        const email = req.body.email
-        res.cookie ("email", email, {maxAge: ((1000 * 60) * 60) * 24})
-        res.redirect("userProfile")
-      };
-      //console.log("DATOS INGRESADOS");
-    }else{
-      res.render("login", { errors: errors.mapped()});
-    }
-  },
-  userProfile: (req,res) => {
-    res.render("userProfile");
-  },
-  
-  editarEliminar: (req,res) =>{
+        const { usuarios } = dataBaseU;
+        const { email } = req.body;
 
+        // Busca el usuario en la base de datos por correo electrónico
+        const usuarioALoguearse = usuarios.find(user => user.email === email);
+
+        if (usuarioALoguearse) {
+            const contrasenaCorrecta = bcrypt.compareSync(req.body.password, usuarioALoguearse.password);
+            if (contrasenaCorrecta) {
+                // Almacena el usuario en la sesión
+                req.session.usuarioLogueado = usuarioALoguearse;
+
+                // Almacena el correo en una cookie
+                res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
+
+                // Redirige a la página de perfil y pasa los datos del usuario
+                res.render("userProfile", { datosUsuario: usuarioALoguearse });
+            } else {
+                res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
+            }
+        } else {
+            res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
+        }
+    } else {
+        res.render("login", { errors: errors.mapped() });
+    }
+},
+
+  userProfile: (req,res) => {
+/*     const usuarioIngresado = req.body.email; // Correo ingresado por el usuario
+    // Busca el usuario en el JSON por correo electrónico
+    const usuarioEncontrado = dataBaseU.usuarios.find(usuario => usuario.email === usuarioIngresado);
+
+    if (usuarioEncontrado) {
+        // Usuario encontrado, pasa sus datos a la vista de perfil
+        res.render('userProfile', { usuario: usuarioEncontrado });
+        console.log(usuarioEncontrado);
+    } */
+  },
+
+  editarEliminar: (req,res) =>{
+    const action = req.body.action; // Obtiene el valor del botón "action"
+
+    if (action === 'eliminar') {
+      const userEmail = req.params.email; // Obtén el Email del usuario de la URL
+    
+      const usuarioAEliminar = dataBaseU.usuarios.findIndex(user => user.email === userEmail); // Encuentra el índice del usuario con el ID proporcionado
+
+          if (usuarioAEliminar !== -1) {
+              // Elimina al usuario de la matriz
+              dataBaseU.usuarios.splice(usuarioAEliminar, 1);
+
+              // Guarda la información actualizada en el archivo JSON
+              fs.writeFileSync(
+                  path.join(__dirname, "../dataBase/usuarios.json"),
+                  JSON.stringify(dataBaseU, null, 2)
+              );
+
+              // Redirige al usuario a una página de confirmación
+              res.redirect("/confirmacion-eliminacion");
+          }
+    res.send('Usuario eliminado');
+    } else if (action === 'editar') {
+        const userId = req.params.id; // Obtén el ID del usuario de la URL
+        res.send('Usuario editado');
+    } else {
+        res.send('Acción desconocida'); // Manejar cualquier otro valor de "action"
+    }
   }
 };
 

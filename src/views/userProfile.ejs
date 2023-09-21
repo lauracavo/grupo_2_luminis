@@ -18,22 +18,12 @@
           <div>
             <form method="POST" action="/users/editarEliminar" enctype="multipart/form-data">
               <h3>Datos de usuario</h3>
-              <label class="nombre_campos" for="name">Nombre y Apellido:</label>
-              <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
-                <% if (locals.errors && errors.name){ %>
-                  <div> <%= errors.name.msg %> </div>
-                  <% } %>
-              <label class="nombre_campos" for="email">Correo electronico:</label>
-              <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
-              <% if (locals.errors && errors.email){ %> 
-                <!-- era error."el valor que pasamos por name" -->
-                <div> <%= errors.email.msg %> </div>
-                <% } %>  
-              <label class="nombre_campos" for="password">Contraseña:</label>
-              <input type="password" id="password" name="password" />
-              <% if (locals.errors && errors.password){ %>
-                <div> <%= errors.password.msg %> </div>
-                <% } %>
+                <label class="nombre_campos" for="name">Nombre y Apellido:</label>
+                <input type="text" id="name" name="name" value="<%= datosUsuario.name %>"/>
+                <label class="nombre_campos" for="email">Correo electronico:</label>
+                <input type="text" id="email" name="email" value="<%= datosUsuario.email %>"/> 
+                <label class="nombre_campos" for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" value="<%= datosUsuario.password %>"/>
               <div>
                 <button id="botonEliminar" type="submit" name="action" value="eliminar">Eliminar Usuario</button>
                 <button id="botonEditar" type="submit" name="action" value="editar">Editar Usuario</button>
