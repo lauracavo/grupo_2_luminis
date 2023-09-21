@@ -2,11 +2,44 @@
 <html lang="en">
   <head>
     <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/userProfile.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/login.css">
   </head>
   <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
     <main>
-        <h1>BIENVENIDO A LUMINIS</h1>
+      <h1 id="miPerfil">MI PERFIL</h1>
+      <div id="contenedorFotoPerfil">
+        <div id="fotoPerfil">
+          <img src="/img/usersProfile_images/avatar-1694739964634.JPG" alt="foto de perfil" >
+        </div>
+      </div>
+          <div>
+            <form method="POST" action="/users/editarEliminar" enctype="multipart/form-data">
+              <h3>Datos de usuario</h3>
+              <label class="nombre_campos" for="name">Nombre y Apellido:</label>
+              <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
+                <% if (locals.errors && errors.name){ %>
+                  <div> <%= errors.name.msg %> </div>
+                  <% } %>
+              <label class="nombre_campos" for="email">Correo electronico:</label>
+              <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
+              <% if (locals.errors && errors.email){ %> 
+                <!-- era error."el valor que pasamos por name" -->
+                <div> <%= errors.email.msg %> </div>
+                <% } %>  
+              <label class="nombre_campos" for="password">Contraseña:</label>
+              <input type="password" id="password" name="password" />
+              <% if (locals.errors && errors.password){ %>
+                <div> <%= errors.password.msg %> </div>
+                <% } %>
+              <div>
+                <button id="botonEliminar" type="submit" name="action" value="eliminar">Eliminar Usuario</button>
+                <button id="botonEditar" type="submit" name="action" value="editar">Editar Usuario</button>
+              </div>
+            </form>
+          </div>
     </main>
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
   </body>

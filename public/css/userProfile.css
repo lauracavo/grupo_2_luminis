@@ -1,0 +1,21 @@
+h1#miPerfil{
+    font-size: 24px;
+    padding-left: 30px;
+}
+div#contenedorFotoPerfil{
+    display: flex;
+    justify-content: center;
+}
+
+div#fotoPerfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

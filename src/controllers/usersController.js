@@ -93,6 +93,10 @@ const usersController = {
   },
   userProfile: (req,res) => {
     res.render("userProfile");
+  },
+  
+  editarEliminar: (req,res) =>{
+
   }
 };
 
