@@ -125,11 +125,26 @@ const usersController = {
           }
     res.send('Usuario eliminado');
     } else if (action === 'editar') {
-        const userId = req.params.id; // Obtén el ID del usuario de la URL
-        res.send('Usuario editado');
-    } else {
-        res.send('Acción desconocida'); // Manejar cualquier otro valor de "action"
-    }
+      const userId = req.params.id; // Obtén el ID del usuario de la URL
+
+      // Encuentra el usuario con el ID proporcionado en la matriz
+      const user = dataBaseU.usuarios.find(user => user.id === userId);
+  
+      if (user) {
+          // Actualiza los campos del usuario con los datos del formulario
+          user.name = req.body.name;
+          user.email = req.body.email;
+  
+          // Guarda la información actualizada en el archivo JSON o en tu base de datos
+          fs.writeFileSync(
+              path.join(__dirname, "../dataBase/usuarios.json"),
+              JSON.stringify(dataBaseU, null, 2)
+          );
+  
+          // Redirige al usuario a una página de confirmación o a donde desees
+          res.redirect("/confirmacion-edicion");
+      }
+    } 
   }
 };
 
