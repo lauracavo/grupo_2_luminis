@@ -29,6 +29,13 @@
       "code": "",
       "password": "$2a$10$PAzlYA6Bjm.I5x1DH1gk7OY.6zhAsNbgCa8oZjyEJPFLWsI1dZ5QW",
       "profile_image": null
+    },
+    {
+      "name": "Leandro Agustín Ortiz",
+      "email": "leandroortiz.sn@gmail.com",
+      "code": "luminis",
+      "password": "$2a$10$CnRYZdzJZDp99xFmw1kMAOyUxRJ7bGVoAOBn3h/bekEgEnlUmviYi",
+      "profile_image": null
     }
   ]
 }
