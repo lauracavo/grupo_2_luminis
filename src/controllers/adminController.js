@@ -1,11 +1,11 @@
 const path = require("path");
 const fs = require("fs");
-const dataLibros = require("../dataBase/libros.json");
+const dataLibros = require("../dataBase/books.json");
 
 const adminController = {
   getAll: (req, res) => {
     const { libros } = dataLibros;
-    res.render("administrador", { data: libros });
+    res.render("admin", { data: libros });
   },
 
   create: (req, res) => {
@@ -44,11 +44,11 @@ const adminController = {
 
     // Guardar la información actualizada en el archivo JSON
     fs.writeFileSync(
-      path.join(__dirname, "../dataBase/libros.json"),
+      path.join(__dirname, "../dataBase/books.json"),
       JSON.stringify(dataLibros, null, 2)
     );
 
-    res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
+    res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
   },
 
   edit: (req,res)=>{
@@ -86,11 +86,11 @@ const adminController = {
         precio ? productoId.precio = precio: productoId.precio;
 
         fs.writeFileSync(
-          path.join(__dirname, "../dataBase/libros.json"),
+          path.join(__dirname, "../dataBase/books.json"),
           JSON.stringify(dataLibros, null, 2)
         );
     
-        res.redirect("/administrador");
+        res.redirect("/admin");
   },
 
 
@@ -109,11 +109,11 @@ const adminController = {
     })
     
  fs.writeFileSync(
-        path.join(__dirname, "../dataBase/libros.json"),
+        path.join(__dirname, "../dataBase/books.json"),
         JSON.stringify(dataLibros, null, 2)
       );
   
-      res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
+      res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
   },
 
   };

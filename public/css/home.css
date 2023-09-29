@@ -2,14 +2,14 @@
   display: none;
 }
 /* ----------------------- DECRIPCION CON FOTO DE LIBRERIA ------------------------- */
-#contenedor_libreria {
+#bookStore_container {
   margin-top: 25px;
   justify-content: space-around;
   align-items: center;
 }
 
-#contenedor_libreria div#introduccion p,
-#contenedor_libreria div#introduccion h2 {
+#bookStore_container div#introduccion p,
+#bookStore_container div#introduccion h2 {
   text-align: center;
 }
 div#button_comprar {
@@ -113,7 +113,7 @@ div.boton {
   main section article {
     width: 40%;
   }
-  #contenedor_libreria div#introduccion {
+  #bookStore_container div#introduccion {
     width: 50%;
     justify-content: center;
   }

@@ -1,5 +1,5 @@
 const path = require("path");
-const dataLibros = require("../dataBase/libros.json");
+const dataLibros = require("../dataBase/books.json");
 //const Contenedor = require('./productClassController');
 //const direction = require('../dataBase/direction');
 //const container = new Contenedor(direction); 

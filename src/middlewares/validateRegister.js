@@ -1,7 +1,7 @@
 const { body } = require("express-validator");
 
 //middleware para validar el formulario de registro
-const validarRegistro = [
+const validateRegister = [
   body("name").notEmpty().withMessage("Debe ingresar nombre y apellido"),
   body("email").notEmpty().withMessage("Debe ingresar su email").bail().isEmail().withMessage("Debe ingresar un Email válido"),
   body("password")
@@ -17,4 +17,4 @@ const validarRegistro = [
   }),
 ];
 
-module.exports = validarRegistro
+module.exports = validateRegister
