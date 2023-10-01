@@ -8,31 +8,31 @@
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
     <main class="formulario_create">
     <section id="form_create" class="efecto_glass">
-        <h2>Editar Producto: <%= data.nombre %></h2>
+        <h2>Editar Producto: <%= data.name %></h2>
     <form action="/administrador/editar/<%= data.id %>?_method=PUT" method="POST">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" value="<%= data.nombre %>" required><br>
+        <input type="text" id="name" name="name" value="<%= data.name %>" required><br>
         
         <label for="editorial">Editorial:</label>
         <input type="text" id="editorial" name="editorial" value="<%= data.editorial %>" required><br>
         
-        <label for="autor">Autor:</label>
-        <input type="text" id="autor" name="autor" value="<%= data.autor %>" required><br>
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" value="<%= data.author %>" required><br>
         
-        <label for="fechaPublicacion">Fecha de Publicación:</label>
-        <input type="number" id="fechaPublicacion" name="fechaPublicacion" value="<%= data.fechaPublicacion %>" required><br>
+        <label for="publishDate">Fecha de Publicación:</label>
+        <input type="number" id="publishDate" name="publishDate" value="<%= data.publishDate %>" required><br>
         
-        <label for="detalle">Detalle:</label>
-        <textarea id="detalle" name="detalle" rows="4" required><%= data.detalle %></textarea><br>
+        <label for="datail">Detalle:</label>
+        <textarea id="datail" name="datail" rows="4" required><%= data.datail %></textarea><br>
         
-        <label for="caracteristica">Característica:</label>
-        <input type="text" id="caracteristica" name="caracteristica" value="<%= data.caracteristica %>" required><br>
+        <label for="characteristic">Característica:</label>
+        <input type="text" id="characteristic" name="characteristic" value="<%= data.characteristic %>" required><br>
         
-        <label for="categoria">Categoría:</label>
-        <input type="text" id="categoria" name="categoria" value="<%= data.categoria %>" required><br>
+        <label for="category">Categoría:</label>
+        <input type="text" id="category" name="category" value="<%= data.category %>" required><br>
         
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" name="precio" step="0.01" value="<%= data.precio %>" required><br>
+        <label for="price">Precio:</label>
+        <input type="number" id="price" name="price" step="0.01" value="<%= data.price %>" required><br>
         
         
         <button class="editar_producto" type="submit">Guardar Cambios</button>

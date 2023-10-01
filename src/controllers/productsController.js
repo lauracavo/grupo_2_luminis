@@ -1,5 +1,5 @@
 const path = require("path");
-const dataLibros = require("../dataBase/books.json");
+const booksData = require("../dataBase/books.json");
 //const Contenedor = require('./productClassController');
 //const direction = require('../dataBase/direction');
 //const container = new Contenedor(direction); 
@@ -7,8 +7,8 @@ const dataLibros = require("../dataBase/books.json");
 
 const productsController = {
   getAll: (req, res) => {
-    const { libros } = dataLibros;
-    res.render("product", { data: libros });
+    const { books } = booksData;
+    res.render("product", { data: books });
    //const products= container.getAll();
    //const {limit} = req.query;
    //let limitList = products.slice(0,limit);
@@ -20,11 +20,11 @@ const productsController = {
 
   byId: (req, res) => {
     const { id } = req.params;
-    const { libros } = dataLibros;
+    const { books } = booksData;
 
-    const productId = libros.find((prod) => prod.id === id);
+    const productId = books.find((prod) => prod.id === id);
 
-    res.render("productDetail", { libroSelect: productId });
+    res.render("productDetail", { bookselect: productId });
   } 
 };
 

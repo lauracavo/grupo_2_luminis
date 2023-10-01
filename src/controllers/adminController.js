@@ -1,11 +1,11 @@
 const path = require("path");
 const fs = require("fs");
-const dataLibros = require("../dataBase/books.json");
+const booksData = require("../dataBase/books.json");
 
 const adminController = {
   getAll: (req, res) => {
-    const { libros } = dataLibros;
-    res.render("admin", { data: libros });
+    const { books } = booksData;
+    res.render("admin", { data: books });
   },
 
   create: (req, res) => {
@@ -16,46 +16,46 @@ const adminController = {
     //definimos los datos que queremos obtener del formulario
     const {
       id,
-      nombre,
+      name,
       editorial,
-      autor,
-      fechaPublicacion,
-      detalle,
-      caracteristica,
-      categoria,
-      precio,
+      author,
+      publishDate,
+      datail,
+      characteristic,
+      category,
+      price,
     } = req.body;
 
     // Crear un nuevo producto
     const newProduct = {
       id,
-      nombre,
+      name,
       editorial,
-      autor,
-      fechaPublicacion,
-      detalle,
-      caracteristica,
-      categoria,
-      precio,
+      author,
+      publishDate,
+      datail,
+      characteristic,
+      category,
+      price,
     };
 
     // Agregar el nuevo producto a la lista de productos
-    dataLibros.libros.push(newProduct);
+    booksData.books.push(newProduct);
 
     // Guardar la información actualizada en el archivo JSON
     fs.writeFileSync(
       path.join(__dirname, "../dataBase/books.json"),
-      JSON.stringify(dataLibros, null, 2)
+      JSON.stringify(booksData, null, 2)
     );
 
     res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
   },
 
   edit: (req,res)=>{
-    const libroId = req.params.id;
-    const libro = dataLibros.libros.find(libro => libro.id === libroId);
+    const bookId = req.params.id;
+    const book = booksData.books.find(book => book.id === bookId);
 
-    res.render('formEdit', { data: libro });
+    res.render('formEdit', { data: book });
   },
 
   editProduct: (req,res) =>{
@@ -63,54 +63,54 @@ const adminController = {
     const {id} = req.params;
     console.log(req.params.id)
     const {
-      nombre,
+      name,
       editorial,
-      autor,
-      fechaPublicacion,
-      detalle,
-      caracteristica,
-      categoria,
-      precio,
+      author,
+      publishDate,
+      datail,
+      characteristic,
+      category,
+      price,
     } = req.body;
-    const productoId=dataLibros.libros.find((element)=>{
+    const productId=booksData.books.find((element)=>{
       return element.id == id
   });
 
-        nombre ? productoId.nombre = nombre: productoId.nombre;
-        editorial ? productoId.editorial = editorial: productoId.editorial;
-        autor ? productoId.autor = autor: productoId.autor;
-        fechaPublicacion ? productoId.fechaPublicacion = fechaPublicacion: productoId.fechaPublicacion;
-        detalle ? productoId.detalle = detalle: productoId.detalle;
-        caracteristica ? productoId.caracteristica = caracteristica: productoId.caracteristica;
-        categoria ? productoId.categoria = categoria: productoId.categoria;
-        precio ? productoId.precio = precio: productoId.precio;
+        name ? productId.name = name: productId.name;
+        editorial ? productId.editorial = editorial: productId.editorial;
+        author ? productId.author = author: productId.author;
+        publishDate ? productId.publishDate = publishDate: productId.publishDate;
+        datail ? productId.datail = datail: productId.datail;
+        characteristic ? productId.characteristic = characteristic: productId.characteristic;
+        category ? productId.category = category: productId.category;
+        price ? productId.price = price: productId.price;
 
         fs.writeFileSync(
           path.join(__dirname, "../dataBase/books.json"),
-          JSON.stringify(dataLibros, null, 2)
+          JSON.stringify(booksData, null, 2)
         );
     
         res.redirect("/admin");
   },
 
 
-  eliminar: (req,res)=>{
+  delete: (req,res)=>{
     console.log ("eliminando");
     const {id} = req.params;
     console.log (req.params.id);
-    const {libros} = dataLibros
+    const {books} = booksData
 
-    // const productoId= libros.find((element)=>{
+    // const productId= books.find((element)=>{
     //   return element.id == id
     // });
 
-      dataLibros.libros = dataLibros.libros.filter((element)=>{
+      booksData.books = booksData.books.filter((element)=>{
         return element.id != id
     })
     
  fs.writeFileSync(
         path.join(__dirname, "../dataBase/books.json"),
-        JSON.stringify(dataLibros, null, 2)
+        JSON.stringify(booksData, null, 2)
       );
   
       res.redirect("/admin"); // Redirigir de nuevo a la página de administrador

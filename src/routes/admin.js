@@ -9,6 +9,6 @@ route.get("/formCreate", adminController.create);
 route.post("/store", adminController.store); // Cambiado a ruta "/store"
 route.get('/editar/:id', adminController.edit); // renderiza el form edit
 route.put('/editar/:id', adminController.editProduct); // Guarda los cambios realizados
-route.delete ("/delete/:id", adminController.eliminar);
+route.delete ("/delete/:id", adminController.delete);
 
 module.exports = route;

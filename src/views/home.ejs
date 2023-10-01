@@ -38,9 +38,9 @@
         <div class="articulos_ocultos">
           <% data.map(item => { %>
           <article class="efecto_glass display_flex">
-            <img class="imagenProducto" src="/img/libros/<%= item.img %>" />
+            <img class="imagenProducto" src="/img/books/<%= item.img %>" />
             <div class="display_flex info_prod">
-              <p class="nombreProducto"><%= item.nombre %></p>
+              <p class="nombreProducto"><%= item.name %></p>
               <p class="precios">Precio por unidad: <%= item.precioUnidad %></p>
               <p class="precios">Precio al por mayor: <%= item.precioAlMayor %></p>
             </div>
@@ -168,9 +168,9 @@
         <div class="articulos_ocultos">
           <% data.map(item => { %>
           <article class="efecto_glass display_flex">
-            <img class="imagenProducto" src="/img/libros/<%= item.img %>" />
+            <img class="imagenProducto" src="/img/books/<%= item.img %>" />
             <div class="display_flex info_prod">
-              <p class="nombreProducto"><%= item.nombre %></p>
+              <p class="nombreProducto"><%= item.name %></p>
               <p class="precios">Precio por unidad: <%= item.precioUnidad %></p>
               <p class="precios">Precio al por mayor: <%= item.precioAlMayor %></p>
               </div>

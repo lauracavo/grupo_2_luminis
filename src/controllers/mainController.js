@@ -6,8 +6,8 @@ const dataBaseUp = require("../dataBase/userTest.json");
 
 const mainController = {
   home: (req, res) => {
-    const { libros } = dataProductos;
-    res.render("home", { data: libros });
+    const { books } = dataProductos;
+    res.render("home", { data: books });
   },
   
 };
