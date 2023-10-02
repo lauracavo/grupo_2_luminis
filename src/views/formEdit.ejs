@@ -7,7 +7,7 @@
 <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
     <main class="formulario_create">
-    <section id="form_create" class="efecto_glass">
+    <section id="form_create" class="glass_effect">
         <h2>Editar Producto: <%= data.name %></h2>
     <form action="/administrador/editar/<%= data.id %>?_method=PUT" method="POST">
         <label for="nombre">Nombre:</label>

@@ -10,7 +10,7 @@
 .display_flex {
   display: flex;
 }
-.efecto_glass {
+.glass_effect {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.33);
   border-radius: 16px;
@@ -455,29 +455,29 @@ p {
   text-align: center;
 }
 
-#ayuda,
-#busca_trabajo,
-#redes {
+#help,
+#looking_for_job,
+#social_media {
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#busca_trabajo {
+#looking_for_job {
   justify-content: center;
   padding: 0 10px 0 10px;
   height: 100%;
 }
 
-#redes_icons {
+#social_media_icons {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-#ayuda_boton,
-#trabaja_boton {
+#help_button,
+#work_button {
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -491,17 +491,17 @@ p {
   transition: all 0.5s ease;
 }
 
-#ayuda_boton {
+#help_button {
   width: 80%;
 }
 
-#ayuda_boton:hover,
-#trabaja_boton:hover {
+#help_button:hover,
+#work_button:hover {
   background-color: #e46f50;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-#trabaja_boton {
+#work_button {
   font-size: 10px;
 }
 .fa-facebook-square,
@@ -531,7 +531,7 @@ p {
 .fa-linkedin {
   color: #0e76a8;
 }
-.texto_footer {
+.footer_text {
   display: flex;
   justify-content: center;
 }
@@ -558,7 +558,7 @@ p {
   -webkit-background-clip: text;
 }
 
-#contacto_footer {
+#footer_contact {
   display: flex;
 }
 
@@ -602,13 +602,13 @@ p {
   #busqueda form {
     width: 350px;
   }
-  #ayuda_boton {
+  #help_button {
     font-size: 18px;
   }
-  #trabaja_boton {
+  #work_button {
     font-size: 16px;
   }
-  #redes_icons i {
+  #social_media_icons i {
     font-size: 28px;
     gap: 5px;
   }
@@ -646,12 +646,12 @@ p {
     width: 50%;
     margin-top: 35px;
   }
-  #ayuda_boton,
-  #trabaja_boton {
+  #help_button,
+  #work_button {
     font-size: 22px;
   }
 
-  #redes_icons i {
+  #social_media_icons i {
     font-size: 45px;
     margin: 3px;
   }
@@ -666,7 +666,7 @@ p {
 }
 
 @media (min-width: 1024px) {
-  #redes_icons i {
+  #social_media_icons i {
     font-size: 45px;
     margin: 10px;
   }

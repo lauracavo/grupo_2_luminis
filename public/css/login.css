@@ -85,7 +85,7 @@ input[type="email"]:focus-within {
 }
 
 .nombre_campos,
-.texto_footer {
+.footer_text {
   font-size: 16px;
 }
 
@@ -100,7 +100,7 @@ input[type="email"]:focus-within {
   }
 
   .nombre_campos,
-  .texto_footer {
+  .footer_text {
     font-size: 20px;
   }
 }
@@ -116,7 +116,7 @@ input[type="email"]:focus-within {
   }
 
   .nombre_campos,
-  .texto_footer {
+  .footer_text {
     font-size: 25px;
   }
 }
