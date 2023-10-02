@@ -13,7 +13,7 @@ route.post("/store", upload.single('profile_image'), validateRegister, usersCont
 route.get("/login", usersController.login); //localhost2020:/users/login
 route.post("/processLogin", validateLogin, usersController.processLogin); //localhost:2020/users/processLogin
 route.get("/userProfile", usersController.userProfile);//localhost2020:/users/userProfile
-route.post("/userProfile", usersController.editarEliminar);//localhost2020:/users/userProfile
+route.post("/userProfile", usersController.editDelete);//localhost2020:/users/userProfile
 
 module.exports = route;
 

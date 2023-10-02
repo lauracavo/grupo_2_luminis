@@ -16,14 +16,14 @@
         </div>
       </div>
           <div>
-            <form method="POST" action="/users/editarEliminar" enctype="multipart/form-data">
+            <form method="POST" action="/users/editDelete" enctype="multipart/form-data">
               <h3>Datos de usuario</h3>
                 <label class="nombre_campos" for="name">Nombre y Apellido:</label>
-                <input type="text" id="name" name="name" value="<%= datosUsuario.name %>"/>
+                <input type="text" id="name" name="name" value="<%= userInfo.name %>"/>
                 <label class="nombre_campos" for="email">Correo electronico:</label>
-                <input type="text" id="email" name="email" value="<%= datosUsuario.email %>"/> 
+                <input type="text" id="email" name="email" value="<%= userInfo.email %>"/> 
                 <label class="nombre_campos" for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" value="<%= datosUsuario.password %>"/>
+                <input type="password" id="password" name="password" value="<%= userInfo.password %>"/>
               <div>
                 <button id="botonEliminar" type="submit" name="action" value="delete">Eliminar Usuario</button>
                 <button id="botonEditar" type="submit" name="action" value="editar">Editar Usuario</button>

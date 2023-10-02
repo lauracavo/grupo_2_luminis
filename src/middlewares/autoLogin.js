@@ -1,9 +1,9 @@
-const arrData = require('../dataBase/usuarios.json'); // JS
-const {usuarios} = arrData;
+const arrData = require('../dataBase/users.json'); // JS
+const {users} = arrData;
 
 const autoLogin = (req, res, next) =>{
     if(req.cookies.email !== undefined){
-       const findUser = usuarios.find((aUser) => aUser.email === req.cookies.email);
+       const findUser = users.find((aUser) => aUser.email === req.cookies.email);
 
        req.session.userLogged = findUser;
 
