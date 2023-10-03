@@ -1,10 +1,14 @@
-const {Sequelize, DataTypes} = require("sequelize");
-const sequelize = new Sequelize
-const product = sequelize.define("product", {
+ const {Sequelize, DataTypes} = require ('sequelize');
+// const sequelize = new Sequelize
+ 
+
+
     //Aca definimos el modelo
-    idProduct:{
-        type:DataTypes.INTEGER,
-        allowNull: false,
+    module.exports = (sequelize, DataTypes) => {
+        const Product = sequelize.define('Product', {
+    // define los campos del modelo y tipos de datos
+    idProduct: {
+        type: DataTypes.INTEGER,        
         autoIncrement: true,
         primaryKey: true
     },
@@ -39,9 +43,19 @@ const product = sequelize.define("product", {
     stock:{
         type:DataTypes.INTEGER,
         allowNull: false
-    },
+    }},
+   {
+    timestamps: false,
+   
     tableName: 'products'
+   })
+    return Product
+    }
+  
     
-})
 
-module.exports = product;
+   
+    
+   
+
+
