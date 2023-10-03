@@ -9,40 +9,40 @@
 
     <main>
       
-        <p id="titulo">Carrito de Compras</p>
-        <table id="tabla" class="redondeada">
-          <thead id="encabezado_tabla" class="glass_effect">
+        <p id="title">Carrito de Compras</p>
+        <table id="table" class="redondeada">
+          <thead id="table_header" class="glass_effect">
             <tr>
-              <td class="titulos_tabla">Producto</th>
-              <td class="titulos_tabla">Precio Individual</th>
-              <td class="titulos_tabla">Cantidad</th>
-              <td class="titulos_tabla">Precio Total</th>
+              <td class="table_titles">Producto</th>
+              <td class="table_titles">Precio Individual</th>
+              <td class="table_titles">Cantidad</th>
+              <td class="table_titles">Precio Total</th>
             </tr>
           </thead>
-          <tbody id="cuerpo_tabla">
+          <tbody id="table_body">
             <!-- Contenido de la tabla -->
             <tr>
-              <td class="contenido_tabla"><button class="login-button">
+              <td class="table_content"><button class="login-button">
                 <i class="fa fa-trash" ></i>
               </button> Producto 1</td>
-              <td class="contenido_tabla">$50.00</td>
-              <td class="contenido_tabla">
-                <input class="cantidad_producto" type="number" value="1" min="1" max="10" />
+              <td class="table_content">$50.00</td>
+              <td class="table_content">
+                <input class="product_quantity" type="number" value="1" min="1" max="10" />
               </td>
-              <td class="contenido_tabla">$50.00</td>
+              <td class="table_content">$50.00</td>
             </tr>
             <tr>
-              <td class="contenido_tabla"><button class="login-button">
+              <td class="table_content"><button class="login-button">
                 <i class="fa fa-trash" ></i>
               </button> Producto 2</td>
-              <td class="contenido_tabla">$30.00</td>
-              <td class="contenido_tabla">
-                <input class="cantidad_producto" type="number" value="2" min="1" max="10" />
+              <td class="table_content">$30.00</td>
+              <td class="table_content">
+                <input class="product_quantity" type="number" value="2" min="1" max="10" />
               </td>
-              <td class="contenido_tabla">$60.00</td>
+              <td class="table_content">$60.00</td>
             </tr>
           </tbody>
-          <tfoot id="pie_tabla">
+          <tfoot id="table_footer">
             <!-- Pie de tabla -->
             <tr>
               <td colspan="3"><strong>Total a pagar:</strong></td>
@@ -52,23 +52,23 @@
         </table>
       
         <!-- Calculo y opciones de envio -->
-<div class="display_flex" id="bajo_tabla">
-  <div class="display_flex" id="envios_pais">
-    <p id="titulo_envio">ENVIOS A TODO EL PAÍS</p>
-    <a href="#" id="calcular_envio">Calcular envío</a>
+<div class="display_flex" id="down_table">
+  <div class="display_flex" id="country_shipping">
+    <p id="shipping_title">ENVIOS A TODO EL PAÍS</p>
+    <a href="#" id="calculate_shipping">Calcular envío</a>
   </div>
   <div class="checkbox-container">
     <label>
-      <input type="checkbox" id="envio_domicilio" />
+      <input type="checkbox" id="home_delivery" />
       <span>Envío a mi domicilio</span>
     </label>
     <label>
-      <input type="checkbox" id="retiro_sucursal" />
+      <input type="checkbox" id="shop_withdrawal" />
       <span>Retiro en sucursal</span>
     </label>
   </div>
   <div>
-    <div id="button_comprar">
+    <div id="buy_button">
       <button class="button">
         <span class="button-content">FINALIZAR COMPRA</span>
       </button>
@@ -79,12 +79,12 @@
       <!-- Sección de Seguridad y envios -->
       <section id="prefooter" class="glass_effect">
         <!-- Contenedor de Compra Segura -->
-        <div class="seccion" >
+        <div class="section" >
           <i class="fas fa-lock"></i>
           <p>COMPRA SEGURA</p>
         </div>
         <!-- Contenedor de Entrega en 48 HS -->
-        <div class="seccion">
+        <div class="section">
           <i class="fas fa-truck"></i>
           <p>ENTREGA EN 48 HS</p>
         </div>
