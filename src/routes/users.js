@@ -33,7 +33,7 @@ module.exports = route;
 //   const { username, password } = req.body;
 
 //   // Check if the remember me checkbox was checked
-//   const rememberMe = req.body.recordarme === 'on';
+//   const rememberMe = req.body.remember_me === 'on';
 
 //   // If the remember me checkbox was checked, set a cookie with the username and password
 //   if (rememberMe) {

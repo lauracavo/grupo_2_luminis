@@ -1,4 +1,4 @@
-.oculto {
+.hidden {
   display: none;
 }
 /* ----------------------- DECRIPCION CON FOTO DE LIBRERIA ------------------------- */
@@ -15,7 +15,7 @@
 div#buy_button {
   justify-content: center;
 }
-#foto_libreria {
+#bookstore_photo {
   width: 200px;
   border-radius: 0 0 0 50px;
 }
@@ -31,33 +31,33 @@ main section article {
   margin: 0px auto 40px auto;
   flex-direction: column;
 }
-.articulos_ocultos {
+.hidden_articles {
   display: none;
 }
 section div.articulos {
   justify-content: space-around;
   flex-direction: column;
 }
-section div.info_prod {
+section div.product_information {
   display: flex;
   flex-direction: column;
 }
-.imagenProducto{
+.product_image{
   width: 100px;
   height: 500px;
   border-radius: 8px;
   object-fit: cover;
   transition: all 0.5s ease;
 }
-.imagenProducto:hover{
+.product_image:hover{
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.nombreProducto {
+.product_name {
   font-size: 25px;
   font-weight: bold;
 }
-.precios {
+.prices {
   font-size: 20px;
 }
 section h3 {
@@ -65,31 +65,31 @@ section h3 {
   color: black;
   font-weight: bold;
 }
-#productos_nuevos {
+#new_products {
   margin-top: 35px;
 }
-#productos_nuevos img,
-#mas_vendidos img {
+#new_products img,
+#best_sellers img {
   object-fit: cover;
   width: 90%;
   margin: auto;
 }
-#mas_vendidos {
+#best_sellers {
   margin-top: 10px;
 }
-#mas_vendidos div#descripcion {
+#best_sellers div#descripcion {
   width: 100%;
 }
 
-#mas_vendidos div#descripcion p,
-#mas_vendidos h3 {
+#best_sellers div#descripcion p,
+#best_sellers h3 {
   justify-items: center;
 }
-div.boton {
+div.button_container {
   display: flex;
   justify-content: center;
 }
-.verMas {
+.watch_more {
   text-decoration: none;
   color: white;
 }
@@ -99,12 +99,12 @@ div.boton {
   #carouselExampleIndicators {
     display: none;
   }
-  .articulos_ocultos {
+  .hidden_articles {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .oculto {
+  .hidden {
     display: block;
   }
   section div.articulos {
@@ -120,7 +120,7 @@ div.boton {
 }
 
 @media (min-width: 1024px) {
-  #foto_libreria {
+  #bookstore_photo {
     width: 500px;
   }
   main section article {

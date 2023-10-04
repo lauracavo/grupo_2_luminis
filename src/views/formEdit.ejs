@@ -6,11 +6,11 @@
 </head>
 <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="formulario_create">
+    <main class="main_form_create">
     <section id="form_create" class="glass_effect">
         <h2>Editar Producto: <%= data.name %></h2>
-    <form action="/administrador/editar/<%= data.id %>?_method=PUT" method="POST">
-        <label for="nombre">Nombre:</label>
+    <form action="/admin/editar/<%= data.id %>?_method=PUT" method="POST">
+        <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" value="<%= data.name %>" required><br>
         
         <label for="editorial">Editorial:</label>
@@ -35,7 +35,7 @@
         <input type="number" id="price" name="price" step="0.01" value="<%= data.price %>" required><br>
         
         
-        <button class="editar_producto" type="submit">Guardar Cambios</button>
+        <button class="submit_edit_product" type="submit">Guardar Cambios</button>
     </form>
         
       

@@ -8,40 +8,40 @@
 
   <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="formularios_register">
-      <section id="formulario_inicio_register" class="glass_effect">
+    <main class="main_register_form">
+      <section id="register_form" class="glass_effect">
         <div>
           <form method="POST" action="/users/store" enctype="multipart/form-data">
             <h3>REGISTRAR USUARIO</h3>
-            <label class="nombre_campos" for="name">Nombre y Apellido:</label>
+            <label class="fields_name" for="name">Nombre y Apellido:</label>
             <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
               <% if (locals.errors && errors.name){ %>
                 <div> <%= errors.name.msg %> </div>
                 <% } %>
-            <label class="nombre_campos" for="email">Correo electronico:</label>
+            <label class="fields_name" for="email">Correo electronico:</label>
             <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
             <% if (locals.errors && errors.email){ %> 
               <!-- era error."el valor que pasamos por name" -->
               <div> <%= errors.email.msg %> </div>
               <% } %>
 
-            <div id="soy_docente">
-              <label class="nombre_campos" for="teacher">Soy docente:</label>
-              <input id="checkbox_docente" type="checkbox" name="teacher" />
+            <div id="im_teacher">
+              <label class="fields_name" for="teacher">Soy docente:</label>
+              <input id="teacher_checkbox" type="checkbox" name="teacher" />
             </div>
 
-            <label class="nombre_campos" for="code"
+            <label class="fields_name" for="code"
               >Código de verificacíon:</label
             >
             <input type="text" id="code" name="code" />
 
-            <label class="nombre_campos" for="password">Contraseña:</label>
+            <label class="fields_name" for="password">Contraseña:</label>
             <input type="password" id="password" name="password" />
             <% if (locals.errors && errors.password){ %>
               <div> <%= errors.password.msg %> </div>
               <% } %>
 
-            <label class="nombre_campos" for="passwordR"
+            <label class="fields_name" for="passwordR"
               >Repetir contraseña:</label
             >
             <input type="password" id="password" name="passwordR" />
@@ -49,21 +49,21 @@
               <div> <%= errors.passwordR.msg %> </div>
               <% } %>
                 
-            <label for="profile_image" class="nombre_campos"
+            <label for="profile_image" class="fields_name"
               >Imagen de perfil:</label
             >
-            <input type="file" name="profile_image" class="nombre_campos" />
+            <input type="file" name="profile_image" class="fields_name" />
 
-            <input id="registrarme" type="submit" value="Registrarme" />
+            <input id="submit_register" type="submit" value="Registrarme" />
             <br />
-            <p class="nombre_campos">
+            <p class="fields_name">
               ¿Ya tenés una cuenta? Inicia sesión
-              <a class="nombre_campos" href="#">aqui.</a>
+              <a class="fields_name" href="#">aqui.</a>
             </p>
           </form>
         </div>
       </section>
-      <div id="placa_izquierda">
+      <div id="left_panel">
         <p>¡BIENVENIDO!</p>
       </div>
     </main>

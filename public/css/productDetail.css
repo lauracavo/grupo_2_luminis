@@ -45,17 +45,17 @@ main section article {
 }
 
 /* ------------Css image */
-#uno {
+#one {
   padding: 2%;
   width: 75%;
 }
 
-#dos {
+#two {
   padding: 2%;
   width: 75%;
 }
 
-#tres {
+#three {
   padding: 2%;
   width: 75%;
 }
@@ -70,7 +70,7 @@ main section article {
   padding-top: 4px;
 }
 
-#envio {
+#shipping {
   color: blue;
   padding-top: 4px;
 }
@@ -111,7 +111,7 @@ main section article {
   display: flex;
   justify-content: space-around;
 }
-.details__envio {
+.details_shipping {
   display: flex;
   justify-content: space-around;
 }
@@ -293,10 +293,10 @@ main section article {
   #ok {
     font-size: 70px;
   }
-  #envio {
+  #shipping {
     font-size: 70px;
   }
-  .datails__envio {
+  .details__shipping {
     font-size: 30px;
   }
   .details__button {
@@ -323,7 +323,7 @@ main section article {
     font-size: 30px;
   }
 
-.details__envio, .details__stock, .details__prices {
+.details_shipping, .details__stock, .details__prices {
   display: flex;
   align-items: center;
   justify-content: space-evenly;

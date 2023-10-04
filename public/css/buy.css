@@ -177,11 +177,11 @@ button:hover {
   margin-bottom: 5px;
 }
 
-.back_side .credit_card_data #firma {
+.back_side .credit_card_data #signature_container {
   width: 70%;
 }
 
-.back_side .credit_card_data #firma .firma {
+.back_side .credit_card_data #signature_container .signature {
   height: 40px;
   background: repeating-linear-gradient(
     skyblue 0,
@@ -191,7 +191,7 @@ button:hover {
   );
 }
 
-.back_side .credit_card_data #firma .firma p {
+.back_side .credit_card_data #signature_container .signature p {
   line-height: 40px;
   font-family: "Liu Jian Mao Cao", cursive;
   color: #000;
@@ -212,7 +212,7 @@ button:hover {
   text-align: center;
 }
 
-.back_side .leyenda {
+.back_side .legend {
   font-size: 14px;
   line-height: 24px;
 }
@@ -223,7 +223,7 @@ button:hover {
 }
 
 /* ---------- Contenedor Boton ----------*/
-.contenedor-btn .btn-abrir-formulario {
+.container-btn .btn-open-form {
   width: 50px;
   height: 50px;
   font-size: 20px;
@@ -241,16 +241,16 @@ button:hover {
   cursor: pointer;
 }
 
-.contenedor-btn .btn-abrir-formulario:hover {
+.container-btn .btn-open-form:hover {
   background: #1850b1;
 }
 
-.contenedor-btn .btn-abrir-formulario.active {
+.container-btn .btn-open-form.active {
   transform: rotate(45deg);
 }
 
 /* ---------- Formulario Tarjeta ----------*/
-.formulario-tarjeta {
+.credit_card_form {
   background: #fff;
   width: 100%;
   max-width: 700px;
@@ -263,20 +263,20 @@ button:hover {
   transition: clip-path 0.3s ease-out;
 }
 
-.formulario-tarjeta.active {
+.credit_card_form.active {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.formulario-tarjeta label {
+.credit_card_form label {
   display: block;
   color: #7d8994;
   margin-bottom: 5px;
   font-size: 16px;
 }
 
-.formulario-tarjeta input,
-.formulario-tarjeta select,
-.btn-enviar {
+.credit_card_form input,
+.credit_card_form select,
+.btn-send {
   border: 2px solid #ced6e0;
   font-size: 18px;
   height: 50px;
@@ -286,47 +286,47 @@ button:hover {
   border-radius: 5px;
 }
 
-.formulario-tarjeta input:hover,
-.formulario-tarjeta select:hover {
+.credit_card_form input:hover,
+.credit_card_form select:hover {
   border: 2px solid #93bded;
 }
 
-.formulario-tarjeta input:focus,
-.formulario-tarjeta select:focus {
+.credit_card_form input:focus,
+.credit_card_form select:focus {
   outline: rgb(4, 4, 4);
   box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
 }
 
-.formulario-tarjeta input {
+.credit_card_form input {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 
-.formulario-tarjeta .flexbox {
+.credit_card_form .flexbox {
   display: flex;
   justify-content: space-between;
 }
 
-.formulario-tarjeta .expire {
+.credit_card_form .expire {
   width: 100%;
 }
 
-.formulario-tarjeta .ccv {
+.credit_card_form .ccv {
   min-width: 100px;
 }
 
-.formulario-tarjeta .group-select {
+.credit_card_form .group-select {
   width: 100%;
   margin-right: 15px;
   position: relative;
 }
 
-.formulario-tarjeta select {
+.credit_card_form select {
   -webkit-appearance: none;
   appearance: none;
 }
 
-.formulario-tarjeta .group-select i {
+.credit_card_form .group-select i {
   position: absolute;
   color: #ced6e0;
   top: 18px;
@@ -334,11 +334,11 @@ button:hover {
   transition: 0.3s ease all;
 }
 
-.formulario-tarjeta .group-select:hover i {
+.credit_card_form .group-select:hover i {
   color: #93bfed;
 }
 
-.formulario-tarjeta .btn-enviar {
+.credit_card_form .btn-send {
   border: none;
   padding: 10px;
   font-size: 22px;
@@ -348,7 +348,7 @@ button:hover {
   cursor: pointer;
 }
 
-.formulario-tarjeta .btn-enviar:hover {
+.credit_card_form .btn-send:hover {
   background: #1850b1;
 }
 

@@ -8,12 +8,12 @@
 
   <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="formularios_login">
-      <section id="formulario_inicio_login" class="glass_effect">
+    <main class="login_form_main">
+      <section id="login_form" class="glass_effect">
         <div>
           <form action="/users/processLogin" method="post">
             <h3>INGRESAR</h3>
-            <label class="nombre_campos" for="email">Correo electronico:</label>
+            <label class="fields_name" for="email">Correo electronico:</label>
             <input type="email" id="email" name="email"/>
             <% if (locals.errors && errors.email){ %>
               <div> <%= errors.email.msg %> </div>
@@ -27,27 +27,27 @@
               </div>
             <% } %>
 
-            <label class="nombre_campos" for="password">Contraseña:</label>
+            <label class="fields_name" for="password">Contraseña:</label>
             <input type="password" id="password" name="password"/>
             <% if (locals.errors && errors.password){ %>
               <div> <%= errors.password.msg %> </div>
               <% } %>
 
-            <div id="recordarme">
-              <label class="nombre_campos" for="recordarme">Recordarme:</label>
-              <input id="checkbox_recordarme" type="checkbox" name="recordarme"/>
+            <div id="remember_me">
+              <label class="fields_name" for="remember_me">Recordarme:</label>
+              <input id="checkbox_recordarme" type="checkbox" name="remember_me"/>
             </div>
 
-            <input id="iniciar_sesion" type="submit" value="Iniciar sesión" />
+            <input id="submit_login" type="submit" value="Iniciar sesión" />
             <br />
-            <p class="nombre_campos">
+            <p class="fields_name">
               ¿No estás registrado? Registrate
-              <a class="nombre_campos" href="#">aqui.</a>
+              <a class="fields_name" href="#">aqui.</a>
             </p>
           </form>
         </div>
       </section>
-      <div id="placa_derecha">
+      <div id="right_panel">
         <p>¡HOLA DE NUEVO!</p>
       </div>
     </main>

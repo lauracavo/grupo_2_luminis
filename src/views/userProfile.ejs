@@ -9,24 +9,24 @@
   <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
     <main>
-      <h1 id="miPerfil">MI PERFIL</h1>
-      <div id="contenedorFotoPerfil">
-        <div id="fotoPerfil">
+      <h1 id="my_profile">MI PERFIL</h1>
+      <div id="profile_image_container">
+        <div id="profile_image">
           <img src="/img/usersProfile_images/avatar-1694739964634.JPG" alt="foto de perfil" >
         </div>
       </div>
           <div>
             <form method="POST" action="/users/editDelete" enctype="multipart/form-data">
               <h3>Datos de usuario</h3>
-                <label class="nombre_campos" for="name">Nombre y Apellido:</label>
+                <label class="fields_name" for="name">Nombre y Apellido:</label>
                 <input type="text" id="name" name="name" value="<%= userInfo.name %>"/>
-                <label class="nombre_campos" for="email">Correo electronico:</label>
+                <label class="fields_name" for="email">Correo electronico:</label>
                 <input type="text" id="email" name="email" value="<%= userInfo.email %>"/> 
-                <label class="nombre_campos" for="password">Contraseña:</label>
+                <label class="fields_name" for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" value="<%= userInfo.password %>"/>
               <div>
-                <button id="botonEliminar" type="submit" name="action" value="delete">Eliminar Usuario</button>
-                <button id="botonEditar" type="submit" name="action" value="editar">Editar Usuario</button>
+                <button id="delete_button" type="submit" name="action" value="delete">Eliminar Usuario</button>
+                <button id="edit_button" type="submit" name="action" value="editar">Editar Usuario</button>
               </div>
             </form>
           </div>

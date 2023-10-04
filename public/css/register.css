@@ -1,19 +1,19 @@
 /* ------------------REGISTER---------------------- */
 
-#formulario_inicio_register {
+#register_form {
   width: 70%;
   margin-left: 20px;
   padding: 20px;
 }
 
-.formularios_register {
+.main_register_form {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   margin-left: 0;
 }
 
-#placa_izquierda {
+#left_panel {
   padding: 5px;
   background-color: #2a9d8f;
   font-weight: bold;
@@ -25,7 +25,7 @@
   border-radius:  0 50px 50px 0;
 }
 
-#registrarme {
+#submit_register {
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -39,44 +39,44 @@
   transition: all 0.5s ease;
 }
 
-#registrarme:hover {
+#submit_register:hover {
   background-color:#e46f50;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-#soy_docente {
+#im_teacher {
   display: flex;
   gap: 5px;
   align-content: center;
   margin-top: 10px;
 }
 
-#checkbox_docente {
+#teacher_checkbox {
   width: 20px;
   accent-color: #2a9d8f;
   transition: all 0.5s ease;
 }
 
-#checkbox_docente:hover {
+#teacher_checkbox:hover {
   transform: rotate(360deg);
 }
 
 @media (min-width: 426px) {
-  #placa_izquierda {
+  #left_panel {
     font-size: 25px;
   }
 
-  #registrarme {
+  #submit_register {
     font-size: 18px;
   }
 }
 
 @media (min-width: 769px) {
-  #placa_izquierda {
+  #left_panel {
     font-size: 35px;
   }
 
-  #registrarme {
+  #submit_register {
     font-size: 22px;
   }
 }

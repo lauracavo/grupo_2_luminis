@@ -4,7 +4,7 @@
     padding: 20px;
 }
 
-.formulario_create {
+.main_form_create {
     display: flex;
     justify-content: space-between;
     margin-right: 0;
@@ -28,8 +28,8 @@ option:focus-within {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-.agregar_producto,
-.editar_producto {
+.submit_product,
+.submit_edit_product {
     font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -43,28 +43,28 @@ option:focus-within {
   transition: all 0.5s ease;
 }
 
-.agregar_producto:hover {
+.submit_product:hover {
     background-color: #e46f50;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 426px) {
-    .agregar_producto {
+    .submit_product {
       font-size: 18px;
     }
   
-    .nombre_campos,
+    .fields_name,
     .footer_text {
       font-size: 20px;
     }
   }
   
   @media (min-width: 769px) {
-    .agregar_producto {
+    .submit_product {
       font-size: 22px;
     }
   
-    .nombre_campos,
+    .fields_name,
     .footer_text {
       font-size: 25px;
     }
