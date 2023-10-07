@@ -13,11 +13,29 @@
         <div>
           <form method="POST" action="/users/store" enctype="multipart/form-data">
             <h3>REGISTRAR USUARIO</h3>
-            <label class="fields_name" for="name">Nombre y Apellido:</label>
+            
+            <!-- Nombre -->
+            <label class="fields_name" for="name">Nombre:</label>
             <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
               <% if (locals.errors && errors.name){ %>
                 <div> <%= errors.name.msg %> </div>
                 <% } %>
+
+            <!-- Apellido -->
+            <label class="fields_name" for="lastName">Apellido:</label>
+            <input type="text" id="lastName" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>"/>
+              <% if (locals.errors && errors.lastName){ %>
+                <div> <%= errors.lastName.msg %> </div>
+                <% } %>
+
+            <!-- DNI -->
+            <label class="fields_name" for="dni">DNI:</label>
+            <input type="number" id="dni" name="dni" value="<%= locals.old && old.dni ? old.dni : '' %>"/>
+              <% if (locals.errors && errors.dni){ %>
+                <div> <%= errors.dni.msg %> </div>
+                <% } %>
+
+            <!-- Email -->
             <label class="fields_name" for="email">Correo electronico:</label>
             <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
             <% if (locals.errors && errors.email){ %> 
@@ -25,15 +43,26 @@
               <div> <%= errors.email.msg %> </div>
               <% } %>
 
+            <!-- Soy Docente -->
             <div id="im_teacher">
               <label class="fields_name" for="teacher">Soy docente:</label>
               <input id="teacher_checkbox" type="checkbox" name="teacher" />
             </div>
 
+            <!-- Codigo -->
             <label class="fields_name" for="code"
               >Código de verificacíon:</label
             >
             <input type="text" id="code" name="code" />
+
+
+            <!-- Usuario -->
+            <label class="fields_name" for="username">Usuario:</label>
+            <input type="text" id="username" name="username" value="<%= locals.old && old.username ? old.username : '' %>"/>
+              <% if (locals.errors && errors.username){ %>
+                <div> <%= errors.username.msg %> </div>
+                <% } %>
+
 
             <label class="fields_name" for="password">Contraseña:</label>
             <input type="password" id="password" name="password" />
@@ -48,6 +77,49 @@
             <% if (locals.errors && errors.passwordR){ %>
               <div> <%= errors.passwordR.msg %> </div>
               <% } %>
+
+            <!-- Numero de celular -->
+            <label class="fields_name" for="cellPhone">Numero de telefono:</label>
+            <input type="number" id="cellPhone" name="cellPhone" value="<%= locals.old && old.cellPhone ? old.cellPhone : '' %>"/>
+              <% if (locals.errors && errors.cellPhone){ %>
+                <div> <%= errors.cellPhone.msg %> </div>
+                <% } %>
+
+            <!-- Dirección -->
+            <label class="fields_name" for="address">Dirección:</label>
+            <input type="text" id="address" name="address" value="<%= locals.old && old.address ? old.address : '' %>"/>
+              <% if (locals.errors && errors.address){ %>
+                <div> <%= errors.address.msg %> </div>
+                <% } %>
+
+            <!-- Ciudad -->
+            <label class="fields_name" for="city">Ciudad:</label>
+            <input type="text" id="city" name="city" value="<%= locals.old && old.city ? old.city : '' %>"/>
+              <% if (locals.errors && errors.city){ %>
+                <div> <%= errors.city.msg %> </div>
+                <% } %>
+
+            <!-- Provincia -->
+            <label class="fields_name" for="province">Provincia:</label>
+            <input type="text" id="province" name="province" value="<%= locals.old && old.province ? old.province : '' %>"/>
+              <% if (locals.errors && errors.province){ %>
+                <div> <%= errors.province.msg %> </div>
+                <% } %>
+
+            <!-- Codigo Postal -->
+            <label class="fields_name" for="cp">Codigo Postal:</label>
+            <input type="number" id="cp" name="cp" value="<%= locals.old && old.cp ? old.cp : '' %>"/>
+              <% if (locals.errors && errors.cp){ %>
+                <div> <%= errors.cp.msg %> </div>
+                <% } %>
+
+            
+            <label class="fields_name" for="rol">Selecciona un rol:</label>
+            <select id="rol" name="rol" value="<%= locals.old && old.rol ? old.rol : '' %>">
+                  <option value="user">Usuario</option>
+                  <option value="teacher">Docente</option>
+                  <option value="admin">Administrador</option>
+                </select>
                 
             <label for="profile_image" class="fields_name"
               >Imagen de perfil:</label

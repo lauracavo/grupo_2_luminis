@@ -13,7 +13,7 @@ const {Sequelize, DataTypes} = require ('sequelize');
         primaryKey: true
     },
     date:{
-        type:DataTypes.STRING,
+        type:DataTypes.date,
         allowNull:false,
     },
     idUser:{
