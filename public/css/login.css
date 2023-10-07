@@ -77,7 +77,7 @@ select:focus-within {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 40%;
   font-size: 20px;
   border-radius: 50px 0 0 50px;
 }

@@ -15,12 +15,13 @@
 
 #left_panel {
   padding: 5px;
+  padding-top: 200px;
   background-color: #2a9d8f;
   font-weight: bold;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
-  width: 30%;
+  width: 40%;
   font-size: 20px;
   border-radius:  0 50px 50px 0;
 }
