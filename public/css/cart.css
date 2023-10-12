@@ -1,5 +1,5 @@
 /* Ocultar botón de comprar en el header */
-header #button_comprar {
+header #buy_button {
   display: none;
 }
 
@@ -42,7 +42,7 @@ main {
 
 
 /* Estilos para el título de la sección de carrito */
-#titulo {
+#title {
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -54,7 +54,7 @@ main {
 }
 
 /* Estilos para la tabla */
-#tabla {
+#table {
   width: 100%;
   margin-top: 20px;
   border-collapse: separate; /* Cambiamos a 'separate' para poder aplicar bordes redondeados */
@@ -66,8 +66,8 @@ main {
 }
 
 /* Estilos para las celdas del encabezado y cuerpo de la tabla */
-#tabla th,
-#tabla td {
+#table th,
+#table td {
   padding: 8px;
   text-align: center;
   border: none; /* Quitamos el borde entre celdas */
@@ -77,14 +77,14 @@ main {
 
 
 /* Estilos para las celdas del encabezado de la tabla */
-#tabla th {
+#table th {
   font-weight: bold;
 }
 
 
 
 /* Estilos para el botón de eliminar y el contenido de la tabla */
-#tabla .login-button {
+#table .login-button {
   background-color: #2a9d8f;
   color: #fff;
   border: none;
@@ -97,14 +97,14 @@ main {
   line-height: 1;
 }
 
-#tabla .login-button i {
+#table .login-button i {
   vertical-align: middle; /* Centrar el ícono verticalmente */
 }
 
 
 
 /* Estilos para el input de cantidad de productos */
-.cantidad_producto[type="number"] {
+.product_quantity[type="number"] {
   width: 40px;
 }
 
@@ -112,18 +112,18 @@ main {
 
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
-  #tabla thead {
+  #table thead {
     display: none; /* Ocultar el encabezado de la tabla en pantallas pequeñas */
   }
 
   
 
-  #tabla tr {
+  #table tr {
     display: block;
     
   }
 
-  #tabla td::before {
+  #table td::before {
     /* Agregar etiquetas de encabezado personalizadas */
     content: attr(data-label);
     font-weight: bold;
@@ -132,26 +132,26 @@ main {
 }
 
 /* Estilos para el campo de código postal */
-input#envio {
+input#shipping {
   border-radius: 15px;
   height: 30px;
   padding-left: 30px;
 }
 
 /* Estilos para el título de envíos */
-#titulo_envio {
+#shipping_title {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 /* Cambio de dirección de los elementos en envíos a columnas */
-#envios_pais {
+#country_shipping {
   flex-direction: column;
 }
 
 /* Estilos para el label de envíos */
-#envios_pais label {
+#country_shipping label {
   display: flex;
   flex-direction: column;
 }
@@ -161,7 +161,7 @@ input#envio {
 
 
 /* Espaciado entre elementos en la parte inferior de la tabla */
-#bajo_tabla {
+#down_table {
   justify-content: space-between;
 }
 
@@ -170,19 +170,19 @@ input#envio {
   /* Estilos para pantallas pequeñas (hasta 426px) */
 
   /* Ocultar el encabezado de la tabla en pantallas pequeñas */
-  #tabla thead {
+  #table thead {
     display: none;
   }
 
   /* Estilos para las celdas del cuerpo de la tabla en pantallas pequeñas */
-  #tabla td {
+  #table td {
     border-bottom: 1px solid #ddd; /* Agregar bordes inferiores para separar las filas */
     display: block;
     text-align: right; /* Alineación de texto a la derecha */
   }
 
   /* Estilos para las celdas del contenido de la tabla en pantallas pequeñas */
-  #tabla td::before {
+  #table td::before {
     /* Agregar etiquetas de encabezado personalizadas */
     content: attr(data-label);
     font-weight: bold;
@@ -190,7 +190,7 @@ input#envio {
   }
 
   /* Estilos para las filas de la tabla en pantallas pequeñas */
-  #tabla tr {
+  #table tr {
     display: block;
     margin-bottom: 10px; /* Espaciado entre filas */
     background-color: transparent; /* Fondo transparente para filas */
@@ -198,27 +198,27 @@ input#envio {
   }
 
   /* Estilos para el botón de eliminar en pantallas pequeñas */
-  #tabla .login-button {
+  #table .login-button {
     float: right; /* Alineación del botón a la derecha */
     margin: 0 5px;
   }
 
   /* Estilos para el input de cantidad de productos en pantallas pequeñas */
-  .cantidad_producto[type="number"] {
+  .product_quantity[type="number"] {
     width: 40px;
     margin: 0 5px;
     text-align: center;
   }
 
   /* Estilos para el pie de la tabla en pantallas pequeñas */
-  #pie_tabla tr {
+  #table_footer tr {
     display: block;
      /* Color de fondo para el pie de la tabla */
     border-radius: 10px; /* Borde redondeado para el pie de la tabla */
   }
   
   /* Estilos para el total a pagar en el pie de la tabla en pantallas pequeñas */
-  #pie_tabla td {
+  #table_footer td {
     text-align: right; /* Alineación de texto a la derecha */
   }
 
@@ -228,46 +228,46 @@ input#envio {
   /* Estilos para pantallas medianas (entre 426px y 768px) */
 
   /* Estilos para el encabezado de la tabla en pantallas medianas */
-  #tabla thead {
+  #table thead {
     display: table-header-group; /* Mostrar el encabezado de la tabla como grupo */
   }
 
   /* Restaurar la visualización normal de las celdas del cuerpo de la tabla en pantallas medianas */
-  #tabla td {
+  #table td {
      /* Agregar bordes inferiores para separar las filas */
     display: table-cell;
     text-align: center; /* Alineación de texto al centro */
   }
 
   /* Restaurar la visualización normal de las filas de la tabla en pantallas medianas */
-  #tabla tr {
+  #table tr {
     display: table-row;
      /* Color de fondo para las filas */
     border-radius: 10px; /* Borde redondeado para las filas */
   }
 
   /* Estilos para el botón de eliminar en pantallas medianas */
-  #tabla .login-button {
+  #table .login-button {
     float: none; /* Restaurar la alineación del botón */
     margin: 0; /* Restaurar el margen del botón */
   }
 
   /* Estilos para el input de cantidad de productos en pantallas medianas */
-  .cantidad_producto[type="number"] {
+  .product_quantity[type="number"] {
     width: 100px; /* Ancho del input */
     margin: 0; /* Restaurar el margen del input */
     text-align: center; /* Alineación de texto al centro */
   }
 
   /* Estilos para el pie de la tabla en pantallas medianas */
-  #pie_tabla tr {
+  #table_footer tr {
     display: table-row;
      /* Color de fondo para el pie de la tabla */
     border-radius: 10px; /* Borde redondeado para el pie de la tabla */
   }
 
   /* Estilos para el total a pagar en el pie de la tabla en pantallas medianas */
-  #pie_tabla td {
+  #table_footer td {
     text-align: right; /* Alineación de texto a la derecha */
   }
 }
@@ -277,18 +277,18 @@ input#envio {
   /* Estilos para pantallas medianas/grandes (entre 769px y 1024px) */
 
   /* Estilos adicionales para la tabla en pantallas medianas/grandes */
-  #tabla {
+  #table {
     font-size: 14px; /* Tamaño de fuente más pequeño */
   }
 
   /* Estilos para el input de cantidad de productos en pantallas medianas/grandes */
-  .cantidad_producto[type="number"] {
+  .product_quantity[type="number"] {
     width: 80px; /* Ancho del input */
     font-size: 14px; /* Tamaño de fuente más pequeño */
   }
 
   /* Estilos para el pie de la tabla en pantallas medianas/grandes */
-  #pie_tabla {
+  #table_footer {
     font-size: 16px; /* Tamaño de fuente más grande para el pie de tabla */
   }
 }
@@ -303,7 +303,7 @@ input#envio {
 }
 
 /* Estilos para el contenedor de Compra Segura y Entrega en 48 HS */
-.seccion {
+.section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -311,14 +311,14 @@ input#envio {
 }
 
 /* Estilos para los iconos */
-.seccion i {
+.section i {
   font-size: 30px;
   color: #2a9d8f;
   margin-bottom: 10px;
 }
 
 /* Estilos para el texto */
-.seccion p {
+.section p {
   font-size: 14px;
   font-weight: bold;
   color: #2a9d8f;
@@ -332,12 +332,12 @@ input#envio {
     align-items: center;
   }
 
-  .seccion {
+  .section {
     margin-bottom: 10px;
   }
 
   /* Ajustar espaciado en pantallas más pequeñas */
-  .seccion {
+  .section {
     gap: 5px;
   }
 
@@ -361,7 +361,7 @@ input#envio {
 
 }
 /* Ajustar el espacio entre los elementos de la sección */
-#bajo_tabla {
+#down_table {
   margin-top: 20px;
   justify-content: space-between;
 }

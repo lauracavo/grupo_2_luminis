@@ -2,7 +2,7 @@
 main {
   margin: 40px;
 }
-#formulario_inicio_login {
+#login_form {
   width: 70%;
   margin-right: 20px;
   padding: 20px;
@@ -15,7 +15,9 @@ label {
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="number"],
+select {
   width: 100%;
   padding: 8px;
   border-radius: 20px;
@@ -26,7 +28,9 @@ input[type="email"] {
 
 input[type="text"]:focus-within,
 input[type="password"]:focus-within,
-input[type="email"]:focus-within {
+input[type="email"]:focus-within,
+input[type="number"]:focus-within,
+select:focus-within {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -40,14 +44,14 @@ input[type="email"]:focus-within {
   transform: rotate(360deg);
 }
 
-#recordarme {
+#remember_me {
   display: flex;
   gap: 5px;
   align-content: center;
   margin-top: 10px;
 }
 
-#iniciar_sesion {
+#submit_login {
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -61,61 +65,61 @@ input[type="email"]:focus-within {
   transition: all 0.5s ease;
 }
 
-#iniciar_sesion:hover {
+#submit_login:hover {
   background-color: #e46f50;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
-#placa_derecha {
+#right_panel {
   padding-left: 20px;
   background-color: #2a9d8f;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30%;
+  width: 40%;
   font-size: 20px;
   border-radius: 50px 0 0 50px;
 }
 
-.formularios_login {
+.login_form_main {
   display: flex;
   justify-content: space-between;
   margin-right: 0;
 }
 
-.nombre_campos,
+.fields_name,
 .footer_text {
   font-size: 16px;
 }
 
 @media (min-width: 426px) {
-  #iniciar_sesion {
+  #submit_login {
     font-size: 18px;
   }
 
-  #placa_derecha {
+  #right_panel {
     font-size: 25px;
     padding-right: 10px;
   }
 
-  .nombre_campos,
+  .fields_name,
   .footer_text {
     font-size: 20px;
   }
 }
 
 @media (min-width: 769px) {
-  #iniciar_sesion {
+  #submit_login {
     font-size: 22px;
   }
 
-  #placa_derecha {
+  #right_panel {
     font-size: 35px;
     padding-right: 10px;
   }
 
-  .nombre_campos,
+  .fields_name,
   .footer_text {
     font-size: 25px;
   }

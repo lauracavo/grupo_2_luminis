@@ -12,12 +12,12 @@
     <main>
       <aside>
         <!------   BOTONES FILTRAR     ------>
-        <div class="filtros glass_effect">
+        <div class="filters glass_effect">
           <a href="#" class="btn">
             <span><i class="fa-duotone fa-right-left"></i></span>
             ORDENAR POR
           </a>
-          <span class="separador"></span>
+          <span class="separator"></span>
           <a href="#" class="btn">
             <span><i class="fa-solid fa-sliders"></i></span>
             FILTRAR
@@ -34,13 +34,13 @@
 
       <!------   GRID DE IMAGENES   ------>
 
-      <div class="itemTarjeta glass_effect">
-        <% data.map(item => { %>
+      <div class="product_card_item glass_effect">
+        <% products.map(item => { %>
         <img src="../img/books/<%= item.img %>" alt="<%= item.name %>" />
         <% }); %>
       </div>
 
-      <div class="boton">
+      <div class="button_container">
         <button class="button">
           <span class="button-content">VER MAS PRODUCTOS</span>
         </button>

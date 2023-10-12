@@ -8,46 +8,46 @@
 <body>
 	<%- include('./partials/menu') %> <%- include('./partials/header') %>
 	<main>
-		<div class="contenedor"></div>
+		<div class="container"></div>
 			<form action="" method="post">
-				<div class="glass_effect" id="diseño">
+				<div class="glass_effect" id="design">
 				<h2> DATOS PERSONALES </h2><br>
 					<label for="email">Correo Electronico</label>
 					<input type="text" name="email" id="email"><br>
 					
-					<label for="nombre-apellido"> Nombre y apellido</label>
-					<input type="text" name="nombre y apellido" id="nombre-apellido"><br>
+					<label for="full_name"> Nombre y apellido</label>
+					<input type="text" name="full_name" id="full_name"><br>
 					<label for="dni"> DNI</label>
 					<input type="text" name="dni" id="DNI"><br>
-					<label for="telefono"> Telefono</label>
-					<input type="text" name="telefono" id="telefono">
+					<label for="phone_number"> Telefono</label>
+					<input type="text" name="phone_number" id="phone_number">
 				</div>
 			</form>
 			<br>
 			<br>
 			<form action="" method="post">
-				<div class="glass_effect" id="diseño">
+				<div class="glass_effect" id="design">
 				<h2>DOMICILIO Y ENTREGA</h2><br>
 				<br>
-					<label for="codigopostal">Codigo postal</label>
-					<input type="text" name="codigopostal" id="codigopostal"><br>
-					<label for="calle">Calle</label>
-					<input type="text" name="calle" id="calle">
-					<label for="numero">Numero</label>
-					<input type="text" name="numero" id="numero">
+					<label for="postal_code">Codigo postal</label>
+					<input type="text" name="postal_code" id="postal_code"><br>
+					<label for="street">Calle</label>
+					<input type="text" name="street" id="street">
+					<label for="number">Numero</label>
+					<input type="text" name="number" id="number">
 				</div>
 			</form>
 			<form action="" method="get">
-				<div class="glass_effect" id="diseño">
+				<div class="glass_effect" id="design">
 				<h2> PROVINCIA</h2><br>
-					<select name="Provincia">
+					<select name="province">
 						<option value="buenosaires">Buenos Aires</option>
 						<option value="chubut">Chubut</option>
 						<option value="SantaFe">Santa Fe</option>
 						<option value="Cordoba">Cordoba</option>
 					</select>
 				<label> Localidad</label>
-					<select name="ciudad">
+					<select name="city">
 						<option value="Sannicolas">San Nicolas</option>
 						<option value="rosario">Rosario</option>
 						<option value="Trelew">Trelew</option>
@@ -57,27 +57,27 @@
 			</form>
 			<br>
 			<form action="" method="get">
-				<div class="glass_effect" id="diseño">
+				<div class="glass_effect" id="design">
 				<h2>ELIJA EL TIPO DE ENTREGA</h2><br>
 				<br>
-					<input type="radio" name="medio" id="medio">
-					<label for="medio">Retiro por sucursal - Gratis.</label>
-					<input type="radio" name="medio" id="medio">
-					<label for="medio">Envio a domicilio - $1200</label>
+					<input type="radio" name="method" id="method">
+					<label for="method">Retiro por sucursal - Gratis.</label>
+					<input type="radio" name="method" id="method">
+					<label for="method">Envio a domicilio - $1200</label>
 				</div>
 			</form>
 			<br>
 			<form action="" method="get">
-				<div class="glass_effect" id="diseño">
+				<div class="glass_effect" id="design">
 				<h2>PAGO</h2><br>
-					<input type="radio" name="pago" id="pago">
-					<label for="pago">Efectivo</label><br>
-					<input type="radio" name="pago" id="pago">
-					<label for="pago">Tarjeta de Debito</label><br>
-					<input type="radio" name="pago" id="pago">
-					<label for="pago">Tarjeta de Credito</label><br>
+					<input type="radio" name="payment" id="payment">
+					<label for="payment">Efectivo</label><br>
+					<input type="radio" name="payment" id="payment">
+					<label for="payment">Tarjeta de Debito</label><br>
+					<input type="radio" name="payment" id="payment">
+					<label for="payment">Tarjeta de Credito</label><br>
 					<div>
-						<div id="button_comprar">
+						<div id="buy_button">
 							<button class="button"><span class="button-content">Finalizar compra</span></button>
 						</div>
 					</div>
@@ -85,79 +85,79 @@
 			</form>
 		</div>
 	</main>
-	<div class="contenedor" id="efecto">
+	<div class="container" id="effect">
 
 		<!-- Tarjeta -->
-		<section class="tarjeta" id="tarjeta">
-			<div class="delantera">
-				<div class="logo-marca" id="logo-marca">
+		<section class="credit_card" id="credit_card">
+			<div class="front_side">
+				<div class="brand_logo" id="brand_logo">
 					
 				</div>
 				<img src="/img/chip-tarjeta.png" class="chip" alt="">
-				<div class="datos">
-					<div class="grupo" id="numero">
+				<div class="credit_card_data">
+					<div class="group" id="number">
 						<p class="label">Número Tarjeta</p>
-						<p class="numero">#### #### #### ####</p>
+						<p class="number">#### #### #### ####</p>
 					</div>
 					<div class="flexbox">
-						<div class="grupo" id="nombre">
+						<div class="group" id="credit_card_name">
 							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">Tal cual figura en su plastico</p>
+							<p class="credit_card_name">Tal cual figura en su plastico</p>
 						</div>
 
-						<div class="grupo" id="expiracion">
+						<div class="group" id="expiry_date">
 							<p class="label">Expiracion</p>
-							<p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+							<p class="expiry_date"><span class="month">MM</span> / <span class="year">AA</span></p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="trasera">
-				<div class="barra-magnetica"></div>
-				<div class="datos">
-					<div class="grupo" id="firma">
+			<div class="back_side">
+				<div class="magnetic_bar"></div>
+				<div class="credit_card_data">
+					<div class="group" id="signature_container">
 						<p class="label">Firma</p>
-						<div class="firma"><p></p></div>
+						<div class="signature"><p></p></div>
 					</div>
-					<div class="grupo" id="ccv">
+					<div class="group" id="ccv">
 						<p class="label">CCV</p>
 						<p class="ccv"></p>
 					</div>
 				</div>
-				<p class="leyenda">Tarjeta valida en todo el territorio Argentino.</p>
+				<p class="legend">Tarjeta valida en todo el territorio Argentino.</p>
 			</div>
 		</section>
 
 		<!-- Contenedor Boton Abrir Formulario -->
-		<div class="contenedor-btn">
-			<button class="btn-abrir-formulario" id="btn-abrir-formulario">
+		<div class="container-btn">
+			<button class="btn-open-form" id="btn-open-form">
 				<i class="fas fa-plus"></i>
 			</button>
 		</div>
 
 		<!-- Formulario -->
-		<form action="" id="formulario-tarjeta" class="formulario-tarjeta">
-			<div class="grupo">
-				<label for="inputNumero">Número Tarjeta</label>
-				<input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+		<form action="" id="credit_card_form" class="credit_card_form">
+			<div class="group">
+				<label for="number_input">Número Tarjeta</label>
+				<input type="text" id="number_input" maxlength="19" autocomplete="off">
 			</div>
-			<div class="grupo">
-				<label for="inputNombre">Nombre</label>
-				<input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+			<div class="group">
+				<label for="name_input">Nombre</label>
+				<input type="text" id="name_input" maxlength="19" autocomplete="off">
 			</div>
 			<div class="flexbox">
-				<div class="grupo expira">
-					<label for="selectMes">Expiracion</label>
+				<div class="group expire">
+					<label for="select_month">Expiracion</label>
 					<div class="flexbox">
-						<div class="grupo-select">
-							<select name="mes" id="selectMes">
+						<div class="group-select">
+							<select name="select_month" id="select_month">
 								<option disabled selected>Mes</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
 						</div>
-						<div class="grupo-select">
-							<select name="year" id="selectYear">
+						<div class="group-select">
+							<select name="year" id="select_year">
 								<option disabled selected>Año</option>
 							</select>
 							<i class="fas fa-angle-down"></i>
@@ -165,12 +165,12 @@
 					</div>
 				</div>
 
-				<div class="grupo ccv">
+				<div class="group ccv">
 					<label for="inputCCV">CCV</label>
 					<input type="text" id="inputCCV" maxlength="3">
 				</div>
 			</div>
-			<button type="submit" class="btn-enviar">Enviar</button>
+			<button type="submit" class="btn-send">Enviar</button>
 		</form>
 	</div>
 

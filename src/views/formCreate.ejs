@@ -6,46 +6,46 @@
 </head>
 <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="formulario_create">
+    <main class="main_form_create">
     <section id="form_create" class="glass_effect">
         <h2>Agregar Nuevo Producto</h2>
-            <form action="/administrador/store" method="post">
+            <form action="/admin/store" method="post">
     
-                <label class="nombre_campos" for="id">ID:</label>
+                <label class="fields_name" for="id">ID:</label>
                 <input type="text" name="id" id="id" required>
     
-                <label class="nombre_campos" for="nombre">Nombre del producto:</label>
-                <input type="text" name="nombre" required>
+                <label class="fields_name" for="name">Nombre del producto:</label>
+                <input type="text" name="name" required>
         
-                <label class="nombre_campos" for="editorial">Editorial/Marca:</label>
+                <label class="fields_name" for="editorial">Editorial/Marca:</label>
                 <input type="text" name="editorial" required></input>
     
-                <label class="nombre_campos" for="author">Autor:</label>
+                <label class="fields_name" for="author">Autor:</label>
                 <input type="text" name="author">
     
-                <label class="nombre_campos" for="publishDate">Fecha de publicación:</label>
+                <label class="fields_name" for="publishDate">Fecha de publicación:</label>
                 <input type="text" name="publishDate" required></input>
     
-                <label class="nombre_campos" for="datail">Detalle:</label>
+                <label class="fields_name" for="datail">Detalle:</label>
                 <textarea name="datail" cols="30" rows="10" required></textarea>
     
-                <label class="nombre_campos" for="characteristic">Caracteristica:</label>
+                <label class="fields_name" for="characteristic">Caracteristica:</label>
                 <input type="text" name="characteristic" required></input>
         
-                <label class="nombre_campos" for="category">Categorias</label>
-                <select id="opcion" name="category">
-                    <option value="opcion1">Infantíl</option>
-                    <option value="opcion2">Drama</option>
-                    <option value="opcion3">Utiles escolares</option>
+                <label class="fields_name" for="category">Categorias</label>
+                <select id="option" name="category">
+                    <option value="option1">Infantíl</option>
+                    <option value="option2">Drama</option>
+                    <option value="option3">Utiles escolares</option>
                 </select>
             
-                <label  class="nombre_campos" for="price">Precio:</label>
+                <label  class="fields_name" for="price">Precio:</label>
                 <input type="number" step="0.01" name="price" required>
             
-                <label class="nombre_campos" for="img">Imagen:</label>
+                <label class="fields_name" for="img">Imagen:</label>
                 <input type="file" name="img" accept="image/*">
     
-                <button class="agregar_producto" type="submit">Agregar Producto</button>
+                <button class="submit_product" type="submit">Agregar Producto</button>
             </form>
         </section>
     </main>

@@ -1,13 +1,13 @@
-h1#miPerfil{
+h1#my_profile{
     font-size: 24px;
     padding-left: 30px;
 }
-div#contenedorFotoPerfil{
+div#profile_image_container{
     display: flex;
     justify-content: center;
 }
 
-div#fotoPerfil{
+div#profile_image{
     width: 100px;
     height: 100px;
     border-radius: 50%;
