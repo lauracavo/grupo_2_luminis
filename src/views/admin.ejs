@@ -24,15 +24,15 @@
         <td class="table_titles">ELIMINAR</th>
       </tr>
     </thead>
-    <% data.map(item => { %>
+    <% product.map(item => { %>
     <tbody id="table_body">
       <!-- Contenido de la tabla -->
       <tr>
         <td class="table_content"><%= item.id %></td>
-        <td class="table_content"><%= item.nombre %></td>
-        <td class="table_content"><%= item.price %></td>
-        <td class="table_content"><%= item.price %></td>
-        <td class="table_content">stock</td>
+        <td class="table_content"><%= item.name %></td>
+        <td class="table_content"><%= item.purchasePrice %></td>
+        <td class="table_content"><%= item.salePrice %></td>
+        <td class="table_content"><%= item.stock %></td>
         <td class="table_content">
           <a href="/admin/edit/<%= item.id %>" class="button-form" >
             <i class="far fa-edit"></i>
