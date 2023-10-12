@@ -68,10 +68,19 @@ const adminController = {
   },
 
   edit: (req,res)=>{
-    const bookId = req.params.id;
-    const book = booksData.books.find(book => book.id === bookId);
+     const {id} = req.params;
+     db.products.findByPK(parseInt(id))
+     .then(product => {
+       res.render("formEdit", {product})
+     })
+     .catch(error =>{
+      res.send({result: 'Error', payload: error})
+     })
 
-    res.render('formEdit', { data: book }); 
+    // const bookId = req.params.id;
+    // const book = booksData.books.find(book => book.id === bookId);
+
+    // res.render('formEdit', { data: book }); 
   },
 
   editProduct: (req,res) =>{
