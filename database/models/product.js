@@ -52,10 +52,10 @@
     idCategory: DataTypes.INTEGER,  
 }
 let config = {
-    timestamps: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-    deletedAt: false,
+    timestamps: false,
+    // createdAt: 'created_at',
+    // updatedAt: 'updated_at',
+    // deletedAt: false,
     tableName: 'products'
     }
 

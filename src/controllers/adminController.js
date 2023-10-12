@@ -69,7 +69,7 @@ const adminController = {
 
   edit: (req,res)=>{
      const {id} = req.params;
-     db.products.findByPK(parseInt(id))
+     db.Product.findByPk(parseInt(id))
      .then(product => {
        res.render("formEdit", {product})
      })
