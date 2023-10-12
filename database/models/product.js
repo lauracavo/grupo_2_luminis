@@ -5,7 +5,8 @@
 
     //Aca definimos el modelo
     module.exports = (sequelize, DataTypes) => {
-        const Product = sequelize.define('Product', {
+        let alias = 'Product'; // esto debería estar en singular
+        let cols = {
     // define los campos del modelo y tipos de datos
     idProduct: {
         type: DataTypes.INTEGER,        
@@ -32,6 +33,10 @@
         type:DataTypes.TEXT,
         allowNull:false
     },
+    characteristic:{
+        type:DataTypes.TEXT,
+        allowNull:false
+    },
     purchasePrice:{
         type:DataTypes.DOUBLE,
         allowNull: false
@@ -43,13 +48,34 @@
     stock:{
         type:DataTypes.INTEGER,
         allowNull: false
-    }},
-   {
-    timestamps: false,
-   
+    },
+    idCategory: DataTypes.INTEGER,  
+}
+let config = {
+    timestamps: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    deletedAt: false,
     tableName: 'products'
-   })
-    return Product
+    }
+
+    const products = sequelize.define(alias, cols, config)
+   //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+   products.associate = ( models ) =>{
+       products.belongsTo( models.categorie, {
+           as: "categorie",
+           foreignKey: "idCategory"
+       } );
+       
+
+    //    products.belongsToMany(  models.Actor, {
+    //        as: "actors",
+    //        through: "actor_movie",
+    //        foreignKey: "movie_id",
+    //        otherKey: "actor_id"
+    //    })
+   }
+    return products
     }
   
     

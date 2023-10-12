@@ -36,7 +36,7 @@
       <section id="new_products">
         <h3>PRODUCTOS NUEVOS</h3>
         <div class="hidden_articles">
-          <% data.map(item => { %>
+          <% products.map(item => { %>
           <article class="glass_effect display_flex">
             <img class="product_image" src="/img/books/<%= item.img %>" />
             <div class="display_flex product_information">
@@ -166,7 +166,7 @@
       <section id="best_sellers">
         <h3>LOS MÁS VENDIDOS</h3>
         <div class="hidden_articles">
-          <% data.map(item => { %>
+          <% products.map(item => { %>
           <article class="glass_effect display_flex">
             <img class="product_image" src="/img/books/<%= item.img %>" />
             <div class="display_flex product_information">

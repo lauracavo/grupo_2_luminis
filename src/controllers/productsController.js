@@ -38,13 +38,23 @@ const productsController = {
    //send.render (products);
 
   byId: (req, res) => {
-    const { id } = req.params;
-    const { books } = booksData;
+//     const { id } = req.params;
+//     const { books } = booksData;
 
-    const productId = books.find((prod) => prod.id === id);
+//     const productId = books.find((prod) => prod.id === id);
 
-    res.render("productDetail", { bookselect: productId });
-  } 
-};
+//     res.render("productDetail", { bookselect: productId });
+//   } 
+
+const {id} = req.params
+db.Product.findByPk(parseInt(id))
+.then(product=>{
+    res.render('productDetail', {product})
+})
+.catch(error=>{
+    res.send({result: 'Error', payload: error})
+})
+},
+ };
 
 module.exports = productsController;

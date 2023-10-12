@@ -1,13 +1,20 @@
 const path = require("path");
 const fs = require("fs");
 const booksData = require("../dataBase/books.json");
+const db = require('../../database/models/index');
+
 
 const adminController = {
   getAll: (req, res) => {
-    const { books } = booksData;
-    res.render("admin", { data: books });
+    db.Product.findAll()
+      .then(products =>{
+          //res.send({result: 'Succes', payload: products})
+          res.render("admin", { products });
+      })
+      .catch(error=>{
+          res.send({result: 'Error', payload: error})
+      })
   },
-
   create: (req, res) => {
     res.render("formCreate"); // Renderiza la página de creación de productos
   },
@@ -17,36 +24,45 @@ const adminController = {
     const {
       id,
       name,
+      brand,
       editorial,
-      author,
-      publishDate,
+      author,     
       datail,
       characteristic,
-      category,
-      price,
+      idCategory,
+      purchasePrice,
+      salePrice,
+      stock
     } = req.body;
 
+    if(!name || !datail || !characteristic || !idCategory || !purchasePrice || !salePrice || !stock){
+      res.send({result: 'Error', payload: 'Falta rellenar uno de los campos.'})
+  }
+
     // Crear un nuevo producto
-    const newProduct = {
-      id,
+    db.Product.create ({
+      idProduct,
       name,
+      brand,
       editorial,
-      author,
-      publishDate,
+      author,      
       datail,
       characteristic,
-      category,
-      price,
-    };
+      idCategory,
+      purchasePrice,
+      salePrice,
+      stock,
+    });
+
 
     // Agregar el nuevo producto a la lista de productos
-    booksData.books.push(newProduct);
+    // booksData.books.push(newProduct);
 
-    // Guardar la información actualizada en el archivo JSON
-    fs.writeFileSync(
-      path.join(__dirname, "../dataBase/books.json"),
-      JSON.stringify(booksData, null, 2)
-    );
+    // // Guardar la información actualizada en el archivo JSON
+    // fs.writeFileSync(
+    //   path.join(__dirname, "../dataBase/books.json"),
+    //   JSON.stringify(booksData, null, 2)
+    // );
 
     res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
   },
@@ -98,22 +114,32 @@ const adminController = {
     console.log ("eliminando");
     const {id} = req.params;
     console.log (req.params.id);
-    const {books} = booksData
+    db.Product.destroy({
+      where:{id_product: parseInt(id)}
+  })
+  .then(result=>{
+      res.send({result: 'Succes', payload: result})
+  })
+  .catch(error=>{
+      res.send({result: 'Error', payload: error})
+  })
+  res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+    // const {books} = booksData
 
     // const productId= books.find((element)=>{
     //   return element.id == id
     // });
 
-      booksData.books = booksData.books.filter((element)=>{
-        return element.id != id
-    })
+      // booksData.books = booksData.books.filter((element)=>{
+      //   return element.id != id
+    // })
     
- fs.writeFileSync(
-        path.join(__dirname, "../dataBase/books.json"),
-        JSON.stringify(booksData, null, 2)
-      );
+//  fs.writeFileSync(
+//         path.join(__dirname, "../dataBase/books.json"),
+//         JSON.stringify(booksData, null, 2)
+//       );
   
-      res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+     
   },
 
   };
