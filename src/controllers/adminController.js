@@ -55,7 +55,7 @@ const adminController = {
     const bookId = req.params.id;
     const book = booksData.books.find(book => book.id === bookId);
 
-    res.render('formEdit', { data: book });
+    res.render('formEdit', { data: book }); 
   },
 
   editProduct: (req,res) =>{
