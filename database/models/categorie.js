@@ -7,7 +7,7 @@ const {Sequelize, DataTypes} = require ('sequelize');
     module.exports = (sequelize, DataTypes) => {
         const Categorie = sequelize.define('Categorie', {
     // define los campos del modelo y tipos de datos
-    idProduct: {
+    idCategory: {
         type: DataTypes.INTEGER,        
         autoIncrement: true,
         primaryKey: true

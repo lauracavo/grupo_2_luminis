@@ -4,55 +4,64 @@ const booksData = require("../dataBase/books.json");
 const db = require('../../database/models/index');
 
 
+
 const adminController = {
   getAll: (req, res) => {
     db.Product.findAll()
-      .then(products =>{
+      .then(product =>{
           //res.send({result: 'Succes', payload: products})
-          res.render("admin", { products });
+          res.render("admin", { product });
       })
       .catch(error=>{
           res.send({result: 'Error', payload: error})
       })
   },
-  create: (req, res) => {
-    res.render("formCreate"); // Renderiza la página de creación de productos
+  create:  (req, res) => {
+    // const allCategories = await db.Categorie.findAll({})
+    
+    // console.log(await db.Categorie.findAll({attributes: ["name"]}))
+      
+      res.render ('formCreate')        
+     // Renderiza la página de creación de productos
   },
 
-  store: (req, res) => {
+  store: async(req, res) => {
+    await db.Product.create( req.body );
+    res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+  },
     //definimos los datos que queremos obtener del formulario
-    const {
-      id,
-      name,
-      brand,
-      editorial,
-      author,     
-      datail,
-      characteristic,
-      idCategory,
-      purchasePrice,
-      salePrice,
-      stock
-    } = req.body;
+  //   const {
+  //     id,
+  //     name,
+  //     brand,
+  //     editorial,
+  //     author,     
+  //     datail,
+  //     characteristic,
+  //     idCategory,
+  //     purchasePrice,
+  //     salePrice,
+  //     stock
+  //   } = req.body;
 
-    if(!name || !datail || !characteristic || !idCategory || !purchasePrice || !salePrice || !stock){
-      res.send({result: 'Error', payload: 'Falta rellenar uno de los campos.'})
-  }
+  //   if(!name || !datail || !characteristic || !idCategory || !purchasePrice || !salePrice || !stock){
+  //     res.send({result: 'Error', payload: 'Falta rellenar uno de los campos.'})
+  // }
 
-    // Crear un nuevo producto
-    db.Product.create ({
-      idProduct,
-      name,
-      brand,
-      editorial,
-      author,      
-      datail,
-      characteristic,
-      idCategory,
-      purchasePrice,
-      salePrice,
-      stock,
-    });
+  //   // Crear un nuevo producto
+  //   db.Product.create ({
+  //     idProduct,
+  //     name,
+  //     brand,
+  //     editorial,
+  //     author,      
+  //     datail,
+  //     characteristic,
+  //     idCategory,
+  //     purchasePrice,
+  //     salePrice,
+  //     stock,
+  //   });
 
 
     // Agregar el nuevo producto a la lista de productos
@@ -64,14 +73,12 @@ const adminController = {
     //   JSON.stringify(booksData, null, 2)
     // );
 
-    res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
-  },
 
-  edit: (req,res)=>{
-     const {id} = req.params;
-     db.Product.findByPk(parseInt(id))
-     .then(product => {
-       res.render("formEdit", {product})
+
+  edit: (req,res)=>{       
+     db.Product.findByPk(req.params.id)
+     .then(products => {
+       res.render("formEdit", { products})
      })
      .catch(error =>{
       res.send({result: 'Error', payload: error})

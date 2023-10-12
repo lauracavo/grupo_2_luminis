@@ -8,37 +8,38 @@
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
     <main class="main_form_create">
     <section id="form_create" class="glass_effect">
-        <h2>Editar Producto: <%= product.name %></h2>
-    <form action="/admin/editar/<%= product.id %>?_method=PUT" method="POST">
+        <h2>Editar Producto: <%= products.name %></h2>
+    <form action="/admin/edit/<%= products.id %>?_method=PUT" method="POST">
         <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" value="<%= product.name %>" required><br>
+        <input type="text" id="name" name="name" value="<%= products.name %>" required><br>
         
         <label for="brand">Marca:</label>
-        <input type="text" id="brand" name="brand" value="<%= product.brand %>"><br>
+        <input type="text" id="brand" name="brand" value="<%= products.brand %>"><br>
 
         <label for="editorial">Editorial:</label>
-        <input type="text" id="editorial" name="editorial" value="<%= product.editorial %>"><br>
+        <input type="text" id="editorial" name="editorial" value="<%= products.editorial %>"><br>
         
         <label for="author">Autor:</label>
-        <input type="text" id="author" name="author" value="<%= product.author %>"><br>
+        <input type="text" id="author" name="author" value="<%= products.author %>"><br>
         
         <label for="datail">Detalle:</label>
-        <textarea id="datail" name="datail" rows="4" required><%= product.datail %></textarea><br>
+        <textarea id="datail" name="datail" rows="4" value= "<%= products.datail %>" required >
+        </textarea><br> 
         
         <label for="characteristic">Característica:</label>
-        <input type="text" id="characteristic" name="characteristic" value="<%= product.characteristic %>" required><br>
+        <input type="text" id="characteristic" name="characteristic" value="<%= products.characteristic %>" required><br>
         
         <label for="idCategory">Categoría:</label>
-        <input type="text" id="idCategory" name="idCategory" value="<%= product.idCategory %>" required><br>
+        <input type="text" id="idCategory" name="idCategory" value="<%= products.idCategory %>" required><br>
         
         <label for="purchasePrice">Precio de compra:</label>
-        <input type="number" id="purchasePrice" name="purchasePrice" step="0.01" value="<%= product.purchasePrice %>" required><br>
+        <input type="number" id="purchasePrice" name="purchasePrice" step="0.01" value="<%= products.purchasePrice %>" required><br>
         
         <label for="salePrice">Precio de venta:</label>
-        <input type="number" id="salePrice" name="salePrice" step="0.01" value="<%= product.salePrice %>" required><br>
+        <input type="number" id="salePrice" name="salePrice" step="0.01" value="<%= products.salePrice %>" required><br>
 
         <label for="stock">Stock:</label>
-        <input type="number" id="stock" name="stock" step="0.01" value="<%= product.stock %>" required><br>
+        <input type="number" id="stock" name="stock" step="0.01" value="<%= products.stock %>" required><br>
 
         <button class="submit_edit_product" type="submit">Guardar Cambios</button>
     </form>

@@ -9,7 +9,8 @@
         let cols = {
     // define los campos del modelo y tipos de datos
     idProduct: {
-        type: DataTypes.INTEGER,        
+        type: DataTypes.INTEGER,   
+        allowNull:false,     
         autoIncrement: true,
         primaryKey: true
     },
@@ -62,8 +63,8 @@ let config = {
     const products = sequelize.define(alias, cols, config)
    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
    products.associate = ( models ) =>{
-       products.belongsTo( models.categorie, {
-           as: "categorie",
+       products.hasOne( models.Categorie, {
+           as: "Categorie",
            foreignKey: "idCategory"
        } );
        
