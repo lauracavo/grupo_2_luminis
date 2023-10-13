@@ -43,6 +43,13 @@
       "code": "",
       "password": "$2a$10$T2au05qyUSAMejWkvzkv3.hll2klEku0U1PMXYEwuOgPwHXoY6O4e",
       "profile_image": null
+    },
+    {
+      "name": "noeliia",
+      "email": "noli_ramos@hotmail.com",
+      "code": "12345",
+      "password": "$2a$10$/h0j7NFj6AjihMae783SqOGmegyl0TSs9GaGQhj5ISsGaexBSYyc6",
+      "profile_image": null
     }
   ]
 }
