@@ -97,35 +97,35 @@
 
     <script>
       // Calcular el envio
-    const tarifaEnvioEstandar = 100; // Precio para el envío estándar
-    const tarifaEnvioExpress = 200; // Precio para el envío express
+    const StandardShippingRate = 100; // Precio para el envío estándar
+    const ExpressShippingrate = 200; // Precio para el envío express 
 
       // Información del usuario y el producto
-    const pesoProducto = parseFloat(prompt("Peso del producto (en kg):"));
-    const destino = prompt("Dirección de envío:");
-    const metodoEnvio = prompt("Método de envío (estándar o express):").toLowerCase();
+    const weightProduct = parseFloat(prompt("Peso del producto (en kg):"));
+    const destination = prompt("Dirección de envío:");
+    const shippingMethod = prompt("Método de envío (estándar o express):").toLowerCase();
 
       // Calcular el costo de envío
-    let costoEnvio;
+    let shippingCost;
 
-      if (metodoEnvio === "estándar") {
-          costoEnvio = tarifaEnvioEstandar;
-    } else if (metodoEnvio === "express") {
-          costoEnvio = tarifaEnvioExpress;
+      if (shippingMethod === "estándar") {
+        shippingCost = StandardShippingRate;
+    } else if (shippingMethod === "express") {
+        shippingCost = ExpressShippingrate;
     } else {
           console.log("Método de envío no válido. Por favor, elija estándar o express.");
   }
 
         // Calcular costo adicional por peso.
-      if (pesoProducto > 1) {
-        const pesoAdicional = pesoProducto - 1;
-        const costoAdicionalPeso = pesoAdicional * 2;
-        costoEnvio += costoAdicionalPeso;
+      if (weightProduct > 1) {
+        const additionalWeight = weightProduct - 1;
+        const costAdditionalPeso = additionalWeight * 2;
+        shippingCost += costAdditionalPes;
     }
 
         // Mostrar el costo de envío al usuario
-      if (costoEnvio) {
-        console.log(`El costo de envío a ${destino} es de $${costoEnvio}`);
+      if (shippingCost) {
+        console.log(`El costo de envío a ${destination} es de $${shippingCost}`);
     }
 
   </script>

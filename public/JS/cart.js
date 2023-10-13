@@ -2,33 +2,33 @@ const table = document.getElementById("carrito-de-compras");
 const table_content = document.getElementById("idproduct");
 const totalElement = document.getElementById("total");
 
-let carritoItems = [];
+let trolleyItems = [];
 
 table_content.addEventListener("click", (event) => {
     if (event.target.tagName === "LI") {
-        const producto = event.target.getAttribute("data-producto");
-        const precio = parseFloat(event.target.textContent.split("-")[1].trim());
+        const product = event.target.getAttribute("data-product");
+        const price = parseFloat(event.target.textContent.split("-")[1].trim());
 
         // Agregar el producto al carrito
-        carritoItems.push({ producto, precio });
+        trolleyItems.push({ product, price });
 
         // Actualizar la tabla del carrito
-        renderCarrito();
+        renderTrolley();
     }
 });
 
-function renderCarrito() {
+function renderTrolley() {
     table.innerHTML = ""; // Cambio el nombre de la variable
     let total = 0;
 
-    carritoItems.forEach((item) => {
+    trolleyItems.forEach((item) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${item.producto}</td>
-            <td>$${item.precio.toFixed(2)}</td>
+            <td>${item.product}</td>
+            <td>$${item.price.toFixed(2)}</td>
         `;
         table.appendChild(row); // Cambio el nombre de la variable
-        total += item.precio;
+        total += item.price;
     });
 
     totalElement.textContent = total.toFixed(2);
