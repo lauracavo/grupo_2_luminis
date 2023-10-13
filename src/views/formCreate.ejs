@@ -32,15 +32,15 @@
                 <label class="fields_name" for="characteristic">Caracteristica:</label>
                 <input type="text" name="characteristic" required></input>
         
-                <!-- <label class="fields_name" for="idCategory">Categoria:  </label>
+                <label class="fields_name" for="idCategory">Categoria:  </label>
                <p>
                     <select name="idCategory" id="" required>
                         <option value="" disabled selected>- select category - </option>
                         <% allCategories.forEach(categorie => { %>
-                        <option value="<%= categorie.idCategory %"> <%= categorie.name %></option>
+                        <option value="<%= categorie.idCategory %>"> <%= categorie.name %></option>
                         <% }); %>
                     </select>
-                </p>  -->
+                </p>  
             
                 <label  class="fields_name" for="purchasePrice">Precio de Compra:</label>
                 <input type="number" step="0.01" name="price" required>

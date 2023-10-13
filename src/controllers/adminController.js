@@ -16,12 +16,12 @@ const adminController = {
           res.send({result: 'Error', payload: error})
       })
   },
-  create:  (req, res) => {
-    // const allCategories = await db.Categorie.findAll({})
+  create:  async(req, res) => {
+   const allCategories = await db.Categorie.findAll({})
     
-    // console.log(await db.Categorie.findAll({attributes: ["name"]}))
+     console.log(await db.Categorie.findAll({attributes: ["name"]}))
       
-      res.render ('formCreate')        
+      res.render ('formCreate', {allCategories})        
      // Renderiza la página de creación de productos
   },
 
