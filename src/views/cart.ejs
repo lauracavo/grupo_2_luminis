@@ -93,5 +93,42 @@
     </main>
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
     <script src="/public/JS/cart.js"></script>
+
+
+    <script>
+      // Calcular el envio
+    const tarifaEnvioEstandar = 100; // Precio para el envío estándar
+    const tarifaEnvioExpress = 200; // Precio para el envío express
+
+      // Información del usuario y el producto
+    const pesoProducto = parseFloat(prompt("Peso del producto (en kg):"));
+    const destino = prompt("Dirección de envío:");
+    const metodoEnvio = prompt("Método de envío (estándar o express):").toLowerCase();
+
+      // Calcular el costo de envío
+    let costoEnvio;
+
+      if (metodoEnvio === "estándar") {
+          costoEnvio = tarifaEnvioEstandar;
+    } else if (metodoEnvio === "express") {
+          costoEnvio = tarifaEnvioExpress;
+    } else {
+          console.log("Método de envío no válido. Por favor, elija estándar o express.");
+  }
+
+        // Calcular costo adicional por peso.
+      if (pesoProducto > 1) {
+        const pesoAdicional = pesoProducto - 1;
+        const costoAdicionalPeso = pesoAdicional * 2;
+        costoEnvio += costoAdicionalPeso;
+    }
+
+        // Mostrar el costo de envío al usuario
+      if (costoEnvio) {
+        console.log(`El costo de envío a ${destino} es de $${costoEnvio}`);
+    }
+
+  </script>
+
   </body>
 </html>
