@@ -28,18 +28,18 @@
     <tbody id="table_body">
       <!-- Contenido de la tabla -->
       <tr>
-        <td class="table_content"><%= item.id %></td>
+        <td class="table_content"><%= item.idProduct %></td>
         <td class="table_content"><%= item.name %></td>
         <td class="table_content"><%= item.purchasePrice %></td>
         <td class="table_content"><%= item.salePrice %></td>
         <td class="table_content"><%= item.stock %></td>
         <td class="table_content">
-          <a href="/admin/edit/<%= item.id %>" class="button-form" >
+         <a href="/admin/edit/<%= item.idProduct %>" class="button-form" >            
             <i class="far fa-edit"></i>
           </a>
         </td>
         <td class="table_content">
-          <form action="/admin/delete/<%= item.id %>?_method=DELETE" method="post" class="formulario" >
+          <form action="/admin/delete/<%= item.idProduct %>?_method=DELETE" method="post" class="formulario" >
               <i class="fas fa-trash"></i> 
           </form>
         </td>

@@ -70,7 +70,7 @@
   <div>
     <div id="buy_button">
       <button class="button">
-        <span class="button-content">FINALIZAR COMPRA</span>
+        <span class="button-content" id="Total">FINALIZAR COMPRA</span>
       </button>
     </div>
   </div>
@@ -92,5 +92,43 @@
       
     </main>
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
+    <script src="/public/JS/cart.js"></script>
+
+
+    <script>
+      // Calcular el envio
+    const StandardShippingRate = 100; // Precio para el envío estándar
+    const ExpressShippingrate = 200; // Precio para el envío express 
+
+      // Información del usuario y el producto
+    const weightProduct = parseFloat(prompt("Peso del producto (en kg):"));
+    const destination = prompt("Dirección de envío:");
+    const shippingMethod = prompt("Método de envío (estándar o express):").toLowerCase();
+
+      // Calcular el costo de envío
+    let shippingCost;
+
+      if (shippingMethod === "estándar") {
+        shippingCost = StandardShippingRate;
+    } else if (shippingMethod === "express") {
+        shippingCost = ExpressShippingrate;
+    } else {
+          console.log("Método de envío no válido. Por favor, elija estándar o express.");
+  }
+
+        // Calcular costo adicional por peso.
+      if (weightProduct > 1) {
+        const additionalWeight = weightProduct - 1;
+        const costAdditionalPeso = additionalWeight * 2;
+        shippingCost += costAdditionalPes;
+    }
+
+        // Mostrar el costo de envío al usuario
+      if (shippingCost) {
+        console.log(`El costo de envío a ${destination} es de $${shippingCost}`);
+    }
+
+  </script>
+
   </body>
 </html>
