@@ -10,11 +10,11 @@ const Sequelize = require('sequelize');
 const db = {};
 
 
+
   const sequelize = new Sequelize('luminis', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
-  });
-
+  }); 
 // lee todos los archivos de modelos en la carpeta actual y los integra al objeto db
 fs.readdirSync(__dirname)
   .filter(file => {

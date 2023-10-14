@@ -26,55 +26,17 @@ const adminController = {
   },
 
   store: async(req, res) => {
-    await db.Product.create( req.body );
-    res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
-  },
-    //definimos los datos que queremos obtener del formulario
-  //   const {
-  //     id,
-  //     name,
-  //     brand,
-  //     editorial,
-  //     author,     
-  //     datail,
-  //     characteristic,
-  //     idCategory,
-  //     purchasePrice,
-  //     salePrice,
-  //     stock
-  //   } = req.body;
-
-  //   if(!name || !datail || !characteristic || !idCategory || !purchasePrice || !salePrice || !stock){
-  //     res.send({result: 'Error', payload: 'Falta rellenar uno de los campos.'})
-  // }
-
-  //   // Crear un nuevo producto
-  //   db.Product.create ({
-  //     idProduct,
-  //     name,
-  //     brand,
-  //     editorial,
-  //     author,      
-  //     datail,
-  //     characteristic,
-  //     idCategory,
-  //     purchasePrice,
-  //     salePrice,
-  //     stock,
-  //   });
-
-
-    // Agregar el nuevo producto a la lista de productos
-    // booksData.books.push(newProduct);
-
-    // // Guardar la información actualizada en el archivo JSON
-    // fs.writeFileSync(
-    //   path.join(__dirname, "../dataBase/books.json"),
-    //   JSON.stringify(booksData, null, 2)
-    // );
-
-
-
+    try {
+        await db.Product.create(req.body);
+        console.log( (req.body))
+        res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+    } catch (error) {
+        // Manejar el error aquí
+        console.error(error); // Puedes imprimir el error en la consola para depuración
+        res.status(500).send("Ha ocurrido un error al crear el producto.");
+    }
+},
+   
   edit: (req,res)=>{       
      db.Product.findByPk(req.params.id)
      .then(products => {

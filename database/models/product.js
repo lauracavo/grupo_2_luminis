@@ -32,7 +32,7 @@
     },
     detail:{
         type:DataTypes.TEXT,
-        allowNull:false
+        allowNull: false
     },
     characteristic:{
         type:DataTypes.TEXT,
@@ -40,7 +40,7 @@
     },
     purchasePrice:{
         type:DataTypes.DOUBLE,
-        allowNull: false
+        allowNull:false
     },
     salePrice:{
         type : DataTypes.DOUBLE,
@@ -69,12 +69,7 @@ let config = {
        } );
        
 
-    //    products.belongsToMany(  models.Actor, {
-    //        as: "actors",
-    //        through: "actor_movie",
-    //        foreignKey: "movie_id",
-    //        otherKey: "actor_id"
-    //    })
+    
    }
     return products
     }
