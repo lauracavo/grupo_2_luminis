@@ -45,49 +45,33 @@ const adminController = {
      .catch(error =>{
       res.send({result: 'Error', payload: error})
      })
-
+    },
     // const bookId = req.params.id;
     // const book = booksData.books.find(book => book.id === bookId);
 
     // res.render('formEdit', { data: book }); 
-  },
 
-  editProduct: (req,res) =>{
-    console.log ("entraste a editar");
-    const {id} = req.params;
-    console.log(req.params.id)
-    const {
-      name,
-      editorial,
-      author,
-      publishDate,
-      datail,
-      characteristic,
-      category,
-      price,
-    } = req.body;
-    const productId=booksData.books.find((element)=>{
-      return element.id == id
-  });
+    //editProduct: (req,res) => {
+    // console.log ("entraste a editar");
+    //const {id} = req.params;
+    // console.log(req.params.id)
+    // //const {
+    //   name,
+    //   editorial,
+    //   author,
+    //   publishDate,
+    //   datail,
+    //   characteristic,
+    //   idCategory,
+    //   purchasePrice,
+    //   salePrice,
+    //   stock 
+    // } = req.body;
+    update: async (req,res) => {
+        await db.Product.update(req.body, { where: { id: req.params.id }});
 
-        name ? productId.name = name: productId.name;
-        editorial ? productId.editorial = editorial: productId.editorial;
-        author ? productId.author = author: productId.author;
-        publishDate ? productId.publishDate = publishDate: productId.publishDate;
-        datail ? productId.datail = datail: productId.datail;
-        characteristic ? productId.characteristic = characteristic: productId.characteristic;
-        category ? productId.category = category: productId.category;
-        price ? productId.price = price: productId.price;
-
-        fs.writeFileSync(
-          path.join(__dirname, "../dataBase/books.json"),
-          JSON.stringify(booksData, null, 2)
-        );
-    
         res.redirect("/admin");
-  },
-
-
+    },
   delete: (req,res)=>{
     console.log ("eliminando");
     const {id} = req.params;
