@@ -9,7 +9,7 @@
     <main class="main_form_create">
     <section id="form_create" class="glass_effect">
         <h2>Editar Producto: <%= products.name %></h2>
-    <form action="/admin/edit/<%= products.id %>?_method=PUT" method="POST">
+    <form action="/admin/edit/<%= products.idProduct %>?_method=PUT" method="POST">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" value="<%= products.name %>" required><br>
         
@@ -22,8 +22,8 @@
         <label for="author">Autor:</label>
         <input type="text" id="author" name="author" value="<%= products.author %>"><br>
         
-        <label for="datail">Detalle:</label>
-        <textarea id="datail" name="datail" rows="4" value= "<%= products.datail %>" required >
+        <label for="detail">Detalle:</label>
+        <textarea id="detail" name="detail" rows="4" value= "<%= products.detail %>" required >
         </textarea><br> 
         
         <label for="characteristic">Característica:</label>

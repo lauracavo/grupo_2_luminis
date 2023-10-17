@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const booksData = require("../dataBase/books.json");
 const db = require('../../database/models/index');
+const upload = require("../middlewares/multerConfigProd");
 
 
 
@@ -27,16 +28,37 @@ const adminController = {
 
   store: async(req, res) => {
     try {
-        await db.Product.create(req.body);
-        console.log( (req.body))
-        res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
-    } catch (error) {
-        // Manejar el error aquí
-        console.error(error); // Puedes imprimir el error en la consola para depuración
-        res.status(500).send("Ha ocurrido un error al crear el producto.");
+     const {
+      name, brand, editorial, author, detail, characteristic, purchasePrice, salePrice, stock, idCategory
+    } = req.body; 
+
+    // Crear el producto 
+    const product = await db.Product.create({
+      name, brand, editorial, author, detail, characteristic, purchasePrice, salePrice, stock, idCategory
+    });
+
+         const idProduct = product.idProduct; 
+         console.log(idProduct)
+         
+         // Guardar las imágenes asociadas al producto 
+         const imgProduct = req.file;
+         console.log (req.file)
+         
+          // Verificamos si hay una imagen cargada
+    if (imgProduct) {
+      // Si hay una imagen cargada, la guardamos
+      const imageRecord = { name: imgProduct.filename, idProduct };
+      await db.imageproduct.create(imageRecord);
+    } else {
+      // Si no hay imagen cargada, guardamos una imagen por defecto
+      const defaultImageRecord = { name: 'sinImagen.png', idProduct }; 
+      await db.imageproduct.create(defaultImageRecord);
     }
-},
-   
+             res.redirect("/admin"); 
+          } 
+          catch (error) { 
+            console.error(error); res.status(500).send("Ha ocurrido un error al crear el producto."); }
+   },   
   edit: (req,res)=>{       
      db.Product.findByPk(req.params.id)
      .then(products => {
@@ -46,38 +68,27 @@ const adminController = {
       res.send({result: 'Error', payload: error})
      })
     },
-    // const bookId = req.params.id;
-    // const book = booksData.books.find(book => book.id === bookId);
-
-    // res.render('formEdit', { data: book }); 
-
-    //editProduct: (req,res) => {
-    // console.log ("entraste a editar");
-    //const {id} = req.params;
-    // console.log(req.params.id)
-    // //const {
-    //   name,
-    //   editorial,
-    //   author,
-    //   publishDate,
-    //   datail,
-    //   characteristic,
-    //   idCategory,
-    //   purchasePrice,
-    //   salePrice,
-    //   stock 
-    // } = req.body;
-    update: async (req,res) => {
-        await db.Product.update(req.body, { where: { id: req.params.id }});
-
-        res.redirect("/admin");
+   
+    editProduct: async (req,res) => {       
+        try {
+          const {id} = req.params;
+          await db.Product.update(req.body, {
+           
+            where: {idProduct: parseInt(id)}
+          });
+          res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+      } catch (error) {
+          // Manejar el error aquí
+          console.error(error); // Puedes imprimir el error en la consola para depuración
+          res.status(500).send("Ha ocurrido un error al crear el producto.");
+      }
     },
   delete: (req,res)=>{
     console.log ("eliminando");
     const {id} = req.params;
     console.log (req.params.id);
     db.Product.destroy({
-      where:{id_product: parseInt(id)}
+      where:{idProduct: parseInt(id)}
   })
   .then(result=>{
       res.send({result: 'Succes', payload: result})

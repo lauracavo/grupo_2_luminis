@@ -9,7 +9,7 @@
     <main class="main_form_create">
     <section id="form_create" class="glass_effect">
         <h2>Agregar Nuevo Producto</h2>
-            <form action="/admin/store" method="post">
+            <form action="/admin/store" method="post" enctype="multipart/form-data">
     
                 <!-- <label class="fields_name" for="id">ID:</label>
                 <input type="text" name="id" id="id" required> -->
@@ -51,8 +51,8 @@
                 <label  class="fields_name" for="stock">Stock:</label>
                 <input type="number" step="0.01" name="stock" required>
             
-                <label class="fields_name" for="img">Imagen:</label>
-                <input type="file" name="img" accept="image/*" multiple>
+                <label class="fields_name" for="imgProduct">Imagen:</label>
+                <input type="file" name="imgProduct" accept="image/*" multiple>
     
                 <button class="submit_product" type="submit">Agregar Producto</button>
             </form>

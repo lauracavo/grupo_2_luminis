@@ -168,7 +168,9 @@
         <div class="hidden_articles">
           <% products.map(item => { %>
           <article class="glass_effect display_flex">
-            <img class="product_image" src="/img/books/<%= item.img %>" />
+            <% allImages.forEach(imagesproducts => { %>
+            <img class="product_image" src="/img/books/<%= imagesproducts.name %>" />
+            <% }); %>
             <div class="display_flex product_information">
               <p class="product_name"><%= item.name %></p>
               <p class="prices">Precio por unidad: <%= item.priceByUnit %></p>

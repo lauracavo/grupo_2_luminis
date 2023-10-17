@@ -10,10 +10,11 @@ const mainController = {
     // const { books } = productsData;
     // res.render("home", { data: books });
 
-    db.Product.findAll()
-    .then(products =>{
+    const products = db.Product.findAll()
+    const allimages =  db.imageproduct.findAll({})
+    .then(products, allImages =>{
         //res.send({result: 'Succes', payload: products})
-        res.render("home", { products });
+        res.render("home", { products, allImages });
     })
     .catch(error=>{
         res.send({result: 'Error', payload: error})

@@ -1,4 +1,5 @@
  const {Sequelize, DataTypes} = require ('sequelize');
+ 
 // const sequelize = new Sequelize
  
 
@@ -50,7 +51,8 @@
         type:DataTypes.INTEGER,
         allowNull: false
     },
-    idCategory: DataTypes.INTEGER,  
+    idCategory: DataTypes.INTEGER, 
+   
 }
 let config = {
     timestamps: false,
@@ -67,9 +69,10 @@ let config = {
            as: "Categorie",
            foreignKey: "idCategory"
        } );
-       
-
     
+    products.hasMany(models.imagesproduct, {
+         as: 'imagesproduct', 
+         foreignKey: 'idProduct' });    
    }
     return products
     }

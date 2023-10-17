@@ -12,23 +12,20 @@ const {Sequelize, DataTypes} = require ('sequelize');
     name:{
         type:DataTypes.STRING,
         allowNull:false,
-    },
-   
-    idProduct: DataTypes.INTEGER,
+    },   
+    idProduct: DataTypes.INTEGER
 }
     let config = {
         timestamps: false,       
         tableName: 'imagesproducts'
         }
-    
+       
         const imageproduct = sequelize.define(alias, cols, config)
-       //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+       //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos 
        imageproduct.associate = ( models ) =>{
-        imageproduct.hasMany( models.products, {
-            as: "products",
+        imageproduct.belongsTo( models.product, {
+            as: "Product",
             foreignKey: "idProduct"
-        } );
-      
-       }
+        } )};
     return imageproduct
-    }
+       }
