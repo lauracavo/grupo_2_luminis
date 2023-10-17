@@ -1,14 +1,34 @@
 const path = require("path");
-const dataLibros = require("../dataBase/libros.json");
-//const Contenedor = require('./productClassController');
+const booksData = require("../dataBase/books.json");
+//const container = require('./productClassController');
 //const direction = require('../dataBase/direction');
-//const container = new Contenedor(direction); 
+//const newContainer = new container(direction); 
+const db = require('../../database/models/index')
 
 
 const productsController = {
   getAll: (req, res) => {
-    const { libros } = dataLibros;
-    res.render("product", { data: libros });
+    // FORMA TRABAJANDO CON JSON
+   // const { books } = booksData;
+    //res.render("product", { data: books });
+
+    // OBTENIENDO LOS DATOS DE LA BASE DE DATOS    
+      db.Product.findAll()
+      .then(products =>{
+          //res.send({result: 'Succes', payload: products})
+          res.render("product", { products });
+      })
+      .catch(error=>{
+          res.send({result: 'Error', payload: error})
+      })
+  },
+    // db.product.findAll()
+    //   .then (products => {
+    //     res.send ({result: 'succes', payload: products})
+    //   })
+    //   .catch(error =>{
+    //     res.send({result: 'Error' , payload: error})
+    //   })
    //const products= container.getAll();
    //const {limit} = req.query;
    //let limitList = products.slice(0,limit);
@@ -16,16 +36,25 @@ const productsController = {
     //send.render(limitList);
    //}
    //send.render (products);
-  },
 
   byId: (req, res) => {
-    const { id } = req.params;
-    const { libros } = dataLibros;
+//     const { id } = req.params;
+//     const { books } = booksData;
 
-    const productId = libros.find((prod) => prod.id === id);
+//     const productId = books.find((prod) => prod.id === id);
 
-    res.render("productDetail", { libroSelect: productId });
-  } 
-};
+//     res.render("productDetail", { bookselect: productId });
+//   } 
+
+const {id} = req.params
+db.Product.findByPk(parseInt(id))
+.then(product=>{
+    res.render('productDetail', {product})
+})
+.catch(error=>{
+    res.send({result: 'Error', payload: error})
+})
+},
+ };
 
 module.exports = productsController;

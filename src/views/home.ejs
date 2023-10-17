@@ -11,8 +11,8 @@
     <%- include('./partials/header') %>
 
     <main>
-      <div id="contenedor_libreria" class="display_flex">
-        <div id="introduccion">
+      <div id="bookStore_container" class="display_flex">
+        <div id="intro">
           <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
@@ -28,25 +28,25 @@
         <img
           src="/img/libreria.jpg"
           alt="foto libreria"
-          id="foto_libreria"
-          class="oculto"
+          id="bookstore_photo"
+          class="hidden"
         />
       </div>
 
-      <section id="productos_nuevos">
+      <section id="new_products">
         <h3>PRODUCTOS NUEVOS</h3>
-        <div class="articulos_ocultos">
-          <% data.map(item => { %>
-          <article class="efecto_glass display_flex">
-            <img class="imagenProducto" src="/img/libros/<%= item.img %>" />
-            <div class="display_flex info_prod">
-              <p class="nombreProducto"><%= item.nombre %></p>
-              <p class="precios">Precio por unidad: <%= item.precioUnidad %></p>
-              <p class="precios">Precio al por mayor: <%= item.precioAlMayor %></p>
+        <div class="hidden_articles">
+          <% products.map(item => { %>
+          <article class="glass_effect display_flex">
+            <img class="product_image" src="/img/books/<%= item.img %>" />
+            <div class="display_flex product_information">
+              <p class="product_name"><%= item.name %></p>
+              <p class="prices">Precio por unidad: <%= item.priceByUnit %></p>
+              <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p>
             </div>
-            <div class="boton">
+            <div class="button_container">
               <button class="button">
-                <a class="verMas" href="/product/productDetail/<%= item.id %>"
+                <a class="watch_more" href="/product/productDetail/<%= item.id %>"
                   ><span class="button-content">VER MÁS</span></a
                 >
               </button>
@@ -86,13 +86,13 @@
           <div class="carousel-inner">
             <div class="carousel-item active carrusel_prod">
               <div class="d-block w-100">
-                <article class="efecto_glass display_flex">
+                <article class="glass_effect display_flex">
                   <img src="/img/producto1.png" />
-                  <div class="display_flex info_prod">
+                  <div class="display_flex product_information">
                     <p>Nombre</p>
                     <p>Precio</p>
                   </div>
-                  <div class="boton">
+                  <div class="button_container">
                     <button class="button">
                       <span class="button-content">COMPRAR</span>
                     </button>
@@ -101,13 +101,13 @@
               </div>
             </div>
             <div class="carousel-item">
-              <article class="efecto_glass display_flex">
+              <article class="glass_effect display_flex">
                 <img src="/img/producto1.png" />
-                <div class="display_flex info_prod">
+                <div class="display_flex product_information">
                   <p>Nombre</p>
                   <p>Precio</p>
                 </div>
-                <div class="boton">
+                <div class="button_container">
                   <button class="button">
                     <span class="button-content">COMPRAR</span>
                   </button>
@@ -115,13 +115,13 @@
               </article>
             </div>
             <div class="carousel-item">
-              <article class="efecto_glass display_flex">
+              <article class="glass_effect display_flex">
                 <img src="/img/producto1.png" />
-                <div class="display_flex info_prod">
+                <div class="display_flex product_information">
                   <p>Nombre</p>
                   <p>Precio</p>
                 </div>
-                <div class="boton">
+                <div class="button_container">
                   <button class="button">
                     <span class="button-content">COMPRAR</span>
                   </button>
@@ -129,13 +129,13 @@
               </article>
             </div>
             <div class="carousel-item">
-              <article class="efecto_glass display_flex">
+              <article class="glass_effect display_flex">
                 <img src="/img/producto1.png" />
-                <div class="display_flex info_prod">
+                <div class="display_flex product_information">
                   <p>Nombre</p>
                   <p>Precio</p>
                 </div>
-                <div class="boton">
+                <div class="button_container">
                   <button class="button">
                     <span class="button-content">COMPRAR</span>
                   </button>
@@ -163,18 +163,20 @@
           </button>
         </div>
       </section>
-      <section id="mas_vendidos">
+      <section id="best_sellers">
         <h3>LOS MÁS VENDIDOS</h3>
-        <div class="articulos_ocultos">
-          <% data.map(item => { %>
-          <article class="efecto_glass display_flex">
-            <img class="imagenProducto" src="/img/libros/<%= item.img %>" />
-            <div class="display_flex info_prod">
-              <p class="nombreProducto"><%= item.nombre %></p>
-              <p class="precios">Precio por unidad: <%= item.precioUnidad %></p>
-              <p class="precios">Precio al por mayor: <%= item.precioAlMayor %></p>
+        <div class="hidden_articles">
+          <% products.map(item => { %>
+          <article class="glass_effect display_flex">
+            <% allImages.forEach(imagesproducts => { %>
+            <img class="product_image" src="/img/books/<%= imagesproducts.name %>" />
+            <% }); %>
+            <div class="display_flex product_information">
+              <p class="product_name"><%= item.name %></p>
+              <p class="prices">Precio por unidad: <%= item.priceByUnit %></p>
+              <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p>
               </div>
-            <div class="boton">
+            <div class="button_container">
               <button class="button">
                 <span class="button-content">VER MÁS</span>
               </button>
@@ -214,13 +216,13 @@
           <div class="carousel-inner">
             <div class="carousel-item active carrusel_prod">
               <div class="d-block w-100">
-                <article class="efecto_glass display_flex">
+                <article class="glass_effect display_flex">
                   <img src="/img/producto1.png" />
-                  <div class="display_flex info_prod">
+                  <div class="display_flex product_information">
                     <p>Nombre</p>
                     <p>Precio</p>
                   </div>
-                  <div class="boton">
+                  <div class="button_container">
                     <button class="button">
                       <span class="button-content">COMPRAR</span>
                     </button>
@@ -229,13 +231,13 @@
               </div>
             </div>
             <div class="carousel-item">
-              <article class="efecto_glass display_flex">
+              <article class="glass_effect display_flex">
                 <img src="/img/producto1.png" />
-                <div class="display_flex info_prod">
+                <div class="display_flex product_information">
                   <p>Nombre</p>
                   <p>Precio</p>
                 </div>
-                <div class="boton">
+                <div class="button_container">
                   <button class="button">
                     <span class="button-content">COMPRAR</span>
                   </button>
@@ -243,13 +245,13 @@
               </article>
             </div>
             <div class="carousel-item">
-              <article class="efecto_glass display_flex">
+              <article class="glass_effect display_flex">
                 <img src="/img/producto1.png" />
-                <div class="display_flex info_prod">
+                <div class="display_flex product_information">
                   <p>Nombre</p>
                   <p>Precio</p>
                 </div>
-                <div class="boton">
+                <div class="button_container">
                   <button class="button">
                     <span class="button-content">COMPRAR</span>
                   </button>
@@ -257,13 +259,13 @@
               </article>
             </div>
             <div class="carousel-item">
-              <article class="efecto_glass display_flex">
+              <article class="glass_effect display_flex">
                 <img src="/img/producto1.png" />
-                <div class="display_flex info_prod">
+                <div class="display_flex product_information">
                   <p>Nombre</p>
                   <p>Precio</p>
                 </div>
-                <div class="boton">
+                <div class="button_container">
                   <button class="button">
                     <span class="button-content">COMPRAR</span>
                   </button>

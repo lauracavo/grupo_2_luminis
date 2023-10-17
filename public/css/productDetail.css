@@ -45,17 +45,17 @@ main section article {
 }
 
 /* ------------Css image */
-#uno {
+#one {
   padding: 2%;
   width: 75%;
 }
 
-#dos {
+#two {
   padding: 2%;
   width: 75%;
 }
 
-#tres {
+#three {
   padding: 2%;
   width: 75%;
 }
@@ -70,7 +70,7 @@ main section article {
   padding-top: 4px;
 }
 
-#envio {
+#shipping {
   color: blue;
   padding-top: 4px;
 }
@@ -111,7 +111,7 @@ main section article {
   display: flex;
   justify-content: space-around;
 }
-.details__envio {
+.details_shipping {
   display: flex;
   justify-content: space-around;
 }
@@ -171,6 +171,42 @@ main section article {
 /* --------------------------Fin Descripcion producto */
 
 /* -----------------------------------------Slider */
+@keyframes slider {
+  from{
+      transform: translateX(0);
+  }
+  to{
+      transform: translateX(-100%);
+  }
+}
+
+.logos{
+  overflow: hidden;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 10px ;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.logos:hover .logo-slide{
+  animation-play-state: paused;
+  
+}
+.logo-slide{
+  
+  display: inline-block;    
+  animation: 10s slider infinite linear;
+ 
+}
+.logo-slide img{
+  
+  height: 70px;
+  margin: 0 10px;
+  filter: grayscale(100%);
+}
+
 .slider {
   width: 90vw;
   height: auto;
@@ -188,16 +224,6 @@ main section article {
 }
 .slider .slide img {
   width: 100%;
-}
-@keyframes scroll {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(calc(-200px * 7));
-    transform: translateX(calc(-200px * 7));
-  }
 }
 /* ---------------------Fin Slider */
 
@@ -255,6 +281,14 @@ main section article {
     transform: scale(2);
    }
  }
+  .button-content{
+    display: flex;
+    align-items: center;
+  }
+  .fa-shopping-cart {   
+    font-size: 20px;
+    color: #e9a105;
+  }
 
 @media (min-width: 1024px) {
   .display_flex_None {
@@ -272,8 +306,9 @@ main section article {
   #login {
     font-size: 20px;
   }
-  .fa-cart-shopping {
+  .fa-shopping-cart {   
     font-size: 30px;
+    color: #e9a105;
   }
 
   .details__title {
@@ -293,10 +328,10 @@ main section article {
   #ok {
     font-size: 70px;
   }
-  #envio {
+  #shipping {
     font-size: 70px;
   }
-  .datails__envio {
+  .details__shipping {
     font-size: 30px;
   }
   .details__button {
@@ -323,7 +358,7 @@ main section article {
     font-size: 30px;
   }
 
-.details__envio, .details__stock, .details__prices {
+.details_shipping, .details__stock, .details__prices {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -336,7 +371,6 @@ main section article {
   width:318px;
   height: 348px;
 }
-
 
 }
 

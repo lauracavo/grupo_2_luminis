@@ -3,7 +3,7 @@
   <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/productDetail.css" />
-
+    <!-- <link rel="stylesheet" href="/css/products.css" /> -->
   </head>
 
   <body>
@@ -20,7 +20,7 @@
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img id="img1" src="/img/libros/<%= libroSelect.img %>" class="imgcarousel"  alt="...">
+              <img id="img1" src="/img/books/<%= bookselect.img %>" class="imgcarousel"  alt="...">
             </div>
             <div class="carousel-item">
               <img id="img2" src="/img/mochila prueba.png" class="imgcarousel" alt="...">
@@ -41,32 +41,32 @@
         <!-- Fin Carrusel--------------------------------------- -->
         <!-- -----Inicio image container-------------------------------- -->
        <div class="image_container">
-        <img id="uno"  src="/img/mochila prueba.png" alt="thumnail">
-        <img id="dos"  src="/img/mochila prueba.png" alt="thumnail">
-        <img id="tres"  src="/img/mochila prueba.png" alt="thumnail">
+        <img id="one"  src="/img/mochila prueba.png" alt="thumnail">
+        <img id="two"  src="/img/mochila prueba.png" alt="thumnail">
+        <img id="three"  src="/img/mochila prueba.png" alt="thumnail">
        </div>
       </article>
        <!-- ----------------Fin image container--------------------------------- -->
        <!-- ---------------------Inicio nombre producto--------------------------------- -->
 
      <article class="details_products">
-      <h2 class="details__title">   <%= libroSelect.nombre %></h2>
+      <h2 class="details__title">   <%= bookselect.name %></h2>
       <div class="details__prices">
-        <p class="details__now">$   <%= libroSelect.precio %></p>
+        <p class="details__now">$   <%= bookselect.price %></p>
         <button class="button">
           <span class="button-content">Ver cuotas</span>
         </button>
       </div>
       <div class="details__stock">
-        <i id="ok" class="fa-solid fa-check"></i>
+        <i id="ok" class="fas fa-check-circle"></i>
         <p class="datails__stock"> Stock disponible</p>
       </div>
-      <div class="details__envio">
-        <i id= "envio" class="fa-solid fa-truck-moving"></i>
-        <p class="datails__envio">Envio al todo el Pais</p>
+      <div class="details_shipping">
+        <i id= "shipping"  class="fas fa-truck"></i>   
+        <p class="details__shipping">Envio al todo el Pais</p>
       </div>
       <div class="details__product-quantity">
-        <button class="button"> <span class="button-content"> <i class="fa-solid fa-cart-shopping"></i> Sumar al carrito</span> </button>
+        <button class="button"> <span class="button-content"> <i class="fas fa-shopping-cart"></i> Sumar al carrito</span> </button>
       </div>
         </article>
         <!-- ------------------FIN nombreproducto-------------------------------  -->
@@ -74,33 +74,33 @@
         <!-- -----------------------Inicio Descripcion Producto------------------------ -->
     <section class="container_productDescription">
       <div class="details_productName">
-      <H2 id="h2"><u>  <%= libroSelect.descripcion %></u></H2>
+      <H2 id="h2"><u>  <%= bookselect.descripcion %></u></H2>
       </div>
       <article class="container_productName">
         <div class="details__description">
         <p class="details_description-P">Primera Descripcion</p>
         <ul class="ul_details_description">
 
-          <li></i>  <%= libroSelect.caracteristica %></li>
-          <li></i><%= libroSelect.autor %></li>
-          <li></i><%= libroSelect.editorial %></li>
-          <li></i><%= libroSelect.categoria %></li>
-          <li></i><%= libroSelect.fechaPublicacion %></li>
-          <li></i><%= libroSelect.puntuacion %></li>
-          <li></i>Espalda acolchonada</li>
-          <li></i>Tela impermeable </li>
+          <li></i>  <%= bookselect.characteristic %></li>
+          <li></i><%= bookselect.author %></li>
+          <li></i><%= bookselect.editorial %></li>
+          <li></i><%= bookselect.category %></li>
+          <li></i><%= bookselect.publishDate %></li>
+          <li></i><%= bookselect.puntuacion %></li>
+          <li></i></li>
+          <li></i></li>
           
           
         </ul>
         </div>
 
-        <div class="oter__descripton">
+        <div class="second_description">
           <p class="details_description-P" > Segunda Descripción</p>
           <ul class="ul_details_description">
-          <li></i></i>2 bolsillos laterales con red</li>
-          <li></i></i>Tiras regulables</li>
-          <li></i></i>Espalda acolchonada</li>
-          <li></i></i>Tela impermeable </li>
+          <li></i></i></li>
+          <li></i></i></li>
+          <li></i></i></li>
+          <li></i></i></li>
         </ul>
         </div>
       </article>
@@ -110,19 +110,38 @@
       
     <!------   SLIDER DE EDITORIALES   ------>
 
-    <%- include('./partials/slider') %>
-
+    
+    
     <!-- --------------------------------------Fin Slider------------- -->
 
     
 
    </main>
-    
-    <script
+   <div class="logos">
+    <div class="logo-slide">
+        <img src="/img/slider/1.png" alt="">
+        <img src="/img/slider/2.png" alt="">
+        <img src="/img/slider/3.png" alt="">
+        <img src="/img/slider/4.png" alt="">
+        <img src="/img/slider/5.png" alt="">
+        <img src="/img/slider/6.png" alt="">
+        <img src="/img/slider/7.png" alt="">
+    </div>
+    <div class="logo-slide">
+        <img src="/img/slider/1.png" alt="">
+        <img src="/img/slider/2.png" alt="">
+        <img src="/img/slider/3.png" alt="">
+        <img src="/img/slider/4.png" alt="">
+        <img src="/img/slider/5.png" alt="">
+        <img src="/img/slider/6.png" alt="">
+        <img src="/img/slider/7.png" alt="">
+    </div>
+</div>
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   
   </body>
   <!-- -----------------------------------------------FOOTER------------------------------------------------- -->

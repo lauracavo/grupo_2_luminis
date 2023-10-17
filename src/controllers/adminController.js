@@ -1,119 +1,118 @@
 const path = require("path");
 const fs = require("fs");
-const dataLibros = require("../dataBase/libros.json");
+const booksData = require("../dataBase/books.json");
+const db = require('../../database/models/index');
+const upload = require("../middlewares/multerConfigProd");
+
+
 
 const adminController = {
   getAll: (req, res) => {
-    const { libros } = dataLibros;
-    res.render("administrador", { data: libros });
+    db.Product.findAll()
+      .then(product =>{
+          //res.send({result: 'Succes', payload: products})
+          res.render("admin", { product });
+      })
+      .catch(error=>{
+          res.send({result: 'Error', payload: error})
+      })
   },
-
-  create: (req, res) => {
-    res.render("formCreate"); // Renderiza la página de creación de productos
-  },
-
-  store: (req, res) => {
-    //definimos los datos que queremos obtener del formulario
-    const {
-      id,
-      nombre,
-      editorial,
-      autor,
-      fechaPublicacion,
-      detalle,
-      caracteristica,
-      categoria,
-      precio,
-    } = req.body;
-
-    // Crear un nuevo producto
-    const newProduct = {
-      id,
-      nombre,
-      editorial,
-      autor,
-      fechaPublicacion,
-      detalle,
-      caracteristica,
-      categoria,
-      precio,
-    };
-
-    // Agregar el nuevo producto a la lista de productos
-    dataLibros.libros.push(newProduct);
-
-    // Guardar la información actualizada en el archivo JSON
-    fs.writeFileSync(
-      path.join(__dirname, "../dataBase/libros.json"),
-      JSON.stringify(dataLibros, null, 2)
-    );
-
-    res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
-  },
-
-  edit: (req,res)=>{
-    const libroId = req.params.id;
-    const libro = dataLibros.libros.find(libro => libro.id === libroId);
-
-    res.render('formEdit', { data: libro });
-  },
-
-  editProduct: (req,res) =>{
-    console.log ("entraste a editar");
-    const {id} = req.params;
-    console.log(req.params.id)
-    const {
-      nombre,
-      editorial,
-      autor,
-      fechaPublicacion,
-      detalle,
-      caracteristica,
-      categoria,
-      precio,
-    } = req.body;
-    const productoId=dataLibros.libros.find((element)=>{
-      return element.id == id
-  });
-
-        nombre ? productoId.nombre = nombre: productoId.nombre;
-        editorial ? productoId.editorial = editorial: productoId.editorial;
-        autor ? productoId.autor = autor: productoId.autor;
-        fechaPublicacion ? productoId.fechaPublicacion = fechaPublicacion: productoId.fechaPublicacion;
-        detalle ? productoId.detalle = detalle: productoId.detalle;
-        caracteristica ? productoId.caracteristica = caracteristica: productoId.caracteristica;
-        categoria ? productoId.categoria = categoria: productoId.categoria;
-        precio ? productoId.precio = precio: productoId.precio;
-
-        fs.writeFileSync(
-          path.join(__dirname, "../dataBase/libros.json"),
-          JSON.stringify(dataLibros, null, 2)
-        );
+  create:  async(req, res) => {
+   const allCategories = await db.Categorie.findAll({})
     
-        res.redirect("/administrador");
+     console.log(await db.Categorie.findAll({attributes: ["name"]}))
+      
+      res.render ('formCreate', {allCategories})        
+     // Renderiza la página de creación de productos
   },
 
+  store: async(req, res) => {
+    try {
+     const {
+      name, brand, editorial, author, detail, characteristic, purchasePrice, salePrice, stock, idCategory
+    } = req.body; 
 
-  eliminar: (req,res)=>{
+    // Crear el producto 
+    const product = await db.Product.create({
+      name, brand, editorial, author, detail, characteristic, purchasePrice, salePrice, stock, idCategory
+    });
+
+         const idProduct = product.idProduct; 
+         console.log(idProduct)
+         
+         // Guardar las imágenes asociadas al producto 
+         const imgProduct = req.file;
+         console.log (req.file)
+         
+          // Verificamos si hay una imagen cargada
+    if (imgProduct) {
+      // Si hay una imagen cargada, la guardamos
+      const imageRecord = { name: imgProduct.filename, idProduct };
+      await db.imageproduct.create(imageRecord);
+    } else {
+      // Si no hay imagen cargada, guardamos una imagen por defecto
+      const defaultImageRecord = { name: 'sinImagen.png', idProduct }; 
+      await db.imageproduct.create(defaultImageRecord);
+    }
+             res.redirect("/admin"); 
+          } 
+          catch (error) { 
+            console.error(error); res.status(500).send("Ha ocurrido un error al crear el producto."); }
+   },   
+  edit: (req,res)=>{       
+     db.Product.findByPk(req.params.id)
+     .then(products => {
+       res.render("formEdit", { products})
+     })
+     .catch(error =>{
+      res.send({result: 'Error', payload: error})
+     })
+    },
+   
+    editProduct: async (req,res) => {       
+        try {
+          const {id} = req.params;
+          await db.Product.update(req.body, {
+           
+            where: {idProduct: parseInt(id)}
+          });
+          res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+      } catch (error) {
+          // Manejar el error aquí
+          console.error(error); // Puedes imprimir el error en la consola para depuración
+          res.status(500).send("Ha ocurrido un error al crear el producto.");
+      }
+    },
+  delete: (req,res)=>{
     console.log ("eliminando");
     const {id} = req.params;
     console.log (req.params.id);
-    const {libros} = dataLibros
+    db.Product.destroy({
+      where:{idProduct: parseInt(id)}
+  })
+  .then(result=>{
+      res.send({result: 'Succes', payload: result})
+  })
+  .catch(error=>{
+      res.send({result: 'Error', payload: error})
+  })
+  res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+    // const {books} = booksData
 
-    // const productoId= libros.find((element)=>{
+    // const productId= books.find((element)=>{
     //   return element.id == id
     // });
 
-      dataLibros.libros = dataLibros.libros.filter((element)=>{
-        return element.id != id
-    })
+      // booksData.books = booksData.books.filter((element)=>{
+      //   return element.id != id
+    // })
     
- fs.writeFileSync(
-        path.join(__dirname, "../dataBase/libros.json"),
-        JSON.stringify(dataLibros, null, 2)
-      );
+//  fs.writeFileSync(
+//         path.join(__dirname, "../dataBase/books.json"),
+//         JSON.stringify(booksData, null, 2)
+//       );
   
-      res.redirect("/administrador"); // Redirigir de nuevo a la página de administrador
+     
   },
 
   };

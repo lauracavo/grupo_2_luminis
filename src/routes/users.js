@@ -5,15 +5,15 @@ const { body } = require("express-validator");
 
 //MIDDLEWARES
 const upload = require("../middlewares/multerConfig");
-const validarRegistro = require("../middlewares/validarRegistro")
-const validarLogin = require("../middlewares/validarLogin")
+const validateRegister = require("../middlewares/validateRegister")
+const validateLogin = require("../middlewares/validateLogin")
 
 route.get("/register", usersController.register); //localhost2020:/users/register
-route.post("/store", upload.single('profile_image'), validarRegistro, usersController.store); //localhost2020:/users/store
+route.post("/store", upload.single('profile_image'), validateRegister, usersController.store); //localhost2020:/users/store
 route.get("/login", usersController.login); //localhost2020:/users/login
-route.post("/processLogin", validarLogin, usersController.processLogin); //localhost:2020/users/processLogin
+route.post("/processLogin", validateLogin, usersController.processLogin); //localhost:2020/users/processLogin
 route.get("/userProfile", usersController.userProfile);//localhost2020:/users/userProfile
-route.post("/userProfile", usersController.editarEliminar);//localhost2020:/users/userProfile
+route.post("/userProfile", usersController.editDelete);//localhost2020:/users/userProfile
 
 module.exports = route;
 
@@ -33,7 +33,7 @@ module.exports = route;
 //   const { username, password } = req.body;
 
 //   // Check if the remember me checkbox was checked
-//   const rememberMe = req.body.recordarme === 'on';
+//   const rememberMe = req.body.remember_me === 'on';
 
 //   // If the remember me checkbox was checked, set a cookie with the username and password
 //   if (rememberMe) {

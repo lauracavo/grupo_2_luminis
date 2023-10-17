@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+  <%- include('./partials/menu') %> <%- include('./partials/header') %>
+
+  <!-- Tabla para mostrar y editar productos existentes -->
+<main>
+  <p id="title">Productos</p>
+  <a href="/admin/formCreate"><button class="fcc-btn">AGREGAR</button></a>
+  <table id="table" class="redondeada">
+    <thead id="table_header" class="glass_effect">
+      <tr>
+        <td class="table_titles">ID</th>
+        <td class="table_titles">NOMBRE</th>
+        <td class="table_titles">PRECIO DE COMPRA</th>
+        <td class="table_titles">PRECIO DE VENTA</th>
+        <td class="table_titles">STOCK</th>
+        <td class="table_titles">EDITAR</th>
+        <td class="table_titles">ELIMINAR</th>
+      </tr>
+    </thead>
+    <% product.map(item => { %>
+    <tbody id="table_body">
+      <!-- Contenido de la tabla -->
+      <tr>
+        <td class="table_content"><%= item.idProduct %></td>
+        <td class="table_content"><%= item.name %></td>
+        <td class="table_content"><%= item.purchasePrice %></td>
+        <td class="table_content"><%= item.salePrice %></td>
+        <td class="table_content"><%= item.stock %></td>
+        <td class="table_content">
+         <a href="/admin/edit/<%= item.idProduct %>" class="button-form" >            
+            <i class="far fa-edit"></i>
+          </a>
+        </td>
+        <td class="table_content">
+          <form action="/admin/delete/<%= item.idProduct %>?_method=DELETE" method="post" class="formulario" >
+              <i class="fas fa-trash"></i> 
+          </form>
+        </td>
+      </tr>
+    </tbody>
+    <% }); %>
+  </table>
+  <%- include('./partials/footer') %> <%- include('./partials/script') %>
+  </body>
+</html>

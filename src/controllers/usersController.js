@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const dataBaseU = require("../dataBase/usuarios.json");
+const userData = require("../dataBase/users.json");
 const session = require("express-session");
 const { validationResult } = require("express-validator");
 const bcrypt = require ('bcryptjs');
@@ -23,7 +23,7 @@ const usersController = {
       const {
         name,
         email,
-        docente,
+        teacher,
         code,
         password,
         passwordR,
@@ -34,18 +34,18 @@ const usersController = {
       const newUser = {
         name,
         email,
-        docente,
+        teacher,
         code,
         password: hashPassword,
         profile_image
       };
 
-      dataBaseU.usuarios.push(newUser);
+      userData.users.push(newUser);
   
       // Guardar la información actualizada en el archivo JSON
       fs.writeFileSync(
-        path.join(__dirname, "../dataBase/usuarios.json"),
-        JSON.stringify(dataBaseU, null, 2)
+        path.join(__dirname, "../dataBase/users.json"),
+        JSON.stringify(userData, null, 2)
       );
       res.redirect("login"); // Redirigir al login
 
@@ -62,23 +62,23 @@ const usersController = {
   processLogin: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()){
-        const { usuarios } = dataBaseU;
+        const { users } = userData;
         const { email } = req.body;
 
         // Busca el usuario en la base de datos por correo electrónico
-        const usuarioALoguearse = usuarios.find(user => user.email === email);
+        const userLogin = users.find(user => user.email === email);
 
-        if (usuarioALoguearse) {
-            const contrasenaCorrecta = bcrypt.compareSync(req.body.password, usuarioALoguearse.password);
-            if (contrasenaCorrecta) {
+        if (userLogin) {
+            const correctPassword = bcrypt.compareSync(req.body.password, userLogin.password);
+            if (correctPassword) {
                 // Almacena el usuario en la sesión
-                req.session.usuarioLogueado = usuarioALoguearse;
+                req.session.successLoginUser = userLogin;
 
                 // Almacena el correo en una cookie
                 res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
 
                 // Redirige a la página de perfil y pasa los datos del usuario
-                res.render("userProfile", { datosUsuario: usuarioALoguearse });
+                res.render("userProfile", { userInfo: userLogin });
             } else {
                 res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
             }
@@ -91,33 +91,33 @@ const usersController = {
 },
 
   userProfile: (req,res) => {
-/*     const usuarioIngresado = req.body.email; // Correo ingresado por el usuario
+/*     const enteredUser = req.body.email; // Correo ingresado por el usuario
     // Busca el usuario en el JSON por correo electrónico
-    const usuarioEncontrado = dataBaseU.usuarios.find(usuario => usuario.email === usuarioIngresado);
+    const foundUser = userData.users.find(usuario => usuario.email === enteredUser);
 
-    if (usuarioEncontrado) {
+    if (foundUser) {
         // Usuario encontrado, pasa sus datos a la vista de perfil
-        res.render('userProfile', { usuario: usuarioEncontrado });
-        console.log(usuarioEncontrado);
+        res.render('userProfile', { usuario: foundUser });
+        console.log(foundUser);
     } */
   },
 
-  editarEliminar: (req,res) =>{
+  editDelete: (req,res) =>{
     const action = req.body.action; // Obtiene el valor del botón "action"
 
     if (action === 'eliminar') {
       const userEmail = req.params.email; // Obtén el Email del usuario de la URL
     
-      const usuarioAEliminar = dataBaseU.usuarios.findIndex(user => user.email === userEmail); // Encuentra el índice del usuario con el ID proporcionado
+      const deleteUser = userData.users.findIndex(user => user.email === userEmail); // Encuentra el índice del usuario con el ID proporcionado
 
-          if (usuarioAEliminar !== -1) {
+          if (deleteUser !== -1) {
               // Elimina al usuario de la matriz
-              dataBaseU.usuarios.splice(usuarioAEliminar, 1);
+              userData.users.splice(deleteUser, 1);
 
               // Guarda la información actualizada en el archivo JSON
               fs.writeFileSync(
-                  path.join(__dirname, "../dataBase/usuarios.json"),
-                  JSON.stringify(dataBaseU, null, 2)
+                  path.join(__dirname, "../dataBase/users.json"),
+                  JSON.stringify(userData, null, 2)
               );
 
               // Redirige al usuario a una página de confirmación
@@ -127,7 +127,7 @@ const usersController = {
       const userId = req.params.id; // Obtén el ID del usuario de la URL
 
       // Encuentra el usuario con el ID proporcionado en la matriz
-      const user = dataBaseU.usuarios.find(user => user.id === userId);
+      const user = userData.users.find(user => user.id === userId);
   
       if (user) {
           // Actualiza los campos del usuario con los datos del formulario
@@ -136,8 +136,8 @@ const usersController = {
   
           // Guarda la información actualizada en el archivo JSON o en tu base de datos
           fs.writeFileSync(
-              path.join(__dirname, "../dataBase/usuarios.json"),
-              JSON.stringify(dataBaseU, null, 2)
+              path.join(__dirname, "../dataBase/users.json"),
+              JSON.stringify(userData, null, 2)
           );
   
           // Redirige al usuario a una página de confirmación o a donde desees

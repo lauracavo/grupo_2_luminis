@@ -10,7 +10,7 @@ main{
 }
 
 /*----- BOTONES FILTRAR ------*/
-.filtros{
+.filters{
     display: flex;
     border: 2px solid rgba(255, 255, 255, 0.116);
     border-radius: 5px; 
@@ -19,7 +19,7 @@ main{
    
 }
 
-.filtros .separador{
+.filters .separator{
       
     width: 1px;
     border-right: 2px solid rgba(255, 255, 255, 0.116);
@@ -27,7 +27,7 @@ main{
 }
 
 
-.filtros .btn{
+.filters .btn{
     color: black;
     font-weight: bold; 
     display: inline-block;
@@ -47,14 +47,14 @@ main{
     0 0 50px #f1c056, 0 0 100px #ffeabd;
 }
 
-.filtros .btn .span i{
+.filters .btn .span i{
    margin-right: 15px;
    color: white;
 }
 
 
 /*----- GRID DE LIBROS ------*/
-.itemTarjeta > img{
+.product_card_item > img{
     border-radius: 8px;
     width: 100%;
     height: auto;
@@ -65,7 +65,7 @@ main{
 img:hover{
     transform: scale(0.9);
 }
-.itemTarjeta{
+.product_card_item{
     margin: 10X;
     padding: 10px;
     margin-top: 50px;
@@ -74,7 +74,7 @@ img:hover{
     repeat(auto-fill,minmax(130px, 1fr));
         gap:32px;
 }
- .boton{
+ .button_container{
         margin-top: 8px;
         display: flex;
         justify-content: center;

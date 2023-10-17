@@ -8,66 +8,141 @@
 
   <body>
     <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="formularios_register">
-      <section id="formulario_inicio_register" class="efecto_glass">
+    <main class="main_register_form">
+      <section id="register_form" class="glass_effect">
         <div>
           <form method="POST" action="/users/store" enctype="multipart/form-data">
             <h3>REGISTRAR USUARIO</h3>
-            <label class="nombre_campos" for="name">Nombre y Apellido:</label>
+            
+            <!-- Nombre -->
+            <label class="fields_name" for="name">Nombre:</label>
             <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
               <% if (locals.errors && errors.name){ %>
                 <div> <%= errors.name.msg %> </div>
                 <% } %>
-            <label class="nombre_campos" for="email">Correo electronico:</label>
+
+            <!-- Apellido -->
+            <label class="fields_name" for="lastName">Apellido:</label>
+            <input type="text" id="lastName" name="lastName" value="<%= locals.old && old.lastName ? old.lastName : '' %>"/>
+              <% if (locals.errors && errors.lastName){ %>
+                <div> <%= errors.lastName.msg %> </div>
+                <% } %>
+
+            <!-- DNI -->
+            <label class="fields_name" for="dni">DNI:</label>
+            <input type="number" id="dni" name="dni" value="<%= locals.old && old.dni ? old.dni : '' %>"/>
+              <% if (locals.errors && errors.dni){ %>
+                <div> <%= errors.dni.msg %> </div>
+                <% } %>
+
+            <!-- Email -->
+            <label class="fields_name" for="email">Correo electronico:</label>
             <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
             <% if (locals.errors && errors.email){ %> 
               <!-- era error."el valor que pasamos por name" -->
               <div> <%= errors.email.msg %> </div>
               <% } %>
 
-            <div id="soy_docente">
-              <label class="nombre_campos" for="docente">Soy docente:</label>
-              <input id="checkbox_docente" type="checkbox" name="docente" />
+            <!-- Soy Docente -->
+            <div id="im_teacher">
+              <label class="fields_name" for="teacher">Soy docente:</label>
+              <input id="teacher_checkbox" type="checkbox" name="teacher" />
             </div>
 
-            <label class="nombre_campos" for="code"
+            <!-- Codigo -->
+            <label class="fields_name" for="code"
               >Código de verificacíon:</label
             >
             <input type="text" id="code" name="code" />
 
-            <label class="nombre_campos" for="password">Contraseña:</label>
+
+            <!-- Usuario -->
+            <label class="fields_name" for="username">Usuario:</label>
+            <input type="text" id="username" name="username" value="<%= locals.old && old.username ? old.username : '' %>"/>
+              <% if (locals.errors && errors.username){ %>
+                <div> <%= errors.username.msg %> </div>
+                <% } %>
+
+
+            <label class="fields_name" for="password">Contraseña:</label>
             <input type="password" id="password" name="password" />
             <% if (locals.errors && errors.password){ %>
               <div> <%= errors.password.msg %> </div>
               <% } %>
 
-            <label class="nombre_campos" for="passwordR"
+            <label class="fields_name" for="passwordR"
               >Repetir contraseña:</label
             >
             <input type="password" id="password" name="passwordR" />
             <% if (locals.errors && errors.passwordR){ %>
               <div> <%= errors.passwordR.msg %> </div>
               <% } %>
+
+            <!-- Numero de celular -->
+            <label class="fields_name" for="cellPhone">Numero de telefono:</label>
+            <input type="number" id="cellPhone" name="cellPhone" value="<%= locals.old && old.cellPhone ? old.cellPhone : '' %>"/>
+              <% if (locals.errors && errors.cellPhone){ %>
+                <div> <%= errors.cellPhone.msg %> </div>
+                <% } %>
+
+            <!-- Dirección -->
+            <label class="fields_name" for="address">Dirección:</label>
+            <input type="text" id="address" name="address" value="<%= locals.old && old.address ? old.address : '' %>"/>
+              <% if (locals.errors && errors.address){ %>
+                <div> <%= errors.address.msg %> </div>
+                <% } %>
+
+            <!-- Ciudad -->
+            <label class="fields_name" for="city">Ciudad:</label>
+            <input type="text" id="city" name="city" value="<%= locals.old && old.city ? old.city : '' %>"/>
+              <% if (locals.errors && errors.city){ %>
+                <div> <%= errors.city.msg %> </div>
+                <% } %>
+
+            <!-- Provincia -->
+            <label class="fields_name" for="province">Provincia:</label>
+            <input type="text" id="province" name="province" value="<%= locals.old && old.province ? old.province : '' %>"/>
+              <% if (locals.errors && errors.province){ %>
+                <div> <%= errors.province.msg %> </div>
+                <% } %>
+
+            <!-- Codigo Postal -->
+            <label class="fields_name" for="cp">Codigo Postal:</label>
+            <input type="number" id="cp" name="cp" value="<%= locals.old && old.cp ? old.cp : '' %>"/>
+              <% if (locals.errors && errors.cp){ %>
+                <div> <%= errors.cp.msg %> </div>
+                <% } %>
+
+            
+            <label class="fields_name" for="rol">Selecciona un rol:</label>
+            <select id="rol" name="rol" value="<%= locals.old && old.rol ? old.rol : '' %>">
+                  <option value="user">Usuario</option>
+                  <option value="teacher">Docente</option>
+                  <option value="admin">Administrador</option>
+                </select>
                 
-            <label for="profile_image" class="nombre_campos"
+            <label for="profile_image" class="fields_name"
               >Imagen de perfil:</label
             >
-            <input type="file" name="profile_image" class="nombre_campos" />
+            <input type="file" name="profile_image" class="fields_name" />
 
-            <input id="registrarme" type="submit" value="Registrarme" />
+            <input id="submit_register" type="submit" value="Registrarme" />
             <br />
-            <p class="nombre_campos">
+            <p class="fields_name">
               ¿Ya tenés una cuenta? Inicia sesión
-              <a class="nombre_campos" href="#">aqui.</a>
+              <a class="fields_name" href="#">aqui.</a>
             </p>
           </form>
         </div>
       </section>
-      <div id="placa_izquierda">
-        <p>¡BIENVENIDO!</p>
+      <div id="left_panel">
+        <!-- Elementos del panel con animacion de escritura -->
+        <span class="typed"></span> 
       </div>
     </main>
 
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="/js/register.js"></script>
   </body>
 </html>
