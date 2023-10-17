@@ -121,9 +121,8 @@ const usersController = {
               );
 
               // Redirige al usuario a una página de confirmación
-              res.redirect("/confirmacion-eliminacion");
+              res.render("USUARIO ELIMINADO");
           }
-    res.send('Usuario eliminado');
     } else if (action === 'editar') {
       const userId = req.params.id; // Obtén el ID del usuario de la URL
 
@@ -142,7 +141,7 @@ const usersController = {
           );
   
           // Redirige al usuario a una página de confirmación o a donde desees
-          res.redirect("/confirmacion-edicion");
+          res.render("USUARIO EDITADO");
       }
     } 
   }
