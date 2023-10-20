@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de edición</title>
+</head>
+<body>
+  <%- include('head') %>
+  <%- include('header') %>
+
+  <main>
+    <h1>¿Estás seguro de que quieres editar este usuario?</h1>
+    <p>Los datos del usuario con el correo electrónico <b><%= user.email %></b> serán actualizados con los siguientes datos:</p>
+    <ul>
+      <li>Nombre: <%= user.name %></li>
+      <li>Correo electrónico: <%= user.email %></li>
+    </ul>
+
+    <div class="buttons">
+        <a href="/confirmation-editUser/confirmar" onclick="confirmar()">Confirmar</a>
+      <a href="/usuarios" onclick="cancelar()">Cancelar</a>
+    </div>
+  </main>
+
+  <%- include('footer') %>
+  <%- include('script') %>
+</body>
+</html>
