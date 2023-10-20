@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+    <title>Editar usuario</title>
+</head>
+
+<body>
+  <%- include('./partials/menu') %> <%- include('./partials/header') %>
+      <main class="edit_user_form">
+        <form method="POST" action="/users/edit/:id" enctype="multipart/form-data">
+          <h3>EDITAR PERFIL</h3>
+
+          <h4>Datos del Usuario</h4>
+
+          <label for="profile_image" class="fields_name">Imagen de perfil:</label>
+          <input type="file" name="profile_image" class="fields_name" />
+
+          <label class="fields_name" for="fullName">Nombre y Apellido:</label>
+          <input type="text" id="name" name="name" value="<%- userInfo.name %>" onfocusout="enableSaveButton()" />
+
+          <label class="fields_name" for="email">Correo electronico:</label>
+          <input type="text" id="email" name="email" value="<%- userInfo.email %>" onfocusout="enableSaveButton()" />
+
+          <label class="fields_name" for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" value="<%- userInfo.password %>" onfocusout="enableSaveButton()" />
+          
+          <h4>Datos de Envio</h4>
+          
+          <label class="fields_name" for="address">Dirección:</label>
+          <input type="text" id="address" name="address" value="<%- userInfo.address %>" onfocusout="enableSaveButton()" />
+
+          <label class="fields_name" for="cellPhone">Numero de telefono:</label>
+          <input type="number" id="cellPhone" name="cellPhone" value="<%- userInfo.cellPhone %>" onfocusout="enableSaveButton()" />
+
+          <label class="fields_name" for="city">Ciudad:</label>
+          <input type="text" id="city" name="city" value="<%- userInfo.city %>" onfocusout="enableSaveButton()" />
+
+          <label class="fields_name" for="cp">Codigo Postal:</label>
+          <input type="number" id="cp" name="cp" value="<%- userInfo.cp %>" onfocusout="enableSaveButton()" />
+
+          <label class="fields_name" for="province">Provincia:</label>
+          <input type="text" id="province" name="province" value="<%- userInfo.province %>" onfocusout="enableSaveButton()" />
+
+          
+          <input id="submit_update" type="submit" value="Guardar cambios" disabled />
+          
+        </form>
+      </main>
+
+      <%- include('./partials/footer') %> <%- include('./partials/script') %>
+
+      <script>
+        function enableSaveButton() {
+          document.getElementById('submit_register').disabled = false;
+        }
+      </script>
+</body>
+
+</html>
