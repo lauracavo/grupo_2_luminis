@@ -19,18 +19,10 @@ const usersControllerClean = {
       const profile_image = req.file ? req.file.filename : null;
 
       const {
-        name,
-        lastName,
-        dni,
+        fullName,
         image,
-        username,
         password,
         email,
-        cellPhone,
-        address,
-        city,
-        province,
-        cp,
         rol
       } = req.body;
       const hashPassword = bcrypt.hashSync(password, 10);
@@ -38,17 +30,10 @@ const usersControllerClean = {
 
       // Almacenamos los datos del usuario en un objeto
       const user = {
-        name: name,
-        lastName: lastName,
-        dni: dni,
-        userName: username,
+        fullName: fullName,
         password: password,
         email: email,
-        cellPhone: cellPhone, // Double
-        address: address,
-        city: city,
-        province: province,
-        cp: cp,
+        image: image,
         rol: rol
       };
 
