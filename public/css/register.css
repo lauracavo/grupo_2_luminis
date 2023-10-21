@@ -32,8 +32,12 @@
 
 .input-control .error {
   color: #ff3860;
-  font-size: 9px;
+  font-size: 18px;
   height: 13px;
+}
+
+.password-conditions {
+  margin-top: 12px;
 }
 
 #left_panel {

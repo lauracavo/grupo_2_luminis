@@ -52,6 +52,13 @@
               <% if (locals.errors && errors.password){ %>
                 <div> <%= errors.password.msg %> </div>
               <% } %>
+              <div class="password-conditions">
+                <ul>
+                  <li id="condition-length">Debe tener al menos 8 caracteres</li>
+                  <li id="condition-uppercase">Debe contener al menos una letra mayúscula</li>
+                  <li id="condition-digit">Debe contener al menos un número</li>
+                </ul>
+              </div>
             </div>
 
             <!-- Repetir Contraseña -->
