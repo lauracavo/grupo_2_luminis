@@ -91,7 +91,7 @@ const usersController = {
 },
 
   userProfile: (req,res) => {
-/*     const enteredUser = req.body.email; // Correo ingresado por el usuario
+    const enteredUser = req.body.email; // Correo ingresado por el usuario
     // Busca el usuario en el JSON por correo electrónico
     const foundUser = userData.users.find(usuario => usuario.email === enteredUser);
 
@@ -99,7 +99,7 @@ const usersController = {
         // Usuario encontrado, pasa sus datos a la vista de perfil
         res.render('userProfile', { usuario: foundUser });
         console.log(foundUser);
-    } */
+    }
   },
 
   editDelete: (req,res) =>{

@@ -15,21 +15,40 @@
           <img src="/img/usersProfile_images/avatar-1694739964634.JPG" alt="foto de perfil" >
         </div>
       </div>
-          <div>
-            <form method="POST" action="/users/editDelete" enctype="multipart/form-data">
+      <div id="datos_menu">
+            <ul>
+              <li>
+                <a href="#" id="usuarioLink">Datos de Usuario</a>
+                <a href="#" id="facturacionLink">Datos de facturación</a>
+              </li>
+            </ul>
+      </div>
+          <div id="datos_usuarios">
               <h3>Datos de usuario</h3>
-                <label class="fields_name" for="name">Nombre y Apellido:</label>
-                <input type="text" id="name" name="name" value="<%= userInfo.name %>"/>
-                <label class="fields_name" for="email">Correo electronico:</label>
-                <input type="text" id="email" name="email" value="<%= userInfo.email %>"/> 
-                <label class="fields_name" for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" value="<%= userInfo.password %>"/>
-              <div>
+                <div class="fields_name glass_effect"><h4>Nombre y Apellido:</h4>
+                  <p><%= userInfo.name %></p>
+                </div>
+                <div class="fields_name glass_effect"><h4>Correo electrónico:</h4>
+                  <p><%= userInfo.email %></p>
+                </div>
+                <div class="fields_name glass_effect"><h4>Contraseña:</h4>
+                  <p>**********</p>
+                </div>
+          </div>
+          <div id="datos_compras">
+            <h3>Datos de facturación</h3>
+              <div class="fields_name glass_effect"><h4>Nombre y Apellido:</h4>
+                <p><%= userInfo.name %></p>
+              </div>
+              <div class="fields_name glass_effect"><h4>Correo electrónico:</h4>
+                <p><%= userInfo.email %></p>
+              </div>
+        </div>
+            <div id="buttons">
                 <button id="delete_button" type="submit" name="action" value="delete">Eliminar Usuario</button>
                 <button id="edit_button" type="submit" name="action" value="editar">Editar Usuario</button>
-              </div>
-            </form>
           </div>
     </main>
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
+    <script src="/JS/userProfile.js"></script>
   </body>
