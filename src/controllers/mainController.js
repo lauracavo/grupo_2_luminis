@@ -7,20 +7,19 @@ const db = require('../../database/models/index')
 
 const mainController = {
   home: (req, res) => {
-    // const { books } = productsData;
-    // res.render("home", { data: books });
-
-    const products = db.Product.findAll()
-    const allimages =  db.imageproduct.findAll({})
-    .then(products, allImages =>{
-        //res.send({result: 'Succes', payload: products})
-        res.render("home", { products, allImages });
-    })
-    .catch(error=>{
-        res.send({result: 'Error', payload: error})
-    })
+    // Consulta los productos y las imágenes de la base de datos
+    db.Product.findAll()
+      .then(products => {
+        return db.imageproduct.findAll()
+          .then(allImages => {
+            res.render("home", { products, allImages });
+          })
+      })
+      .catch(error => {
+        res.send({ result: 'Error', payload: error });
+      });
   },
-  
 };
+
 
 module.exports = mainController;

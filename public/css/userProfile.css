@@ -20,7 +20,7 @@
     font-size: 24px;
 }
 #datos_menu a:hover {
-    text-decoration: underline; /* Agrega un subrayado al hacer hover en los enlaces */
+    text-decoration: underline;
 }
   
 h1#my_profile{
