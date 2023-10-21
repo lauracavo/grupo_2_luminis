@@ -47,7 +47,7 @@ const usersController = {
         path.join(__dirname, "../dataBase/users.json"),
         JSON.stringify(userData, null, 2)
       );
-      res.redirect("login"); // Redirigir al login
+      res.render("confirmationRegisterUser"); // Redirigir a la página de confirmación
 
       } else {
         res.render("register", { errors: errors.mapped(), old: req.body });

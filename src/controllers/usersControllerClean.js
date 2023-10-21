@@ -19,7 +19,6 @@ const usersControllerClean = {
       const profile_image = req.file ? req.file.filename : null;
 
       const {
-        
         name,
         lastName,
         dni,
