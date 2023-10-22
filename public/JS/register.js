@@ -1,9 +1,12 @@
-const form = document.querySelector('#prueba');
+//Validaciones de Registro desde el Front
+//Capturamos los elementos del formulario
+const form = document.querySelector('#formRegister');
 const fullNameInput = document.querySelector('#fullName');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 const passwordRInput = document.querySelector('#passwordR');
 
+//Creamos setError, una función de ayuda para manejar los mensajes de error
 const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector('.error');
@@ -13,6 +16,7 @@ const setError = (element, message) => {
   inputControl.classList.remove('success');
 };
 
+//Creamos setSuccess, una función de ayuda para cambiar la clase error a success si no hay errores
 const setSuccess = element => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector('.error');
@@ -22,11 +26,13 @@ const setSuccess = element => {
   inputControl.classList.remove('error');
 };
 
+//Función para revisar si el email es de formato válido
 const isValidEmail = email => {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
 
+//Validación del campo fullName
 const validateFullName = () => {
   const fullNameValue = fullNameInput.value.trim();
   if (fullNameValue === '') {
@@ -38,6 +44,7 @@ const validateFullName = () => {
   }
 };
 
+//Validación del campo email
 const validateEmail = () => {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
@@ -49,11 +56,13 @@ const validateEmail = () => {
   }
 };
 
+//Capturamos elementos necesarios para validar el campo password, en este caso las condiciones
 const passwordConditions = document.querySelector('.password-conditions');
 const conditionLength = document.getElementById('condition-length');
 const conditionUppercase = document.getElementById('condition-uppercase');
 const conditionDigit = document.getElementById('condition-digit');
 
+//Validación del campo password
 const validatePassword = () => {
   const passwordValue = passwordInput.value.trim();
   const hasUppercase = /[A-Z]/.test(passwordValue);
@@ -87,6 +96,7 @@ const validatePassword = () => {
   }
 };
 
+//Validación del campo passwordR
 const validatePasswordR = () => {
   const passwordValue = passwordInput.value.trim();
   const passwordRValue = passwordRInput.value.trim();
@@ -99,11 +109,14 @@ const validatePasswordR = () => {
   }
 };
 
+//Creamos un evento input para validar los campos
 fullNameInput.addEventListener('input', validateFullName);
 emailInput.addEventListener('input', validateEmail);
 passwordInput.addEventListener('input', validatePassword);
 passwordRInput.addEventListener('input', validatePasswordR);
 
+//Agregamos un evento 'submit' al formulario con un preventDefault
+//y ejecutamos cada una de las validaciones
 form.addEventListener('submit', function(e){
   e.preventDefault();
   validateFullName();
@@ -111,38 +124,6 @@ form.addEventListener('submit', function(e){
   validatePassword();
   validatePasswordR();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Creamos las diferentes opciones que se escribirán en la animación, su orden y velocidad de typeo 
 const options = {

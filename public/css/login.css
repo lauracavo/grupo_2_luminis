@@ -34,6 +34,29 @@ select:focus-within {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 18px;
+  height: 13px;
+}
+
 #checkbox_recordarme {
   width: 20px;
   accent-color: #2a9d8f;
