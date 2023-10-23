@@ -11,13 +11,18 @@
     <main class="login_form_main">
       <section id="login_form" class="glass_effect">
         <div>
-          <form action="/users/processLogin" method="post">
+          <form id="formLogin" action="/users/processLogin" method="post">
             <h3>INGRESAR</h3>
-            <label class="fields_name" for="email">Correo electronico:</label>
-            <input type="email" id="email" name="email"/>
-            <% if (locals.errors && errors.email){ %>
-              <div> <%= errors.email.msg %> </div>
-            <% } %>
+
+            <!-- Email -->
+            <div class="input-control">
+              <label class="fields_name" for="email">Correo electronico:</label>
+              <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
+              <div class="error"></div>
+              <% if (locals.errors && errors.email){ %> 
+                <div> <%= errors.email.msg %> </div>
+              <% } %>
+            </div>
 
             <% if (locals.errors) { %>
               <div>
@@ -27,11 +32,15 @@
               </div>
             <% } %>
 
-            <label class="fields_name" for="password">Contraseña:</label>
-            <input type="password" id="password" name="password"/>
-            <% if (locals.errors && errors.password){ %>
-              <div> <%= errors.password.msg %> </div>
+            <!-- Contraseña -->
+            <div class="input-control">
+              <label class="fields_name" for="password">Contraseña:</label>
+              <input type="password" id="password" name="password" />
+              <div class="error"></div>
+              <% if (locals.errors && errors.password){ %>
+                <div> <%= errors.password.msg %> </div>
               <% } %>
+            </div>
 
             <div id="remember_me">
               <label class="fields_name" for="remember_me">Recordarme:</label>
@@ -42,7 +51,7 @@
             <br />
             <p class="fields_name">
               ¿No estás registrado? Registrate
-              <a class="fields_name" href="#">aqui.</a>
+              <a class="fields_name" href="/users/register">aqui.</a>
             </p>
           </form>
         </div>

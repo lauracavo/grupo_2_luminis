@@ -47,7 +47,7 @@ const usersController = {
         path.join(__dirname, "../dataBase/users.json"),
         JSON.stringify(userData, null, 2)
       );
-      res.redirect("login"); // Redirigir al login
+      res.render("confirmationRegisterUser"); // Redirigir a la página de confirmación
 
       } else {
         res.render("register", { errors: errors.mapped(), old: req.body });
@@ -91,7 +91,7 @@ const usersController = {
 },
 
   userProfile: (req,res) => {
-/*     const enteredUser = req.body.email; // Correo ingresado por el usuario
+    const enteredUser = req.body.email; // Correo ingresado por el usuario
     // Busca el usuario en el JSON por correo electrónico
     const foundUser = userData.users.find(usuario => usuario.email === enteredUser);
 
@@ -99,7 +99,7 @@ const usersController = {
         // Usuario encontrado, pasa sus datos a la vista de perfil
         res.render('userProfile', { usuario: foundUser });
         console.log(foundUser);
-    } */
+    }
   },
 
   editDelete: (req,res) =>{
@@ -121,9 +121,8 @@ const usersController = {
               );
 
               // Redirige al usuario a una página de confirmación
-              res.redirect("/confirmacion-eliminacion");
+              res.render("USUARIO ELIMINADO");
           }
-    res.send('Usuario eliminado');
     } else if (action === 'editar') {
       const userId = req.params.id; // Obtén el ID del usuario de la URL
 
@@ -142,7 +141,7 @@ const usersController = {
           );
   
           // Redirige al usuario a una página de confirmación o a donde desees
-          res.redirect("/confirmacion-edicion");
+          res.render("USUARIO EDITADO");
       }
     } 
   }

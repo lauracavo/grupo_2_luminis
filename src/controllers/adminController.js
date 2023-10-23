@@ -10,7 +10,6 @@ const adminController = {
   getAll: (req, res) => {
     db.Product.findAll()
       .then(product =>{
-          //res.send({result: 'Succes', payload: products})
           res.render("admin", { product });
       })
       .catch(error=>{
@@ -38,11 +37,9 @@ const adminController = {
     });
 
          const idProduct = product.idProduct; 
-         console.log(idProduct)
          
          // Guardar las imágenes asociadas al producto 
          const imgProduct = req.file;
-         console.log (req.file)
          
           // Verificamos si hay una imagen cargada
     if (imgProduct) {
@@ -97,22 +94,6 @@ const adminController = {
       res.send({result: 'Error', payload: error})
   })
   res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
-    // const {books} = booksData
-
-    // const productId= books.find((element)=>{
-    //   return element.id == id
-    // });
-
-      // booksData.books = booksData.books.filter((element)=>{
-      //   return element.id != id
-    // })
-    
-//  fs.writeFileSync(
-//         path.join(__dirname, "../dataBase/books.json"),
-//         JSON.stringify(booksData, null, 2)
-//       );
-  
-     
   },
 
   };

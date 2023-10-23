@@ -50,6 +50,63 @@
       "code": "12345",
       "password": "$2a$10$/h0j7NFj6AjihMae783SqOGmegyl0TSs9GaGQhj5ISsGaexBSYyc6",
       "profile_image": null
+    },
+    {
+      "name": "Laura ",
+      "email": "laura.cavo@outlook.com",
+      "teacher": "on",
+      "code": "7548",
+      "password": "$2a$10$wkJOfE9uE0aXZj/D53EopuG04uMptUyk35CyJ3P7AcUnJzlfvqpTu",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$4vqeS2GMyMO9hvo4cfG1HeSbNMfBzc7EFBbUx74yKrALpGgUmU9gu",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$JgmK5ql4wG5qj.VihoULaOYVsHNRmFyiiSKc7qN9NAQ/Omj6DNOba",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$SI/VKz.fBiCr1KRbLlzIguNIBU/sGzvDecR/jgtF5Icv98XnRw23y",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$At6oMifpXOX9gqvbvbG5SeVpUs5n4qp1Nf/Obhedo5Djns2RDMn0G",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$HeNN2CkEiebPizDHjjGeYePb4UiFJzGRDowJSDiomRmEuf4T4L4Om",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$c5y8DDnB9DKwmSJzgU/Qq.IKI1ZEBkqJtjF9rYfYw/JGllzDELvRa",
+      "profile_image": null
+    },
+    {
+      "name": "La",
+      "email": "laura.cavo@outlook.com",
+      "code": "",
+      "password": "$2a$10$6/T6rds4fovHHNwcr2iR0.ZWxi.rtTzsxern60RrmZnee8Fs3c2aW",
+      "profile_image": null
     }
   ]
 }

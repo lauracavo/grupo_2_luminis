@@ -1,6 +1,30 @@
+#datos_usuarios, #datos_compras {
+    display: none;
+  }
+
+#datos_menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+#datos_menu ul li{
+    margin: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+#datos_menu ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+#datos_menu a:hover {
+    text-decoration: underline;
+}
+  
 h1#my_profile{
     font-size: 24px;
-    padding-left: 30px;
 }
 div#profile_image_container{
     display: flex;
@@ -16,6 +40,62 @@ div#profile_image{
     justify-content: center;
     align-items: center;
 }
+#datos_usuarios{
+    margin: auto;
+}
+.fields_name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 75%;
+    margin: 25px auto;
+}
 
+h3{
+    margin-left: 165px;
+}
 
+h4{
+    margin: 10px;
+    font-size: 18px;
+}
 
+p{
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+}
+#delete_button{
+    --primary-color: #e46f50;
+    --secondary-color: #fff;
+    --hover-color: #f2a160;
+    
+}
+#edit_button{
+    --primary-color: #2a9d8e;
+    --secondary-color: #fff;
+    --hover-color: #264653;
+}
+
+button{
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  margin: 10px;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+  }
