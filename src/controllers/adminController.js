@@ -83,11 +83,11 @@ const adminController = {
           res.status(500).send("Ha ocurrido un error al crear el producto.");
       }
     },
-  delete: (req,res)=>{
+  delete: async (req,res)=>{
     console.log ("eliminando");
     const {id} = req.params;
     console.log (req.params.id);
-    db.Product.destroy({
+   await db.Product.destroy({
       where:{idProduct: parseInt(id)}
   })
   .then(result=>{
