@@ -1,25 +1,70 @@
-const path = require("path");
-const fs = require("fs");
-const userData = require("../dataBase/users.json");
-const productsData = require("../dataBase/books.json");
-const dataBaseUp = require("../dataBase/userTest.json");
-const db = require('../../database/models/index')
+
+const db = require('../../database/models/index');
+
+
 
 const mainController = {
-  home: (req, res) => {
-    // Consulta los productos y las imágenes de la base de datos
-    db.Product.findAll()
-      .then(products => {
-        return db.imageproduct.findAll()
-          .then(allImages => {
-            res.render("home", { products, allImages });
-          })
-      })
-      .catch(error => {
-        res.send({ result: 'Error', payload: error });
-      });
-  },
-};
+
+  home: async (req, res) => {
+try{
+    let product = await db.Product.findAll()
+
+  for(let item of product){
+      // console.log(item)
+      const imgList = await db.imageproduct.findOne({ where: {idProduct: item.idProduct}});
+      product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
+  //     console.log(imgList.dataValues)
+   }
+  
+   res.render("home", {product})
+} catch (error){
+      res. send({ result: 'Error', payload: error });
+}
+   
+    },   
+}
+   
+      module.exports = mainController
 
 
-module.exports = mainController;
+
+
+
+
+
+
+  // index: (req, res) => {
+  //   // Consulta los productos y las imágenes de la base de datos
+  //   db.Product.findAll()
+  //     .then(products => {
+  //       return db.imageproduct.findAll({
+  //       attributes: ['idProduct', [sequelize.fn('MIN', sequelize.col('idImgProduct')), 'minIdImgProduct']],
+  //       group: ['idProduct'],        
+  //       })
+  //         .then(allImages => {
+  //           const promises = allImages.map(image => {
+  //               const minIdImgProduct = image.dataValues.minIdImgProduct;   
+  //               console.log (minIdImgProduct) 
+  //               return db.imageproduct.findOne({
+  //                 where: { idImgProduct: minIdImgProduct },
+  //               });
+  //          })
+  //          return Promise.all(promises)
+  //             .then(images => {
+  //               res.render("home", { products, allImages: images });
+  //         })
+  //       })
+  //       .catch(error => {
+  //         console.log (' esta promesa no puede ejercutarse')
+  //         res.send({ result: 'Error', payload: error });
+  //       });
+  //     })
+  //       .catch(error => {
+  //         console.log ('promesa 2 no se ha cumplido')
+  //       res.send({ result: 'Error', payload: error });
+  //     });
+  // }}
+
+
+
+

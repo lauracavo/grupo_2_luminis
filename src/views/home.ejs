@@ -36,9 +36,9 @@
       <section id="new_products">
         <h3>PRODUCTOS NUEVOS</h3>
         <div class="hidden_articles">
-          <% products.map(item => { %>
+          <% product.map(item => { %>
           <article class="glass_effect display_flex">
-            <img class="product_image" src="/img/books/<%= item.img %>" />
+            <img class="product_image" src="/img/books/<%= item.imgList?.name %>" />
             <div class="display_flex product_information">
               <p class="product_name"><%= item.name %></p>
               <p class="prices">Precio por unidad: <%= item.priceByUnit %></p>
@@ -166,15 +166,14 @@
       <section id="best_sellers">
         <h3>LOS MÁS VENDIDOS</h3>
         <div class="hidden_articles">
-          <% products.map(item => { %>
-          <article class="glass_effect display_flex">
-            <% allImages.forEach(imagesproducts => { %>
-            <img class="product_image" src="/img/books/<%= imagesproducts.name %>" />
-            <% }); %>
+          <% product.map(item => { %>
+          <article class="glass_effect display_flex">            
+            <img class="product_image" src="/img/books/<%= item.imgList?.name %>" />
+            
             <div class="display_flex product_information">
               <p class="product_name"><%= item.name %></p>
-              <p class="prices">Precio por unidad: <%= item.priceByUnit %></p>
-              <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p>
+              <p class="prices">Precio: <%= item. salePrice %></p>
+              <!-- <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p> -->
               </div>
             <div class="button_container">
               <button class="button">
