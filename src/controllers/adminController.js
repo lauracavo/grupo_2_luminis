@@ -4,14 +4,18 @@ const upload = require("../middlewares/multerConfigProd");
 
 
 const adminController = {
-  getAll: (req, res) => {
-    db.Product.findAll()
-      .then(product => {
-        res.render("admin", { product });
-      })
-      .catch(error => {
+  getAll: async (req, res) => {
+    try{
+      let product = await db.Product.findAll()
+      for(let item of product){
+        // console.log(item)
+        const imgList = await db.imageproduct.findOne({ where: {idProduct: item.idProduct}});
+        product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
+      }
+      res.render("admin", { product });
+      }catch(error){
         res.send({ result: 'Error', payload: error })
-      })
+      }
   },
   create: async (req, res) => {
     const allCategories = await db.Categorie.findAll({})

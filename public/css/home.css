@@ -44,14 +44,15 @@ section div.product_information {
   flex-direction: column;
 }
 .product_image{
-  width: 100px;
-  height: 500px;
+  width: 70px;
+  height: auto;
   border-radius: 8px;
   object-fit: cover;
   transition: all 0.5s ease;
 }
 .product_image:hover{
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
 }
 
 .product_name {

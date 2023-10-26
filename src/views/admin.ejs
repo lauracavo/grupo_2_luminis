@@ -17,6 +17,7 @@
     <thead id="table_header" class="glass_effect">
       <tr>
         <td class="table_titles">ID</th>
+        <td class="table_titles">PORTADA</th>
         <td class="table_titles">NOMBRE</th>
         <td class="table_titles">PRECIO DE COMPRA</th>
         <td class="table_titles">PRECIO DE VENTA</th>
@@ -30,6 +31,8 @@
       <!-- Contenido de la tabla -->
       <tr>
         <td class="table_content"><%= item.idProduct %></td>
+      </td>
+        <td><img src="/img/books/<%= item.imgList?.name %>" class = "img" alt=""></td>
         <td class="table_content"><%= item.name %></td>
         <td class="table_content"><%= item.purchasePrice %></td>
         <td class="table_content"><%= item.salePrice %></td>

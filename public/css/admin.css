@@ -15,6 +15,10 @@ label {
 .fields_name {
   font-size: 23px;
 }
+.img {
+  width: 70px;
+  height: auto;
+}
 input[type="text"],
 input[type="file"] {
   width: 60%;
@@ -42,6 +46,7 @@ input[type="file"]:focus-within {
   cursor: pointer;
   transition: all 0.5s ease;
 }
+
 
 .fcc-btn {
   font-size: 15px;

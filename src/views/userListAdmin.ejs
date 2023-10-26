@@ -15,7 +15,8 @@
             <td class="table_titles">ID</th>
             <td class="table_titles">EMAIL</th>
             <td class="table_titles">ROL ACTUAL</th>   
-            <td class="table_titles">ROL ADMINISTRADOR</th>   
+            <td class="table_titles">ROL ADMIN</th>   
+            <td class="table_titles">ELIMINAR</th>   
           </tr>
         </thead>
         <% user.map(item => { %>
@@ -27,11 +28,11 @@
                 <td class="table_content"><%= item.rol %></td>                
                 <td class="table_content">
                     <input type="checkbox" name="adminRol" class="adminRol">
-                  </td>
                 </td>
+                
                 <td class="table_content">
                   <form action="/admin/deleteUser/<%= item.idUser %>?_method=DELETE" method="post" class="formulario" >
-                      <i class="fas fa-trash"></i> 
+                      <i class="fas fa-trash"></i>  
                   </form>
                 </td>
               </tr>
