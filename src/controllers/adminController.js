@@ -1,6 +1,3 @@
-const path = require("path");
-const fs = require("fs");
-const booksData = require("../dataBase/books.json");
 const db = require('../../database/models/index');
 const upload = require("../middlewares/multerConfigProd");
 
@@ -97,6 +94,15 @@ const adminController = {
         res.send({ result: 'Error', payload: error })
       })
     res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+  },
+  listUser: (req, res) => {
+    db.User.findAll()
+      .then(user => {
+        res.render("userListAdmin", { user });
+      })
+      .catch(error => {
+        res.send({ result: 'Error', payload: error })
+      })
   },
 
 };

@@ -16,26 +16,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-
-
-        // lastName:{
-        //     type:DataTypes.STRING,
-        //     allowNull: false
-        // },
-
-
-        // dni:{
-        //   type:DataTypes.STRING,
-        //   allowNull: false
-        // },
-
-
-        // userName:{
-        //     type:DataTypes.STRING,
-        //     allowNull: false
-        // },
-
-
         password: {
             type: DataTypes.STRING,
             allowNull: false
@@ -44,31 +24,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-
-
-
-        // cellPhone:{
-        //     type : DataTypes.DOUBLE,
-        //     allowNull : true
-        // },
-        // address:{
-        //     type:DataTypes.INTEGER,
-        //     allowNull: true
-        // },
-        // city:{
-        //     type:DataTypes.INTEGER,
-        //     allowNull: true
-        // },
-        // province:{
-        //     type:DataTypes.INTEGER,
-        //     allowNull: true
-        // },
-        // cp:{
-        //     type:DataTypes.INTEGER,
-        //     allowNull: true
-        // },
-
-
         rol: {
             type: DataTypes.STRING,
             allowNull: false

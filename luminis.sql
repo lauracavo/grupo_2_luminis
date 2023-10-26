@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2023 a las 02:40:40
+-- Tiempo de generación: 26-10-2023 a las 06:18:59
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -125,17 +125,9 @@ INSERT INTO `products` (`idProduct`, `name`, `brand`, `editorial`, `author`, `de
 
 CREATE TABLE `users` (
   `idUser` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `dni` varchar(12) NOT NULL,
-  `userName` varchar(50) NOT NULL,
+  `fullname` varchar(50) NOT NULL,
   `password` varchar(120) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `cellPhone` varchar(50) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `city` varchar(50) NOT NULL,
-  `province` varchar(50) NOT NULL,
-  `cp` varchar(10) NOT NULL,
   `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
