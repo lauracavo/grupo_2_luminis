@@ -9,7 +9,7 @@
 <body>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
       <main class="edit_user_form">
-        <form method="POST" action="/users/edit/:id" enctype="multipart/form-data">
+        <form  id="formEdit" method="POST" action="/users/edit/:id" enctype="multipart/form-data">
           <h3>EDITAR PERFIL</h3>
 
           <h4>Datos del Usuario</h4>
@@ -18,7 +18,7 @@
           <input type="file" name="profile_image" class="fields_name" />
 
           <label class="fields_name" for="fullName">Nombre y Apellido:</label>
-          <input type="text" id="name" name="name" value="<%- userInfo.name %>" onfocusout="enableSaveButton()" />
+          <input type="text" id="fullName" name="fullName" value="<%- userInfo.name %>" onfocusout="enableSaveButton()" />
 
           <label class="fields_name" for="email">Correo electronico:</label>
           <input type="text" id="email" name="email" value="<%- userInfo.email %>" onfocusout="enableSaveButton()" />
@@ -26,6 +26,16 @@
           <label class="fields_name" for="password">Contraseña:</label>
           <input type="password" id="password" name="password" value="<%- userInfo.password %>" onfocusout="enableSaveButton()" />
           
+          <div class="input-control">
+            <label class="fields_name" for="passwordR">Repetir contraseña:</label>
+            <input type="password" id="passwordR" name="passwordR" />
+            <div class="error"></div>
+            <% if (locals.errors && errors.passwordR){ %>
+              <div> <%= errors.passwordR.msg %> </div>
+            <% } %>
+          </div>
+
+
           <h4>Datos de Envio</h4>
           
           <label class="fields_name" for="address">Dirección:</label>
@@ -56,6 +66,9 @@
           document.getElementById('submit_register').disabled = false;
         }
       </script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="/js/register.js"></script>
 </body>
 
 </html>

@@ -2,15 +2,9 @@ const { body } = require("express-validator");
 
 //middleware para validar el formulario de registro
 const validateRegister = [
-  body("name").notEmpty().withMessage("Debe ingresar nombre"),
-
-  body("lastName").notEmpty().withMessage("Debe ingresar su apellido"),
-
-  body("dni").notEmpty().withMessage("Debe ingresar su DNI"),
+  body("fullName").notEmpty().withMessage("Debe ingresar nombre"),
 
   body("email").notEmpty().withMessage("Debe ingresar su email").bail().isEmail().withMessage("Debe ingresar un Email válido"),
-
-  body("username").notEmpty().withMessage("Debe ingresar un nombre de usuario"),
 
   body("password").notEmpty().withMessage("Debe ingresar una constraseña válida"),
 
@@ -22,15 +16,15 @@ const validateRegister = [
     return true;
   }),
 
-  body("cellPhone").notEmpty().withMessage("Debe ingresar un numero de telefono"),
+  // body("cellPhone").notEmpty().withMessage("Debe ingresar un numero de telefono"),
 
-  body("address").notEmpty().withMessage("Debe ingresar una dirección"),
+  // body("address").notEmpty().withMessage("Debe ingresar una dirección"),
 
-  body("city").notEmpty().withMessage("Debe ingresar una ciudad"),
+  // body("city").notEmpty().withMessage("Debe ingresar una ciudad"),
 
-  body("province").notEmpty().withMessage("Debe ingresar una provincia"),
+  // body("province").notEmpty().withMessage("Debe ingresar una provincia"),
 
-  body("cp").notEmpty().withMessage("Debe ingresar un codigo postal"),
+  // body("cp").notEmpty().withMessage("Debe ingresar un codigo postal"),
 ];
 
 module.exports = validateRegister

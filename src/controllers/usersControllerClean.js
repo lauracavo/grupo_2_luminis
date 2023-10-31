@@ -6,7 +6,8 @@ const { validationResult } = require("express-validator");
 const bcrypt = require('bcryptjs');
 const upload = require("../middlewares/multerConfig");
 // const { log, error } = require("console");
-const db = require("../../database/models")
+const db = require("../../database/models");
+const { Console } = require("console");
 
 const usersControllerClean = {
   register: (req, res) => {
@@ -14,6 +15,7 @@ const usersControllerClean = {
   },
   store: (req, res) => {
     let errors = validationResult(req);
+    console.log(errors)
     if (errors.isEmpty()) {
       // Si la foto de perfil se cargó correctamente, accedemos a ella
       const profile_image = req.file ? req.file.filename : null;
@@ -31,10 +33,11 @@ const usersControllerClean = {
       // Almacenamos los datos del usuario en un objeto
       const user = {
         fullName: fullName,
-        password: password,
+        password: hashPassword,
         email: email,
-        image: image,
-        rol: rol
+        image: req.file,
+        rol: (req.body?.teacher == 'on')? 'profesor' : 'cliente'
+        
       };
 
       // Guardamos el usuario en la base de datos
