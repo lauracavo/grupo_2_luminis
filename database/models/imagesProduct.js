@@ -1,7 +1,7 @@
 const {Sequelize, DataTypes} = require ('sequelize');
    //Aca definimos el modelo
     module.exports = (sequelize, DataTypes) => {
-        let alias = 'imageproduct'; // esto debería estar en singular
+        let alias = 'ImageProduct'; // esto debería estar en singular
         let cols = {
     // define los campos del modelo y tipos de datos
     idImgProduct: {
@@ -23,7 +23,7 @@ const {Sequelize, DataTypes} = require ('sequelize');
         const imageproduct = sequelize.define(alias, cols, config)
        //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos 
        imageproduct.associate = ( models ) =>{
-        imageproduct.belongsTo( models.product, {
+        imageproduct.belongsTo( models.Product, {
             as: "Product",
             foreignKey: "idProduct"
         } )};

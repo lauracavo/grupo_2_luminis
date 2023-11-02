@@ -51,7 +51,7 @@ let config = {
     // createdAt: 'created_at',
     // updatedAt: 'updated_at',
     // deletedAt: false,
-    tableName: 'personal_datas'
+    tableName: 'personal_data'
     }
 
     const products = sequelize.define(alias, cols, config)
@@ -62,7 +62,7 @@ let config = {
            foreignKey: "idCategory"
        } );
     
-    products.hasMany(models.imagesproduct, {
+    products.hasMany(models.ImageProduct, {
          as: 'imagesproduct', 
          foreignKey: 'idProduct' });    
    }

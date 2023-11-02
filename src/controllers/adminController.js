@@ -9,7 +9,7 @@ const adminController = {
       let product = await db.Product.findAll()
       for(let item of product){
         // console.log(item)
-        const imgList = await db.imageproduct.findOne({ where: {idProduct: item.idProduct}});
+        const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
         product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
       }
       res.render("admin", { product });
@@ -47,12 +47,12 @@ const adminController = {
         // Si hay una imagen cargada, la guardamos
         await Promise.all(imgProduct.map(async (img) => {
           const imageRecord = { name: img.filename, idProduct };
-          await db.imageproduct.create(imageRecord);
+          await db.ImageProduct.create(imageRecord);
         }));
       } else {
         // Si no hay imagen cargada, guardamos una imagen por defecto
         const defaultImageRecord = { name: 'sinImagen.png', idProduct };
-        await db.imageproduct.create(defaultImageRecord);
+        await db.ImageProduct.create(defaultImageRecord);
       }
       res.redirect("/admin");
     }
