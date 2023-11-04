@@ -18,7 +18,7 @@
           <input type="file" name="profile_image" class="fields_name" />
 
           <label class="fields_name" for="fullName">Nombre y Apellido:</label>
-          <input type="text" id="fullName" name="fullName" value="<%- userInfo.name %>" onfocusout="enableSaveButton()" />
+          <input type="text" id="fullName" name="fullName" value="<%- userInfo.fullName %>" onfocusout="enableSaveButton()" />
 
           <label class="fields_name" for="email">Correo electronico:</label>
           <input type="text" id="email" name="email" value="<%- userInfo.email %>" onfocusout="enableSaveButton()" />
@@ -68,7 +68,7 @@
       </script>
       <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="/js/register.js"></script>
+      <script src="/js/editUser.js"></script>
 </body>
 
 </html>

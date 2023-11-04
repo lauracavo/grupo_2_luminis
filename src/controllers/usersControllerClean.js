@@ -35,14 +35,14 @@ const usersControllerClean = {
         fullName: fullName,
         password: hashPassword,
         email: email,
-        image: req.file,
+        image: req.file.filename,
         rol: (req.body?.teacher == 'on')? 'profesor' : 'cliente'
         
       };
 
       // Guardamos el usuario en la base de datos
-      // db.User.create(user);
-      console.log(user);
+      db.User.create(user);
+      res.redirect("/users/login")
 
     }
   },
@@ -60,7 +60,7 @@ const usersControllerClean = {
       const userLogin = await db.User.findOne({ where: { email: email } });
       // // Busca el usuario en la base de datos por correo electrónico
       // const userLogin = users.find(user => user.email === email);
-      console.log(userLogin);
+      
       if (userLogin) {
         const correctPassword = bcrypt.compareSync(req.body.password, userLogin.password);
         if (correctPassword) {
@@ -71,7 +71,9 @@ const usersControllerClean = {
           res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
 
           // Redirige a la página de perfil y pasa los datos del usuario
-          res.render("userProfile", { userInfo: userLogin });
+          // res.render("userProfile", { userInfo: userLogin });
+            res.redirect("/users/userProfile")
+
         } else {
           res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
         }
@@ -84,19 +86,68 @@ const usersControllerClean = {
   },
 
   userProfile: async (req, res) => {
-    const enteredUser = req.body.email; // Correo ingresado por el usuario (session / coockies)
+    const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
+     
+
 
     // Busca el usuario en la base de datos por correo electrónico
-    const foundUser = await db.Users.findOne({ where: { email: enteredUser } });
+    const foundUser = await db.User.findOne({ where: { email: enteredUser } });
 
     if (foundUser) {
       // Usuario encontrado, pasa sus datos a la vista de perfil
-      res.render('userProfile', { usuario: foundUser });
+      res.render('userProfile', { userInfo: foundUser });
     } else {
       // Usuario no encontrado
       res.status(404).send('Usuario no encontrado');
     }
   },
+
+viewEdit: async (req, res) => {
+  const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
+     
+
+
+  // Busca el usuario en la base de datos por correo electrónico
+  const foundUser = await db.User.findOne({ where: { email: enteredUser } });
+
+  if (foundUser) {
+    // Usuario encontrado, pasa sus datos a la vista de perfil
+    console.log(foundUser)
+    res.render('../views/editUser.ejs', { userInfo: foundUser });
+  } else {
+    // Usuario no encontrado
+    res.status(404).send('Usuario no encontrado');
+  }
+
+
+
+},
+
+viewDelete: async (req, res) => {
+  const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
+     
+
+
+  // Busca el usuario en la base de datos por correo electrónico
+  const foundUser = await db.User.findOne({ where: { email: enteredUser } });
+
+  if (foundUser) {
+    // Usuario encontrado, pasa sus datos a la vista de perfil
+    console.log(foundUser)
+    res.render('../views/confirmation-deleteUser.ejs', { userInfo: foundUser });
+  } else {
+    // Usuario no encontrado
+    res.status(404).send('Usuario no encontrado');
+  }
+
+
+
+},
+
+
+
+
+
 
   editDelete: async (req, res) => {
     const action = req.body.action; // Obtiene el valor del botón "action"
