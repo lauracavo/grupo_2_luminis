@@ -1,4 +1,4 @@
-const {Sequelize, DataTypes} = require ('sequelize');
+const {Sequelize, DataTypes} = require ('sequelize')
 // const sequelize = new Sequelize
  
 
@@ -15,7 +15,10 @@ const {Sequelize, DataTypes} = require ('sequelize');
     name:{
         type:DataTypes.STRING,
         allowNull:false,
-    }},
+    },
+    idProduct: {type: DataTypes.INTEGER}
+    },
+    
    {
     timestamps: false,
    

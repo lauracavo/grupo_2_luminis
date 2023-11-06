@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/cart.css">
+   <link rel="stylesheet" href="css/admin.css">
+   <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
@@ -27,11 +27,12 @@
                 <td class="table_content"><%= item.email %></td>
                 <td class="table_content"><%= item.rol %></td>                
                 <td class="table_content">
-                    <input type="checkbox" name="adminRol" class="adminRol">
+                  <form action="/admin/updateUser/<%= item.idUser %>?" class="fcc-btn" >
+                      <button class = "btn">VER MAS</button>
+                  </form>
                 </td>
-                
                 <td class="table_content">
-                  <form action="/admin/deleteUser/<%= item.idUser %>?_method=DELETE" method="post" class="formulario" >
+                  <form action="/admin/deleteUser/<%= item.idUser %>?_method=DELETE" method="post" class="button-form" >
                       <i class="fas fa-trash"></i>  
                   </form>
                 </td>

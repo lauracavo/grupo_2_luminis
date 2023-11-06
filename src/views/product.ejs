@@ -35,8 +35,8 @@
       <!------   GRID DE IMAGENES   ------>
 
       <div class="product_card_item glass_effect">
-        <% products.map(item => { %>
-        <img src="../img/books/<%= item.img %>" alt="<%= item.name %>" />
+        <% product.map(item => { %>
+        <img src="../img/books/<%= item.imgList?.name %>" alt="<%= item.imgList?.name %>" />
         <% }); %>
       </div>
 
