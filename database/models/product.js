@@ -70,9 +70,11 @@ let config = {
            foreignKey: "idCategory"
        } );
     
-    products.hasMany(models.ImageProduct, {
-         as: 'imagesproduct', 
-         foreignKey: 'idProduct' });    
+       products.belongsTo(models.Categorie, {
+            foreignKey: 'idCategory',
+             as: 'category'
+                });
+          
    }
     return products
     }
