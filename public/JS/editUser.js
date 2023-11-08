@@ -243,4 +243,19 @@ const options = {
 })
 
 
+//marca o desmarca la casilla de verificación "Habilitar Datos de Facturación"
+function toggleShippingForm() {
+  var secondForm = document.getElementById('secondForm');
+  var enableShipping = document.getElementById('enableShipping');
+  if (enableShipping.checked) {
+    secondForm.style.display = 'block';
+  } else {
+    secondForm.style.display = 'none';
+  }
+  enableSaveButton();
+}
 
+//habilitar o deshabilitar el botón "Guardar cambios"
+function enableSaveButton() {
+  document.getElementById('submit_update').disabled = false;
+}
