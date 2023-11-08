@@ -60,10 +60,16 @@ const adminController = {
       console.error(error); res.status(500).send("Ha ocurrido un error al crear el producto.");
     }
   },
-  edit: (req, res) => {
+  edit: async (req, res) => {
+    
+    const allCategories = await db.Categorie.findAll()  
+    console.log (allCategories)
     db.Product.findByPk(req.params.id)
+  
       .then(products => {
-        res.render("formEdit", { products })
+       
+        res.render("formEdit", { products, allCategories})
+        
       })
       .catch(error => {
         res.send({ result: 'Error', payload: error })
@@ -73,15 +79,19 @@ const adminController = {
   editProduct: async (req, res) => {
     try {
       const { id } = req.params;
+      
+     
       await db.Product.update(req.body, {
-
-        where: { idProduct: parseInt(id) }
+       
+        where: { idProduct: parseInt(id) },
+        
       });
+      
       res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
     } catch (error) {
       // Manejar el error aquí
       console.error(error); // Puedes imprimir el error en la consola para depuración
-      res.status(500).send("Ha ocurrido un error al crear el producto.");
+      res.status(500).send("Ha ocurrido un error al editar el producto.");
     }
   },
   delete: async (req, res) => {
