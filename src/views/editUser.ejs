@@ -3,72 +3,100 @@
 
 <head>
   <%- include('./partials/head') %>
+  <link rel="stylesheet" href="/css/editUser.css" />
+  <link rel="stylesheet" href="/css/userProfile.css">
     <title>Editar usuario</title>
 </head>
 
 <body>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
       <main class="edit_user_form">
-        <form  id="formEdit" method="POST" action="/users/edit/:id" enctype="multipart/form-data">
+        <form id="formEdit" method="POST" action="/users/edit/:id" enctype="multipart/form-data">
           <h3>EDITAR PERFIL</h3>
 
           <h4>Datos del Usuario</h4>
 
           <label for="profile_image" class="fields_name">Imagen de perfil:</label>
-          <input type="file" name="profile_image" class="fields_name" />
-
+          <input type="file" name="profile_image" class="fields_name" accept="image/*" />
+          
           <label class="fields_name" for="fullName">Nombre y Apellido:</label>
-          <input type="text" id="fullName" name="fullName" value="<%- userInfo.fullName %>" onfocusout="enableSaveButton()" />
-
+          <input type="text" id="fullName" name="fullName" value="<%- userInfo.fullName %>"
+            onfocusout="enableSaveButton()" />
+            <% if (locals.errors && errors.fullName){ %>
+              <div> <%= errors.fullName.msg %> </div>
+            <% } %>
           <label class="fields_name" for="email">Correo electronico:</label>
           <input type="text" id="email" name="email" value="<%- userInfo.email %>" onfocusout="enableSaveButton()" />
-
+          <% if (locals.errors && errors.email){ %>
+            <div> <%= errors.email.msg %> </div>
+            <% } %>
           <label class="fields_name" for="password">Contraseña:</label>
-          <input type="password" id="password" name="password" value="<%- userInfo.password %>" onfocusout="enableSaveButton()" />
-          
+          <input type="password" id="password" name="password" value="<%- userInfo.password %>"
+            onfocusout="enableSaveButton()" />
+            <% if (locals.errors && errors.password){ %>
+              <div> <%= errors.password.msg %> </div>
+              <% } %>
           <div class="input-control">
             <label class="fields_name" for="passwordR">Repetir contraseña:</label>
             <input type="password" id="passwordR" name="passwordR" />
             <div class="error"></div>
             <% if (locals.errors && errors.passwordR){ %>
-              <div> <%= errors.passwordR.msg %> </div>
-            <% } %>
+              <div>
+                <%= errors.passwordR.msg %>
+              </div>
+              <% } %>
           </div>
 
+          <!-- Agrega una casilla de verificación para habilitar Datos de facturación -->
+          <label for="enableShipping">Datos de facturación</label>
+          <input type="checkbox" id="enableShipping" onchange="toggleShippingForm()" />
 
-          <h4>Datos de Envio</h4>
-          
-          <label class="fields_name" for="address">Dirección:</label>
-          <input type="text" id="address" name="address" value="<%- userInfo.address %>" onfocusout="enableSaveButton()" />
+          <!-- Segundo formulario de Datos de facturación (inicialmente oculto) -->
+          <div id="secondForm">
+            <h4>Datos de facturación</h4>
 
-          <label class="fields_name" for="cellPhone">Numero de telefono:</label>
-          <input type="number" id="cellPhone" name="cellPhone" value="<%- userInfo.cellPhone %>" onfocusout="enableSaveButton()" />
+            <label class="fields_name" for="address">Dirección:</label>
+            <input type="text" id="address" name="address" value="<%- userInfo.address %>"
+              onfocusout="enableSaveButton()" />
+              <% if (locals.errors && errors.address){ %>
+                <div> <%= errors.address.msg %> </div>
+                <% } %>
+            <label class="fields_name" for="cellPhone">Numero de telefono:</label>
+            <input type="number" id="cellPhone" name="cellPhone" value="<%- userInfo.cellPhone %>"
+              onfocusout="enableSaveButton()" />
+              <% if (locals.errors && errors.cellPhone){ %>
+                <div> <%= errors.cellPhone.msg %> </div>
+                <% } %>
+            <label class="fields_name" for="city">Ciudad:</label>
+            <input type="text" id="city" name="city" value="<%- userInfo.city %>" onfocusout="enableSaveButton()" />
+            <% if (locals.errors && errors.city){ %>
+              <div> <%= errors.city.msg %> </div>
+              <% } %>
+            <label class="fields_name" for="cp">Codigo Postal:</label>
+            <input type="number" id="cp" name="cp" value="<%- userInfo.cp %>" onfocusout="enableSaveButton()" />
+            <% if (locals.errors && errors.cp){ %>
+              <div> <%= errors.cp.msg %> </div>
+              <% } %>
+            <label class="fields_name" for="province">Provincia:</label>
+            <input type="text" id="province" name="province" value="<%- userInfo.province %>"
+              onfocusout="enableSaveButton()" />
+              <% if (locals.errors && errors.province){ %>
+                <div> <%= errors.province.msg %> </div>
+                <% } %>
 
-          <label class="fields_name" for="city">Ciudad:</label>
-          <input type="text" id="city" name="city" value="<%- userInfo.city %>" onfocusout="enableSaveButton()" />
+          </div>
 
-          <label class="fields_name" for="cp">Codigo Postal:</label>
-          <input type="number" id="cp" name="cp" value="<%- userInfo.cp %>" onfocusout="enableSaveButton()" />
-
-          <label class="fields_name" for="province">Provincia:</label>
-          <input type="text" id="province" name="province" value="<%- userInfo.province %>" onfocusout="enableSaveButton()" />
-
-          
+          <!-- Botón para guardar cambios (inicialmente deshabilitado) -->
           <input id="submit_update" type="submit" value="Guardar cambios" disabled />
-          
         </form>
       </main>
 
       <%- include('./partials/footer') %> <%- include('./partials/script') %>
 
-      <script>
-        function enableSaveButton() {
-          document.getElementById('submit_register').disabled = false;
-        }
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="/js/editUser.js"></script>
+
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="/js/editUser.js"></script>
 </body>
 
 </html>

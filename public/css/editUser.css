@@ -1,0 +1,33 @@
+/* Agrega estilos generales para el formulario */
+.edit_user_form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .fields_name {
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para el botón de "Guardar cambios" */
+  #submit_update {
+    margin-top: 10px;
+    background-color: #2a9d8f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #submit_update:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Oculta el segundo formulario por defecto */
+  #secondForm {
+    display: none;
+  }
