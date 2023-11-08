@@ -37,22 +37,27 @@ const validateFullName = () => {
   const fullNameValue = fullNameInput.value.trim();
   if (fullNameValue === '') {
     setError(fullNameInput, 'Debe ingresar un nombre y un apellido');
+    return false;
   } else if (fullNameValue.length < 8) {
     setError(fullNameInput, 'Debe ingresar al menos 8 caracteres');
+    return false;
   } else {
     setSuccess(fullNameInput);
+    return true;
   }
 };
-
 //Validación del campo email
 const validateEmail = () => {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
     setError(emailInput, 'Debe ingresar un email');
+    return false;
   } else if (!isValidEmail(emailValue)) {
     setError(emailInput, 'El email ingresado debe tener un formato valido');
+    return false;
   } else {
     setSuccess(emailInput);
+    return true;
   }
 };
 
@@ -73,26 +78,29 @@ const validatePassword = () => {
     conditionLength.style.color = 'black';
     conditionUppercase.style.color = 'black';
     conditionDigit.style.color = 'black';
+    return false;
   } else if (passwordValue.length < 8) {
     setError(passwordInput, '');
     conditionLength.style.color = 'red';
     conditionUppercase.style.color = 'black';
     conditionDigit.style.color = 'black';
+    return false;
   } else {
     setSuccess(passwordInput);
     conditionLength.style.color = 'green';
-
+    
     if (hasUppercase) {
       conditionUppercase.style.color = 'green';
     } else {
       conditionUppercase.style.color = 'red';
     }
-
+    
     if (hasDigit) {
       conditionDigit.style.color = 'green';
     } else {
       conditionDigit.style.color = 'red';
     }
+    return true;
   }
 };
 
@@ -102,10 +110,13 @@ const validatePasswordR = () => {
   const passwordRValue = passwordRInput.value.trim();
   if (passwordRValue === '') {
     setError(passwordRInput, 'Debe confirmar su contraseña');
+    return false;
   } else if (passwordRValue !== passwordValue) {
     setError(passwordRInput, 'Las contraseñas no coinciden');
+    return false;
   } else {
     setSuccess(passwordRInput);
+    return true;
   }
 };
 
@@ -115,15 +126,23 @@ emailInput.addEventListener('input', validateEmail);
 passwordInput.addEventListener('input', validatePassword);
 passwordRInput.addEventListener('input', validatePasswordR);
 
+
 //Agregamos un evento 'submit' al formulario con un preventDefault
 //y ejecutamos cada una de las validaciones
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  validateFullName();
-  validateEmail();
-  validatePassword();
-  validatePasswordR();
+form.addEventListener('submit', function(e) {
+  // Validar cada campo
+  const fullNameValid = validateFullName();
+  const emailValid = validateEmail();
+  const passwordValid = validatePassword();
+  const passwordRValid = validatePasswordR();
+
+  // Verificar si hay errores en alguno de los campos
+  if (!fullNameValid || !emailValid || !passwordValid || !passwordRValid) {
+    // Si hay errores, prevenimos el envío del formulario
+    e.preventDefault();
+  }
 });
+
 
 //Creamos las diferentes opciones que se escribirán en la animación, su orden y velocidad de typeo 
 const options = {
