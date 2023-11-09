@@ -35,10 +35,13 @@ const validateEmail = () => {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
     setError(emailInput, 'Debe ingresar un email');
+    return false;
   } else if (!isValidEmail(emailValue)) {
     setError(emailInput, 'El email ingresado debe tener un formato valido');
+    return false;
   } else {
     setSuccess(emailInput);
+    return true;
   }
 };
 
@@ -47,8 +50,10 @@ const validatePassword = () => {
   const passwordValue = passwordInput.value.trim();
   if (passwordValue === '') {
     setError(passwordInput, 'Debe ingresar una contraseña');
+    return false;
   } else {
     setSuccess(passwordInput);
+    return true;
   }
 };
 
@@ -58,10 +63,16 @@ passwordInput.addEventListener('input', validatePassword);
 
 //Agregamos un evento 'submit' al formulario con un preventDefault
 //y ejecutamos cada una de las validaciones
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  validateEmail();
-  validatePassword();
+form.addEventListener('submit', function(e) {
+  // Validar cada campo
+  const emailValid = validateEmail();
+  const passwordValid = validatePassword();
+
+  // Verificar si hay errores en alguno de los campos
+  if (!emailValid || !passwordValid) {
+    // Si hay errores, prevenimos el envío del formulario
+    e.preventDefault();
+  }
 });
 
 

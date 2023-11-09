@@ -5,7 +5,8 @@ const {Sequelize, DataTypes} = require ('sequelize')
 
     //Aca definimos el modelo
     module.exports = (sequelize, DataTypes) => {
-        const Categorie = sequelize.define('Categorie', {
+        let alias = 'Categorie'; // esto debería estar en singular
+        let cols = {
     // define los campos del modelo y tipos de datos
     idCategory: {
         type: DataTypes.INTEGER,        
@@ -15,17 +16,21 @@ const {Sequelize, DataTypes} = require ('sequelize')
     name:{
         type:DataTypes.STRING,
         allowNull:false,
-    },
-    idProduct: {type: DataTypes.INTEGER}
-    },
+    }
+}
     
-   {
+    let config = {
     timestamps: false,
    
     tableName: 'categories'
-   })
-   
-   Categorie.associate = ( models ) =>{
-    Categorie.belongsTo( models.Product )};
-    return Categorie
-    }
+   }
+   const Categorie = sequelize.define(alias, cols, config)
+   Categorie.associate = (models) => {
+   Categorie.hasMany(models.Product, {
+        foreignKey: 'idCategory',       
+        as: 'products'
+    })
+   }
+ 
+    return Categorie;
+}

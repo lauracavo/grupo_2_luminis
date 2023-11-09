@@ -23,14 +23,22 @@
         <input type="text" id="author" name="author" value="<%= products.author %>"><br>
         
         <label for="detail">Detalle:</label>
-        <textarea id="detail" name="detail" rows="4" value= "<%= products.detail %>" required >
-        </textarea><br> 
+       
+        <textarea  id="detail" name="detail" cols="30" rows="6"  required><%= products.detail %></textarea>
+    
+       
         
         <label for="characteristic">Característica:</label>
         <input type="text" id="characteristic" name="characteristic" value="<%= products.characteristic %>" required><br>
         
         <label for="idCategory">Categoría:</label>
-        <input type="text" id="idCategory" name="idCategory" value="<%= products.idCategory %>" required><br>
+        <p>
+            <select name="idCategory" id="" required>                
+                <% allCategories.forEach(categorie => { %>
+                <option value="<%= products.idCategory %>" <%= categorie.idCategory == products.idCategory ?  "selected" : null %>  > <%= categorie.name %></option>
+                <% }); %>
+            </select>
+        </p>  
         
         <label for="purchasePrice">Precio de compra:</label>
         <input type="number" id="purchasePrice" name="purchasePrice" step="0.01" value="<%= products.purchasePrice %>" required><br>
