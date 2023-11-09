@@ -24,6 +24,7 @@ const {Sequelize, DataTypes} = require ('sequelize')
    
     tableName: 'categories'
    })
+   
    Categorie.associate = ( models ) =>{
     Categorie.belongsTo( models.Product )};
     return Categorie
