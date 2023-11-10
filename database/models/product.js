@@ -2,8 +2,6 @@
  
 // const sequelize = new Sequelize
  
-
-
     //Aca definimos el modelo
     module.exports = (sequelize, DataTypes) => {
         let alias = 'Product'; // esto debería estar en singular
