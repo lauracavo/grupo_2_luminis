@@ -10,10 +10,8 @@ Laura Cavo: Soy profesora de matemáticas y desde el año 2020 me encuentro trab
 
 Noelia Ramos: Soy Maestra en Educación Especial y acompañante terapéutico. Deje de ejercerlo hace un año y me metí en este mundo de la programación, donde me estoy perfeccionando y sumando conocimientos. Es una rama muy distinta a mi título actualmente, pero me encanta. Por lo que mi intención es seguir por este camino y poder desempeñarme laboralmente de esto.
 
-Tomás Di Estefano: A finales del 2022 terminé la Licenciatura en Diseño y Animación Digital, y a principios de 2023 empecé a estudiar programación. Actualmente también estoy trabajando.
+Tomás Di Stefano: A finales del 2022 terminé la Licenciatura en Diseño y Animación Digital, y a principios de 2023 empecé a estudiar programación. Actualmente también estoy trabajando.
 Si el camino que queda por delante es largo, con dedicación, todo es posible. En un futuro busco poder aplicar lo aprendido a lo largo de estos años, y seguir capacitándome para ampliar mis habilidades.
-
-Bernardita Ferreira: Estoy terminando la secundaria en bachiller de Economía y Sistema de Información Contable, lo que me gusta es programar con front, ya sea html, css y boostrap, jugar al fútbol. Actualmente soy presidente de Interact que pertenece a Rotary ayudando a la comunidad. Quise entrar a este curso para poder avanzar con mi nivel como Programadora y hacer algo más avanzado y aunque me está costando me gusta mucho todo lo que se da. Quiero estudiar Ingeniería en Sistemas y Contador Publico.
 
 Leandro Ortiz: Soy emprendedor en marketing digital desde 2017, en 2019 continúe capacitándome en Siglo 21, en 2022 realicé el programa Crece con Google obteniendo varias certificaciones en Google Ads. También tuve la posibilidad de realizar cursos en Google Cloud. Este último me hizo retomar el camino de la programación, actualmente aprendiendo en la nube y en Digital House.
 
