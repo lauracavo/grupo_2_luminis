@@ -21,8 +21,17 @@ try{
       res. send({ result: 'Error', payload: error });
 }
    
-    },   
-}
+    },
+  
+  aboutUs: async (req, res) => {
+    try{
+      res.render("aboutUs")
+    } catch (error){
+      res. send({ result: 'Error', payload: error });
+    }
+},
+    }
+
    
       module.exports = mainController
 
