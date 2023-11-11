@@ -13,6 +13,7 @@ const usersControllerClean = {
   register: (req, res) => {
     res.render("register");
   },
+
   store: (req, res) => {
     let errors = validationResult(req);
     console.log(errors)
@@ -46,6 +47,7 @@ const usersControllerClean = {
 
     }
   },
+
   login: (req, res) => {
     res.render("login");
   },
@@ -53,13 +55,11 @@ const usersControllerClean = {
   processLogin: async (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      // const { users } = userData;   Se usaba con json
       const { email } = req.body;
 
       // Busca el usuario en la base de datos por correo electrónico
       const userLogin = await db.User.findOne({ where: { email: email } });
-      // // Busca el usuario en la base de datos por correo electrónico
-      // const userLogin = users.find(user => user.email === email);
+     
       
       if (userLogin) {
         const correctPassword = bcrypt.compareSync(req.body.password, userLogin.password);
@@ -71,8 +71,7 @@ const usersControllerClean = {
           res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
 
           // Redirige a la página de perfil y pasa los datos del usuario
-          // res.render("userProfile", { userInfo: userLogin });
-            res.redirect("/users/userProfile")
+          res.redirect("/users/userProfile")
 
         } else {
           res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
@@ -88,8 +87,6 @@ const usersControllerClean = {
   userProfile: async (req, res) => {
     const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
      
-
-
     // Busca el usuario en la base de datos por correo electrónico
     const foundUser = await db.User.findOne({ where: { email: enteredUser } });
 
@@ -105,8 +102,6 @@ const usersControllerClean = {
 viewEdit: async (req, res) => {
   const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
      
-
-
   // Busca el usuario en la base de datos por correo electrónico
   const foundUser = await db.User.findOne({ where: { email: enteredUser } });
 
@@ -118,15 +113,10 @@ viewEdit: async (req, res) => {
     // Usuario no encontrado
     res.status(404).send('Usuario no encontrado');
   }
-
-
-
 },
 
 viewDelete: async (req, res) => {
   const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
-     
-
 
   // Busca el usuario en la base de datos por correo electrónico
   const foundUser = await db.User.findOne({ where: { email: enteredUser } });
@@ -139,17 +129,10 @@ viewDelete: async (req, res) => {
     // Usuario no encontrado
     res.status(404).send('Usuario no encontrado');
   }
-
-
-
 },
 
 
-
-
-
-
-  editDelete: async (req, res) => {
+editDelete: async (req, res) => {
     const action = req.body.action; // Obtiene el valor del botón "action"
 
     if (action === 'eliminar') {

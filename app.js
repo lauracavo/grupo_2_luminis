@@ -13,6 +13,7 @@ const adminRoute = require("./src/routes/admin");
 const usersRoute = require("./src/routes/users");
 
 
+
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 
@@ -53,3 +54,13 @@ app.use("/product", productsRoute);
 app.use("/cart", cartRoute);
 app.use("/admin", adminRoute);
 app.use("/users", usersRoute);
+app.use("/productos", productsRoute)
+
+//api
+
+
+
+const productsApiRoute = require("./src/routes/api/products");
+app.use("/api/products", productsApiRoute); // Mounting the products API routes
+
+

@@ -1,46 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const productForm = document.getElementById('productForm');
-    productForm.addEventListener('submit', function (event) {
-        if (!validateForm()) {
-            event.preventDefault(); // Evitar que se envíe el formulario si no pasa la validación.
-        }
-    });
 
-    function validateForm() {
-        let isValid = true;
+    const nameInput = document.querySelector('#name');
+    //Creamos setError, una función de ayuda para manejar los mensajes de error
+ 
+    const setError = (element, message) => {
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+        
+        errorDisplay.innerText = message;
+        inputControl.classList.add('error');
+        inputControl.classList.remove('success');
+      };
 
-        // Validación para el campo ""
-        const nameField = document.querySelector('input[name="name"]');
-        if (nameField.value.trim() === '') {
-            alert('El campo "Nombre del producto" no puede estar vacío.');
-            nameField.focus();
-            return false;
-        }
+    //Creamos setSuccess, una función de ayuda para cambiar la clase error a success si no hay errores
 
-        // // Validación para el campo "brand"
-        // const brandField = document.querySelector('input[name="brand"]');
-        // if (brandField.value.trim() === '') {
-        //     alert('El campo "Marca" no puede estar vacío.');
-        //     brandField.focus();
-        //     isValid = false;
-        // }
+<<<<<<< HEAD
+    const setSuccess = element => {
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+        
+        errorDisplay.innerText = '';
+        inputControl.classList.add('success');
+        inputControl.classList.remove('error');
+      };
 
-        // // Validación para el campo "editorial"
-        // const editorialField = document.querySelector('input[name="editorial"]');
-        // if (editorialField.value.trim() === '') {
-        //     alert('El campo "Editorial" no puede estar vacío.');
-        //     editorialField.focus();
-        //     isValid = false;
-        // }
-
-        // // Validación para el campo "author"
-        // const authorField = document.querySelector('input[name="author"]');
-        // if (authorField.value.trim() === '') {
-        //     alert('El campo "Autor" no puede estar vacío.');
-        //     authorField.focus();
-        //     isValid = false;
-        // }
-
+      //Validación del campo name
+const validatename = () => {
+    const nameValue = nameInput.value.trim();
+    if (nameValue === '') {
+      setError(nameInput, 'Debe ingresar un nombre y un apellido');
+      return false;
+    } else if (nameValue.length < 8) {
+      setError(nameInput, 'Debe ingresar al menos 8 caracteres');
+      return false;
+    } else {
+      setSuccess(nameInput);
+      return true;
+=======
         // Validación para el campo "detail"
         const detailField = document.querySelector('textarea[name="detail"]');
         if (detailField.value.trim() === '') {
@@ -98,5 +93,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         return isValid;
+>>>>>>> c6bb516e7ae63af232c21af56965a38ad9e79217
     }
-});
+  };
+  //Creamos un evento input para validar los campos
+nameInput.addEventListener('input', validatename);
+//Agregamos un evento 'submit' al formulario con un preventDefault
+//y ejecutamos cada una de las validaciones
+form.addEventListener('submit', function(e) {
+    // Validar cada campo
+    const nameValid = validatename();
+    // Verificar si hay errores en alguno de los campos
+  if (!nameValid){
+    // Si hay errores, prevenimos el envío del formulario
+    e.preventDefault();
+  }
+  });

@@ -19,14 +19,15 @@
       <article class="container_carousel-image">
         <div id="carouselExample" class="carousel slide">
           <div class="carousel-inner">
+            <% product.map(item => { %>
             <div class="carousel-item active">
-              <img id="img1" src="/img/books/<%= bookselect.img %>" class="imgcarousel"  alt="...">
+              <img id="img1" src="/img/books/<%= item.imgList?.name %>" class="imgcarousel"  alt="<%= item.imgList?.name %>">
             </div>
             <div class="carousel-item">
-              <img id="img2" src="/img/mochila prueba.png" class="imgcarousel" alt="...">
+              <img id="img2" src="/img/books/<%= item.imgList?.name %>" class="imgcarousel" alt="<%= item.imgList?.name %>">
             </div>
             <div class="carousel-item">
-              <img id="img3" src="/img/mochila prueba.png" class="imgcarousel" alt="...">
+              <img id="img3" src="/img/books/<%= item.imgList?.name %>" class="imgcarousel" alt="<%= item.imgList?.name %>">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -41,25 +42,25 @@
         <!-- Fin Carrusel--------------------------------------- -->
         <!-- -----Inicio image container-------------------------------- -->
        <div class="image_container">
-        <img id="one"  src="/img/mochila prueba.png" alt="thumnail">
-        <img id="two"  src="/img/mochila prueba.png" alt="thumnail">
-        <img id="three"  src="/img/mochila prueba.png" alt="thumnail">
+        <img id="one"  src="<%= item.imgList?.name %>" alt="thumnail">
+        <img id="two"  src="<%= item.imgList?.name %>" alt="thumnail">
+        <img id="three"  src="<%= item.imgList?.name %>" alt="thumnail">
        </div>
       </article>
        <!-- ----------------Fin image container--------------------------------- -->
        <!-- ---------------------Inicio nombre producto--------------------------------- -->
 
-     <article class="details_products">
-      <h2 class="details__title">   <%= bookselect.name %></h2>
+     <article class="details_products">      
+      <h2 class="details__title">   <%=item.name %></h2>
       <div class="details__prices">
-        <p class="details__now">$   <%= bookselect.price %></p>
+        <p class="details__now">$   <%=item.salePrice %></p>
         <button class="button">
           <span class="button-content">Ver cuotas</span>
         </button>
       </div>
       <div class="details__stock">
         <i id="ok" class="fas fa-check-circle"></i>
-        <p class="datails__stock"> Stock disponible</p>
+        <p class="datails__stock"> Stock disponible : <%=item.stock %> </p>
       </div>
       <div class="details_shipping">
         <i id= "shipping"  class="fas fa-truck"></i>   
@@ -74,27 +75,28 @@
         <!-- -----------------------Inicio Descripcion Producto------------------------ -->
     <section class="container_productDescription">
       <div class="details_productName">
-      <H2 id="h2"><u>  <%= bookselect.descripcion %></u></H2>
+      <H2 id="h2"><u>  <%= item.detail %></u></H2>
       </div>
       <article class="container_productName">
         <div class="details__description">
         <p class="details_description-P">Primera Descripcion</p>
         <ul class="ul_details_description">
 
-          <li></i>  <%= bookselect.characteristic %></li>
-          <li></i><%= bookselect.author %></li>
-          <li></i><%= bookselect.editorial %></li>
-          <li></i><%= bookselect.category %></li>
-          <li></i><%= bookselect.publishDate %></li>
-          <li></i><%= bookselect.puntuacion %></li>
+          <li></i><%=item.characteristic %></li>
+          <li></i><%= item.author %></li>
+          <li></i><%= item.brand %></li>
+          <li></i><%= item.editorial %></li>
+          <li></i><%= item.idcategory %></li>
+          <!-- <li></i><%= item.publishDate %></li>
+          <li></i><%= item.puntuacion %></li> -->
           <li></i></li>
           <li></i></li>
           
-          
+          <% }); %>  
         </ul>
         </div>
 
-        <div class="second_description">
+        <!-- <div class="second_description">
           <p class="details_description-P" > Segunda Descripción</p>
           <ul class="ul_details_description">
           <li></i></i></li>
@@ -102,7 +104,7 @@
           <li></i></i></li>
           <li></i></i></li>
         </ul>
-        </div>
+        </div> -->
       </article>
     </section>
       <!-- -------------------------------------FIN Descripcion producto------------------------ -->

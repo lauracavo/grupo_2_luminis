@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/register.css" />
+        <link rel="stylesheet" href="/css/login.css" />
+</head>
+
+<body>
+    <%- include('./partials/menu') %> <%- include('./partials/header') %>
+            <main class="main_register_form">
+                <section id="register_form" class="glass_effect">
+                    <div>
+                        <form id="formRegister" method="POST" action="/users/editPassword">
+                            <h3>CAMBIAR CONTRASEÑA</h3>
+
+                            <!-- Ingresar Contraseña Anterior-->
+                            <div class=" input-control">
+                                <label class="fields_name" for="OldPassword">Ingresar su contraseña actual:</label>
+                                <input type="password" id="OldPassword" name="OldPassword" />
+                                <div class="error"></div>
+                                <% if (locals.errors && errors.OldPassword){ %>
+                                    <div>
+                                        <%= errors.OldPassword.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div class="input-control">
+                                <label class="fields_name" for="password">Contraseña:</label>
+                                <input type="password" id="password" name="password" />
+                                <div class="error"></div>
+                                <% if (locals.errors && errors.password){ %>
+                                    <div>
+                                        <%= errors.password.msg %>
+                                    </div>
+                                    <% } %>
+                                        <div class="password-conditions">
+                                            <ul>
+                                                <li id="condition-length">Debe tener al menos 8 caracteres</li>
+                                                <li id="condition-uppercase">Debe contener al menos una letra mayúscula
+                                                </li>
+                                                <li id="condition-digit">Debe contener al menos un número</li>
+                                            </ul>
+                                        </div>
+                            </div>
+
+                            <!-- Repetir Contraseña -->
+                            <div class="input-control">
+                                <label class="fields_name" for="passwordR">Repetir contraseña:</label>
+                                <input type="password" id="passwordR" name="passwordR" />
+                                <div class="error"></div>
+                                <% if (locals.errors && errors.passwordR){ %>
+                                    <div>
+                                        <%= errors.passwordR.msg %>
+                                    </div>
+                                    <% } %>
+                            </div>
+
+
+
+                            <!-- Submit -->
+                            <input id="submit_register" type="submit" value="Cambiar Contraseña" />
+                        </form>
+                    </div>
+                </section>
+                <div id="left_panel">
+                    <!-- Elementos del panel con animacion de escritura -->
+                    <span class="typed"></span>
+                </div>
+            </main>
+
+            <%- include('./partials/footer') %> <%- include('./partials/script') %>
+                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script src="/js/register.js"></script>
+</body>
+
+</html>
