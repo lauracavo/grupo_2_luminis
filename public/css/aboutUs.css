@@ -1,0 +1,32 @@
+.card {
+    width: 30rem;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-areas: "stack";
+}
+
+.card > * {
+    grid-area: stack;
+}
+
+.card > figcaption {
+    display: grid;
+    align-items: end;
+    padding: 1.5rem 2rem;
+    background-image: linear-gradient(to bottom,
+    rgb(33 44 55 / 0),
+    rgb(33 44 55 / 0),
+    rgb(33 44 55 / 0.75)
+    );
+}
+
+.card figcaption {
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.card:hover figcaption {
+    opacity: 1;
+}

@@ -12,6 +12,8 @@ const cartRoute = require("./src/routes/cart");
 const adminRoute = require("./src/routes/admin");
 const usersRoute = require("./src/routes/users");
 
+const productsRouteApi = require("./src/routes/api/apiProducts");
+
 
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
@@ -53,3 +55,11 @@ app.use("/product", productsRoute);
 app.use("/cart", cartRoute);
 app.use("/admin", adminRoute);
 app.use("/users", usersRoute);
+app.use("/productos", productsRoute)
+
+//api
+
+app.use("api/product", productsRouteApi);
+// app.use("api/users", usersRoute);
+
+

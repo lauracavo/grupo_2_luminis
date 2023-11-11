@@ -2,7 +2,6 @@ const path = require("path");
 const booksData = require("../dataBase/books.json");
 const db = require('../../database/models/index')
 
-
 const productsController = {
     getAll: async (req, res) => {
     // OBTENIENDO LOS DATOS DE LA BASE DE DATOS    
