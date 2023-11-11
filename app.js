@@ -57,7 +57,13 @@ app.use("/productos", productsRoute)
 
 //api
 
-app.use("api/product", productsRoute);
-app.use("api/users", usersRoute);
+// app.use("/product", productsRoute);
+// // app.use("api/users", usersRoute);
 
+const productsApiRoute = require("./src/routes/api/products");
+// const usersApiRoute = require("./src/routes/api/users");
+
+app.use("/product", productsRoute); // This might be a duplicate - check if needed
+app.use("/api/products", productsApiRoute); // Mounting the products API routes
+// app.use("/api/users", usersApiRoute); // Mounting the users API routes
 

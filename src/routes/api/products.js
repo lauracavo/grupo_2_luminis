@@ -1,8 +1,11 @@
-const express = require ("express");
-const route = express.Router;
+const express = require("express");
+const router = express.Router(); // Create a router instance
 
-const controller = require("../../controllers/Api/productsController")
-router.get ("/", controller.list)
-router.get ("/:id", controller.show)
-router.post ("/", controller.store)
-router.detete ("/:id", controller.delete)
+const controller = require("../../controllers/Api/productsController");
+
+router.get("/", controller.list);
+router.get("/:id", controller.show);
+router.post("/", controller.store);
+router.delete("/:id", controller.delete);
+
+module.exports = router;
