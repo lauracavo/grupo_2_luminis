@@ -10,7 +10,7 @@ const productsController = {
         let product = await db.Product.findAll()
     
       for(let item of product){
-          // console.log(item)
+          
           const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
           product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
       //     console.log(imgList.dataValues)
@@ -21,18 +21,30 @@ const productsController = {
           res. send({ result: 'Error', payload: error });
     }
        
-        },   
+},   
 
-    byId: (req, res) => {
+    byId: async (req, res) => {
         const {id} = req.params
-        db.Product.findByPk(parseInt(id))
-        .then(product=>{
-            res.render('productDetail', {product})
-        })
-        .catch(error=>{
-            res.send({result: 'Error', payload: error})
-        })
+    try{
+        let product = await db.Product.findByPk(parseInt(id));
+        
+        if (!product) {
+            return res.status(404).send({ result: 'Error', payload: 'Product not found' });
         }
- };
+
+        
+       
+const imgList = await db.ImageProduct.findAll({ where: { idProduct: product.idProduct } });
+
+        // Add imgList to the product object
+        product.dataValues.imgList = imgList.map(img => img.dataValues);
+
+        console.log("objeto product", { product });
+        res.render('productDetail', { product });
+    } catch(error){
+            res.send({result: 'Error', payload: error})
+        }
+    },
+ }
 
 module.exports = productsController;
