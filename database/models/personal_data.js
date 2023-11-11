@@ -54,17 +54,18 @@ let config = {
     tableName: 'personal_data'
     }
 
-    const products = sequelize.define(alias, cols, config)
+    const userDetail = sequelize.define(alias, cols, config)
    //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
-   products.associate = ( models ) =>{
-       products.hasOne( models.Categorie, {
-           as: "Categorie",
-           foreignKey: "idCategory"
+   userDetail.associate = ( models ) =>{
+       userDetail.hasOne( models.User, {
+           as: "userDetail",
+           foreignKey: "idUser"
        } );
     
-    products.hasMany(models.ImageProduct, {
+    /* userDetail.hasMany(models.ImageProduct, {
          as: 'imagesproduct', 
-         foreignKey: 'idProduct' });    
+         foreignKey: 'idProduct' });  */   
    }
-    return products
+    return userDetail
     }
+

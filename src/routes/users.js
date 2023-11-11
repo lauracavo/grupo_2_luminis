@@ -7,6 +7,7 @@ const { body } = require("express-validator");
 const upload = require("../middlewares/multerConfig");
 const validateRegister = require("../middlewares/validateRegister")
 const validateLogin = require("../middlewares/validateLogin");
+const authMiddleware = require("../middlewares/authMiddleware")
 
 
 route.get("/register", usersController.register); //localhost2020:/users/register
@@ -16,7 +17,10 @@ route.post("/processLogin", validateLogin, usersController.processLogin); //loca
 
 route.get("/userProfile", usersController.userProfile);//localhost2020:/users/userProfile
 route.get("/editUser", usersController.viewEdit);
-route.post("/editUser", usersController.actualizar); 
+route.post("/editUser/:id", usersController.actualizar);
+route.get("/viewPassword", usersController.viewPassword)
+route.post("/editPassword", usersController.editPassword)
+route.post("/eliminarUsuario", usersController.eliminar)
 
 //route.get("/confirmation-deleteUser", usersController.viewDelete);
 

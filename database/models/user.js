@@ -1,16 +1,19 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize')
 // const sequelize = new Sequelize
+
+
 
 //Aca definimos el modelo
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
+    let alias = 'User'; // esto debería estar en singular
+    let cols = {
         // define los campos del modelo y tipos de datos
         idUser: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        fullName: {
+        fullname: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -30,7 +33,31 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         }
-    },
+    }
+
+    let config = {
+        timestamps: false,
+
+        tableName: 'users'
+    }
+    const User = sequelize.define(alias, cols, config)
+    User.associate = (models) => {
+        User.hasMany(models.Personal, {
+            foreignKey: 'idUser',
+            as: 'userDetail'
+        })
+    }
+
+    return User;
+}
+
+/* const { Sequelize, DataTypes } = require('sequelize');
+// const sequelize = new Sequelize
+
+//Aca definimos el modelo
+module.exports = (sequelize, DataTypes) => {
+    const User = sequelize.define('User', {
+        
         {
 
             timestamps: false,
@@ -38,4 +65,4 @@ module.exports = (sequelize, DataTypes) => {
             tableName: 'users'
         })
     return User
-}
+} */
