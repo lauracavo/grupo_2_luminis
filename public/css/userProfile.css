@@ -1,6 +1,45 @@
+h3{
+    margin-left: 165px;
+}
+
+h4{
+    margin: 10px;
+    font-size: 18px;
+}
+
+p{
+    margin: 0px 10px;
+    font-size: 14px;
+    
+}
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+#divContraseña{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+#divContraseña div {
+    display: flex;
+    align-items: center;
+}
+#divContraseña a {
+    text-decoration: none;
+    color: #e46f50;
+    font-weight: bold;
+}
+
 #datos_usuarios, #datos_compras {
     display: none;
-  }
+}
+
+.fields_name {
+    padding-bottom: 10px;
+}
 
 #datos_menu ul{
     list-style: none;
@@ -15,14 +54,15 @@
     justify-content: space-around;
 }
 #datos_menu ul li a{
-    text-decoration: none;
     color: black;
     font-size: 24px;
+    text-decoration: none;
 }
 #datos_menu a:hover {
     text-decoration: underline;
 }
-  
+
+
 h1#my_profile{
     font-size: 24px;
 }
@@ -51,19 +91,6 @@ div#profile_image{
     margin: 25px auto;
 }
 
-h3{
-    margin-left: 165px;
-}
-
-h4{
-    margin: 10px;
-    font-size: 18px;
-}
-
-p{
-    margin-left: 10px;
-    font-size: 14px;
-}
 
 #buttons{
     display: flex;
