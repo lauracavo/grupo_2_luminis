@@ -53,3 +53,11 @@ app.use("/product", productsRoute);
 app.use("/cart", cartRoute);
 app.use("/admin", adminRoute);
 app.use("/users", usersRoute);
+app.use("/productos", productsRoute)
+
+//api
+
+app.use("api/product", productsRoute);
+app.use("api/users", usersRoute);
+
+

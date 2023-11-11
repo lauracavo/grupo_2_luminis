@@ -17,30 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return false;
         }
 
-        // // Validación para el campo "brand"
-        // const brandField = document.querySelector('input[name="brand"]');
-        // if (brandField.value.trim() === '') {
-        //     alert('El campo "Marca" no puede estar vacío.');
-        //     brandField.focus();
-        //     isValid = false;
-        // }
-
-        // // Validación para el campo "editorial"
-        // const editorialField = document.querySelector('input[name="editorial"]');
-        // if (editorialField.value.trim() === '') {
-        //     alert('El campo "Editorial" no puede estar vacío.');
-        //     editorialField.focus();
-        //     isValid = false;
-        // }
-
-        // // Validación para el campo "author"
-        // const authorField = document.querySelector('input[name="author"]');
-        // if (authorField.value.trim() === '') {
-        //     alert('El campo "Autor" no puede estar vacío.');
-        //     authorField.focus();
-        //     isValid = false;
-        // }
-
         // Validación para el campo "detail"
         const detailField = document.querySelector('textarea[name="detail"]');
         if (detailField.value.trim() === '') {
