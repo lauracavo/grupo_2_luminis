@@ -1,8 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 // const sequelize = new Sequelize
 
-
-
 //Aca definimos el modelo
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
