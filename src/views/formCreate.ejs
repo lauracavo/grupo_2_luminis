@@ -11,52 +11,117 @@
         <h2>Agregar Nuevo Producto</h2>
             <form action="/admin/store" method="post" enctype="multipart/form-data">
     
-                <!-- <label class="fields_name" for="id">ID:</label>
-                <input type="text" name="id" id="id" required> -->
-    
-                <label class="fields_name" for="name">Nombre del producto:</label>
-                <input type="text" name="name" required>
+                <!-- Nombre del producto -->
+                <div class="input-control">
+                    <label class="fields_name" for="name">Nombre del producto:</label>
+                    <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.name){ %>
+                        <div> <%= errors.name.msg %> </div>
+                    <% } %>
+                </div>
 
-                <label class="fields_name" for="brand">Marca:</label>
-                <input type="text" name="brand" ></input>
-        
-                <label class="fields_name" for="editorial">Editorial:</label>
-                <input type="text" name="editorial" ></input>
-    
-                <label class="fields_name" for="author">Autor:</label>
-                <input type="text" name="author">                  
-    
-                <label class="fields_name" for="detail">Detalle:</label>
-                <textarea name="detail" cols="30" rows="6" required></textarea>
-    
-                <label class="fields_name" for="characteristic">Caracteristica:</label>
-                <input type="text" name="characteristic" required>
-           
-                <label class="fields_name" for="idCategory">Categoria:</label>            
-            
-                    <select name="idCategory" required>
-                     <option value="" disabled selected>- select category - </option>
+                <!-- Marca -->
+                <div class="input-control">
+                    <label class="fields_name" for="brand">Marca:</label>
+                    <input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.brand){ %>
+                        <div> <%= errors.brand.msg %> </div>
+                    <% } %>
+                </div>
+
+                <!-- Editorial -->
+                <div class="input-control">
+                    <label class="fields_name" for="editorial">Editorial:</label>
+                    <input type="text" id="editorial" name="editorial" value="<%= locals.old && old.editorial ? old.editorial : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.editorial){ %>
+                        <div> <%= errors.editorial.msg %> </div>
+                    <% } %>
+                </div>
+
+                <!-- Autor -->
+                <div class="input-control">
+                    <label class="fields_name" for="author">Autor:</label>
+                    <input type="text" id="author" name="author" value="<%= locals.old && old.author ? old.author : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.author){ %>
+                        <div> <%= errors.author.msg %> </div>
+                    <% } %>
+                </div>
+                
+                <!-- Detalle -->
+                <div class="input-control">
+                    <label class="fields_name" for="detail">Detalle:</label>
+                    <textarea name="detail" id="detail" cols="30" rows="6" value="<%= locals.old && old.detail ? old.detail : '' %>"></textarea>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.detail){ %>
+                        <div> <%= errors.detail.msg %> </div>
+                    <% } %>
+                </div>
+
+                <!-- Caracteristica -->
+                <div class="input-control">
+                    <label class="fields_name" for="characteristic">Caracteristica:</label>
+                    <input type="text" id="characteristic" name="characteristic" value="<%= locals.old && old.characteristic ? old.characteristic : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.characteristic){ %>
+                        <div> <%= errors.characteristic.msg %> </div>
+                    <% } %>
+                </div>
+
+                <!-- Categoria -->
+                <div class="input-control">
+                    <label class="fields_name" for="idCategory">Categoria:</label>            
+                    <select name="idCategory" id="idCategory">
+                    <option value="" disabled selected>- select category - </option>
                         <% allCategories.forEach(categorie => { %>
                     <option value="<%= categorie.idCategory %>"> <%= categorie.name %></option>
                         <% }); %>
-                    </select>
-    
-                <label class="fields_name" for="purchasePrice">Precio de Compra:</label>
-                <input type="number" step="0.01" name="purchasePrice" required>
+                    </select>    
+                </div>
 
-                <label  class="fields_name" for="salePrice">Precio de Venta:</label>
-                <input type="number" step="0.01" name="salePrice" required>
+                <!-- Precio de Compra -->
+                <div class="input-control">
+                    <label class="fields_name" for="purchasePrice">Precio de Compra:</label>
+                    <input type="text" id="purchasePrice" name="purchasePrice" value="<%= locals.old && old.purchasePrice ? old.purchasePrice : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.purchasePrice){ %>
+                        <div> <%= errors.purchasePrice.msg %> </div>
+                    <% } %>
+                </div>
 
-                <label  class="fields_name" for="stock">Stock:</label>
-                <input type="number" step="0.01" name="stock" required>
-            
+                <!-- Precio de Venta -->
+                <div class="input-control">
+                    <label class="fields_name" for="salePrice">Precio de Venta:</label>
+                    <input type="text" id="salePrice" name="salePrice" value="<%= locals.old && old.salePrice ? old.salePrice : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.salePrice){ %>
+                        <div> <%= errors.salePrice.msg %> </div>
+                    <% } %>
+                </div>
+
+                <!-- Stock -->
+                <div class="input-control">
+                    <label class="fields_name" for="stock">Stock:</label>
+                    <input type="text" id="stock" name="stock" value="<%= locals.old && old.stock ? old.stock : '' %>"/>
+                    <div class="error"></div>
+                    <% if (locals.errors && errors.stock){ %>
+                        <div> <%= errors.stock.msg %> </div>
+                    <% } %>
+                </div>
+
+                <!-- Imagen Principal -->
                 <label class="fields_name" for="imgProduct">Imagen Principal:</label>
                 <input type="file" name="imgProduct" accept="image/*" multiple>
-               
-        <button class="submit_product" type="submit">Agregar Producto</button>
+
+                <!-- Submit -->
+                <input class="submit_product" type="submit" value="Agregar Producto" />
     </form>
      
     </main>
     <%- include('./partials/footer') %> <%- include('./partials/script') %>
+    <script src="/js/formCreateTest.js"></script>
 </body>
 </html>
