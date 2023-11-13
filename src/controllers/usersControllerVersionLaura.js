@@ -44,7 +44,6 @@ const usersControllerVersionLaura = {
           res.status(200).json({ success: true, message: "Usuario creado con éxito." });
         })
         .catch(error => {
-          console.error("Error al crear usuario:", error);
           res.status(500).json({ success: false, message: "Error al crear usuario." });
         });
     } else {

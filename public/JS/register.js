@@ -212,16 +212,14 @@ document.getElementById("formRegister").addEventListener("submit", function (eve
     .then(result => {
       if (result.success === true) {
         Swal.fire({
-          title: "Created!",
-          text: "Your user has been created.",
+          title: "USUARIO CREADO CON ÉXITO",
           icon: "success"
         }).then(() => {
           window.location.href = "/users/login";
         });
       } else {
         Swal.fire({
-          title: "Error",
-          text: result.message || "Unable to create the user.",
+          title: "EL USUARIO NO PUDO SER CREADO",
           icon: "error"
         });
       }
@@ -230,7 +228,7 @@ document.getElementById("formRegister").addEventListener("submit", function (eve
       console.error("Error al crear usuario:", error);
       Swal.fire({
         title: "Error",
-        text: "An error occurred while trying to create the user.",
+        text: "Intente nuevamente",
         icon: "error"
       });
     });
