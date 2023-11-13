@@ -36,7 +36,7 @@ const usersControllerVersionLaura = {
 
       // Almacenamos los datos del usuario en un objeto
       const user = {
-        fullName: fullName,
+        fullname: fullName,
         password: hashPassword,
         email: email,
         image: req.file.filename,
@@ -189,7 +189,7 @@ const usersControllerVersionLaura = {
   },
 
   viewPassword: (req, res) => {
-    res.render("cambioContrasena")
+    res.render("editPassword")
   },
 
   editPassword: async (req, res) => {
@@ -200,7 +200,7 @@ const usersControllerVersionLaura = {
     if (errors.isEmpty()) {
       // Busca el usuario en la base de datos por correo electrónico
       const foundUser = await db.User.findOne({ where: { email: enteredUser } });
-      const correctPassword = bcrypt.compareSync(req.body.OldPassword, foundUser.password);
+      const correctPassword = bcrypt.compareSync(req.body.oldPassword, foundUser.password);
 
       if (correctPassword) {
         let newPassword = req.body.password;
@@ -208,13 +208,12 @@ const usersControllerVersionLaura = {
 
         await db.User.update({ password: hashPassword }, { where: { idUser: foundUser.idUser } })
 
-        res.redirect("/users/userProfile")
       } else {
-        res.render("cambioContrasena", { errors: [{ msg: "LA CONTRASEÑA ES INCORRECTA" }] });
+        res.render("editPassword", { errors: [{ msg: "LA CONTRASEÑA ES INCORRECTA" }] });
       }
 
     } else {
-      res.render("cambioContrasena", { errors: errors.mapped() });
+      res.render("editPassword", { errors: errors.mapped() });
     }
 
   },
@@ -223,10 +222,16 @@ const usersControllerVersionLaura = {
     const enteredUser = req.cookies.email;
     const foundUser = await db.User.findOne({ where: { email: enteredUser } });
 
-    /*  await db.User.destroy({ where: { idUser: foundUser.idUser } }) */
-
-    res.redirect("/")
+    try {
+      await db.User.destroy({ where: { idUser: foundUser.idUser } });
+      res.json({ success: true, message: "Usuario eliminado con éxito." });
+    } catch (error) {
+      console.error("Error al eliminar usuario:", error);
+      res.status(500).json({ success: false, message: "Error al eliminar usuario." });
+    }
   }
+
+
 }
 
 

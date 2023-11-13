@@ -65,10 +65,11 @@
         <div id="buttons">
           <button id="edit_button" type="submit" name="action" value="editar"><a href="/users/editUser"
               id="editUser">Editar Usuario</a></button>
-          <button id="delete_button" type="submit" name="action" value="delete"><a href="/users/confirmation-deleteUser"
-              id="deleteUser">Eliminar Usuario</a></button>
+          <button id="delete_button" type="submit" name="action" value="delete">Eliminar usuario</button>
         </div>
       </main>
       <%- include('./partials/footer') %> <%- include('./partials/script') %>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="/JS/deleteUser.js"></script>
           <script src="/JS/userProfile.js"></script>
 </body>
