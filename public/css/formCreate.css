@@ -1,16 +1,39 @@
 #form_create {
-    
-    margin: 20px;
-    padding: 20px;
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
 }
 
 .main_form_create {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-right: 0;
 }
 
-input[type="text"], input[type="number"], input[type="file"], textarea, select, option {
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 18px;
+  height: 13px;
+}
+
+input[type="text"], input[type="number"], textarea, select, option {
   width: 100%;
   padding: 8px;
   border-radius: 20px;
@@ -46,6 +69,28 @@ option:focus-within {
 .submit_product:hover {
     background-color: #e46f50;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 18px;
+  height: 13px;
 }
 
 @media (min-width: 426px) {

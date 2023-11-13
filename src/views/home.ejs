@@ -87,17 +87,19 @@
           <div class="carousel-inner">
             <div class="carousel-item active carrusel_prod">
               <div class="d-block w-100">
+                <% product.map(item => { %>
                 <article class="glass_effect display_flex">
-                  <img src="/img/producto1.png" />
+                  <img src="/img/books/<%= item.imgList?.name %>" />
                   <div class="display_flex product_information">
-                    <p>Nombre</p>
-                    <p>Precio</p>
+                    <p><%= item.name %></p>
+                    <p><%= item.salePrice %></p>
                   </div>
                   <div class="button_container">
                     <button class="button">
                       <span class="button-content">COMPRAR</span>
                     </button>
                   </div>
+                  <% }); %>
                 </article>
               </div>
             </div>

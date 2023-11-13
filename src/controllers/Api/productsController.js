@@ -1,39 +1,34 @@
 const path = require("path");
-const booksData = require("../../dataBase/books.json");
 const db = require('../../../database/models');
 const { response } = require("express");
+
 //Pimer endpoint de api
-const op = db.Sequelize.op;
+// const op = db.Sequelize.op;
 module.exports = {
     //Consulta todos los productos
     list: (req,res) => {
-        db.product
-        .findAll ()
+        db.Product.findAll()
         .then (products =>{
-            return res.status(200).json ({
-                total: products.length,
-                data: products,
-                status: 200
-
-            })
+            res.json({result: "succes" , playload: products})
         })
+        .catch(error => {
+            res.json({result: "error" , playload: error})
+        })              
     },
 
     //consulta un solo producto
     show: (req,res) => {
-        db.product
-        .findByPk (req.params.id)
+        db.Product.findByPk(req.params.id)
         .then (product =>{
-            return res.status(200).json ({
-                data: product,
-                status: 200
-            })
+            res.json({result: "succes" , playload: product})
         })
+        .catch(error => {
+            res.json({result: "error" , playload: error})
+        })              
     },
     //Consulta de tipo post para crear un producto
     store: (req,res) => {
-        db.product
-        .create (req.body)
+        db.Product.create(req.body)
         .then (product =>{
             return res.status(200).json ({
                 data: product,
@@ -43,8 +38,7 @@ module.exports = {
     },
     //consulta de tipo post para eliminar un producto
     delete: (req, res) => {
-        db.product
-        .destroy (req.params.id)
+        db.Product.destroy (req.params.id)
         then ((response) =>{
             
         })
