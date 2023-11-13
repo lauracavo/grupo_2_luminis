@@ -1,6 +1,7 @@
 const path = require("path");
 const db = require('../../../database/models');
 const { response } = require("express");
+
 //Pimer endpoint de api
 // const op = db.Sequelize.op;
 module.exports = {

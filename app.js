@@ -56,11 +56,11 @@ app.use("/admin", adminRoute);
 app.use("/users", usersRoute);
 app.use("/productos", productsRoute)
 
-//api
-
-
-
+//api de producto
 const productsApiRoute = require("./src/routes/api/products");
-app.use("/api/products", productsApiRoute); // Mounting the products API routes
+app.use("/api/products", productsApiRoute); 
 
+//api de users
+const usersApiRoute = require("./src/routes/api/users");
+app.use("/api/users", usersApiRoute); 
 
