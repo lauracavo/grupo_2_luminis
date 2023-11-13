@@ -21,13 +21,13 @@
           <div class="carousel-inner">
             <% product.map(item => { %>
             <div class="carousel-item active">
-              <img id="img1" src="/img/books/<%= item.imgList?.name %>" class="imgcarousel"  alt="<%= item.imgList?.name %>">
+              <img id="img1" src="/img/books/<%=item.imgList?.name %>" class="imgcarousel"  alt="<%=item.imgList?.name %>">
             </div>
             <div class="carousel-item">
-              <img id="img2" src="/img/books/<%= item.imgList?.name %>" class="imgcarousel" alt="<%= item.imgList?.name %>">
+              <img id="img2" src="/img/books/<%=item.imgList?.name %>" class="imgcarousel" alt="<%=item.imgList?.name %>">
             </div>
             <div class="carousel-item">
-              <img id="img3" src="/img/books/<%= item.imgList?.name %>" class="imgcarousel" alt="<%= item.imgList?.name %>">
+              <img id="img3" src="/img/books/<%=item.imgList?.name %>" class="imgcarousel" alt="<%=item.imgList?.name %>">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
