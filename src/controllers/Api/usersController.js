@@ -6,7 +6,7 @@ module.exports = {
     list: (req, res) => {
         db.User.findAll()
             .then(users => {
-                res.json({ result: "success", payload: user });
+                res.json({ result: "success", payload: users });
             })
             .catch(error => {
                 res.json({ result: "error", payload: error });
