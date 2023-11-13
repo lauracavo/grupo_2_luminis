@@ -1,5 +1,4 @@
 const path = require("path");
-const booksData = require("../dataBase/books.json");
 const db = require('../../database/models/index')
 
 const productsController = {
@@ -25,24 +24,19 @@ const productsController = {
     byId: async (req, res) => {
         const {id} = req.params
     try{
-        let product = await db.Product.findByPk(parseInt(id));
-        
-        if (!product) {
-            return res.status(404).send({ result: 'Error', payload: 'Product not found' });
+        let products = await db.Product.findAll();
+    let productsWithImages = [];
+        for (let item of products) {
+            const imgList = await db.ImageProduct.findOne({ where: { idProduct: item.idProduct } });
+        productsWithImages.products
+push({ ...item.dataValues, imgList: imgList ? imgList.dataValues : null });
         }
-
         
-       
-const imgList = await db.ImageProduct.findAll({ where: { idProduct: product.idProduct } });
-
-        // Add imgList to the product object
-        product.dataValues.imgList = imgList.map(img => img.dataValues);
-
-        console.log("objeto product", { product });
-        res.render('productDetail', { product });
-    } catch(error){
-            res.send({result: 'Error', payload: error})
-        }
+        res.render("product", { products: productsWithImages });
+    
+       } catch (error) {
+        res.send({ result: 'Error', payload: error });
+    }
     },
  }
 
