@@ -193,3 +193,45 @@ code.addEventListener('keydown', function (e) {
 
 
 
+/* ----------------- ALERTA DE USUARIO CREADO CON EXITO ----------------- */
+// register.js
+document.getElementById("formRegister").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  fetch("/users/store", {
+    method: "POST",
+    body: new FormData(event.target),
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Network response was not ok");
+      }
+    })
+    .then(result => {
+      if (result.success === true) {
+        Swal.fire({
+          title: "Created!",
+          text: "Your user has been created.",
+          icon: "success"
+        }).then(() => {
+          window.location.href = "/users/login";
+        });
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: result.message || "Unable to create the user.",
+          icon: "error"
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Error al crear usuario:", error);
+      Swal.fire({
+        title: "Error",
+        text: "An error occurred while trying to create the user.",
+        icon: "error"
+      });
+    });
+});

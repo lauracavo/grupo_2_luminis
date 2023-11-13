@@ -19,37 +19,39 @@ const usersControllerVersionLaura = {
 
   store: (req, res) => {
     let errors = validationResult(req);
-    console.log(errors)
+    console.log(errors);
     if (errors.isEmpty()) {
-      // Si la foto de perfil se cargó correctamente, accedemos a ella
       const profile_image = req.file ? req.file.filename : null;
 
       const {
         fullName,
-        image,
         password,
         email,
         rol
       } = req.body;
       const hashPassword = bcrypt.hashSync(password, 10);
 
-
-      // Almacenamos los datos del usuario en un objeto
       const user = {
         fullname: fullName,
         password: hashPassword,
         email: email,
         image: req.file.filename,
         rol: (req.body?.teacher == 'on') ? 'profesor' : 'cliente'
-
       };
 
-      // Guardamos el usuario en la base de datos
-      db.User.create(user);
-      res.redirect("/users/login")
-
+      db.User.create(user)
+        .then(() => {
+          res.status(200).json({ success: true, message: "Usuario creado con éxito." });
+        })
+        .catch(error => {
+          console.error("Error al crear usuario:", error);
+          res.status(500).json({ success: false, message: "Error al crear usuario." });
+        });
+    } else {
+      res.status(400).json({ success: false, message: "Error en la validación de los datos." });
     }
   },
+
 
   login: (req, res) => {
     res.render("login");
@@ -226,7 +228,6 @@ const usersControllerVersionLaura = {
       await db.User.destroy({ where: { idUser: foundUser.idUser } });
       res.json({ success: true, message: "Usuario eliminado con éxito." });
     } catch (error) {
-      console.error("Error al eliminar usuario:", error);
       res.status(500).json({ success: false, message: "Error al eliminar usuario." });
     }
   }
