@@ -13,7 +13,7 @@ const productsController = {
           product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
       //     console.log(imgList.dataValues)
        }
-      
+       
        res.render("product", {product})
     } catch (error){
           res. send({ result: 'Error', payload: error });
@@ -23,20 +23,18 @@ const productsController = {
 
     byId: async (req, res) => {
         const {id} = req.params
-    try{
-        let products = await db.Product.findAll();
-    let productsWithImages = [];
-        for (let item of products) {
-            const imgList = await db.ImageProduct.findOne({ where: { idProduct: item.idProduct } });
-        productsWithImages.products
-push({ ...item.dataValues, imgList: imgList ? imgList.dataValues : null });
-        }
-        
-        res.render("product", { products: productsWithImages });
-    
-       } catch (error) {
-        res.send({ result: 'Error', payload: error });
-    }
+  try {
+        let product = await  db.Product.findByPk(id);
+     
+        const imgList = await db.ImageProduct.findAll({ where: { idProduct: product.idProduct } });
+       
+             res.render("productDetail", { product, imgList })
+            // res.json(  {product , imgList } )
+            
+          
+        } catch (error) {
+                 res.status(500).send({ result: 'Error', payload: error.message });
+                }
     },
  }
 
