@@ -4,36 +4,61 @@
 
 .container {
   position: relative;
-  width: auto;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: auto auto auto auto auto auto;
+  width: 100%; /* Cambiado a 100% para que ocupe el ancho completo */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  gap: 40px;
   margin: 0 auto;
   padding: 0;
 }
-  
+
 .container .box {
-  position: relative;
-  width: 17rem;
-  height: 17rem;
+  width: 100%; /* Cambiado a 100% para ocupar el ancho completo en dispositivos móviles */
+  max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
   margin: 0.5rem;
   border-radius: 16px;
 }
-  
+
+.description {
+  display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .container .box {
+    width: 60%; /* Dos imágenes por fila en pantallas más grandes que 600px */
+  }
+
+  .container .box:nth-child(2n) {
+    margin-right: 0; /* Elimina el margen derecho en las imágenes impares */
+  }
+
+  .description {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .container .box {
+    width: 40%; /* Tres imágenes por fila en pantallas más grandes que 900px */
+  }
+
+  .container .box:nth-child(3n) {
+    margin-right: 0; /* Elimina el margen derecho en las imágenes que son múltiplo de 3 */
+  }
+}
+
 .container .box:hover .imgBox {
   filter: grayscale(0);
 }
-  
+
 .imgBox {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
   transition: all 0.5s ease-in-out;
   filter: grayscale(1);
   overflow: hidden;
@@ -44,11 +69,14 @@
 .imgBox > * {
   grid-area: stack;
 }
-  
+
 .imgBox img {
-  width: 17rem;
-  height: 17rem;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  resize: both;
   border-radius: 16px;
+}
+
+.aboutUsText {
+  text-align: center;
 }
