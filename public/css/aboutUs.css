@@ -1,75 +1,54 @@
+.ourTeamContainer {
+  width: 100%;
+}
 
+.container {
+  position: relative;
+  width: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+}
   
-  .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+.container .box {
+  position: relative;
+  width: 17rem;
+  height: 17rem;
+  margin: 0.5rem;
+  border-radius: 16px;
+}
   
-  .container .box {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    margin: 1rem;
-    border-radius: 16px;
-  }
+.container .box:hover .imgBox {
+  filter: grayscale(0);
+}
   
-  .container .box:hover .imgBox {
-    filter: grayscale(0);
-  }
+.imgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+  filter: grayscale(1);
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.imgBox > * {
+  grid-area: stack;
+}
   
-  .imgBox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    transition: all 0.5s ease-in-out;
-    filter: grayscale(1);
-    overflow: hidden;
-    display: grid;
-    grid-template-areas: "stack";
-  }
-
-  .imgBox > * {
-    grid-area: stack;
-  }
-
-  .caption {
-    border-radius: 0 0 16px 16px;
-  }
-
-  .caption wp-element-caption {
-    font-size: 16px;
-  }
-  
-  .imgBox img {
-    width: 15rem;
-    height: 15rem;
-    object-fit: cover;
-    resize: both;
-    border-radius: 16px;
-  }
-
-  .imgBox > .caption {
-    display: grid;
-    align-items: end;
-    padding: 1.5rem 2rem;
-    background-image: linear-gradient(to bottom,
-    rgb(33 44 55 / 0),
-    rgb(33 44 55 / 0),
-    rgb(33 44 55 / 00.75)
-    );
-  }
-
-  .imgBox .caption {
-    opacity: 0;
-    transition: opacity 300ms;
-  }
-
-  .imgBox:hover .caption {
-    opacity: 1;
-  }
+.imgBox img {
+  width: 17rem;
+  height: 17rem;
+  object-fit: cover;
+  resize: both;
+  border-radius: 16px;
+}

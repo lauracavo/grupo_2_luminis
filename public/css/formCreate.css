@@ -79,11 +79,35 @@ option:focus-within {
   outline: 0;
 }
 
+.input-control textarea:focus {
+  outline: 0;
+}
+
+.input-control select:focus {
+  outline: 0;
+}
+
 .input-control.success input {
   border-color: #09c372;
 }
 
+.input-control.success textarea {
+  border-color: #09c372;
+}
+
+.input-control.success select {
+  border-color: #09c372;
+}
+
 .input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control.error textarea {
+  border-color: #ff3860;
+}
+
+.input-control.error select {
   border-color: #ff3860;
 }
 
