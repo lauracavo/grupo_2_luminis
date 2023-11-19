@@ -17,6 +17,7 @@ module.exports = {
                 const products = result.rows;
                 const totalItems = result.count;
                 
+                //construir las URL de paginacion
                 const nextPage = offset + limit < totalItems ? `/api/products/?limit=${limit}&offset=${offset + limit}` : null;
                 const prevPage = offset > 0 ? `/api/products/?limit=${limit}&offset=${Math.max(0, offset - limit)}` : null;
 
