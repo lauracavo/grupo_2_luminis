@@ -18,7 +18,9 @@
             <div class="input-control">
               <label class="fields_name" for="email">Correo electronico:</label>
               <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
-              <div class="error"></div>
+              <div>
+                <span class="error"></span>
+              </div>
               <% if (locals.errors && errors.email){ %> 
                 <div> <%= errors.email.msg %> </div>
               <% } %>
@@ -36,7 +38,9 @@
             <div class="input-control">
               <label class="fields_name" for="password">Contraseña:</label>
               <input type="password" id="password" name="password" />
-              <div class="error"></div>
+              <div>
+                <span class="error"></span>
+              </div>
               <% if (locals.errors && errors.password){ %>
                 <div> <%= errors.password.msg %> </div>
               <% } %>

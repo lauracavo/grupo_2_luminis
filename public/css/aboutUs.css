@@ -1,3 +1,108 @@
+.ourTeamContainer {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%; /* Cambiado a 100% para que ocupe el ancho completo */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container .box {
+  width: 100%; /* Cambiado a 100% para ocupar el ancho completo en dispositivos móviles */
+  max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0.5rem;
+  border-radius: 16px;
+}
+
+.description {
+  display: none;
+  opacity: 0;
+  position: relative;
+  top: -200px; /* Ajusta según sea necesario para la posición inicial de la descripción */
+  transition: opacity 0.5s, top 0.5s;
+}
+
+.photo {
+  filter: grayscale(100%); /* Configura todas las fotos en blanco y negro */
+  transition: filter 0.5s; /* Agrega una transición de 0.5s a la propiedad filter */
+}
+
+.photo.active {
+  filter: grayscale(0%); /* Configura la foto activa en color */
+}
+
+.description.active {
+  display: block;
+  opacity: 1;
+  top: 0;
+  animation: slideIn 0.5s ease-out, fadeIn 1s ease-out; /* Agrega una animación fadeIn de 0.5s a la descripción activa */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
+  .container .box {
+    width: 60%; /* Dos imágenes por fila en pantallas más grandes que 600px */
+  }
+
+  .container .box:nth-child(2n) {
+    margin-right: 0; /* Elimina el margen derecho en las imágenes impares */
+  }
+
+  .description {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .container .box {
+    width: 40%; /* Tres imágenes por fila en pantallas más grandes que 900px */
+  }
+
+  .container .box:nth-child(3n) {
+    margin-right: 0; /* Elimina el margen derecho en las imágenes que son múltiplo de 3 */
+  }
+}
+
+.imgBox {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "stack";
+}
 
   
   .container {
@@ -34,10 +139,19 @@
     grid-template-areas: "stack";
   }
 
+.imgBox > * {
+  grid-area: stack;
+}
   .imgBox > * {
     grid-area: stack;
   }
 
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
   .caption {
     border-radius: 0 0 16px 16px;
   }
@@ -65,11 +179,6 @@
     );
   }
 
-  .imgBox .caption {
-    opacity: 0;
-    transition: opacity 300ms;
-  }
-
-  .imgBox:hover .caption {
-    opacity: 1;
-  }
+.aboutUsText {
+  text-align: center;
+}

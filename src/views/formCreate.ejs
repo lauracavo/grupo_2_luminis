@@ -15,7 +15,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="name">Nombre del producto:</label>
                     <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.name){ %>
                         <div> <%= errors.name.msg %> </div>
                     <% } %>
@@ -25,7 +27,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="brand">Marca:</label>
                     <input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.brand){ %>
                         <div> <%= errors.brand.msg %> </div>
                     <% } %>
@@ -35,7 +39,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="editorial">Editorial:</label>
                     <input type="text" id="editorial" name="editorial" value="<%= locals.old && old.editorial ? old.editorial : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.editorial){ %>
                         <div> <%= errors.editorial.msg %> </div>
                     <% } %>
@@ -45,7 +51,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="author">Autor:</label>
                     <input type="text" id="author" name="author" value="<%= locals.old && old.author ? old.author : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.author){ %>
                         <div> <%= errors.author.msg %> </div>
                     <% } %>
@@ -55,7 +63,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="detail">Detalle:</label>
                     <textarea name="detail" id="detail" cols="30" rows="6" value="<%= locals.old && old.detail ? old.detail : '' %>"></textarea>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.detail){ %>
                         <div> <%= errors.detail.msg %> </div>
                     <% } %>
@@ -65,7 +75,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="characteristic">Caracteristica:</label>
                     <input type="text" id="characteristic" name="characteristic" value="<%= locals.old && old.characteristic ? old.characteristic : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.characteristic){ %>
                         <div> <%= errors.characteristic.msg %> </div>
                     <% } %>
@@ -75,18 +87,23 @@
                 <div class="input-control">
                     <label class="fields_name" for="idCategory">Categoria:</label>            
                     <select name="idCategory" id="idCategory">
-                    <option value="" disabled selected>- select category - </option>
+                        <option value="" disabled selected>- select category - </option>
                         <% allCategories.forEach(categorie => { %>
-                    <option value="<%= categorie.idCategory %>"> <%= categorie.name %></option>
-                        <% }); %>
-                    </select>    
+                            <option value="<%= categorie.idCategory %>"> <%= categorie.name %></option>
+                            <% }); %>
+                        </select>    
+                    <div>
+                        <span class="error"></span>
+                    </div>
                 </div>
 
                 <!-- Precio de Compra -->
                 <div class="input-control">
                     <label class="fields_name" for="purchasePrice">Precio de Compra:</label>
                     <input type="text" id="purchasePrice" name="purchasePrice" value="<%= locals.old && old.purchasePrice ? old.purchasePrice : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.purchasePrice){ %>
                         <div> <%= errors.purchasePrice.msg %> </div>
                     <% } %>
@@ -96,7 +113,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="salePrice">Precio de Venta:</label>
                     <input type="text" id="salePrice" name="salePrice" value="<%= locals.old && old.salePrice ? old.salePrice : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.salePrice){ %>
                         <div> <%= errors.salePrice.msg %> </div>
                     <% } %>
@@ -106,7 +125,9 @@
                 <div class="input-control">
                     <label class="fields_name" for="stock">Stock:</label>
                     <input type="text" id="stock" name="stock" value="<%= locals.old && old.stock ? old.stock : '' %>"/>
-                    <div class="error"></div>
+                    <div>
+                        <span class="error"></span>
+                    </div>
                     <% if (locals.errors && errors.stock){ %>
                         <div> <%= errors.stock.msg %> </div>
                     <% } %>

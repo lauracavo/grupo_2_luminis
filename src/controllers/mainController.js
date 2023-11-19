@@ -12,7 +12,7 @@ try{
   for(let item of product){
       // console.log(item)
       const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
-      product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
+      product=[{...item.dataValues, imgList: imgList.dataValues}]
   //     console.log(imgList.dataValues)
    }
   
