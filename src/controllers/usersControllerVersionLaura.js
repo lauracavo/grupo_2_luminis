@@ -19,37 +19,38 @@ const usersControllerVersionLaura = {
 
   store: (req, res) => {
     let errors = validationResult(req);
-    console.log(errors)
+    console.log(errors);
     if (errors.isEmpty()) {
-      // Si la foto de perfil se cargó correctamente, accedemos a ella
       const profile_image = req.file ? req.file.filename : null;
 
       const {
         fullName,
-        image,
         password,
         email,
         rol
       } = req.body;
       const hashPassword = bcrypt.hashSync(password, 10);
 
-
-      // Almacenamos los datos del usuario en un objeto
       const user = {
-        fullName: fullName,
+        fullname: fullName,
         password: hashPassword,
         email: email,
         image: req.file.filename,
         rol: (req.body?.teacher == 'on') ? 'profesor' : 'cliente'
-
       };
 
-      // Guardamos el usuario en la base de datos
-      db.User.create(user);
-      res.redirect("/users/login")
-
+      db.User.create(user)
+        .then(() => {
+          res.status(200).json({ success: true, message: "Usuario creado con éxito." });
+        })
+        .catch(error => {
+          res.status(500).json({ success: false, message: "Error al crear usuario." });
+        });
+    } else {
+      res.status(400).json({ success: false, message: "Error en la validación de los datos." });
     }
   },
+
 
   login: (req, res) => {
     res.render("login");
@@ -189,7 +190,7 @@ const usersControllerVersionLaura = {
   },
 
   viewPassword: (req, res) => {
-    res.render("cambioContrasena")
+    res.render("editPassword")
   },
 
   editPassword: async (req, res) => {
@@ -200,7 +201,7 @@ const usersControllerVersionLaura = {
     if (errors.isEmpty()) {
       // Busca el usuario en la base de datos por correo electrónico
       const foundUser = await db.User.findOne({ where: { email: enteredUser } });
-      const correctPassword = bcrypt.compareSync(req.body.OldPassword, foundUser.password);
+      const correctPassword = bcrypt.compareSync(req.body.oldPassword, foundUser.password);
 
       if (correctPassword) {
         let newPassword = req.body.password;
@@ -208,13 +209,12 @@ const usersControllerVersionLaura = {
 
         await db.User.update({ password: hashPassword }, { where: { idUser: foundUser.idUser } })
 
-        res.redirect("/users/userProfile")
       } else {
-        res.render("cambioContrasena", { errors: [{ msg: "LA CONTRASEÑA ES INCORRECTA" }] });
+        res.render("editPassword", { errors: [{ msg: "LA CONTRASEÑA ES INCORRECTA" }] });
       }
 
     } else {
-      res.render("cambioContrasena", { errors: errors.mapped() });
+      res.render("editPassword", { errors: errors.mapped() });
     }
 
   },
@@ -223,10 +223,15 @@ const usersControllerVersionLaura = {
     const enteredUser = req.cookies.email;
     const foundUser = await db.User.findOne({ where: { email: enteredUser } });
 
-    /*  await db.User.destroy({ where: { idUser: foundUser.idUser } }) */
-
-    res.redirect("/")
+    try {
+      await db.User.destroy({ where: { idUser: foundUser.idUser } });
+      res.json({ success: true, message: "Usuario eliminado con éxito." });
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Error al eliminar usuario." });
+    }
   }
+
+
 }
 
 

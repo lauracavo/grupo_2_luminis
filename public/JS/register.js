@@ -10,7 +10,7 @@ const passwordRInput = document.querySelector('#passwordR');
 const setError = (element, message) => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector('.error');
-  
+
   errorDisplay.innerText = message;
   inputControl.classList.add('error');
   inputControl.classList.remove('success');
@@ -20,7 +20,7 @@ const setError = (element, message) => {
 const setSuccess = element => {
   const inputControl = element.parentElement;
   const errorDisplay = inputControl.querySelector('.error');
-  
+
   errorDisplay.innerText = '';
   inputControl.classList.add('success');
   inputControl.classList.remove('error');
@@ -79,30 +79,23 @@ const validatePassword = () => {
     conditionUppercase.style.color = 'black';
     conditionDigit.style.color = 'black';
     return false;
-  } else if (passwordValue.length < 8) {
+  } else if (passwordValue.length < 8 || !hasUppercase || !hasDigit) {
     setError(passwordInput, '');
-    conditionLength.style.color = 'red';
-    conditionUppercase.style.color = 'black';
-    conditionDigit.style.color = 'black';
+
+    conditionLength.style.color = passwordValue.length >= 8 ? 'green' : 'red';
+    conditionUppercase.style.color = hasUppercase ? 'green' : 'red';
+    conditionDigit.style.color = hasDigit ? 'green' : 'red';
+
     return false;
   } else {
     setSuccess(passwordInput);
     conditionLength.style.color = 'green';
-    
-    if (hasUppercase) {
-      conditionUppercase.style.color = 'green';
-    } else {
-      conditionUppercase.style.color = 'red';
-    }
-    
-    if (hasDigit) {
-      conditionDigit.style.color = 'green';
-    } else {
-      conditionDigit.style.color = 'red';
-    }
+    conditionUppercase.style.color = 'green';
+    conditionDigit.style.color = 'green';
     return true;
   }
 };
+
 
 //Validación del campo passwordR
 const validatePasswordR = () => {
@@ -129,7 +122,7 @@ passwordRInput.addEventListener('input', validatePasswordR);
 
 //Agregamos un evento 'submit' al formulario con un preventDefault
 //y ejecutamos cada una de las validaciones
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
   // Validar cada campo
   const fullNameValid = validateFullName();
   const emailValid = validateEmail();
@@ -146,28 +139,28 @@ form.addEventListener('submit', function(e) {
 
 //Creamos las diferentes opciones que se escribirán en la animación, su orden y velocidad de typeo 
 const options = {
-    strings: ['¿Hola?... 🤨',
+  strings: ['¿Hola?... 🤨',
     'No te veo en nuestra base de datos 🤔',
     'Debe ser tu primera visita 😲',
     '¿Porque no te registras? 😅',
     'Seguramente encontrás algo que te guste 😉',
     '¡BIENVENIDO A LUMINIS! 😊'],
-    typeSpeed: 40,
-    backSpeed: 20,
-    backDelay: 2000,
-  };
-  //Anclamos la animación a la clase .typed
-  let typed = new Typed('.typed', options);
+  typeSpeed: 40,
+  backSpeed: 20,
+  backDelay: 2000,
+};
+//Anclamos la animación a la clase .typed
+let typed = new Typed('.typed', options);
 
-  //Seteamos el estado del codigo promocional en 0
-  let promoCode = 0;
+//Seteamos el estado del codigo promocional en 0
+let promoCode = 0;
 
-  //Capturamos el input "code"
-  const code = document.querySelector('#code');
+//Capturamos el input "code"
+const code = document.querySelector('#code');
 
-  //Agregamos un evento "keydown" a "code", para que escuche cada vez que se presiona una tecla
-  code.addEventListener('keydown', function(e){
-    const pressedKey = e.key.toLowerCase();
+//Agregamos un evento "keydown" a "code", para que escuche cada vez que se presiona una tecla
+code.addEventListener('keydown', function (e) {
+  const pressedKey = e.key.toLowerCase();
 
   //Creamos las condiciones para que el codigo promocional solo funcione si se presionan las
   //teclas correctas en el orden correspondiente y que 
@@ -200,3 +193,43 @@ const options = {
 
 
 
+/* ----------------- ALERTA DE USUARIO CREADO CON EXITO ----------------- */
+// register.js
+document.getElementById("formRegister").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  fetch("/users/store", {
+    method: "POST",
+    body: new FormData(event.target),
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Network response was not ok");
+      }
+    })
+    .then(result => {
+      if (result.success === true) {
+        Swal.fire({
+          title: "USUARIO CREADO CON ÉXITO",
+          icon: "success"
+        }).then(() => {
+          window.location.href = "/users/login";
+        });
+      } else {
+        Swal.fire({
+          title: "EL USUARIO NO PUDO SER CREADO",
+          icon: "error"
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Error al crear usuario:", error);
+      Swal.fire({
+        title: "Error",
+        text: "Intente nuevamente",
+        icon: "error"
+      });
+    });
+});

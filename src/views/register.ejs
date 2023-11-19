@@ -1,103 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
+
+<head>
+  <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/register.css" />
     <link rel="stylesheet" href="/css/login.css" />
-  </head>
+</head>
 
-  <body>
-    <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="main_register_form">
-      <section id="register_form" class="glass_effect">
-        <div>
-          <form id="formRegister" method="POST" action="/users/store" enctype="multipart/form-data">
-            <h3>REGISTRAR USUARIO</h3>
-            
-            <!-- Nombre y Apellido -->
-            <div class="input-control">
-              <label class="fields_name" for="fullName">Nombre y Apellido:</label>
-              <input type="text" id="fullName" name="fullName" value="<%= locals.old && old.fullName ? old.fullName : '' %>"/>
-              <div class="error"></div>
-              <% if (locals.errors && errors.fullName){ %>
-                <div> <%= errors.fullName.msg %> </div>
-              <% } %>
-            </div>
+<body>
+  <%- include('./partials/menu') %> <%- include('./partials/header') %>
+      <main class="main_register_form">
+        <section id="register_form" class="glass_effect">
+          <div>
+            <form id="formRegister" method="POST" action="/users/store" enctype="multipart/form-data">
+              <h3>REGISTRAR USUARIO</h3>
 
-            <!-- Email -->
-            <div class="input-control">
-              <label class="fields_name" for="email">Correo electronico:</label>
-              <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
-              <div class="error"></div>
-              <% if (locals.errors && errors.email){ %> 
-                <div> <%= errors.email.msg %> </div>
-              <% } %>
-            </div>
-
-            <!-- Soy Docente -->
-            <div id="im_teacher">
-              <label class="fields_name" for="teacher">Soy docente:</label>
-              <input id="teacher_checkbox" type="checkbox" name="teacher" />
-            </div>
-
-            <!-- Codigo -->
-            <label class="fields_name" for="code">Código de verificacíon:</label>
-            <input type="password" id="code" name="code" />
-
-            <!-- Contraseña -->
-            <div class="input-control">
-              <label class="fields_name" for="password">Contraseña:</label>
-              <input type="password" id="password" name="password" />
-              <div class="error"></div>
-              <% if (locals.errors && errors.password){ %>
-                <div> <%= errors.password.msg %> </div>
-              <% } %>
-              <div class="password-conditions">
-                <ul>
-                  <li id="condition-length">Debe tener al menos 8 caracteres</li>
-                  <li id="condition-uppercase">Debe contener al menos una letra mayúscula</li>
-                  <li id="condition-digit">Debe contener al menos un número</li>
-                </ul>
+              <!-- Nombre y Apellido -->
+              <div class="input-control">
+                <label class="fields_name" for="fullName">Nombre y Apellido:</label>
+                <input type="text" id="fullName" name="fullName"
+                  value="<%= locals.old && old.fullName ? old.fullName : '' %>" />
+                <div class="error"></div>
+                <% if (locals.errors && errors.fullName){ %>
+                  <div>
+                    <%= errors.fullName.msg %>
+                  </div>
+                  <% } %>
               </div>
-            </div>
 
-            <!-- Repetir Contraseña -->
-            <div class="input-control">
-              <label class="fields_name" for="passwordR">Repetir contraseña:</label>
-              <input type="password" id="passwordR" name="passwordR" />
-              <div class="error"></div>
-              <% if (locals.errors && errors.passwordR){ %>
-                <div> <%= errors.passwordR.msg %> </div>
-              <% } %>
-            </div>
+              <!-- Email -->
+              <div class="input-control">
+                <label class="fields_name" for="email">Correo electronico:</label>
+                <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" />
+                <div class="error"></div>
+                <% if (locals.errors && errors.email){ %>
+                  <div>
+                    <%= errors.email.msg %>
+                  </div>
+                  <% } %>
+              </div>
 
-            <!-- Imagen de Perfil -->   
-            <label for="profile_image" class="fields_name">Imagen de perfil:</label>
-            <input type="file" name="profile_image" class="fields_name" />
+              <!-- Soy Docente -->
+              <div id="im_teacher">
+                <label class="fields_name" for="teacher">Soy docente:</label>
+                <input id="teacher_checkbox" type="checkbox" name="teacher" />
+              </div>
 
-            <!-- Submit -->
-            <input id="submit_register" type="submit" value="Registrarme" />
+              <!-- Codigo -->
+              <label class="fields_name" for="code">Código de verificacíon:</label>
+              <input type="password" id="code" name="code" />
 
-            <br />
+              <!-- Contraseña -->
+              <div class="input-control">
+                <label class="fields_name" for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" />
+                <div class="error"></div>
+                <% if (locals.errors && errors.password){ %>
+                  <div>
+                    <%= errors.password.msg %>
+                  </div>
+                  <% } %>
+                    <div class="password-conditions">
+                      <ul>
+                        <li id="condition-length">Debe tener al menos 8 caracteres</li>
+                        <li id="condition-uppercase">Debe contener al menos una letra mayúscula</li>
+                        <li id="condition-digit">Debe contener al menos un número</li>
+                      </ul>
+                    </div>
+              </div>
 
-            <p class="fields_name">
-              ¿Ya tenés una cuenta? Inicia sesión
-              <a class="fields_name" href="/users/login">aqui.</a>
-            </p>
-          </form>
+              <!-- Repetir Contraseña -->
+              <div class="input-control">
+                <label class="fields_name" for="passwordR">Repetir contraseña:</label>
+                <input type="password" id="passwordR" name="passwordR" />
+                <div class="error"></div>
+                <% if (locals.errors && errors.passwordR){ %>
+                  <div>
+                    <%= errors.passwordR.msg %>
+                  </div>
+                  <% } %>
+              </div>
+
+              <!-- Imagen de Perfil -->
+              <label for="profile_image" class="fields_name">Imagen de perfil:</label>
+              <input type="file" name="profile_image" class="fields_name" />
+
+              <!-- Submit -->
+              <input id="submit_register" type="submit" value="Registrarme" />
+
+              <br />
+
+              <p class="fields_name">
+                ¿Ya tenés una cuenta? Inicia sesión
+                <a class="fields_name" href="/users/login">aqui.</a>
+              </p>
+            </form>
+          </div>
+        </section>
+        <div id="left_panel">
+          <!-- Elementos del panel con animacion de escritura -->
+          <span class="typed"></span>
         </div>
-      </section>
-      <div id="left_panel">
-        <!-- Elementos del panel con animacion de escritura -->
-        <span class="typed"></span> 
-      </div>
-    </main>
+      </main>
 
-    <%- include('./partials/footer') %> <%- include('./partials/script') %>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/js/register.js"></script>
-  </body>
+      <%- include('./partials/footer') %> <%- include('./partials/script') %>
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="/js/register.js"></script>
+          <script src="/js/confirmationRegisterUser.js"></script>
+</body>
+
 </html>
 
 
