@@ -1,6 +1,7 @@
 // Obtén referencias a todas las fotos y descripciones
 const photos = document.querySelectorAll('.photo');
 const descs = document.querySelectorAll('.description');
+const iconContainers = document.querySelectorAll('.iconContainer');
 
 // Función para mostrar el texto
 function showText(descElement) {
@@ -17,10 +18,12 @@ photos.forEach((photo, index) => {
     // Elimina la clase 'active' de todas las fotos y descripciones
     photos.forEach(p => p.classList.remove('active'));
     descs.forEach(d => d.classList.remove('active'));
+    iconContainers.forEach(ic => ic.classList.remove('active'));
 
     // Agrega la clase 'active' a la foto y descripción clicadas
     photo.classList.add('active');
     descs[index].classList.add('active');
+    iconContainers[index].classList.add('active');
   });
 });
 
@@ -47,6 +50,18 @@ photos.forEach((photo, index) => {
     // Agrega el evento de clic al documento
     document.addEventListener('click', hideDescOnOutsideClick);
   });
+});
+
+// Agrega un evento de clic al documento para ocultar los iconos al hacer clic fuera de las imágenes
+document.addEventListener('click', function hideIconsOnOutsideClick(e) {
+  // Comprueba si el clic no ocurrió en el icon container ni en sus descendientes
+  if (!iconContainers[0].contains(e.target) && !iconContainers[1].contains(e.target)) {
+    // Oculta los iconos
+    iconContainers.forEach(ic => ic.classList.remove('active'));
+
+    // Remueve el evento de clic del documento después de ocultar los iconos
+    document.removeEventListener('click', hideIconsOnOutsideClick);
+  }
 });
 
 

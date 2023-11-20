@@ -2,6 +2,21 @@
   width: 100%;
 }
 
+.iconContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  align-items: end;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.iconContainer.active {
+  opacity: 1;
+}
+
 .container {
   position: relative;
   width: 100%; /* Cambiado a 100% para que ocupe el ancho completo */
