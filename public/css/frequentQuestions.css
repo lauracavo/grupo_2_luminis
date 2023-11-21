@@ -1,0 +1,79 @@
+/* Estilo para el encabezado */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.glass_effect .frequent-questions {
+  transform: translateY(20px);
+  transition: transform 0.5s;
+}
+  
+  /* Estilo para las preguntas frecuentes */
+.frequent-questions {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+  
+  /* Estilo para los botones */
+.show-answer {
+  margin-top: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #2a9d8f;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.show-answer:hover {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.show-answer.active {
+  background-color: #e46f50;
+}
+  
+  /* Estilo para las respuestas (inicialmente ocultas) */
+.answer {
+  display: none;
+  font-size: 18px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s, max-height 0.5s;
+}
+
+.answer.active {
+  opacity: 1;
+  top: 0;
+  animation: slideIn 0.5s ease-out, fadeIn 0.5s ease-out;
+}
+  
+  /* Estilo cuando se muestra la respuesta */
+.answer.show {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+  
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

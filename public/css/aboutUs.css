@@ -1,3 +1,12 @@
+#intro {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.introText {
+  font-size: 18px;
+}
+
 .ourTeamContainer {
   width: 100%;
 }
@@ -38,6 +47,7 @@
 
 .description {
   display: none;
+  font-size: 18px;
   opacity: 0;
   position: relative;
   top: -200px; /* Ajusta según sea necesario para la posición inicial de la descripción */
