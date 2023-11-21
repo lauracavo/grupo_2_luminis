@@ -12,7 +12,7 @@ try{
   for(let item of product){
       // console.log(item)
       const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
-      product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
+      product=[{...item.dataValues, imgList: imgList.dataValues}]
   //     console.log(imgList.dataValues)
    }
   
@@ -24,12 +24,20 @@ try{
     },
   
   aboutUs: async (req, res) => {
-    try{
+    try {
       res.render("aboutUs")
     } catch (error){
-      res. send({ result: 'Error', payload: error });
+      res.send({ result: 'Error', payload: error });
     }
 },
+
+  frequentQuestions: async (req, res) => {
+    try {
+      res.render("frequentQuestions")
+    } catch (error) {
+      res.send({ result: 'Error', payload: error});
+    }
+  }
     }
 
    

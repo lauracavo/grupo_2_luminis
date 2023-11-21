@@ -67,14 +67,14 @@ const validateCharacteristic = () => {
 
 //Validación del campo Categoria de Producto
 const validateIdCategory = () => {
-    const idCategoryValue = idCategoryInput.value.trim();
-    if (idCategoryValue === '- select category -') {
-      setError(idCategoryInput, 'Debe ingresar una categoria para el producto');
-      return false;
-    } else {
-      setSuccess(idCategoryInput);
-      return true;
-    }
+  const idCategoryValue = idCategoryInput.value.trim();
+  if (idCategoryValue === '') {
+    setError(idCategoryInput, 'Debe seleccionar una categoría para el producto');
+    return false;
+  } else {
+    setSuccess(idCategoryInput);
+    return true;
+  }
 };
 
 //Validación del campo Precio de Compra de Producto
@@ -117,7 +117,7 @@ const validateStock = () => {
 nameInput.addEventListener('input', validateName);
 detailInput.addEventListener('input', validateDetail);
 characteristicInput.addEventListener('input', validateCharacteristic);
-idCategoryInput.addEventListener('focus', validateIdCategory);
+idCategoryInput.addEventListener('blur', validateIdCategory);
 purchasePriceInput.addEventListener('input', validatePurchasePrice);
 salePriceInput.addEventListener('input', validateSalePrice);
 stockInput.addEventListener('input', validateStock);
