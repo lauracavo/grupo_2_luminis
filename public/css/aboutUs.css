@@ -12,18 +12,13 @@
 }
 
 .iconContainer {
-  display: flex;
+  display: none;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
   align-items: end;
   margin-bottom: 10px;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.iconContainer.active {
-  opacity: 1;
+  transition: display 0.5s;
 }
 
 .container {
