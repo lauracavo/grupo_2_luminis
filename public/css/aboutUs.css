@@ -43,44 +43,13 @@
 .description {
   display: none;
   font-size: 18px;
-  opacity: 0;
-  position: relative;
-  top: -200px; /* Ajusta según sea necesario para la posición inicial de la descripción */
-  transition: opacity 0.5s, top 0.5s;
+  position: relative; /* Ajusta según sea necesario para la posición inicial de la descripción */
+  transition: display 0.5s, top 0.5s;
 }
 
 .photo {
   filter: grayscale(100%); /* Configura todas las fotos en blanco y negro */
   transition: filter 0.5s; /* Agrega una transición de 0.5s a la propiedad filter */
-}
-
-.photo.active {
-  filter: grayscale(0%); /* Configura la foto activa en color */
-}
-
-.description.active {
-  display: block;
-  opacity: 1;
-  top: 0;
-  animation: slideIn 0.5s ease-out, fadeIn 1s ease-out; /* Agrega una animación fadeIn de 0.5s a la descripción activa */
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-200px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 
