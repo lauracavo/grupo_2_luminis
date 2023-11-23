@@ -6,18 +6,16 @@ const productsController = {
     // OBTENIENDO LOS DATOS DE LA BASE DE DATOS    
     try{
         let product = await db.Product.findAll()
-    
-      for(let item of product){
-          
-          const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
-          product=[...product,{...item.dataValues, imgList: imgList.dataValues}]
-      //     console.log(imgList.dataValues)
+        const newProduct = await Promise.all(product.map(async (item) => {  
+        const imgList = await db.ImageProduct.findOne({ where: { idProduct: item.idProduct } })
+        return { ...item.dataValues, imgList: imgList ? imgList.dataValues : null };
+      }));
+      res.render("product", {product: newProduct})      
        }
-       
-       res.render("product", {product})
-    } catch (error){
+       catch (error){
           res. send({ result: 'Error', payload: error });
-    }
+    
+  }
        
 },   
 

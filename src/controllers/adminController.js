@@ -5,19 +5,19 @@ const upload = require("../middlewares/multerConfigProd");
 
 const adminController = {
   getAll: async (req, res) => {
-    try{
-      let product = await db.Product.findAll()
-      for(let item of product){
-         
-        const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
-        product=[{...item.dataValues, imgList: imgList.dataValues}]
-        console.log( 'products: ' , product)
-      }
-      res.render("admin", { product });
-      }catch(error){
-        res.send({ result: 'Error', payload: error })
-      }
-  },
+      try{
+        let product = await db.Product.findAll()
+        const newProduct = await Promise.all(product.map(async (item) => {  
+        const imgList = await db.ImageProduct.findOne({ where: { idProduct: item.idProduct } })
+        return { ...item.dataValues, imgList: imgList ? imgList.dataValues : null };
+      }));
+      res.render("admin", {product: newProduct})      
+       }
+       catch (error){
+          res. send({ result: 'Error', payload: error });
+          
+  }
+ },
   create: async (req, res) => {
     const allCategories = await db.Categorie.findAll({})
 
@@ -55,12 +55,18 @@ const adminController = {
         const defaultImageRecord = { name: 'sinImagen.png', idProduct };
         await db.ImageProduct.create(defaultImageRecord);
       }
-      res.redirect("/admin");
+     
+      res.status(200).json({ success: true, message: "producto creado con éxito." });
     }
     catch (error) {
-      console.error(error); res.status(500).send("Ha ocurrido un error al crear el producto.");
+      res.status(500).json({ success: false, message: "Error al crear producto." });
     }
   },
+
+  
+          
+           
+      
   edit: async (req, res) => {
     
     const allCategories = await db.Categorie.findAll()  
@@ -95,20 +101,15 @@ const adminController = {
       res.status(500).send("Ha ocurrido un error al editar el producto.");
     }
   },
-  delete: async (req, res) => {
-    console.log("eliminando");
-    const { id } = req.params;
-    console.log(req.params.id);
-    await db.Product.destroy({
-      where: { idProduct: parseInt(id) }
-    })
-      .then(result => {
-        res.send({ result: 'Succes', payload: result })
-      })
-      .catch(error => {
-        res.send({ result: 'Error', payload: error })
-      })
-    res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+  delete: async (req, res) => {    
+    const { id } = id.params;
+    const foundProduct = await db.Product.findOne({where: { idProduct: parseInt(id)}})
+    try {
+      await db.Product.destroy({ where: { idProduct: foundProduct.id } });
+      res.json({ success: true, message: "Producto eliminado con éxito." });
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Error al eliminar Producto." });
+    }
   },
   listUser: (req, res) => {
     db.User.findAll()

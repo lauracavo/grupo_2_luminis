@@ -23,12 +23,12 @@
             <div class="carousel-item active">
               <img id="img1" src="/img/books/<%=imgList?.name %>" class="imgcarousel"  alt="<%=imgList?.name %>">
             </div>
-            <div class="carousel-item">
+            <!-- <div class="carousel-item">
               <img id="img2" src="/img/books/<%=imgList?.name %>" class="imgcarousel" alt="<%=product.imgList?.name %>">
             </div>
             <div class="carousel-item">
               <img id="img3" src="/img/books/<%=imgList?.name %>" class="imgcarousel" alt="<%=imgList?.name %>">
-            </div>
+            </div> -->
           </div>
           <% }) %>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -42,11 +42,13 @@
         </div>
         <!-- Fin Carrusel--------------------------------------- -->
         <!-- -----Inicio image container-------------------------------- -->
-       <!-- <div class="image_container">
-        <img id="one"  src="<%= imgList?.name %>" alt="thumnail">
-        <img id="two"  src="<%= imgList?.name %>" alt="thumnail">
-        <img id="three"  src="<%=imgList?.name %>" alt="thumnail">
-       </div> -->
+       <div class="image_container">
+        <% imgList.map(imgList => { %>
+        <img id="one"  src="<%=imgList?.name %>" alt="">
+        <img id="two"  src="<%=imgList?.name %>" alt="">
+        <img id="three"  src="<%=imgList?.name %>" alt="">
+        <% }) %>
+       </div>
       
       </article>
        <!-- ----------------Fin image container--------------------------------- -->

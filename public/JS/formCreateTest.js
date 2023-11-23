@@ -140,3 +140,46 @@ form.addEventListener('submit', function(e) {
       e.preventDefault();
     }
   });
+
+  
+    /* ----------------- ALERTA DE PRODUCTO CREADO CON EXITO ----------------- */
+
+document.getElementById("formCreate").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  fetch("/admin/store", {
+    method: "POST",
+    body: new FormData(event.target),
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Network response was not ok");
+      }
+    })
+    .then(result => {
+      if (result.success === true) {
+        Swal.fire({
+          title: "PRODUCTO CREADO CON ÉXITO",
+          icon: "success"
+        }).then(() => {
+          window.location.href = "/admin";
+        });
+      } else {
+        Swal.fire({
+          title: "EL PRODUCTO NO PUDO SER CREADO",
+          icon: "error"
+        });
+      }
+    })
+    .catch(error => {
+      console.error("Error al crear producto:", error);
+      Swal.fire({
+        title: "Error",
+        text: "Intente nuevamente",
+        icon: "error"
+      });
+    });
+  })
+   

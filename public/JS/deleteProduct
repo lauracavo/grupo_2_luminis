@@ -1,0 +1,63 @@
+const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "BORRAR",
+        cancelButtonText: "CANCELAR",
+        reverseButtons: true
+    }).then((confirmacion) => {
+        if (confirmacion.isConfirmed) {
+            fetch("/admin/delete/:id", {
+                method: "POST",
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        swalWithBootstrapButtons.fire({
+                            title: "PRODUCTO ELIMINADO",
+                            text: "Your user has been deleted.",
+                            icon: "success"
+                        }).then(() => {
+                            window.location.href = "/admin";
+                        });
+                    } else {
+                        swalWithBootstrapButtons.fire({
+                            title: "Error",
+                            text: result.message || "NO FUE POSIBLE ELIMINAR PRODUCTO",
+                            icon: "error"
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error("Error al eliminar producto:", error);
+                    swalWithBootstrapButtons.fire({
+                        title: "ERROR AL ELIMINAR PRODUCTO",
+                        text: "An error occurred while trying to delete the product.",
+                        icon: "error"
+                    });
+                });
+        } else if (
+            confirmacion.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "CANCELADO",
+                text: "Your user is safe :)",
+                icon: "error"
+            });
+        }
+    });
+
+    // Esta línea se ejecutará inmediatamente después de mostrar la alerta,
+    // pero no después de la eliminación del usuario.
+    console.log("Alerta mostrada");
+
+
