@@ -1,75 +1,109 @@
+#intro {
+  text-align: center;
+  margin-top: 15px;
+}
 
-  
-  .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
+.introText {
+  font-size: 18px;
+}
+
+.ourTeamContainer {
+  width: 100%;
+}
+
+.iconContainer {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  align-items: end;
+  margin-bottom: 10px;
+  transition: display 0.5s;
+}
+
+.container {
+  position: relative;
+  width: 100%; /* Cambiado a 100% para que ocupe el ancho completo */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container .box {
+  width: 100%; /* Cambiado a 100% para ocupar el ancho completo en dispositivos móviles */
+  max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 0.5rem;
+  border-radius: 16px;
+}
+
+.description {
+  display: none;
+  font-size: 18px;
+  position: relative; /* Ajusta según sea necesario para la posición inicial de la descripción */
+  transition: display 0.5s, top 0.5s;
+}
+
+.photo {
+  filter: grayscale(100%); /* Configura todas las fotos en blanco y negro */
+  transition: filter 0.5s; /* Agrega una transición de 0.5s a la propiedad filter */
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px) {
   .container .box {
-    position: relative;
-    width: 15rem;
-    height: 15rem;
-    margin: 1rem;
-    border-radius: 16px;
-  }
-  
-  .container .box:hover .imgBox {
-    filter: grayscale(0);
-  }
-  
-  .imgBox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    transition: all 0.5s ease-in-out;
-    filter: grayscale(1);
-    overflow: hidden;
-    display: grid;
-    grid-template-areas: "stack";
+    width: 60%; /* Dos imágenes por fila en pantallas más grandes que 600px */
   }
 
-  .imgBox > * {
-    grid-area: stack;
+  .container .box:nth-child(2n) {
+    margin-right: 0; /* Elimina el margen derecho en las imágenes impares */
   }
 
-  .caption {
-    border-radius: 0 0 16px 16px;
+  .description {
+    width: 30%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .container .box {
+    width: 40%; /* Tres imágenes por fila en pantallas más grandes que 900px */
   }
 
-  .caption wp-element-caption {
-    font-size: 16px;
+  .container .box:nth-child(3n) {
+    margin-right: 0; /* Elimina el margen derecho en las imágenes que son múltiplo de 3 */
   }
-  
-  .imgBox img {
-    width: 15rem;
-    height: 15rem;
-    object-fit: cover;
-    resize: both;
-    border-radius: 16px;
-  }
+}
 
-  .imgBox > .caption {
-    display: grid;
-    align-items: end;
-    padding: 1.5rem 2rem;
-    background-image: linear-gradient(to bottom,
-    rgb(33 44 55 / 0),
-    rgb(33 44 55 / 0),
-    rgb(33 44 55 / 00.75)
-    );
-  }
+.imgBox {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "stack";
+}
 
-  .imgBox .caption {
-    opacity: 0;
-    transition: opacity 300ms;
-  }
+.imgBox > * {
+  grid-area: stack;
+}
 
-  .imgBox:hover .caption {
-    opacity: 1;
-  }
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.aboutUsText {
+  text-align: center;
+}

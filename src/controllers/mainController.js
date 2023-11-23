@@ -23,12 +23,20 @@ try{
     },
   
   aboutUs: async (req, res) => {
-    try{
+    try {
       res.render("aboutUs")
     } catch (error){
-      res. send({ result: 'Error', payload: error });
+      res.send({ result: 'Error', payload: error });
     }
 },
+
+  frequentQuestions: async (req, res) => {
+    try {
+      res.render("frequentQuestions")
+    } catch (error) {
+      res.send({ result: 'Error', payload: error});
+    }
+  }
     }
 
    

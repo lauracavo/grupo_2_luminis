@@ -2,11 +2,32 @@ const path = require("path");
 const db = require('../../../database/models');
 
 module.exports = {
-    // Consulta todos los usuarios
+    // Consulta todos los usuarios con paginación
     list: (req, res) => {
-        db.User.findAll()
-            .then(users => {
-                res.json({ result: "success", payload: users });
+        const limit = req.query.limit || 10; // Número de resultados por página
+        const offset = req.query.offset || 0; // Número de resultados que se deben omitir
+
+        db.User.findAndCountAll({
+            limit: limit,
+            offset: offset
+        })
+            .then(result => {
+                const users = result.rows;
+                const totalCount = result.count;
+
+                // Construir las URL de paginación
+                const nextPage = offset + limit < totalCount ? `api/users/?limit=${limit}&offset=${offset + limit}` : null;
+                const prevPage = offset - limit >= 0 ? `api/users/?limit=${limit}&offset=${offset - limit}` : null;
+
+                res.json({
+                    result: "success",
+                    payload: users,
+                    pagination: {
+                        totalCount: totalCount,
+                        nextPage: nextPage,
+                        prevPage: prevPage
+                    }
+                });
             })
             .catch(error => {
                 res.json({ result: "error", payload: error });
