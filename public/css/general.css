@@ -233,11 +233,22 @@ button.arrow_button:hover .arrow:before {
   transition: all 0.2s;
 }
 /* ------------------ CARRITO ---------------------------- */
-#div-shopping-cart , #div-icon-user{
+#div-shopping-cart {
   display: flex;
   align-items: center;
 }
 
+/* -------------------- BARRA DE NAVEGACION USUARIOS LOGUEADOS ------------ */
+#cerrar_sesion{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+}
+#div-icon-user , #logout {
+  display: flex;
+  align-items: center;
+}
 /* ------------------FULLSCREEN MENU---------------------- */
 a,
 a:visited,
