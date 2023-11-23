@@ -15,8 +15,15 @@ try{
       product=[{...item.dataValues, imgList: imgList.dataValues}]
   //     console.log(imgList.dataValues)
    }
+
+   let userLogged
+   if(req.session.userLogged){
+    userLogged = true;
+   } else{
+    userLogged = false;
+   }
   
-   res.render("home", {product})
+   res.render("home", {product, userLogged})
 } catch (error){
       res. send({ result: 'Error', payload: error });
 }

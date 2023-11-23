@@ -232,6 +232,11 @@ button.arrow_button:hover .arrow:before {
   );
   transition: all 0.2s;
 }
+/* ------------------ CARRITO ---------------------------- */
+#div-shopping-cart , #div-icon-user{
+  display: flex;
+  align-items: center;
+}
 
 /* ------------------FULLSCREEN MENU---------------------- */
 a,

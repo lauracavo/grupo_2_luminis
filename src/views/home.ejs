@@ -1,302 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
+
+<head>
+  <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/home.css" />
-  </head>
-  <body>
-    <!-- menu hamburguesa -->
-    <%- include('./partials/menu') %>
-    <!-- barra navegacion desktop -->
-    <%- include('./partials/header') %>
+</head>
 
-    <main>
-      <div id="bookStore_container" class="display_flex">
-        <div id="intro">
-          <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            eaque corrupti, quo at consequuntur provident, ducimus fugit
-            possimus esse quae sapiente sint reprehenderit repellendus. Dolorem
-            doloremque voluptatum modi itaque numquam! At quasi similique
-            corrupti ut provident nobis a et ullam. Similique, aliquam beatae
-            autem doloremque facilis repudiandae ipsam eos eum officiis
-            excepturi nulla officia incidunt, adipisci tenetur quia. Eaque,
-            iure.
-          </p>
-        </div>
-        <img
-          src="/img/libreria.jpg"
-          alt="foto libreria"
-          id="bookstore_photo"
-          class="hidden"
-        />
-      </div>
+<body>
+  <!-- menu hamburguesa -->
+  <%- include('./partials/menu') %>
 
-      <section id="new_products">
-        <h3>PRODUCTOS NUEVOS</h3>
-        <div class="hidden_articles">
-          <% product.map(item => { %>
-          <article class="glass_effect display_flex">            
-            <img class="product_image" src="/img/books/<%= item.imgList?.name %>" />
-            
-            <div class="display_flex product_information">
-              <p class="product_name"><%= item.name %></p>
-              <p class="prices">Precio: <%= item. salePrice %></p>
-              <!-- <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p> -->
-              </div>
-            <div class="button_container">
-              <button class="button">
-                <a class="watch_more" href="/product/productDetail/<%= item.idProduct %>"
-                  ><span class="button-content">VER MÁS</span></a
-                >
-              </button>
-            </div>
-          </article>
-          <% }); %>
-        </div>
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active carrusel_prod">
-              <div class="d-block w-100">
-                <% product.map(item => { %>
-                <article class="glass_effect display_flex">
-                  <img src="/img/books/<%= item.imgList?.name %>" />
-                  <div class="display_flex product_information">
-                    <p><%= item.name %></p>
-                    <p><%= item.salePrice %></p>
+
+    <% if (userLogged) { %>
+      <!-- Mostrar barra de navegación para usuarios autenticados -->
+      <%- include ('./partials/headerUser') %>
+        <% } else { %>
+          <!-- Mostrar barra de navegación para usuarios no autenticados -->
+          <%- include ('./partials/header') %>
+            <% } %>
+
+
+
+              <main>
+                <div id="bookStore_container" class="display_flex">
+                  <div id="intro">
+                    <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                      eaque corrupti, quo at consequuntur provident, ducimus fugit
+                      possimus esse quae sapiente sint reprehenderit repellendus. Dolorem
+                      doloremque voluptatum modi itaque numquam! At quasi similique
+                      corrupti ut provident nobis a et ullam. Similique, aliquam beatae
+                      autem doloremque facilis repudiandae ipsam eos eum officiis
+                      excepturi nulla officia incidunt, adipisci tenetur quia. Eaque,
+                      iure.
+                    </p>
                   </div>
-                  <div class="button_container">
-                    <button class="button">
-                      <span class="button-content">COMPRAR</span>
+                  <img src="/img/libreria.jpg" alt="foto libreria" id="bookstore_photo" class="hidden" />
+                </div>
+
+                <section id="new_products">
+                  <h3>PRODUCTOS NUEVOS</h3>
+                  <div class="hidden_articles">
+                    <% product.map(item=> { %>
+                      <article class="glass_effect display_flex">
+                        <img class="product_image" src="/img/books/<%= item.imgList?.name %>" />
+
+                        <div class="display_flex product_information">
+                          <p class="product_name">
+                            <%= item.name %>
+                          </p>
+                          <p class="prices">Precio: <%= item. salePrice %>
+                          </p>
+                          <!-- <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p> -->
+                        </div>
+                        <div class="button_container">
+                          <button class="button">
+                            <a class="watch_more" href="/product/productDetail/<%= item.idProduct %>"><span
+                                class="button-content">VER MÁS</span></a>
+                          </button>
+                        </div>
+                      </article>
+                      <% }); %>
+                  </div>
+                  <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active carrusel_prod">
+                        <div class="d-block w-100">
+                          <% product.map(item=> { %>
+                            <article class="glass_effect display_flex">
+                              <img src="/img/books/<%= item.imgList?.name %>" />
+                              <div class="display_flex product_information">
+                                <p>
+                                  <%= item.name %>
+                                </p>
+                                <p>
+                                  <%= item.salePrice %>
+                                </p>
+                              </div>
+                              <div class="button_container">
+                                <button class="button">
+                                  <span class="button-content">COMPRAR</span>
+                                </button>
+                              </div>
+                              <% }); %>
+                            </article>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="glass_effect display_flex">
+                          <img src="/img/producto1.png" />
+                          <div class="display_flex product_information">
+                            <p>Nombre</p>
+                            <p>Precio</p>
+                          </div>
+                          <div class="button_container">
+                            <button class="button">
+                              <span class="button-content">COMPRAR</span>
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="glass_effect display_flex">
+                          <img src="/img/producto1.png" />
+                          <div class="display_flex product_information">
+                            <p>Nombre</p>
+                            <p>Precio</p>
+                          </div>
+                          <div class="button_container">
+                            <button class="button">
+                              <span class="button-content">COMPRAR</span>
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="glass_effect display_flex">
+                          <img src="/img/producto1.png" />
+                          <div class="display_flex product_information">
+                            <p>Nombre</p>
+                            <p>Precio</p>
+                          </div>
+                          <div class="button_container">
+                            <button class="button">
+                              <span class="button-content">COMPRAR</span>
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
                     </button>
                   </div>
-                  <% }); %>
-                </article>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <article class="glass_effect display_flex">
-                <img src="/img/producto1.png" />
-                <div class="display_flex product_information">
-                  <p>Nombre</p>
-                  <p>Precio</p>
-                </div>
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">COMPRAR</span>
-                  </button>
-                </div>
-              </article>
-            </div>
-            <div class="carousel-item">
-              <article class="glass_effect display_flex">
-                <img src="/img/producto1.png" />
-                <div class="display_flex product_information">
-                  <p>Nombre</p>
-                  <p>Precio</p>
-                </div>
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">COMPRAR</span>
-                  </button>
-                </div>
-              </article>
-            </div>
-            <div class="carousel-item">
-              <article class="glass_effect display_flex">
-                <img src="/img/producto1.png" />
-                <div class="display_flex product_information">
-                  <p>Nombre</p>
-                  <p>Precio</p>
-                </div>
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">COMPRAR</span>
-                  </button>
-                </div>
-              </article>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-      <section id="best_sellers">
-        <h3>LOS MÁS VENDIDOS</h3>
-        <div class="hidden_articles">
-          <% product.map(item => { %>
-          <article class="glass_effect display_flex">            
-            <img class="product_image" src="/img/books/<%= item.imgList?.name %>" />
-            
-            <div class="display_flex product_information">
-              <p class="product_name"><%= item.name %></p>
-              <p class="prices">Precio: <%= item. salePrice %></p>
-              <!-- <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p> -->
-              </div>
-            <div class="button_container">
-              <button class="button">
-                <span class="button-content">VER MÁS</span>
-              </button>
-            </div>
-          </article>
-          <% }); %>
-        </div>
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active carrusel_prod">
-              <div class="d-block w-100">
-                <article class="glass_effect display_flex">
-                  <img src="/img/producto1.png" />
-                  <div class="display_flex product_information">
-                    <p>Nombre</p>
-                    <p>Precio</p>
+                </section>
+                <section id="best_sellers">
+                  <h3>LOS MÁS VENDIDOS</h3>
+                  <div class="hidden_articles">
+                    <% product.map(item=> { %>
+                      <article class="glass_effect display_flex">
+                        <img class="product_image" src="/img/books/<%= item.imgList?.name %>" />
+
+                        <div class="display_flex product_information">
+                          <p class="product_name">
+                            <%= item.name %>
+                          </p>
+                          <p class="prices">Precio: <%= item. salePrice %>
+                          </p>
+                          <!-- <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p> -->
+                        </div>
+                        <div class="button_container">
+                          <button class="button">
+                            <span class="button-content">VER MÁS</span>
+                          </button>
+                        </div>
+                      </article>
+                      <% }); %>
                   </div>
-                  <div class="button_container">
-                    <button class="button">
-                      <span class="button-content">COMPRAR</span>
+                  <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active carrusel_prod">
+                        <div class="d-block w-100">
+                          <article class="glass_effect display_flex">
+                            <img src="/img/producto1.png" />
+                            <div class="display_flex product_information">
+                              <p>Nombre</p>
+                              <p>Precio</p>
+                            </div>
+                            <div class="button_container">
+                              <button class="button">
+                                <span class="button-content">COMPRAR</span>
+                              </button>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="glass_effect display_flex">
+                          <img src="/img/producto1.png" />
+                          <div class="display_flex product_information">
+                            <p>Nombre</p>
+                            <p>Precio</p>
+                          </div>
+                          <div class="button_container">
+                            <button class="button">
+                              <span class="button-content">COMPRAR</span>
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="glass_effect display_flex">
+                          <img src="/img/producto1.png" />
+                          <div class="display_flex product_information">
+                            <p>Nombre</p>
+                            <p>Precio</p>
+                          </div>
+                          <div class="button_container">
+                            <button class="button">
+                              <span class="button-content">COMPRAR</span>
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="carousel-item">
+                        <article class="glass_effect display_flex">
+                          <img src="/img/producto1.png" />
+                          <div class="display_flex product_information">
+                            <p>Nombre</p>
+                            <p>Precio</p>
+                          </div>
+                          <div class="button_container">
+                            <button class="button">
+                              <span class="button-content">COMPRAR</span>
+                            </button>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                      data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
                     </button>
                   </div>
-                </article>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <article class="glass_effect display_flex">
-                <img src="/img/producto1.png" />
-                <div class="display_flex product_information">
-                  <p>Nombre</p>
-                  <p>Precio</p>
-                </div>
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">COMPRAR</span>
-                  </button>
-                </div>
-              </article>
-            </div>
-            <div class="carousel-item">
-              <article class="glass_effect display_flex">
-                <img src="/img/producto1.png" />
-                <div class="display_flex product_information">
-                  <p>Nombre</p>
-                  <p>Precio</p>
-                </div>
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">COMPRAR</span>
-                  </button>
-                </div>
-              </article>
-            </div>
-            <div class="carousel-item">
-              <article class="glass_effect display_flex">
-                <img src="/img/producto1.png" />
-                <div class="display_flex product_information">
-                  <p>Nombre</p>
-                  <p>Precio</p>
-                </div>
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">COMPRAR</span>
-                  </button>
-                </div>
-              </article>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-    </main>
+                </section>
+              </main>
 
-    <%- include('./partials/footer') %> <%- include('./partials/script') %>
-  </body>
+              <%- include('./partials/footer') %> <%- include('./partials/script') %>
+</body>
+
 </html>
