@@ -1,3 +1,5 @@
+
+
 //Capturamos todas las fotos y descripciones
 const photos = document.querySelectorAll('.photo');
 const descs = document.querySelectorAll('.description');
@@ -15,12 +17,13 @@ function hideText(descElement) {
 
 photos.forEach((photo, index) => {
   photo.addEventListener('click', function (event) {
-    //Elimina la clase 'active' de todas las fotos y descripciones
+    console.log('Hiciste clic en una foto', iconContainers);
+    
     photos.forEach(p => p.style.filter = 'grayscale(100%)');
     descs.forEach(d => d.style.display = 'none');
-    iconContainers.forEach(ic => ic.style.display = 'none');
-
-    //Agrega la clase 'active' a la foto y descripción clicadas
+    
+    //iconContainers.forEach(ic => ic.classList.remove('visible'));
+    
     photo.style.filter = 'grayscale(0%)';
     descs[index].style.display = 'block';
     descs[index].style.transform = 'scale(0)';
@@ -28,10 +31,23 @@ photos.forEach((photo, index) => {
     setTimeout(function () {
       descs[index].style.transform = 'scale(1)';
     },0);
-    iconContainers[index].style.display = 'flex';
+    iconContainers.forEach(ic => ic.classList.remove('visible'));
+    iconContainers[index].classList.add('visible');
   });
 });
 
+document.addEventListener('click', function (event) {
+  //if (!iconContainers.contains(event.target)) {console.log('fewf')};
+    iconContainers.forEach(ic => {
+      if (!ic.contains(event.target)){
+        ic.classList.remove('visible');
+      }
+    });
+});
+
+
+
+//iconContainers.forEach(ic => ic.classList.remove('visible'));
 // //Agrega un evento de clic a cada foto
 // photos.forEach((photo, index) => {
 //   photo.addEventListener('click', function (event) {
