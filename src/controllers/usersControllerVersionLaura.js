@@ -89,15 +89,17 @@ const usersControllerVersionLaura = {
   },
 
   logout: (req, res) => {
-    req.session.destroy(err => {
+    req.session.destroy((err) => {
       if (err) {
         console.error('Error al cerrar sesión:', err);
-        return res.redirect('/'); // Redirigir a la página principal en caso de error
+        res.redirect('/users/userProfile'); // Redirigir a la página principal en caso de error
+      } else {
+        console.log('Sesión cerrada con éxito');
+        res.redirect('/'); // Redirigir al usuario a la página de inicio
       }
-      // Redirigir al usuario a la página de inicio de sesión u a otra página deseada
-      res.redirect('/'); // Por ejemplo, redirigir a la página de inicio de sesión
     });
   },
+
 
   userProfile: async (req, res) => {
     const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / cookies)

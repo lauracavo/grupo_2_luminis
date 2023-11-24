@@ -96,6 +96,14 @@ div.button_container {
   color: white;
 }
 
+a#icono-carrito{
+  color: black;
+  text-decoration: none;
+  margin: auto;
+}
+#icono-carrito i{
+  margin: 10px;
+}
 /* ----------------MEDIA QUERIES------------------- */
 @media (min-width: 769px) {
   #carouselExampleIndicators {
