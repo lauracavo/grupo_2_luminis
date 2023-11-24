@@ -43,11 +43,10 @@
           </a>
         </td>
         <td class="table_content">
-          <button id="delete_button" type="submit" name="action" value="delete">
-            ELIMINAR </button>
-          <!-- <form action="/admin/delete/<%= item.idProduct %>?_method=DELETE" method="post" class="button-form" >
-              <i class="fas fa-trash"></i>  -->
-          <!-- </form> -->
+          <form id="deleteForm" action="/admin/delete/<%- item.idProduct %>?" method="post">
+            <button id="delete_button" type="submit" name="action" value="delete">Eliminar</button>
+          </form>
+       
         </td>
       </tr>
     </tbody>

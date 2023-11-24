@@ -5,9 +5,11 @@ const {Sequelize, DataTypes} = require ('sequelize');
 
     //Aca definimos el modelo
     module.exports = (sequelize, DataTypes) => {
-        const Cart = sequelize.define('Cart', {
+        let alias = 'Cart'; // esto debería estar en singular
+        let cols = {
     // define los campos del modelo y tipos de datos
-    idProduct: {
+    // define los campos del modelo y tipos de datos
+    idCart: {
         type: DataTypes.INTEGER,        
         autoIncrement: true,
         primaryKey: true
@@ -16,17 +18,30 @@ const {Sequelize, DataTypes} = require ('sequelize');
         type:DataTypes.DATE,
         allowNull:false,
     },
-    idUser:{
-        type:DataTypes.STRING,
-        allowNull: true,
-        references: {
-            model:"users",  // Nombre de la tabla a la que se hace referencia
-            key: "idUser" // Nombre de la clave primaria en la tabla User
-      
-    }},
+ 
+    idUser: DataTypes.INTEGER, 
+ }
+    let config = {
     timestamps: false,
    
     tableName: 'carts'
-   })
-    return Cart
+   }
+   const carts = sequelize.define(alias, cols, config)
+   //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+   carts.associate = ( models ) =>{      
+    
+       carts.belongsTo(models.User, {
+            foreignKey: 'idUser',
+             as: 'User'
+        });
+        carts.belongsTo(models.Order, {
+            foreignKey: 'idOrder',
+             as: 'Order'
+        });
+   }
+    return carts
     }
+  
+    
+
+   
