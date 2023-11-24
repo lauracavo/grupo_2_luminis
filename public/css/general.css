@@ -79,6 +79,14 @@ body {
   color: black;
   margin: 10px;
   font-size: 25px;
+  transition: all 0.5s ease;
+}
+
+.fa-shopping-cart:hover,
+.fa-user-circle:hover {
+  color: rgb(255, 251, 239);
+  text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+    0 0 50px #f1c056, 0 0 100px #ffeabd;
 }
 /* ------------------BARRA DE NAVEGACION-------------------- */
 #luminis_button {

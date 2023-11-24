@@ -57,6 +57,9 @@
 }
 
 .photo {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
   filter: grayscale(100%); /* Configura todas las fotos en blanco y negro */
   transition: filter 0.5s; /* Agrega una transición de 0.5s a la propiedad filter */
 }
