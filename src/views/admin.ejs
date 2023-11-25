@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <%- include('./partials/head') %>
+  <%- include('./partials/head') %>
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="css/cart.css">
     <link rel="stylesheet" href="/css/login.css">
 </head>
+
 <body>
   <div id="overlay"></div>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
 
-  <!-- Tabla para mostrar y editar productos existentes -->
-<main>
-  <p id="title">Productos</p>
-  <a href="/admin/userListAdmin"><button class="fcc-btn">LISTA DE USUARIOS</button></a>
-  <a href="/admin/formCreate"><button class="fcc-btn">AGREGAR NUEVO PRODUCTO</button></a>
-  <table id="table" class="redondeada">
-    <thead id="table_header" class="glass_effect">
-      <tr>
-        <td class="table_titles">ID</th>
-        <td class="table_titles">PORTADA</th>
-        <td class="table_titles">NOMBRE</th>
-        <td class="table_titles">PRECIO DE COMPRA</th>
-        <td class="table_titles">PRECIO DE VENTA</th>
-        <td class="table_titles">STOCK</th>
-        <td class="table_titles">EDITAR</th>
-        <td class="table_titles">ELIMINAR</th>
-      </tr>
-    </thead>
-    <% product.map(item => { %>
-    <tbody id="table_body">
-      <!-- Contenido de la tabla -->
-      <tr>
-        <td class="table_content"><%= item.idProduct %></td>
-      </td>
-        <td><img src="/img/books/<%= item.imgList?.name %>" class = "img" alt=""></td>
-        <td class="table_content"><%= item.name %></td>
-        <td class="table_content"><%= item.purchasePrice %></td>
-        <td class="table_content"><%= item.salePrice %></td>
-        <td class="table_content"><%= item.stock %></td>
-        <td class="table_content">
-         <a href="/admin/edit/<%= item.idProduct %>" class="button-form" >            
-            <i class="far fa-edit"></i>
-          </a>
-        </td>
-        <td class="table_content">
-          <form id="deleteForm" action="/admin/delete/<%- item.idProduct %>?" method="post">
-            <button id="delete_button" type="submit" name="action" value="delete">Eliminar</button>
-          </form>
-       
-        </td>
-      </tr>
-    </tbody>
-    <% }); %>
-  </table>
-  <%- include('./partials/footer') %> <%- include('./partials/script') %>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<<<<<<< HEAD
-                            <script src="/js/aboutUs.js"></script>
-                            <script src="/JS/footer.js"></script>
-=======
-          <script src="/JS/deleteProduct.js"></script>
->>>>>>> e193c299203f4551e3bd92823893e6c2cc112e7f
-  </body>
+      <!-- Tabla para mostrar y editar productos existentes -->
+      <main>
+        <p id="title">Productos</p>
+        <a href="/admin/userListAdmin"><button class="fcc-btn">LISTA DE USUARIOS</button></a>
+        <a href="/admin/formCreate"><button class="fcc-btn">AGREGAR NUEVO PRODUCTO</button></a>
+        <table id="table" class="redondeada">
+          <thead id="table_header" class="glass_effect">
+            <tr>
+              <td class="table_titles">ID</th>
+              <td class="table_titles">PORTADA</th>
+              <td class="table_titles">NOMBRE</th>
+              <td class="table_titles">PRECIO DE COMPRA</th>
+              <td class="table_titles">PRECIO DE VENTA</th>
+              <td class="table_titles">STOCK</th>
+              <td class="table_titles">EDITAR</th>
+              <td class="table_titles">ELIMINAR</th>
+            </tr>
+          </thead>
+          <% product.map(item=> { %>
+            <tbody id="table_body">
+              <!-- Contenido de la tabla -->
+              <tr>
+                <td class="table_content">
+                  <%= item.idProduct %>
+                </td>
+                </td>
+                <td><img src="/img/books/<%= item.imgList?.name %>" class="img" alt=""></td>
+                <td class="table_content">
+                  <%= item.name %>
+                </td>
+                <td class="table_content">
+                  <%= item.purchasePrice %>
+                </td>
+                <td class="table_content">
+                  <%= item.salePrice %>
+                </td>
+                <td class="table_content">
+                  <%= item.stock %>
+                </td>
+                <td class="table_content">
+                  <a href="/admin/edit/<%= item.idProduct %>" class="button-form">
+                    <i class="far fa-edit"></i>
+                  </a>
+                </td>
+                <td class="table_content">
+                  <form id="deleteForm" action="/admin/delete/<%- item.idProduct %>?" method="post">
+                    <button id="delete_button" type="submit" name="action" value="delete">Eliminar</button>
+                  </form>
+
+                </td>
+              </tr>
+            </tbody>
+            <% }); %>
+        </table>
+        <%- include('./partials/footer') %> <%- include('./partials/script') %>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script src="/js/aboutUs.js"></script>
+            <script src="/JS/footer.js"></script>
+            <script src="/JS/deleteProduct.js"></script>
+</body>
+
 </html>
