@@ -1,48 +1,69 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let trolleyItems = [];
+let trolleyItems = [];
+let tableContent;
+let totalElement;
 
-  document.addEventListener("click", (event) => {
-      console.log('Clic en:', event.target);
-      if (event.target.classList.contains("add-to-cart")) {
-          const name = event.target.dataset.name;
-          const salePrice = parseFloat(event.target.dataset.salePrice);
+document.addEventListener("DOMContentLoaded", () => {
+    tableContent = document.getElementById("table_body");
+    totalElement = document.getElementById("Total");
 
-          // Agregar el producto al carrito
-          trolleyItems.push({ name, salePrice });
+    if (!tableContent || !totalElement) {
+        console.error('Los elementos del DOM no existen.');
+        return;
+    }
 
-          // Actualizar la tabla del carrito
-          renderTrolley();
-      }
-  });
+    console.log('DOM completamente cargado');
+    console.log('Botón "FINALIZAR COMPRA":', totalElement);
 
-  function renderTrolley() {
-      // Mover la declaración dentro de la función
-      const table_content = document.getElementById("table_body");
-      const totalElement = document.getElementById("Total");
+    document.addEventListener("click", (event) => {
+        console.log('Clic en:', event.target);
 
-      // Verificar si los elementos existen antes de usarlos
-      if (!table_content || !totalElement) {
-          console.error('Los elementos del DOM no existen.');
-          return;
-      }
+        if (event.target.classList.contains("add-to-cart")) {
+            console.log('Botón "Agregar al carrito" clicado');
+            const name = event.target.dataset.name;
+            const salePrice = parseFloat(event.target.dataset.salePrice);
+            const quantity = 1;
 
-      table_content.innerHTML = ""; // Limpiar contenido anterior
-      let total = 0;
+            // Agregar el producto al carrito
+            trolleyItems.push({ name, salePrice, quantity });
 
-      trolleyItems.forEach((item) => {
+            // Actualizar la tabla del carrito
+            renderTrolley();
+        }
+    });
+});
+
+function renderTrolley() {
+    console.log('tableContent:', tableContent);
+    console.log('totalElement:', totalElement);
+
+    if (!tableContent || !totalElement) {
+        console.error('Los elementos del DOM no existen.');
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    let total = 0;
+
+    trolleyItems.forEach((item) => {
         const row = document.createElement("tr");
+        const itemTotal = item.salePrice * item.quantity;
+
         row.innerHTML = `
           <td>${item.name}</td>
           <td>${item.salePrice.toFixed(2)}</td>
           <td>
-            <input class="product_quantity" type="number" value="1" min="1" max="10" />
+            <input class="product_quantity" type="number" value="${item.quantity}" min="1" max="10" />
           </td>
-          <td>${item.salePrice.toFixed(2)}</td>
+          <td>${itemTotal.toFixed(2)}</td>
         `;
-        table_content.appendChild(row);
-        total += item.salePrice;
+
+        fragment.appendChild(row);
+        total += itemTotal;
     });
+
+    // Limpiar contenido anterior y agregar el fragmento
+    tableContent.innerHTML = "";
+    tableContent.appendChild(fragment);
 
     totalElement.textContent = total.toFixed(2);
 }
-});

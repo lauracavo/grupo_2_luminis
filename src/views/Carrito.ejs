@@ -20,20 +20,22 @@
         </thead>
         <tbody id="table_body">
           <!-- Contenido de la tabla -->
+          <% products.map(product=> { %>
           <tr>
+
             <td class="table_content">
               <button class="login-button">
                 <i class="fa fa-trash"></i>
-              </button> Producto 1
+              </button> <%= product.name %>
             </td>
             <td class="table_content"></td>
             <td class="table_content">
-              <input class="product_quantity" type="number" value="1" min="1" max="10" />
+              <input class="product_quantity" type="number" value="<%= product.cant %>" min="1" max="10" />
             </td>
-            <td class="table_content">$50.00</td>
+            <td class="table_content"><%= product.salePrice %></td>
           </tr>
-          <tr>
-            <td class="table_content">
+          <!-- <tr> -->
+            <!-- <td class="table_content">
               <button class="login-button">
                 <i class="fa fa-trash"></i>
               </button> Producto 2
@@ -43,10 +45,11 @@
               <input class="product_quantity" type="number" value="2" min="1" max="10" />
             </td>
             <td class="table_content">$60.00</td>
-          </tr>
-        </tbody>
+         <!-- </tr> -->
+         </tbody>
+         <% }); %>
         <tfoot id="table_footer">
-          <!-- Pie de tabla -->
+          <!-- Pie de tabla  -->
           <tr>
             <td colspan="3"><strong>Total a pagar:</strong></td>
             <td><strong>$110.00</strong></td>
@@ -73,7 +76,7 @@
         <div>
           <div id="buy_button">
             <button class="button">
-              <span class="button-content" id="Total">FINALIZAR COMPRA</span>
+              <span class="button-content"  id="Total">FINALIZAR COMPRA</span>
             </button>
           </div>
         </div>
@@ -96,7 +99,7 @@
     
     <%- include('./partials/footer') %> 
     <%- include('./partials/script') %>
-    <script src="/public/JS/carrito.js"></script>  
+    
    
   </body>
 </html>

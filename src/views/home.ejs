@@ -176,10 +176,9 @@
                             <span class="button-content">VER MÁS</span>
                           </button>
                         </div>
-                        <a href="#" class="add-to-cart" data-name="<%= item.name %>" data-sale-price="<%= item.salePrice %>">
-                          <i class="fas fa-cart-plus"></i>Agregar al carrito
-                          <% console.log ('producto agregado al carrito', item.name ) %>
-                      </a>
+                        <a href="/Carrito/add/<%= item.idProduct %>" class="add-to-cart" >
+                          <i class="fas fa-cart-plus" id="carrito-icono"></i>Agregar al carrito                          
+                       </a>
                       </article>
                       <% }); %>
                   </div>
