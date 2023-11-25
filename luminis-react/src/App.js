@@ -1,6 +1,9 @@
 import React from "react";
-import Category from "./components/category";
-import Dashboard from "./components/dashboard";
+import CategoryPanel from "./components/CategoryPanel";
+import Dashboard from "./components/Dashboard";
+import ProductListPanel from "./components/ProductList";
+import DetailPanel from "./components/Detail";
+import TotalPanel from "./components/Total";
 
 function App() {
   return (
@@ -10,10 +13,10 @@ function App() {
       </header>
       <main>
         <Dashboard/>
-        <Category/>
-        <productList/>
-        <detail/>
-        <total/>
+        <CategoryPanel/>
+        <ProductListPanel />
+        <DetailPanel/>
+        <TotalPanel/>
       </main>
     </div>
   );
