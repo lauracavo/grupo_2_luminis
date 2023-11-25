@@ -19,12 +19,19 @@ label {
   width: 70px;
   height: auto;
 }
-input[type="text"],
-input[type="file"] {
+input[type="text"] {
   width: 60%;
   padding: 5px;
   border-radius: 30px;
   border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+input[type="file"] {
+  width: 60%;
+  padding: 5px;
+  border-radius: 30px;
   outline: none;
   transition: all 0.5s ease;
 }

@@ -118,4 +118,19 @@
 
 .aboutUsText {
   text-align: center;
+  margin: 25px 0 15px 0;
+}
+
+#map {
+  display: flex;
+  justify-content: center;
+}
+
+#map iframe {
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+
+#map iframe:hover {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }

@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <div id="overlay"></div>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
       <main class="main_register_form">
         <section id="register_form" class="glass_effect">
@@ -115,52 +116,8 @@
           <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
           <script src="/js/register.js"></script>
+          <script src="/JS/footer.js"></script>
           <script src="/js/confirmationRegisterUser.js"></script>
 </body>
 
 </html>
-
-
-<!-- Campos para guardar para el formulario de compra -->
-
-<!-- DNI -->
-<!-- <label class="fields_name" for="dni">DNI:</label>
-<input type="number" id="dni" name="dni" value="<%= locals.old && old.dni ? old.dni : '' %>"/>
-  <% if (locals.errors && errors.dni){ %>
-    <div> <%= errors.dni.msg %> </div>
-    <% } %> -->
-
-<!-- Numero de celular -->
-<!-- <label class="fields_name" for="cellPhone">Numero de telefono:</label>
-<input type="number" id="cellPhone" name="cellPhone" value="<%= locals.old && old.cellPhone ? old.cellPhone : '' %>"/>
-  <% if (locals.errors && errors.cellPhone){ %>
-    <div> <%= errors.cellPhone.msg %> </div>
-    <% } %> -->
-
-<!-- Dirección -->
-<!-- <label class="fields_name" for="address">Dirección:</label>
-<input type="text" id="address" name="address" value="<%= locals.old && old.address ? old.address : '' %>"/>
-  <% if (locals.errors && errors.address){ %>
-    <div> <%= errors.address.msg %> </div>
-    <% } %> -->
-
-<!-- Ciudad -->
-<!-- <label class="fields_name" for="city">Ciudad:</label>
-<input type="text" id="city" name="city" value="<%= locals.old && old.city ? old.city : '' %>"/>
-  <% if (locals.errors && errors.city){ %>
-    <div> <%= errors.city.msg %> </div>
-    <% } %> -->
-
-<!-- Provincia -->
-<!-- <label class="fields_name" for="province">Provincia:</label>
-<input type="text" id="province" name="province" value="<%= locals.old && old.province ? old.province : '' %>"/>
-  <% if (locals.errors && errors.province){ %>
-    <div> <%= errors.province.msg %> </div>
-    <% } %> -->
-
-<!-- Codigo Postal -->
-<!-- <label class="fields_name" for="cp">Codigo Postal:</label>
-<input type="number" id="cp" name="cp" value="<%= locals.old && old.cp ? old.cp : '' %>"/>
-  <% if (locals.errors && errors.cp){ %>
-    <div> <%= errors.cp.msg %> </div>
-    <% } %> -->

@@ -3,12 +3,6 @@ header #buy_button {
   display: none;
 }
 
-/* Estilos para el contenido principal */
-main {
-  width: 90vw;
-  margin: auto;
-}
-
 /* Estilos para la barra de búsqueda */
 .search-container {
   flex: 1;

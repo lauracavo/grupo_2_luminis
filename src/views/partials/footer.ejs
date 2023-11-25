@@ -10,7 +10,7 @@
     </div>
     <div id="looking_for_job">
       <p class="footer_text">¿Buscás trabajo?</p>
-      <input id="work_button" type="button" value="¡Trabajá con nosotros!" />
+      <input id="work_button" type="button" value="¡Trabajá con nosotros!" onclick="openPopup()"/>
     </div>
     <div id="social_media">
       <p class="footer_text">Seguinos en nuestras redes sociales</p>
@@ -22,5 +22,25 @@
       </div>
     </div>
   </section>
+  <!-- Modal -->
+  <section id="work_form" class="glass_effect">
+    <div>
+      <form id="formLogin" action="/users/processLogin" method="post">
+        <h3>TRABAJA CON NOSOTROS</h3>
+          <!-- Nombre y Apellido -->
+          <label class="fields_name" for="fullName">Nombre y Apellido:</label>
+          <input type="text" id="fullName" name="fullName" value="<%= locals.old && old.fullName ? old.fullName : '' %>" />
+          <!-- Email -->
+          <label class="fields_name" for="email">Correo electronico:</label>
+          <input type="text" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>"/>
+          <!-- Curriculum -->
+          <label class="fields_name" for="curriculum">Adjunta tu currículum:</label>
+          <input type="file" id="curriculum" name="curriculum" accept=".pdf, .doc, .docx">
+        <input class="sendRequest" id="submit_login" type="submit" value="Enviar Solicitud" />
+      </form>
+    </div>
+  </section>
   <p>&copy; 2023 Luminis. Todos los derechos reservados.</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/JS/footer.js"></script>
