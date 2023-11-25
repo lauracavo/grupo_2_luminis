@@ -7,14 +7,11 @@ const mainController = {
 
   home: async (req, res) => {
 try{
-    let product = await db.Product.findAll()
-
-  for(let item of product){
-      // console.log(item)
-      const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
-      product=[{...item.dataValues, imgList: imgList.dataValues}]
-  //     console.log(imgList.dataValues)
-        }
+    let products = await db.Product.findAll()
+    const product = await Promise.all(products.map(async (item) => {
+           const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
+           return { ...item.dataValues, imgList: imgList.dataValues };
+            }));
 
         let userLogged
         if(req.session.successLoginUser){

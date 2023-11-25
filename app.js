@@ -51,7 +51,7 @@ app.set("views", "./src/views");
 
 app.use("/", mainRoute);
 app.use("/product", productsRoute);
-app.use("/cart", cartRoute);
+app.use("/Carrito", cartRoute);
 app.use("/admin", adminRoute);
 app.use("/users", usersRoute);
 app.use("/productos", productsRoute)

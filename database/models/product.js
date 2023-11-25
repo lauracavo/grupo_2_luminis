@@ -72,7 +72,10 @@ let config = {
             foreignKey: 'idCategory',
              as: 'category'
                 });
-          
+    //    products.belongsTo(models.Order, {
+    //     foreignKey: 'idOrder', 
+    //     as: 'Order'
+    //    })
    }
     return products
     }

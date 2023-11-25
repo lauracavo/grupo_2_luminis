@@ -7,6 +7,7 @@ main{
     position: relative;
     display: block;
     margin-top: 15px;
+    box-sizing: border-box;
 }
 
 /*----- BOTONES FILTRAR ------*/
@@ -54,9 +55,20 @@ main{
 
 
 /*----- GRID DE LIBROS ------*/
+
+.container-image{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: left; 
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    width: 100%;
+    height: auto;
+}
 .product_card_item > img{
     border-radius: 8px;
-    width: 100%;
+    width: 80%;
     height: auto;
     box-shadow: 0px 0px 30px #000 ;
     transition: .3s;

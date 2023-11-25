@@ -5,7 +5,8 @@ const {Sequelize, DataTypes} = require ('sequelize');
 
     //Aca definimos el modelo
     module.exports = (sequelize, DataTypes) => {
-        const Order = sequelize.define('Order', {
+        let alias = 'Order'; // esto debería estar en singular
+        let cols = {
     // define los campos del modelo y tipos de datos
     idOrder: {
         type: DataTypes.INTEGER,        
@@ -17,31 +18,31 @@ const {Sequelize, DataTypes} = require ('sequelize');
         allowNull:false,
     },
     amount:{
-        type:DataTypes.STRING,
+        type:DataTypes.INTEGER,
         allowNull: true
     },
-    idProduct:{
-      type:DataTypes.STRING,
-      allowNull: true,
-      references: {
-        model: 'products', // Nombre de la tabla a la que se hace referencia
-        key: 'idProduct' // Nombre de la clave primaria en la tabla Product
-    },
-    idCart:{
-        type:DataTypes.STRING,
-        allowNull: true,
-        references: {
-            model:"carts",  // Nombre de la tabla a la que se hace referencia
-            key: "idCart" // Nombre de la clave primaria en la tabla Cart
-        }
+    idProduct: DataTypes.INTEGER, 
+    idCart: DataTypes.INTEGER
         
-     }},
-   
+    }
+   let config = { 
     timestamps: false,
    
     tableName: 'orders'
-   })
-
-   
-    return Order
+   }
+   const orders = sequelize.define(alias, cols, config)
+   //Aquí debes realizar lo necesario para crear las relaciones con los otros modelos (Genre - Actor)
+        orders.associate = ( models ) =>{      
+    
+       orders.hasMany(models.Product, {
+            foreignKey: 'idProduct',
+             as: 'Product'
+        });
+        orders.hasMany(models.Cart, {
+            foreignKey: 'idCart',
+             as: 'Cart'
+        });
+          
+   }
+    return orders
     }

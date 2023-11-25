@@ -27,7 +27,7 @@
   }
 
   /* Estilos para el botón de "Guardar cambios" */
-  #submit_update {
+  #submit_update, #delete_button {
     margin-top: 10px;
     background-color: #2a9d8f;
     color: #fff;
@@ -36,7 +36,8 @@
     cursor: pointer;
   }
   
-  #submit_update:disabled {
+  #submit_update:disabled,
+  #delete_button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
@@ -55,3 +56,13 @@
   #secondForm {
     display: none;
   }
+
+  div#profile_image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

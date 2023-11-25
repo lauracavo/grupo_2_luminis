@@ -45,9 +45,10 @@
           </a>
         </td>
         <td class="table_content">
-          <form action="/admin/delete/<%= item.idProduct %>?_method=DELETE" method="post" class="button-form" >
-              <i class="fas fa-trash"></i> 
+          <form id="deleteForm" action="/admin/delete/<%- item.idProduct %>?" method="post">
+            <button id="delete_button" type="submit" name="action" value="delete">Eliminar</button>
           </form>
+       
         </td>
       </tr>
     </tbody>
@@ -55,7 +56,11 @@
   </table>
   <%- include('./partials/footer') %> <%- include('./partials/script') %>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<<<<<<< HEAD
                             <script src="/js/aboutUs.js"></script>
                             <script src="/JS/footer.js"></script>
+=======
+          <script src="/JS/deleteProduct.js"></script>
+>>>>>>> e193c299203f4551e3bd92823893e6c2cc112e7f
   </body>
 </html>

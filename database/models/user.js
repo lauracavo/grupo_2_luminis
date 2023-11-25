@@ -45,24 +45,13 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(models.Personal, {
             foreignKey: 'idUser',
             as: 'userDetail'
+        });
+        User.hasMany(models.Cart , {
+            foreignKey: 'idUser',
+            as: 'Cart'
         })
     }
 
     return User;
 }
 
-/* const { Sequelize, DataTypes } = require('sequelize');
-// const sequelize = new Sequelize
-
-//Aca definimos el modelo
-module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
-        
-        {
-
-            timestamps: false,
-
-            tableName: 'users'
-        })
-    return User
-} */

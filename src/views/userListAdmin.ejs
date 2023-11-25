@@ -2,8 +2,11 @@
 <html lang="es">
   <head>
     <%- include('./partials/head') %>
-   <link rel="stylesheet" href="css/admin.css">
-   <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="css/cart.css">
+   <link rel="stylesheet" href="css/AdminUser.css">
+   
+  
 </head>
 <body>
   <%- include('./partials/menu') %> <%- include('./partials/header') %>
@@ -16,7 +19,7 @@
             <td class="table_titles">EMAIL</th>
             <td class="table_titles">ROL ACTUAL</th>   
             <td class="table_titles">ROL ADMIN</th>   
-            <td class="table_titles">ELIMINAR</th>   
+              
           </tr>
         </thead>
         <% user.map(item => { %>
@@ -28,14 +31,9 @@
                 <td class="table_content"><%= item.rol %></td>                
                 <td class="table_content">
                   <form action="/admin/updateUser/<%= item.idUser %>?" class="fcc-btn" >
-                      <button class = "btn">VER MAS</button>
+                      <button class = "btn-user">VER MAS</button>
                   </form>
-                </td>
-                <td class="table_content">
-                  <form action="/admin/deleteUser/<%= item.idUser %>?_method=DELETE" method="post" class="button-form" >
-                      <i class="fas fa-trash"></i>  
-                  </form>
-                </td>
+                </td>                
               </tr>
             </tbody>
             <% }); %>

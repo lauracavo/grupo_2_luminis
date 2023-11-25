@@ -5,19 +5,19 @@ const upload = require("../middlewares/multerConfigProd");
 
 const adminController = {
   getAll: async (req, res) => {
-    try{
-      let product = await db.Product.findAll()
-      for(let item of product){
-         
-        const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
-        product=[{...item.dataValues, imgList: imgList.dataValues}]
-        console.log( 'products: ' , product)
-      }
-      res.render("admin", { product });
-      }catch(error){
-        res.send({ result: 'Error', payload: error })
-      }
-  },
+      try{
+        let product = await db.Product.findAll()
+        const newProduct = await Promise.all(product.map(async (item) => {  
+        const imgList = await db.ImageProduct.findOne({ where: { idProduct: item.idProduct } })
+        return { ...item.dataValues, imgList: imgList ? imgList.dataValues : null };
+      }));
+      res.render("admin", {product: newProduct})      
+       }
+       catch (error){
+          res. send({ result: 'Error', payload: error });
+          
+  }
+ },
   create: async (req, res) => {
     const allCategories = await db.Categorie.findAll({})
 
@@ -55,12 +55,18 @@ const adminController = {
         const defaultImageRecord = { name: 'sinImagen.png', idProduct };
         await db.ImageProduct.create(defaultImageRecord);
       }
-      res.redirect("/admin");
+     
+      res.status(200).json({ success: true, message: "producto creado con éxito." });
     }
     catch (error) {
-      console.error(error); res.status(500).send("Ha ocurrido un error al crear el producto.");
+      res.status(500).json({ success: false, message: "Error al crear producto." });
     }
   },
+
+  
+          
+           
+      
   edit: async (req, res) => {
     
     const allCategories = await db.Categorie.findAll()  
@@ -95,20 +101,25 @@ const adminController = {
       res.status(500).send("Ha ocurrido un error al editar el producto.");
     }
   },
-  delete: async (req, res) => {
-    console.log("eliminando");
-    const { id } = req.params;
-    console.log(req.params.id);
-    await db.Product.destroy({
-      where: { idProduct: parseInt(id) }
-    })
-      .then(result => {
-        res.send({ result: 'Succes', payload: result })
-      })
-      .catch(error => {
-        res.send({ result: 'Error', payload: error })
-      })
-    res.redirect("/admin"); // Redirigir de nuevo a la página de administrador
+  delete: async (req, res) => {    
+    try { 
+    const productId = req.params.id;
+    console.log('La función eliminar se está ejecutando. Producto ID:', productId);
+    const foundProduct = await db.Product.findOne({ where: { idProduct:  productId} });
+    console.log('Producto encontrado:', foundProduct);
+    if (foundProduct) {
+      const deleteResult = await db.Product.destroy({ where: { idProduct: foundProduct.idProduct } });
+      console.log('Resultado de eliminación:', deleteResult);
+      if (deleteResult > 0) {
+        console.log('Producto eliminado con éxito.');
+        res.redirect ('/admin')
+       } else {
+        console.log('Producto no encontrado o no se pudo eliminar.');
+       }
+        }     
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Error al eliminar Producto." });
+    }
   },
   listUser: (req, res) => {
     db.User.findAll()
@@ -119,6 +130,56 @@ const adminController = {
         res.send({ result: 'Error', payload: error })
       })
   },
+  updateUser: async (req, res) => {
+    const enteredUser = req.params.id; 
+    try {
+      let userInfo = await db.User.findOne({ where: { idUser: enteredUser } })
+        console.log('el usuario es : ' , userInfo)
+        res.render('editUserAdmin', { userInfo: userInfo });
+     }
+
+     catch (error) {
+      res.status(500).send('Error interno del servidor');
+    }
+  }, 
+  editUser: async (req, res) => {
+    const userId = req.params.id;
+    const {image,  fullname, email, rol} = req.body;
+    try {
+      // Obtén el usuario de la base de datos
+      const user = await db.User.findByPk(userId);
+      // Verifica si el rol ha cambiado
+      if (user.rol !== rol) {
+            // Actualiza solo el rol
+            await db.User.update({ rol: rol }, { where: { idUser: userId } });
+           
+          }         
+      res.redirect('/admin/userListAdmin'); // Redirige a la página correspondiente después de guardar cambios
+    } catch (error) {
+        console.error('Error al editar usuario:', error);
+        res.status(500).send('Error interno del servidor');
+  }
+  },
+  eliminar: async (req, res) => {
+    try {
+    const userId = req.params.id;
+    console.log('La función eliminar se está ejecutando. Usuario ID:', userId);
+    const foundUser = await db.User.findOne({ where: { idUser: userId } });
+    console.log('Usuario encontrado:', foundUser);
+    if (foundUser) {
+      const deleteResult = await db.User.destroy({ where: { idUser: foundUser.idUser } });
+      console.log('Resultado de eliminación:', deleteResult);
+      if (deleteResult > 0) {
+        console.log('Usuario eliminado con éxito.');
+        res.redirect ('/admin/userListAdmin')
+       } else {
+        console.log('Usuario no encontrado o no se pudo eliminar.');
+       }
+        }     
+    } catch (error) {
+      res.status(500).json({ success: false, message: "Error al eliminar usuario." });
+    }
+  }
 
 };
 

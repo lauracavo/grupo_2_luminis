@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/editUser.css">
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Editar usuario</title>
+</head>
+
+<body>
+  <%- include('./partials/menu') %> <%- include('./partials/header') %>
+      <main class="edit_user_form">
+        <form id="formEdit"  action="/admin/editUser/<%= userInfo.idUser %>" method="post">
+          <h3>EDITAR PERFIL</h3>
+
+          <h4>Datos del Usuario</h4>
+          <!-- FOTO DE PERFIL -->
+          <div id = "profile_image">
+            <img src="/img/usersProfile_images/<%= userInfo.image %>" alt="foto de perfil">
+          </div>
+
+          <!-- NOMBRE Y APELLIDO -->
+          <label class="fields_name" for="fullName">Nombre y Apellido:</label>
+          <input type="text" id="fullname" name="fullname" value="<%- userInfo.fullname %>"
+            onfocusout="enableSaveButton()" readonly />
+          <% if (locals.errors && errors.fullname){ %>
+            <div>
+              <%= errors.fullName.msg %>
+            </div>
+            <% } %>
+
+              <!-- EMAIL -->
+              <label class="fields_name" for="email">Correo electronico:</label>
+              <input type="text" id="email" name="email"  value="<%- userInfo.email %> "
+                onfocusout="enableSaveButton()" readonly />
+              <% if (locals.errors && errors.email){ %>
+                <div>
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+
+                
+               <!-- ROL DE USUARIO -->
+               <label class="fields_name" for="rol">Rol de Usuario:</label>
+                    <select id="rol" name="rol" onchange="enableSaveButton()">
+                          <% if (userInfo.rol === 'profesor') { %>
+                               <option value="profesor" selected>Profesor</option>
+                               <% } else { %>
+                                   <option value="profesor">Profesor</option>
+                           <% } %>
+                           <% if (userInfo.rol === 'cliente') { %>
+                               <option value="cliente" selected>Cliente</option>
+                               <% } else { %>
+                                <option value="cliente">Cliente</option>
+                            <% } %>
+                            <% if (userInfo.rol === 'admin') { %>
+                              <option value="admin" selected>admin</option>
+                              <% } else { %>
+                               <option value="admin">Admin</option>
+                           <% } %>
+                  </div>
+
+                  <!-- Botón para guardar cambios (inicialmente deshabilitado) -->
+                  <input id="submit_update" type="submit" value="Guardar cambios" />
+                </form>
+                  <form id="deleteForm" action="/admin/delete/<%- userInfo.idUser %>?" method="post">
+                  <button id="delete_button" type="submit" name="action" value="delete">Eliminar usuario</button>
+        </form>
+      </main>
+
+
+      <%- include('./partials/footer') %> <%- include('./partials/script') %>
+
+
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="/js/editUser.js"></script>
+</body>
+
+</html>
