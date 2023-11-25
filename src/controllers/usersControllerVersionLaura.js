@@ -88,22 +88,20 @@ const usersControllerVersionLaura = {
     }
   },
 
-  userProfile: async (req, res) => {
-    const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / coockies)
-
-    // Busca el usuario en la base de datos por correo electrónico
-    const foundUser = await db.User.findOne({ where: { email: enteredUser } });
-
-    if (foundUser) {
-      // Usuario encontrado, pasa sus datos a la vista de perfil
-      res.render('userProfile', { userInfo: foundUser });
-    } else {
-      // Usuario no encontrado
-      res.status(404).send('Usuario no encontrado');
-    }
+  logout: (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error('Error al cerrar sesión:', err);
+        res.redirect('/users/userProfile'); // Redirigir a la página principal en caso de error
+      } else {
+        console.log('Sesión cerrada con éxito');
+        res.redirect('/'); // Redirigir al usuario a la página de inicio
+      }
+    });
   },
 
-  viewEdit: async (req, res) => {
+
+  userProfile: async (req, res) => {
     const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / cookies)
     try {
       let foundUser = await db.User.findOne({ where: { email: enteredUser } })
@@ -112,7 +110,7 @@ const usersControllerVersionLaura = {
         // Usuario encontrado, pasa sus datos a la vista de edición
         /* console.log(JSON.stringify(foundUser)); */
         let userDetail = await db.Personal.findOne({ where: { idUser: foundUser.idUser } })
-        /*  console.log(JSON.stringify(userDetail)); */
+        /* console.log(JSON.stringify(userDetail)); */
         let userInfo = {
           ...JSON.parse(JSON.stringify(foundUser))
         }
@@ -126,10 +124,47 @@ const usersControllerVersionLaura = {
             cp: userDetail.cp,
             cellphone: userDetail.cellphone,
           }
+
         }
 
-        /* console.log(JSON.stringify(userInfo)); */
-        res.render('../views/editUser.ejs', { userInfo: userInfo });
+        res.render('userProfile', { userInfo: userInfo });
+      } else {
+        // Usuario no encontrado
+        res.status(404).send('Usuario no encontrado');
+      }
+
+    } catch (error) {
+      res.status(500).send('Error interno del servidor');
+    }
+  },
+
+  viewEdit: async (req, res) => {
+    const enteredUser = req.cookies.email; // Correo ingresado por el usuario (session / cookies)
+    try {
+      let foundUser = await db.User.findOne({ where: { email: enteredUser } })
+
+      if (foundUser) {
+        // Usuario encontrado, pasa sus datos a la vista de edición
+        /* console.log(JSON.stringify(foundUser)); */
+        let userDetail = await db.Personal.findOne({ where: { idUser: foundUser.idUser } })
+        /* console.log(JSON.stringify(userDetail)); */
+        let userInfo = {
+          ...JSON.parse(JSON.stringify(foundUser))
+        }
+        if (userDetail) {
+          userInfo = {
+            ...userInfo,
+            dni: userDetail.DNI,
+            address: userDetail.adress,
+            city: userDetail.city,
+            province: userDetail.province,
+            cp: userDetail.cp,
+            cellphone: userDetail.cellphone,
+          }
+
+        }
+
+        res.render('editUser', { userInfo: userInfo });
       } else {
         // Usuario no encontrado
         res.status(404).send('Usuario no encontrado');

@@ -14,6 +14,7 @@ route.get("/register", usersController.register); //localhost2020:/users/registe
 route.post("/store", upload.single('profile_image'), validateRegister, usersController.store); //localhost2020:/users/store
 route.get("/login", usersController.login); //localhost2020:/users/login
 route.post("/processLogin", validateLogin, usersController.processLogin); //localhost:2020/users/processLogin
+route.get("/logout", usersController.logout)
 
 route.get("/userProfile", usersController.userProfile);//localhost2020:/users/userProfile
 route.get("/editUser", usersController.viewEdit);

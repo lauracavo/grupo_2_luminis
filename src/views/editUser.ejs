@@ -40,10 +40,13 @@
                 </div>
                 <% } %>
 
-                  <!-- Agrega una casilla de verificación para habilitar Datos de facturación -->
-                  <label for="enableShipping">Datos de facturación</label>
-                  <input type="checkbox" name="casillaVerificacion" id="enableShipping"
-                    onchange="toggleShippingForm()" />
+                  <div id="habilitar_datosFacturacion">
+                    <!-- Agrega una casilla de verificación para habilitar Datos de facturación -->
+                    <label for="enableShipping">Datos de facturación</label>
+                    <input type="checkbox" name="casillaVerificacion" id="enableShipping"
+                      onchange="toggleShippingForm()" />
+                  </div>
+
 
                   <!-- Segundo formulario de Datos de facturación (inicialmente oculto) -->
                   <div id="secondForm">
@@ -101,7 +104,10 @@
                   </div>
 
                   <!-- Botón para guardar cambios (inicialmente deshabilitado) -->
-                  <input id="submit_update" type="submit" value="Guardar cambios" />
+                  <div id="botones_editarUsuario">
+                    <input id="submit_update" type="submit" value="Guardar cambios" />
+                    <a href="/users/userProfile"><button id="cancelar_cambios">Cancelar</button></a>
+                  </div>
         </form>
       </main>
 

@@ -7,24 +7,39 @@ const mainController = {
 
   home: async (req, res) => {
 try{
-    let product = await db.Product.findAll()
-    const newProduct = await Promise.all(product.map(async (item) => {  
-    const imgList = await db.ImageProduct.findOne({ where: { idProduct: item.idProduct } })
-    return { ...item.dataValues, imgList: imgList ? imgList.dataValues : null };
-  }));
-  res.render("home", {product: newProduct})      
-   }
-  
-  
- catch (error){
-      res. send({ result: 'Error', payload: error });
-}
+    let products = await db.Product.findAll()
+    const product = await Promise.all(products.map(async (item) => {
+           const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
+           return { ...item.dataValues, imgList: imgList.dataValues };
+            }));
+
+        let userLogged
+        if(req.session.successLoginUser){
+          userLogged = true;
+          console.log(userLogged);
+        } else{
+          userLogged = false;
+          console.log(userLogged);
+        }
+        
+        res.render("home", {product, userLogged})
+      } catch (error){
+            res. send({ result: 'Error', payload: error });
+        }
    
     },
   
   aboutUs: async (req, res) => {
     try {
-      res.render("aboutUs")
+      let userLogged
+        if(req.session.successLoginUser){
+          userLogged = true;
+          console.log(userLogged);
+        } else{
+          userLogged = false;
+          console.log(userLogged);
+        }
+      res.render("aboutUs" , {userLogged})
     } catch (error){
       res.send({ result: 'Error', payload: error });
     }
@@ -32,7 +47,15 @@ try{
 
   frequentQuestions: async (req, res) => {
     try {
-      res.render("frequentQuestions")
+      let userLogged
+        if(req.session.successLoginUser){
+          userLogged = true;
+          console.log(userLogged);
+        } else{
+          userLogged = false;
+          console.log(userLogged);
+        }
+      res.render("frequentQuestions" , {userLogged})
     } catch (error) {
       res.send({ result: 'Error', payload: error});
     }

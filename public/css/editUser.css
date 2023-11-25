@@ -12,6 +12,20 @@
     margin-bottom: 10px;
   }
   
+  /* Div contenedor de botones */
+  #botones_editarUsuario{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #habilitar_datosFacturacion{
+    display: flex;
+  }
+
+  #habilitar_datosFacturacion label{
+    margin-right: 10px;
+  }
+
   /* Estilos para el botón de "Guardar cambios" */
   #submit_update, #delete_button {
     margin-top: 10px;
@@ -26,6 +40,16 @@
   #delete_button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  /* boton cancelar */
+  #cancelar_cambios{
+    margin-top: 10px;
+    background-color: #e46f50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
   }
   
   /* Oculta el segundo formulario por defecto */
