@@ -60,7 +60,8 @@
                                 class="button-content">VER MÁS</span></a>
                           </button>
                         </div>
-                        <a href="####" id="icono-carrito"><i class="fas fa-cart-plus"></i>Agregar al carrito</a>
+                        <a href="/Carrito/add/<%= item.idProduct %>" class="add-to-cart" id="icono-carrito"><i
+                            class="fas fa-cart-plus"></i>Agregar al carrito</a>
 
                       </article>
                       <% }); %>
@@ -176,9 +177,9 @@
                             <span class="button-content">VER MÁS</span>
                           </button>
                         </div>
-                        <a href="/Carrito/add/<%= item.idProduct %>" class="add-to-cart" >
-                          <i class="fas fa-cart-plus" id="carrito-icono"></i>Agregar al carrito                          
-                       </a>
+                        <a href="/Carrito/add/<%= item.idProduct %>" class="add-to-cart" id="icono-carrito">
+                          <i class="fas fa-cart-plus" id="carrito-icono"></i>Agregar al carrito
+                        </a>
                       </article>
                       <% }); %>
                   </div>
@@ -268,7 +269,7 @@
               </main>
 
               <%- include('./partials/footer') %> <%- include('./partials/script') %>
-              <script src="/JS/carrito.js"></script>
+                  <script src="/JS/carrito.js"></script>
 </body>
 
 </html>

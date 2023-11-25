@@ -10,8 +10,8 @@
 </head>
 
 <body>
-  <%- include('./partials/menu') %> <%- include('./partials/header') %>
-      <main class="edit_user_form">
+  <%- include('./partials/menu') %> <%- include('./partials/headerUser') %>
+      <main class="edit_user_form glass_effect">
         <form id="formEdit" method="POST" action="/users/editUser/<%= userInfo.idUser %>">
           <h3>EDITAR PERFIL</h3>
 
@@ -106,7 +106,8 @@
                   <!-- Botón para guardar cambios (inicialmente deshabilitado) -->
                   <div id="botones_editarUsuario">
                     <input id="submit_update" type="submit" value="Guardar cambios" />
-                    <a href="/users/userProfile"><button id="cancelar_cambios">Cancelar</button></a>
+                    <input id="cancelar_cambios" type="button" value="Cancelar"
+                      onclick="location.href='/users/userProfile'" />
                   </div>
         </form>
       </main>

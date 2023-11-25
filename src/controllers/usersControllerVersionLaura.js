@@ -253,6 +253,31 @@ const usersControllerVersionLaura = {
     }
 
   },
+  viewPhoto: (req, res) => {
+    res.render("editUserImg")
+  },
+
+  editPhoto: async (req, res) => {
+    const enteredUser = req.cookies.email;
+
+    try {
+      let foundUser = await db.User.findOne({ where: { email: enteredUser } })
+
+      if (foundUser) {
+        let datosUsuario = {
+          image: req.file.filename
+        };
+        console.log("datos de usuario:", datosUsuario);
+
+        await db.User.update({ image: datosUsuario.image }, { where: { idUser: foundUser.idUser } })
+
+        res.redirect("/users/userProfile");
+      }
+
+    } catch {
+      res.status(500).send('Error interno del servidor');
+    }
+  },
 
   eliminar: async (req, res) => {
     const enteredUser = req.cookies.email;

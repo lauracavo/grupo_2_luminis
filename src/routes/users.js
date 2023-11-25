@@ -21,6 +21,8 @@ route.get("/editUser", usersController.viewEdit);
 route.post("/editUser/:id", usersController.actualizar);
 route.get("/viewPassword", usersController.viewPassword)
 route.post("/editPassword", usersController.editPassword)
+route.get("/viewPhoto", usersController.viewPhoto)
+route.post("/editPhoto", upload.single('profile_image'), usersController.editPhoto)
 route.post("/eliminarUsuario", usersController.eliminar)
 
 //route.get("/confirmation-deleteUser", usersController.viewDelete);

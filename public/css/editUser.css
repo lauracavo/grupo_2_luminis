@@ -1,10 +1,8 @@
 /* Agrega estilos generales para el formulario */
 .edit_user_form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
   }
   
   /* Estilos para los campos de entrada */
@@ -27,29 +25,45 @@
   }
 
   /* Estilos para el botón de "Guardar cambios" */
-  #submit_update, #delete_button {
-    margin-top: 10px;
-    background-color: #2a9d8f;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+  #submit_update {
+    --primary-color: #2a9d8e;
+    --secondary-color: #fff;
+    --hover-color: #264653;
   }
   
-  #submit_update:disabled,
-  #delete_button:disabled {
+  #submit_update:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
 
   /* boton cancelar */
   #cancelar_cambios{
-    margin-top: 10px;
-    background-color: #e46f50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    --primary-color: #e46f50;
+    --secondary-color: #fff;
+    --hover-color: #f2a160;
+  }
+  
+  #submit_update, #cancelar_cambios {
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    margin: 10px;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+  }
+  
+  #submit_update:hover {
+      background-color: var(--hover-color);
+  }
+  
+  #cancelar_cambios:hover {
+      background-color: var(--hover-color);
   }
   
   /* Oculta el segundo formulario por defecto */

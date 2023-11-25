@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/userProfile.css">
+        <link rel="stylesheet" href="/css/editUser.css">
+        <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <%- include('./partials/menu') %> <%- include('./partials/headerUser') %>
+            <main class="edit_user_form glass_effect">
+                <form method="POST" action="/users/editPhoto" enctype="multipart/form-data">
+
+                    <!-- Imagen de Perfil -->
+                    <label for="profile_image" class="fields_name">Editar foto de perfil:</label>
+                    <input type="file" name="profile_image" class="fields_name" />
+
+                    <!-- Submit -->
+                    <div id="botones_editarUsuario">
+                        <input id="submit_update" type="submit" value="Guardar cambios" />
+                        <input id="cancelar_cambios" type="button" value="Cancelar"
+                            onclick="location.href='/users/userProfile'" />
+                    </div>
+
+                </form>
+            </main>
+</body>
+<%- include('./partials/footer') %> <%- include('./partials/script') %>

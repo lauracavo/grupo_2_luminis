@@ -71,7 +71,8 @@ h1#my_profile{
 }
 div#profile_image_container{
     display: flex;
-    justify-content: center;
+flex-direction: column;
+
 }
 
 div#profile_image{
@@ -82,7 +83,24 @@ div#profile_image{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
+
+#profile_image img{
+    object-fit: contain;
+    height: 100px;
+}
+#edit_img{
+    display: flex;
+    justify-content: center;
+}
+
+#edit_img a{
+    text-decoration: none;
+    color: #e46f50;
+    font-weight: bold;
+}
+
 #datos_usuarios{
     margin: auto;
 }

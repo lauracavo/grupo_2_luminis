@@ -16,10 +16,8 @@ try{
         let userLogged
         if(req.session.successLoginUser){
           userLogged = true;
-          console.log(userLogged);
         } else{
           userLogged = false;
-          console.log(userLogged);
         }
         
         res.render("home", {product, userLogged})
@@ -34,10 +32,8 @@ try{
       let userLogged
         if(req.session.successLoginUser){
           userLogged = true;
-          console.log(userLogged);
         } else{
           userLogged = false;
-          console.log(userLogged);
         }
       res.render("aboutUs" , {userLogged})
     } catch (error){
@@ -50,10 +46,8 @@ try{
       let userLogged
         if(req.session.successLoginUser){
           userLogged = true;
-          console.log(userLogged);
         } else{
           userLogged = false;
-          console.log(userLogged);
         }
       res.render("frequentQuestions" , {userLogged})
     } catch (error) {
