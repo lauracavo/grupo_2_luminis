@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Tabla from '../Tabla/Tabla';
-import getConsultas from '../../Servicios/getConsultas';
+import getConsultas from '../../Conexiones/getConsultas';
 
 function ProductosCategoria(props) {
     const [productos, modProductos] = useState([]);

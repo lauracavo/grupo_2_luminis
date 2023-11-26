@@ -3,7 +3,7 @@ const responder = async apiResponse => {
     return data;
 }
 const buscar = async (link) => {
-    return await fetch(`/api/${link}`)
+    return await fetch(`/api/2020/api/products`)
         .then(respuesta => respuesta.json())
         .then(responder)
         .catch(error => console.log(error))
@@ -14,7 +14,7 @@ module.exports = {
         return await buscar('categorias/cantidad');
     },
     getProductos: async () => {
-        return await buscar('productos');
+        return await buscar('products');
     },
     getUsuarios: async () => {
         return await buscar('usuarios');

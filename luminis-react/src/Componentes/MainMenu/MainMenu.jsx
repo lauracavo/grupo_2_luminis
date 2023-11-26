@@ -6,7 +6,7 @@ import {                                            //redireccionamiento
     Link
 } from "react-router-dom";
 import './MainStyle.css';
-import getConsultas from '../../Servicios/getConsultas';
+import getConsultas from '../../Conexiones/getConsultas';
 import Categorias from '../Categorias/Categorias';
 import Productos from '../Productos/Productos';
 import Producto from '../Productos/Producto';

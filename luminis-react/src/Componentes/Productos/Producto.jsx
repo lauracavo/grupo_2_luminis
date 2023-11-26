@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import getConsultas from '../../Servicios/getConsultas';
+import getConsultas from '../../Conexiones/getConsultas';
 import './productoStyle.css';
 
 function Producto(props) {
