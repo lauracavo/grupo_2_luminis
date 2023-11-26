@@ -1,24 +1,29 @@
 main {
   margin: 40px;
 }
+
 #login_form {
   width: 70%;
   margin-right: 20px;
   padding: 20px;
   text-align: center;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
   margin-top: 5px;
 }
+
 .fields_name {
   font-size: 23px;
 }
+
 .img {
   width: 70px;
   height: auto;
 }
+
 input[type="text"] {
   width: 60%;
   padding: 5px;
@@ -40,6 +45,7 @@ input[type="text"]:focus-within,
 input[type="file"]:focus-within {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
+
 .submit_product {
   font-size: 15px;
   margin-top: 10px;
@@ -98,4 +104,23 @@ input[type="file"]:focus-within {
   color: rgb(255, 251, 239);
   text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
     0 0 50px #f1c056, 0 0 100px #ffeabd;
+}
+
+#delete_button {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 75%;
+  padding: 10px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#delete_button:hover {
+  background-color: #e46f50;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }

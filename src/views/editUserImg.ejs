@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="overlay"></div>
     <%- include('./partials/menu') %> <%- include('./partials/headerUser') %>
             <main class="edit_user_form glass_effect">
                 <form method="POST" action="/users/editPhoto" enctype="multipart/form-data">
@@ -28,3 +29,4 @@
             </main>
 </body>
 <%- include('./partials/footer') %> <%- include('./partials/script') %>
+<script src="/JS/footer.js"></script>
