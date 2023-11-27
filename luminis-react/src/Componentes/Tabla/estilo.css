@@ -1,0 +1,60 @@
+.tabla {
+    margin-top: 5px;
+    background-color: #F8F8FF;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 10vw;
+}
+.titulos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content:flex-start;
+    border-radius: 4px;
+    margin: 4px;
+    background-color: var(--app-content-secondary-color);
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform .2s;
+    position: relative;
+    background-color: #AFEEEE;
+}
+.fila {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content:flex-start;
+    border-radius: 4px;
+    margin: 4px;
+    background-color: var(--app-content-secondary-color);
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform .2s;
+    position: relative;
+}
+.fila:hover {
+    box-shadow: var(--filter-shadow);
+    background-color: var(--app-content-secondary-color);
+    transform: scale(1.01);
+    box-shadow: var(--filter-shadow);
+    background-color: #E0FFFF;
+}
+.imagen{
+    width: 200px;
+    height: 100px;
+}
+.nombre{
+    text-size-adjust: 3rem;
+}
+.celda {
+    width: 200px;
+    flex-grow: 2;
+}
+
+* {
+    box-sizing: border-box;
+}

@@ -4,10 +4,12 @@
 <head>
   <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/productDetail.css" />
+    <link rel="stylesheet" href="/css/login.css">
     <!-- <link rel="stylesheet" href="/css/products.css" /> -->
 </head>
 
 <body>
+  <div id="overlay"></div>
 
   <!-- --------------------------------------Menu Hamburguesa-------------------------------------- -->
   <%- include('./partials/menu') %>
@@ -177,9 +179,10 @@
       crossorigin="anonymous"
     ></script> -->
 
+    <!-- -----------------------------------------------FOOTER------------------------------------------------- -->
+    <%- include('./partials/footer') %> <%- include('./partials/script') %>
+    <script src="/JS/footer.js"></script>
 </body>
-<!-- -----------------------------------------------FOOTER------------------------------------------------- -->
-<%- include('./partials/footer') %> <%- include('./partials/script') %>
 
     <!-- d-block w-100 -->
 
