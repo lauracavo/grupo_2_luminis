@@ -153,6 +153,7 @@ button.arrow_button {
   display: flex;
   transition: 0.2s background;
   align-items: center;
+  text-align: center;
   gap: 0.6em;
   font-weight: bold;
 }
