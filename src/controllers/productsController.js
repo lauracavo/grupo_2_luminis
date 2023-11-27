@@ -38,10 +38,10 @@ const productsController = {
             let userLogged
             if (req.session.successLoginUser) {
                 userLogged = true;
-                console.log(userLogged);
+                // console.log(userLogged);
             } else {
                 userLogged = false;
-                console.log(userLogged);
+                // console.log(userLogged);
             }
 
             res.render("productDetail", { product, imgList, userLogged })
