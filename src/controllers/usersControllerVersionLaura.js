@@ -17,9 +17,9 @@ const usersControllerVersionLaura = {
     res.render("register");
   },
 
-  store: (req, res) => {
+  store: async (req, res) => {
     let errors = validationResult(req);
-    console.log(errors);
+
     if (errors.isEmpty()) {
       const profile_image = req.file ? req.file.filename : null;
 
@@ -29,23 +29,31 @@ const usersControllerVersionLaura = {
         email,
         rol
       } = req.body;
+
       const hashPassword = bcrypt.hashSync(password, 10);
 
-      const user = {
-        fullname: fullName,
-        password: hashPassword,
-        email: email,
-        image: req.file.filename,
-        rol: (req.body?.teacher == 'on') ? 'profesor' : 'cliente'
-      };
+      let usuarioEncontrado = await db.User.findOne({ where: { email: email } })
 
-      db.User.create(user)
-        .then(() => {
-          res.status(200).json({ success: true, message: "Usuario creado con éxito." });
-        })
-        .catch(error => {
-          res.status(500).json({ success: false, message: "Error al crear usuario." });
-        });
+      if (usuarioEncontrado) {
+        console.log("El correo ya se encuentra registrado.");
+        res.status(400).json({ success: false, message: "El correo ya se encuentra registrado." });
+      } else {
+        const user = {
+          fullname: fullName,
+          password: hashPassword,
+          email: email,
+          image: req.file.filename,
+          rol: (req.body?.teacher == 'on') ? 'profesor' : 'cliente'
+        };
+
+        await db.User.create(user)
+          .then(() => {
+            res.status(200).json({ success: true, message: "Usuario creado con éxito." });
+          })
+          .catch(error => {
+            res.status(500).json({ success: false, message: "Error al crear usuario." });
+          });
+      }
     } else {
       res.status(400).json({ success: false, message: "Error en la validación de los datos." });
     }
