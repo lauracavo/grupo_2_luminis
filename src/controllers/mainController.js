@@ -7,7 +7,7 @@ const mainController = {
 
   home: async (req, res) => {
 try{
-    let products = await db.Product.findAll()
+    let products = await db.Product.findAll({ limit: 4 });
     const product = await Promise.all(products.map(async (item) => {
            const imgList = await db.ImageProduct.findOne({ where: {idProduct: item.idProduct}});
            return { ...item.dataValues, imgList: imgList.dataValues };

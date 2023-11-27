@@ -43,6 +43,7 @@
 
                 <section id="new_products">
                   <h3>PRODUCTOS NUEVOS</h3>
+                  <!-- VISTA PARA DESKTOP -->
                   <div class="hidden_articles">
                     <% product.map(item=> { %>
                       <article class="glass_effect display_flex">
@@ -68,6 +69,7 @@
                       </article>
                       <% }); %>
                   </div>
+                  <!-- VISTA PARA MOBILE -->
                   <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -80,70 +82,26 @@
                         aria-label="Slide 4"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active carrusel_prod">
-                        <div class="d-block w-100">
-                          <% product.map(item=> { %>
-                            <article class="glass_effect display_flex">
-                              <img src="/img/books/<%= item.imgList?.name %>" />
-                              <div class="display_flex product_information">
-                                <p>
-                                  <%= item.name %>
-                                </p>
-                                <p>
-                                  <%= item.salePrice %>
-                                </p>
-                              </div>
-                              <div class="button_container">
-                                <button class="button">
-                                  <span class="button-content">COMPRAR</span>
-                                </button>
-                              </div>
-                              <% }); %>
-                            </article>
+                      <% product.forEach((item, index)=> { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %> carrusel_prod">
+                          <article class="glass_effect display_flex">
+                            <img src="/img/books/<%= item.imgList?.name %>" />
+                            <div class="display_flex product_information">
+                              <p>
+                                <%= item.name %>
+                              </p>
+                              <p>
+                                <%= item.salePrice %>
+                              </p>
+                            </div>
+                            <div class="button_container">
+                              <button class="button">
+                                <span class="button-content">COMPRAR</span>
+                              </button>
+                            </div>
+                          </article>
                         </div>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
+                        <% }); %>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                       data-bs-slide="prev">
@@ -161,6 +119,7 @@
 
                 <section id="best_sellers">
                   <h3>LOS MÁS VENDIDOS</h3>
+                  <!-- VISTA DESKTOP -->
                   <div class="hidden_articles">
                     <% product.map(item=> { %>
                       <article class="glass_effect display_flex">
@@ -185,6 +144,7 @@
                       </article>
                       <% }); %>
                   </div>
+                  <!-- VISTA MOBILE -->
                   <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -197,13 +157,17 @@
                         aria-label="Slide 4"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active carrusel_prod">
-                        <div class="d-block w-100">
+                      <% product.forEach((item, index)=> { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %> carrusel_prod">
                           <article class="glass_effect display_flex">
-                            <img src="/img/producto1.png" />
+                            <img src="/img/books/<%= item.imgList?.name %>" />
                             <div class="display_flex product_information">
-                              <p>Nombre</p>
-                              <p>Precio</p>
+                              <p>
+                                <%= item.name %>
+                              </p>
+                              <p>
+                                <%= item.salePrice %>
+                              </p>
                             </div>
                             <div class="button_container">
                               <button class="button">
@@ -212,49 +176,7 @@
                             </div>
                           </article>
                         </div>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
+                        <% }); %>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                       data-bs-slide="prev">
