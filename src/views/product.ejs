@@ -41,19 +41,14 @@
   <!-- MAIN -->
  <section class = "grid-container">
     <!-- CONTENIDO PRINCIPAL -->
+    
     <div class="container-image glass_effect">
       <% product.map(item => { %>
         <a href="/product/productDetail/<%= item.idProduct %>">
           <img src="../img/books/<%= item.imgList?.name %>" alt="<%= item.imgList?.name %>" />
         </a>
       <% }); %>
-    </div>
-
-    <!-- <div class="button_container">
-      <button class="button">
-        <span class="button-content">VER MAS PRODUCTOS</span>
-      </button>
-    </div> -->
+    </div>  
 
     <!-- ASIDE -->
     <aside class="glass_effect">
