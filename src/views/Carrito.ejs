@@ -1,117 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
+
+<head>
+  <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/cart.css" />
     <link rel="stylesheet" href="/css/login.css">
-  </head>
-  <body>
-    <div id="overlay"></div>
-    <%- include('./partials/menu') %> <%- include('./partials/header') %>
+</head>
 
-    <main>
-      <p id="title">Carrito de Compras</p>
-     
-      <table id="table" class="redondeada">
-        <thead id="table_header" class="glass_effect">
-          <tr>
-            <td class="table_titles">Producto</td>
-            <td class="table_titles">Precio Individual</td>
-            <td class="table_titles">Cantidad</td>
-            <td class="table_titles">Precio Total</td>
-          </tr>
-        </thead>
-        <% if(req.cookies.cart && req.cookies.cart.length>0) { %>
-        <tbody id="table_body">
-          <!-- Contenido de la tabla -->
-          <% products.map(product=> { %>
-          <tr>
+<body>
+  <div id="overlay"></div>
+  <%- include('./partials/menu') %> <%- include('./partials/headerUser') %>
 
-            <td class="table_content">
-              <form action="/Carrito/delete/<%= product.idProduct %>" method="POST" class="borrarCart">
-                <button type="submit" class="login-button">
-                  <i class="fa fa-trash "></i>
-                </button><%= product.name %>
-            </form>
-              <!-- <button class="login-button deleteProduct" onclick="deleteProduct('<%= product.idProduct %>')">
+      <main>
+        <p id="title">Carrito de Compras</p>
+
+        <table id="table" class="redondeada">
+          <thead id="table_header" class="glass_effect">
+            <tr>
+              <td class="table_titles">Producto</td>
+              <td class="table_titles">Precio Individual</td>
+              <td class="table_titles">Cantidad</td>
+              <td class="table_titles">Precio Total</td>
+            </tr>
+          </thead>
+          <% if(req.cookies.cart && req.cookies.cart.length>0) { %>
+            <tbody id="table_body">
+              <!-- Contenido de la tabla -->
+              <% products.map(product=> { %>
+                <tr>
+
+                  <td class="table_content">
+                    <form action="/Carrito/delete/<%= product.idProduct %>" method="POST" class="borrarCart">
+                      <button type="submit" class="login-button">
+                        <i class="fa fa-trash "></i>
+                      </button>
+                      <%= product.name %>
+                    </form>
+                    <!-- <button class="login-button deleteProduct" onclick="deleteProduct('<%= product.idProduct %>')">
                 <i class="fa fa-trash "></i>
               </button> <%= product.name %> -->
-            </td>
-            <td class="table_content"><%= product.salePrice %></td>            
-            <td class="table_content">
-              <input class="product_quantity" type="number" value="<%= product.cant %>" min="1" max="<%= product.stock %>" />
-            </td>
-            <td class="table_content total"> </td>
-          </tr>
-        
-         </tbody>
-         <% }); %>
-        <tfoot id="table_footer">
-          <!-- Pie de tabla  -->
-          <tr>
-            <td colspan="3"><strong>Total a pagar:</strong></td>
-            <td><strong class = "total_a_pagar"></strong></td>
-          </tr>
-        </tfoot>
-      </table>
-      <% } else {%>
-        <div>
-          <h1>Carrito vacio</h1>
-      </div>
-      <% } %>
-      <!-- Calculo y opciones de envio -->
-      <div class="display_flex" id="down_table">
-        <div class="display_flex" id="country_shipping">
-          <p id="shipping_title">ENVIOS A TODO EL PAÍS</p>
-          <a href="#" id="calculate_shipping">Calcular envío</a>
-        </div>
-        <div class="checkbox-container">
-          <label>
-            <input type="checkbox" id="home_delivery" />
-            <span>Envío a mi domicilio</span>
-          </label>
-          <label>
-            <input type="checkbox" id="shop_withdrawal" />
-            <span>Retiro en sucursal</span>
-          </label>
-        </div>
-        
-        <div>
-          <div id="buy_button">
-            <a href="/Carrito/buy">
-            <button class="button" >
-              <span class="button-content"  id="Total">FINALIZAR COMPRA</span>
-            </button>
-          </a>
+                  </td>
+                  <td class="table_content">
+                    <%= product.salePrice %>
+                  </td>
+                  <td class="table_content">
+                    <input class="product_quantity" type="number" value="<%= product.cant %>" min="1"
+                      max="<%= product.stock %>" />
+                  </td>
+                  <td class="table_content total"> </td>
+                </tr>
+
+            </tbody>
+            <% }); %>
+              <tfoot id="table_footer">
+                <!-- Pie de tabla  -->
+                <tr>
+                  <td colspan="3"><strong>Total a pagar:</strong></td>
+                  <td><strong class="total_a_pagar"></strong></td>
+                </tr>
+              </tfoot>
+        </table>
+        <% } else {%>
+          <div>
+            <h1>Carrito vacio</h1>
           </div>
-        </div>
-      </div>
+          <% } %>
+            <!-- Calculo y opciones de envio -->
+            <div class="display_flex" id="down_table">
+              <div class="display_flex" id="country_shipping">
+                <p id="shipping_title">ENVIOS A TODO EL PAÍS</p>
+                <a href="#" id="calculate_shipping">Calcular envío</a>
+              </div>
+              <div class="checkbox-container">
+                <label>
+                  <input type="checkbox" id="home_delivery" />
+                  <span>Envío a mi domicilio</span>
+                </label>
+                <label>
+                  <input type="checkbox" id="shop_withdrawal" />
+                  <span>Retiro en sucursal</span>
+                </label>
+              </div>
 
-      <!-- Sección de Seguridad y envios -->
-      <section id="prefooter" class="glass_effect">
-        <!-- Contenedor de Compra Segura -->
-        <div class="section">
-          <i class="fas fa-lock"></i>
-          <p>COMPRA SEGURA</p>
-        </div>
-        <!-- Contenedor de Entrega en 48 HS -->
-        <div class="section">
-          <i class="fas fa-truck"></i>
-          <p>ENTREGA EN 48 HS</p>
-        </div>
-      </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
-    <script src="/JS/cart.js"></script>      
-    
-    <%- include('./partials/footer') %> 
-    <%- include('./partials/script') %>
-    
-    // Función para calcular y actualizar el total
-   
+              <div>
+                <div id="buy_button">
+                  <a href="/Carrito/buy">
+                    <button class="button">
+                      <span class="button-content" id="Total">FINALIZAR COMPRA</span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sección de Seguridad y envios -->
+            <section id="prefooter" class="glass_effect">
+              <!-- Contenedor de Compra Segura -->
+              <div class="section">
+                <i class="fas fa-lock"></i>
+                <p>COMPRA SEGURA</p>
+              </div>
+              <!-- Contenedor de Entrega en 48 HS -->
+              <div class="section">
+                <i class="fas fa-truck"></i>
+                <p>ENTREGA EN 48 HS</p>
+              </div>
+            </section>
+      </main>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="/JS/cart.js"></script>
+
+      <%- include('./partials/footer') %>
+        <%- include('./partials/script') %>
+
+          // Función para calcular y actualizar el total
 
 
-    <script src="/JS/footer.js"></script>
-   
-  </body>
+
+          <script src="/JS/footer.js"></script>
+
+</body>
+
 </html>

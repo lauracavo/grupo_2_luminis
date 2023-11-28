@@ -28,14 +28,20 @@
                   <div id="intro">
                     <h2>"Acompañando a los alumnos y docentes en cada paso"</h2>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-                      eaque corrupti, quo at consequuntur provident, ducimus fugit
-                      possimus esse quae sapiente sint reprehenderit repellendus. Dolorem
-                      doloremque voluptatum modi itaque numquam! At quasi similique
-                      corrupti ut provident nobis a et ullam. Similique, aliquam beatae
-                      autem doloremque facilis repudiandae ipsam eos eum officiis
-                      excepturi nulla officia incidunt, adipisci tenetur quia. Eaque,
-                      iure.
+                      Nuestra tienda en línea de artículos de librería y libros!
+                      Encontrarás una amplia selección de productos que harán las delicias de los
+                      amantes de la lectura y la escritura.
+                      Navega por nuestras categorías y descubre libros de diversos géneros,
+                      desde best sellers y clásicos hasta literatura infantil y académica.
+                      Además, ofrecemos una variedad de artículos de librería, como cuadernos,
+                      plumas, lápices,
+                      marcadores y organizadores, perfectos para acompañarte en tus aventuras
+                      literarias.
+                      Con precios competitivos y envío rápido, te proporcionamos una experiencia
+                      de compra conveniente y satisfactoria.
+                      Ya sea que busques expandir tu biblioteca personal, encontrar un regalo
+                      especial
+                      o adquirir suministros de escritura de calidad.
                     </p>
                   </div>
                   <img src="/img/libreria.jpg" alt="foto libreria" id="bookstore_photo" class="hidden" />
@@ -43,6 +49,7 @@
 
                 <section id="new_products">
                   <h3>PRODUCTOS NUEVOS</h3>
+                  <!-- VISTA PARA DESKTOP -->
                   <div class="hidden_articles">
                     <% product.map(item=> { %>
                       <article class="glass_effect display_flex">
@@ -68,6 +75,7 @@
                       </article>
                       <% }); %>
                   </div>
+                  <!-- VISTA PARA MOBILE -->
                   <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -80,70 +88,26 @@
                         aria-label="Slide 4"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active carrusel_prod">
-                        <div class="d-block w-100">
-                          <% product.map(item=> { %>
-                            <article class="glass_effect display_flex">
-                              <img src="/img/books/<%= item.imgList?.name %>" />
-                              <div class="display_flex product_information">
-                                <p>
-                                  <%= item.name %>
-                                </p>
-                                <p>
-                                  <%= item.salePrice %>
-                                </p>
-                              </div>
-                              <div class="button_container">
-                                <button class="button">
-                                  <span class="button-content">COMPRAR</span>
-                                </button>
-                              </div>
-                              <% }); %>
-                            </article>
+                      <% product.forEach((item, index)=> { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %> carrusel_prod">
+                          <article class="glass_effect display_flex">
+                            <img src="/img/books/<%= item.imgList?.name %>" />
+                            <div class="display_flex product_information">
+                              <p>
+                                <%= item.name %>
+                              </p>
+                              <p>
+                                <%= item.salePrice %>
+                              </p>
+                            </div>
+                            <div class="button_container">
+                              <button class="button">
+                                <span class="button-content">COMPRAR</span>
+                              </button>
+                            </div>
+                          </article>
                         </div>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
+                        <% }); %>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                       data-bs-slide="prev">
@@ -161,6 +125,7 @@
 
                 <section id="best_sellers">
                   <h3>LOS MÁS VENDIDOS</h3>
+                  <!-- VISTA DESKTOP -->
                   <div class="hidden_articles">
                     <% product.map(item=> { %>
                       <article class="glass_effect display_flex">
@@ -185,6 +150,7 @@
                       </article>
                       <% }); %>
                   </div>
+                  <!-- VISTA MOBILE -->
                   <div id="carouselExampleIndicators" class="carousel slide">
                     <div class="carousel-indicators">
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -197,13 +163,17 @@
                         aria-label="Slide 4"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active carrusel_prod">
-                        <div class="d-block w-100">
+                      <% product.forEach((item, index)=> { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %> carrusel_prod">
                           <article class="glass_effect display_flex">
-                            <img src="/img/producto1.png" />
+                            <img src="/img/books/<%= item.imgList?.name %>" />
                             <div class="display_flex product_information">
-                              <p>Nombre</p>
-                              <p>Precio</p>
+                              <p>
+                                <%= item.name %>
+                              </p>
+                              <p>
+                                <%= item.salePrice %>
+                              </p>
                             </div>
                             <div class="button_container">
                               <button class="button">
@@ -212,49 +182,7 @@
                             </div>
                           </article>
                         </div>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
-                      <div class="carousel-item">
-                        <article class="glass_effect display_flex">
-                          <img src="/img/producto1.png" />
-                          <div class="display_flex product_information">
-                            <p>Nombre</p>
-                            <p>Precio</p>
-                          </div>
-                          <div class="button_container">
-                            <button class="button">
-                              <span class="button-content">COMPRAR</span>
-                            </button>
-                          </div>
-                        </article>
-                      </div>
+                        <% }); %>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                       data-bs-slide="prev">

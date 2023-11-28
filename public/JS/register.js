@@ -203,14 +203,10 @@ document.getElementById("formRegister").addEventListener("submit", function (eve
     body: new FormData(event.target),
   })
     .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Network response was not ok");
-      }
+      return response.json();
     })
     .then(result => {
-      if (result.success === true) {
+      if (result.message === "Usuario creado con éxito.") {
         Swal.fire({
           title: "USUARIO CREADO CON ÉXITO",
           icon: "success"
@@ -218,10 +214,17 @@ document.getElementById("formRegister").addEventListener("submit", function (eve
           window.location.href = "/users/login";
         });
       } else {
-        Swal.fire({
-          title: "EL USUARIO NO PUDO SER CREADO",
-          icon: "error"
-        });
+        if (result.message === "El correo ya se encuentra registrado.") {
+          Swal.fire({
+            title: "EL CORREO YA SE ENCUENTRA REGISTRADO",
+            icon: "error"
+          });
+        } else {
+          Swal.fire({
+            title: "EL USUARIO NO PUDO SER CREADO",
+            icon: "error"
+          });
+        }
       }
     })
     .catch(error => {

@@ -3,187 +3,95 @@
 
 <head>
   <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/productDetail.css" />
-    <link rel="stylesheet" href="/css/login.css">
-    <!-- <link rel="stylesheet" href="/css/products.css" /> -->
+  <link rel="stylesheet" href="/css/general.css">
+  <link rel="stylesheet" href="/css/productDetail.css" />
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
   <div id="overlay"></div>
 
-  <!-- --------------------------------------Menu Hamburguesa-------------------------------------- -->
+  <!-- Menú Hamburguesa -->
   <%- include('./partials/menu') %>
 
-    <% if (userLogged) { %>
-      <!-- Mostrar barra de navegación para usuarios autenticados -->
-      <%- include ('./partials/headerUser') %>
-        <% } else { %>
-          <!-- Mostrar barra de navegación para usuarios no autenticados -->
-          <%- include ('./partials/header') %>
-            <% } %>
-              <!-- -----------------------------------------------------MAIN----------------------------------------------------- -->
+  <!-- Barra de navegación -->
+  <% if (userLogged) { %>
+    <%- include('./partials/headerUser') %>
+  <% } else { %>
+    <%- include('./partials/header') %>
+  <% } %>
 
-
-              <main>
-                <section class="container_productDetails">
-                  <!-- Carrusel------------------------------------------ -->
-                  <article class="container_carousel-image">
-                    <div id="carouselExample" class="carousel slide">
-                      <div class="carousel-inner">
-                        <% imgList.map(imgList=> { %>
-                          <div class="carousel-item active">
-                            <img id="img1" src="/img/books/<%=imgList?.name %>" class="imgcarousel"
-                              alt="<%=imgList?.name %>">
-                          </div>
-                          <div class="carousel-item">
-                            <img id="img2" src="/img/books/<%=imgList?.name %>" class="imgcarousel"
-                              alt="<%=product.imgList?.name %>">
-                          </div>
-                          <div class="carousel-item">
-                            <img id="img3" src="/img/books/<%=imgList?.name %>" class="imgcarousel"
-                              alt="<%=imgList?.name %>">
-                          </div>
-                      </div>
-                      <% }) %>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                          data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                          data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <!-- Fin Carrusel--------------------------------------- -->
-                    <!-- -----Inicio image container-------------------------------- -->
-                    <!-- <div class="image_container">
-        <img id="one"  src="<%= imgList?.name %>" alt="thumnail">
-        <img id="two"  src="<%= imgList?.name %>" alt="thumnail">
-        <img id="three"  src="<%=imgList?.name %>" alt="thumnail">
-       </div> -->
-
-                  </article>
-                  <!-- ----------------Fin image container--------------------------------- -->
-                  <!-- ---------------------Inicio nombre producto--------------------------------- -->
-
-                  <article class="details_products">
-                    <h2 class="details__title">
-                      <%=product.name %>
-                    </h2>
-                    <div class="details__prices">
-                      <p class="details__now">$ <%=product.salePrice %>
-                      </p>
-                      <button class="button">
-                        <span class="button-content">Ver cuotas</span>
-                      </button>
-                    </div>
-                    <div class="details__stock">
-                      <i id="ok" class="fas fa-check-circle"></i>
-                      <p class="datails__stock"> Stock disponible : <%=product.stock %>
-                      </p>
-                    </div>
-                    <div class="details_shipping">
-                      <i id="shipping" class="fas fa-truck"></i>
-                      <p class="details__shipping">Envio al todo el Pais</p>
-                    </div>
-                    <div class="details__product-quantity">
-                      <button class="button"> <span class="button-content"> <i class="fas fa-shopping-cart"></i> Sumar
-                          al carrito</span> </button>
-                    </div>
-                  </article>
-                  <!-- ------------------FIN nombreproducto-------------------------------  -->
-                </section>
-                <!-- -----------------------Inicio Descripcion Producto------------------------ -->
-                <section class="container_productDescription">
-                  <div class="details_productName">
-                    <H2 id="h2"><u>
-                        <%= product.detail %>
-                      </u></H2>
-                  </div>
-                  <article class="container_productName">
-                    <div class="details__description">
-                      <p class="details_description-P">Primera Descripcion</p>
-                      <ul class="ul_details_description">
-
-                        <li></i>
-                          <%=product.characteristic %>
-                        </li>
-                        <li></i>
-                          <%= product.author %>
-                        </li>
-                        <li></i>
-                          <%= product.brand %>
-                        </li>
-                        <li></i>
-                          <%= product.editorial %>
-                        </li>
-                        <li></i>
-                          <%= product.idcategory %>
-                        </li>
-
-                        <li></i></li>
-                        <li></i></li>
-
-
-                      </ul>
-                    </div>
-
-                    <!-- <div class="second_description">
-          <p class="details_description-P" > Segunda Descripción</p>
-          <ul class="ul_details_description">
-          <li></i></i></li>
-          <li></i></i></li>
-          <li></i></i></li>
-          <li></i></i></li>
-        </ul>
-        </div> -->
-                  </article>
-                </section>
-                <!-- -------------------------------------FIN Descripcion producto------------------------ -->
-                <!-- ----------------------------------------Inicio Slider--------------------------------------- -->
-
-                <!------   SLIDER DE EDITORIALES   ------>
-
-
-
-                <!-- --------------------------------------Fin Slider------------- -->
-
-
-
-              </main>
-              <div class="logos">
-                <div class="logo-slide">
-                  <img src="/img/slider/1.png" alt="">
-                  <img src="/img/slider/2.png" alt="">
-                  <img src="/img/slider/3.png" alt="">
-                  <img src="/img/slider/4.png" alt="">
-                  <img src="/img/slider/5.png" alt="">
-                  <img src="/img/slider/6.png" alt="">
-                  <img src="/img/slider/7.png" alt="">
-                </div>
-                <div class="logo-slide">
-                  <img src="/img/slider/1.png" alt="">
-                  <img src="/img/slider/2.png" alt="">
-                  <img src="/img/slider/3.png" alt="">
-                  <img src="/img/slider/4.png" alt="">
-                  <img src="/img/slider/5.png" alt="">
-                  <img src="/img/slider/6.png" alt="">
-                  <img src="/img/slider/7.png" alt="">
-                </div>
+  <main>
+    <section class="container_productDetails">
+      <!-- Carrusel -->
+      <article class="container_carousel-image">
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <% imgList.forEach((img, index) => { %>
+              <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                <img src="/img/books/<%= img.name %>" class="imgcarousel" alt="<%= img.name %>">
               </div>
-              <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script> -->
+            <% }) %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </article>
 
-    <!-- -----------------------------------------------FOOTER------------------------------------------------- -->
-    <%- include('./partials/footer') %> <%- include('./partials/script') %>
-    <script src="/JS/footer.js"></script>
+      <!-- Detalles del producto y Descripción -->
+      <article class="details_products">
+        <h2 class="details__title"><%= product.name %></h2>
+        <div class="details__prices">
+          <p class="details__now">$ <%= product.salePrice %></p>
+          <button class="button">
+            <span class="button-content">Ver cuotas</span>
+          </button>
+        </div>
+        <div class="details__stock">
+          <i id="ok" class="fas fa-check-circle"></i>
+          <p class="datails__stock"> Stock disponible: <%= product.stock %></p>
+        </div>
+        <div class="details_shipping">
+          <i id="shipping" class="fas fa-truck"></i>
+          <p class="details__shipping">Envio al todo el Pais</p>
+        </div>
+        <div class="details__product-quantity">
+          <button class="button">
+            <span class="button-content">Sumar al carrito</span>
+          </button>
+        </div>
+
+        <!-- Descripción del producto -->
+        <div class="details_productName">
+          <h2 id="h2"><u><%= product.detail %></u></h2>
+        </div>
+        <div class="details__description">
+          <p class="details_description-P">Detalles del Producto</p>
+          <ul class="ul_details_description">
+            <% product.characteristic.split(',').forEach(function(characteristic) { %>
+              <li><%= characteristic.trim() %></li>
+            <% }); %>
+            
+            <li><%= product.author %></li>
+            <li><%= product.brand %></li>
+            <li><%= product.editorial %></li>
+            <li><%= product.idCategory %></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer y scripts -->
+  <%- include('./partials/footer') %>
+  <%- include('./partials/script') %>
+  <script src="/JS/footer.js"></script>
 </body>
-
-    <!-- d-block w-100 -->
 
 </html>
