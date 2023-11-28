@@ -1,0 +1,89 @@
+/* Estilos generales para el body y el main */
+body,
+main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Estilos para la sección grid-container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 300px; /* Una columna para las imágenes y otra para el aside */
+  gap: 20px; /* Espacio entre las columnas */
+  max-width: 1200px; /* Máximo ancho del grid-container */
+  margin: 20px auto; /* Centrar el grid-container en la página */
+}
+
+/* Estilos para el contenedor de imágenes */
+.container-image {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+.container-image a {
+  flex: 0 1 calc(33.33% - 20px); /* Cada imagen ocupa 33.33% del ancho con 20px de espacio entre ellas */
+  margin-bottom: 20px; /* Espacio inferior entre las filas de imágenes */
+}
+
+.container-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos para el aside */
+aside {
+  background-color: #f0f0f0;
+  padding: 20px;
+  max-width: 300px;
+}
+aside .publi img {
+    padding-right: 10px;
+    width: 280px;
+    height: auto;
+    border-radius: 3px;
+}
+/* Estilos para el filtro */
+.filters {
+  display: flex;
+  border: 2px solid rgba(255, 255, 255, 0.116);
+  border-radius: 5px;
+  padding: 2px;
+  width: 100%;
+}
+
+.filters .separator {
+  width: 1px;
+  border-right: 2px solid rgba(255, 255, 255, 0.116);
+}
+
+.filters .btn {
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+  justify-content: center;
+  font-size: 16px;
+  margin: 20px;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: rgb(255, 251, 239);
+  text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
+    0 0 50px #f1c056, 0 0 100px #ffeabd;
+}
+
+/* Media query para hacerlo responsive (ajustar según tus necesidades) */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+  }
+
+  .container-image a {
+    flex: 0 1 calc(50% - 20px); /* Dos imágenes por fila en pantallas más pequeñas */
+  }
+}

@@ -1,56 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/products.css" />
-    <link rel="stylesheet" href="/css/login.css" />
-  </head>
 
-  <body>
-    <div id="overlay"></div>
-    <%- include('./partials/menu') %> <% if (userLogged) { %>
-    <!-- Mostrar barra de navegación para usuarios autenticados -->
-    <%- include ('./partials/headerUser') %> <% } else { %>
-    <!-- Mostrar barra de navegación para usuarios no autenticados -->
-    <%- include ('./partials/header') %> <% } %>
+<head>
+  <%- include('./partials/head') %>
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/prod.css">
+  <link rel="stylesheet" href="/css/general.css">
+</head>
 
-    <!------   MAIN   ------>
-    <main>
-      <aside>
-        <!------   BOTONES FILTRAR     ------>
-        <div class="filters glass_effect">
-          <a href="#" class="btn">
-            <span><i class="fa-duotone fa-right-left"></i></span>
-            ORDENAR POR
-          </a>
-          <span class="separator"></span>
-          <a href="#" class="btn">
-            <span><i class="fa-solid fa-sliders"></i></span>
-            FILTRAR
-          </a>
+<body>
+  
+  <%- include('./partials/menu') %>
+
+  <% if (userLogged) { %>
+    <!-- Barra de navegación para usuarios autenticados -->
+    <%- include('./partials/headerUser') %>
+  <% } else { %>
+    <!-- Barra de navegación para usuarios no autenticados -->
+    <%- include('./partials/header') %>
+  <% } %>
+
+  <main>
+  <!-- BANNER DE PROMOCIONES Y BOTONES FILTRAR -->
+  <section class="principal">
+    <div class="container-img glass_effect">
+      <img class="img" src="../img/banner2.png" alt="">
+    </div>
+
+    <div class="filters glass_effect">
+      <a href="#" class="btn">
+        <span><i class="fa-duotone fa-right-left"></i></span> ORDENAR POR
+      </a>
+      <span class="separator"></span>
+      <a href="#" class="btn">
+        <span><i class="fa-solid fa-sliders"></i></span> FILTRAR
+      </a>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+ <section class = "grid-container">
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container-image glass_effect">
+      <% product.map(item => { %>
+        <a href="/product/productDetail/<%= item.idProduct %>">
+          <img src="../img/books/<%= item.imgList?.name %>" alt="<%= item.imgList?.name %>" />
+        </a>
+      <% }); %>
+    </div>
+
+    <!-- <div class="button_container">
+      <button class="button">
+        <span class="button-content">VER MAS PRODUCTOS</span>
+      </button>
+    </div> -->
+
+    <!-- ASIDE -->
+    <aside class="glass_effect">
+      <div class="publicidad">
+        <div class="publi">
+          <img src="img/lectura.jpg" alt="">
+          <h1>Beneficios de Leer a Diario</h1>
+          <p>La lectura es un hábito que puede mejorar las condiciones sociales y humanas de cualquier lector, 
+            el leer permite pensar con reflexión y desarrollar los aspectos cognitivos del cerebro lo que ayuda a ejercitar 
+            todas las células y estar siempre activos para cualquier actividad que se realice en la vida cotidiana.</p>
         </div>
-        <!-- <div class="publicidad">
-            <div class="publi">
-              <img src="img/publicidad1.jpg" alt="">
-            </div>
-       </div> -->
-      </aside>
-      <!------   BANNER DE PROMOCIONES   ------>
-      <section class="banner"></section>
-
-      <!------   GRID DE IMAGENES   ------>
-
-      <div class="product_card_item glass_effect">
-        <% product.map(item=> { %>
-        <img
-          src="../img/books/<%= item.imgList?.name %>"
-          alt="<%= item.imgList?.name %>"
-        />
-        <% }); %>
+        <div class="publi">
+          <img src="img/niños.jpg" alt="">
+          <p>El mejor regalo que podemos hacerle a los niños...ES UN LIBRO</p>
+        </div>
       </div>
-    </main>
+    </aside>
+  </section>
+  </main>
+ 
+  <!-- FOOTER -->
+  <%- include('./partials/footer') %>
+  <script src="/JS/footer.js"></script>
+</body>
 
-    <%- include('./partials/footer') %>
-    <script src="/JS/footer.js"></script>
-  </body>
 </html>
+

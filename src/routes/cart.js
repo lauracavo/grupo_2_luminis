@@ -7,6 +7,6 @@ route.get('/', authMiddleware ,cartController.cart);
 route.get('/add/:id', cartController.addToCart);
 route.post('/delete/:id', cartController.deleteProductCookie);
 
-route.get('/buy', cartController.buy)
+route.get('/buy',authMiddleware, cartController.buy)
 
 module.exports=route;

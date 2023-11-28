@@ -82,10 +82,9 @@ const cartController = {
         },
         buy: async (req, res) => {
               // OBTENIENDO LOS DATOS DE LA BASE DE DATOS    
-         const { id } = req.params
+              let userId;
         try {
-            let personalData = await db.Personal.findByPk(id);
-            let userId;
+
             if (req.session.successLoginUser) {
                 
                 userId = req.session.successLoginUser.idUser; // Asume que la sesión contiene la información del usuario, incluido el ID
@@ -94,7 +93,11 @@ const cartController = {
                 // Manejar el caso en que el usuario no esté autenticado
                 userId = null
             } 
-            const user = await db.User.findOne({ where: { userId: personalData.idUser } });
+
+            let personalData = await db.Personal.findByPk(userId);
+            console.log ({personalData})
+            
+            const user = await db.User.findOne({ where: { idUser: userId } });
             console.log({user})
             let userLogged
             if (req.session.successLoginUser) {
