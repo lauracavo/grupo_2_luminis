@@ -1,5 +1,10 @@
 const express = require("express");
 const app = express();
+
+//configuracion de cors
+const cors = require ("cors");
+app.use (cors());
+
 const session = require("express-session");
 const cookieParser = require('cookie-parser');
 
@@ -63,4 +68,15 @@ app.use("/api/products", productsApiRoute);
 //api de users
 const usersApiRoute = require("./src/routes/api/users");
 app.use("/api/users", usersApiRoute); 
+
+// //api de categorie
+// const categorieApiRoute = require("./src/routes/api/categorie");
+// app.use("/api/categorie", categorieApiRoute); 
+
+app.use (express.static(path.resolve(__dirname, "../public")));
+
+//creo la coleccion de mis recursos (APIS)
+app.use("/api/products", productsApiRoute);
+app.use("/api/users", usersApiRoute);
+// app.use("/api/categori", categorieApiRoute)
 

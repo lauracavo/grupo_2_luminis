@@ -1,5 +1,6 @@
 main {
-    margin: 40px;
+  margin: 40px;
+}
  /* Estilos para la tabla */
 #table {
   width: 100%;
@@ -10,6 +11,25 @@ main {
   backdrop-filter: blur(10px);
   border-radius: 10px;
   overflow: hidden; /* Para ocultar las esquinas redondeadas en contenido desbordado */
+}
+
+#delete_button {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 75%;
+  padding: 10px;
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#delete_button:hover {
+  background-color: #e46f50;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para las celdas del encabezado y cuerpo de la tabla */
@@ -356,4 +376,3 @@ input#shipping {
   top: -1px;
   color: #2a9d8f; /* Color del ícono cuando está activado */
 }
- }
