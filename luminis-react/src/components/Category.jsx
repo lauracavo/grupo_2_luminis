@@ -5,12 +5,15 @@ class Category extends Component {
         super();
         this.state = {
             CategoryList: [
-                'Infantil',
-                'Terror',
-                'Drama',
-                'Novelas',
-                'Comedia',
-                'Romanticos',
+                'infantil',
+                'suspenso',
+                'drama',
+                'utiles_escolares',
+                'politica',
+                'terror',
+                'sagas',
+                'docentes',
+                'libros_escolares'
             ]
         };
     }
@@ -27,10 +30,10 @@ class Category extends Component {
                     <div className="card-body">
                         <div className="row">
                             {
-                                this.state.CategoryList.map((category, index) => (
+                                this.state.CategoryList.map((categorie, index) => (
                                     <div key={index} className="col-lg-6 mb-4">
                                         <div className="card bg-dark text-white shadow">
-                                            <div className="card-body">{category}</div>
+                                            <div className="card-body">{categorie}</div>
                                         </div>
                                     </div>
                                 ))

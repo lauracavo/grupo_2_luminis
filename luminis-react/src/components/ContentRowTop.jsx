@@ -15,13 +15,13 @@ function ContentRowTop(){
       },
       {
         title: "Total de categorias",
-        amount: 79,
+        amount: 9,
         icon: 'fa-solid fa-book',
         styles: [ 'border-left-success' ,'text-success']
       },
       {
         title: "Total de productos",
-        amount: 49,
+        amount: 9,
         icon: "fa-solid fa-book-open",
         styles: ['border-left-warning', 'text-warning']
       }
