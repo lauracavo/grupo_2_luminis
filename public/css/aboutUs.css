@@ -77,12 +77,6 @@
   transition: filter 0.5s; /* Agrega una transición de 0.5s a la propiedad filter */
 }
 
-
-
-
-
-
-
 @media only screen and (min-width: 600px) {
   .container .box {
     width: 60%; /* Dos imágenes por fila en pantallas más grandes que 600px */

@@ -34,24 +34,3 @@ function actualizarTotal() {
       actualizarTotal();
     });
   });
-
-  // function deleteProduct(productId) {
-  //   fetch(`/delete-product/${productId}`, {
-  //     method: 'POST',
-  //   })
-  //   .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       }})
-  //        return response.json()
-  //       .then(data => {
-  //       console.log(data);
-  //       location.reload();
-  //     })
-      
-    
-  // .catch(error => {
-  //       console.error('Error al eliminar el producto:', error);
-  //     });
-  
-  //  }
