@@ -1,8 +1,8 @@
 const express = require("express");
+const cors = require ("cors");
 const app = express();
 
 //configuracion de cors
-const cors = require ("cors");
 app.use (cors());
 
 const session = require("express-session");
