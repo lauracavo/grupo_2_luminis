@@ -36,8 +36,14 @@ main {
 aside {
   background-color: #f0f0f0;
   padding: 20px;
+  max-width: 300px;
 }
-
+aside .publi img {
+    padding-right: 10px;
+    width: 280px;
+    height: auto;
+    border-radius: 3px;
+}
 /* Estilos para el filtro */
 .filters {
   display: flex;
