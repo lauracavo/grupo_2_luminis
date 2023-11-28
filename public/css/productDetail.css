@@ -68,12 +68,12 @@ main section article {
   padding-top: 4px;
 }
 
-#shipping:hover {
+/* #shipping:hover {
   transform: scale(1.3);
   color: rgb(255, 251, 239);
   text-shadow: 0 0 5px #f36624, 0 0 15px #f8882d, 0 0 30px #f2a160,
     0 0 50px #f1c056, 0 0 100px #ffeabd;
-}
+} */
 
 .details_products {
   display: flex;

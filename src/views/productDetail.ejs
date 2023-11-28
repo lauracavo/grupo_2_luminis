@@ -59,9 +59,11 @@
           <p class="details__shipping">Envio al todo el Pais</p>
         </div>
         <div class="details__product-quantity">
+          <a href="/Carrito/add/<%= product.idProduct %>" class="add-to-cart" id="icono-carrito">
           <button class="button">
             <span class="button-content">Sumar al carrito</span>
           </button>
+        </a>
         </div>
 
         <!-- Descripción del producto -->
@@ -72,14 +74,24 @@
           <p class="details_description-P">Detalles del Producto</p>
           <ul class="ul_details_description">
             <% product.characteristic.split(',').forEach(function(characteristic) { %>
-              <li><%= characteristic.trim() %></li>
+              <% if (characteristic.trim() !== "") { %>
+                <li><%= characteristic.trim() %></li>
+              <% } %>
             <% }); %>
-            
-            <li><%= product.author %></li>
-            <li><%= product.brand %></li>
-            <li><%= product.editorial %></li>
-            <li><%= product.idCategory %></li>
-          </ul>
+        
+            <% if (product.author && product.author.trim() !== "") { %>
+              <li><%= product.author.trim() %></li>
+            <% } %>
+        
+            <% if (product.brand && product.brand.trim() !== "") { %>
+              <li><%= product.brand.trim() %></li>
+            <% } %>
+        
+            <% if (product.editorial && product.editorial.trim() !== "") { %>
+              <li><%= product.editorial.trim() %></li>
+            <% } %>
+        
+            </ul>
         </div>
       </article>
     </section>

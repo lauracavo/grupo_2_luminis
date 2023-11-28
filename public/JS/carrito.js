@@ -52,7 +52,7 @@ function renderTrolley() {
           <td>${item.name}</td>
           <td>${item.salePrice.toFixed(2)}</td>
           <td>
-            <input class="product_quantity" type="number" value="${item.quantity}" min="1" max="10" />
+            <input class="product_quantity" type="number" value="1" min="1" max="${item.quantity}" />
           </td>
           <td>${itemTotal.toFixed(2)}</td>
         `;
