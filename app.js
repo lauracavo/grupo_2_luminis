@@ -69,14 +69,14 @@ app.use("/api/products", productsApiRoute);
 const usersApiRoute = require("./src/routes/api/users");
 app.use("/api/users", usersApiRoute); 
 
-// //api de categorie
-// const categorieApiRoute = require("./src/routes/api/categorie");
-// app.use("/api/categorie", categorieApiRoute); 
+//api de categorie
+const categorieApiRoute = require("./src/routes/api/categorie");
+app.use("/api/categorie", categorieApiRoute); 
 
 app.use (express.static(path.resolve(__dirname, "../public")));
 
 //creo la coleccion de mis recursos (APIS)
 app.use("/api/products", productsApiRoute);
 app.use("/api/users", usersApiRoute);
-// app.use("/api/categori", categorieApiRoute)
+app.use("/api/categorie", categorieApiRoute)
 
