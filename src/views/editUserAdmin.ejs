@@ -11,14 +11,14 @@
 
 <body>
   <div id="overlay"></div>
-  <%- include('./partials/menu') %> <%- include('./partials/header') %>
+  <%- include('./partials/menu') %> <%- include('./partials/headerAdmin') %>
       <main class="edit_user_form glass_effect">
-        <form id="formEdit"  action="/admin/editUser/<%= userInfo.idUser %>" method="post">
+        <form id="formEdit" action="/admin/editUser/<%= userInfo.idUser %>" method="post">
           <h3>EDITAR PERFIL</h3>
 
           <h4>Datos del Usuario</h4>
           <!-- FOTO DE PERFIL -->
-          <div id = "profile_image">
+          <div id="profile_image">
             <img src="/img/usersProfile_images/<%= userInfo.image %>" alt="foto de perfil">
           </div>
 
@@ -34,40 +34,40 @@
 
               <!-- EMAIL -->
               <label class="fields_name" for="email">Correo electronico:</label>
-              <input type="text" id="email" name="email"  value="<%- userInfo.email %> "
-                onfocusout="enableSaveButton()" readonly />
+              <input type="text" id="email" name="email" value="<%- userInfo.email %> " onfocusout="enableSaveButton()"
+                readonly />
               <% if (locals.errors && errors.email){ %>
                 <div>
                   <%= errors.email.msg %>
                 </div>
                 <% } %>
 
-                
-               <!-- ROL DE USUARIO -->
-               <label class="fields_name" for="rol">Rol de Usuario:</label>
-                    <select id="rol" name="rol" onchange="enableSaveButton()">
-                          <% if (userInfo.rol === 'profesor') { %>
-                               <option value="profesor" selected>Profesor</option>
-                               <% } else { %>
-                                   <option value="profesor">Profesor</option>
-                           <% } %>
-                           <% if (userInfo.rol === 'cliente') { %>
-                               <option value="cliente" selected>Cliente</option>
-                               <% } else { %>
-                                <option value="cliente">Cliente</option>
-                            <% } %>
-                            <% if (userInfo.rol === 'admin') { %>
-                              <option value="admin" selected>admin</option>
-                              <% } else { %>
-                               <option value="admin">Admin</option>
-                           <% } %>
-                  </div>
 
-                  <!-- Botón para guardar cambios (inicialmente deshabilitado) -->
-                  <input id="delete_button" type="submit" value="Guardar cambios" />
-                </form>
-                  <form id="deleteForm" action="/admin/delete/<%- userInfo.idUser %>?" method="post">
-                  <button id="delete_button" type="submit" name="action" value="delete">Eliminar usuario</button>
+                  <!-- ROL DE USUARIO -->
+                  <label class="fields_name" for="rol">Rol de Usuario:</label>
+                  <select id="rol" name="rol" onchange="enableSaveButton()">
+                    <% if (userInfo.rol==='profesor' ) { %>
+                      <option value="profesor" selected>Profesor</option>
+                      <% } else { %>
+                        <option value="profesor">Profesor</option>
+                        <% } %>
+                          <% if (userInfo.rol==='cliente' ) { %>
+                            <option value="cliente" selected>Cliente</option>
+                            <% } else { %>
+                              <option value="cliente">Cliente</option>
+                              <% } %>
+                                <% if (userInfo.rol==='admin' ) { %>
+                                  <option value="admin" selected>admin</option>
+                                  <% } else { %>
+                                    <option value="admin">Admin</option>
+                                    <% } %>
+                                      </div>
+
+                                      <!-- Botón para guardar cambios (inicialmente deshabilitado) -->
+                                      <input id="delete_button" type="submit" value="Guardar cambios" />
+        </form>
+        <form id="deleteForm" action="/admin/delete/<%- userInfo.idUser %>?" method="post">
+          <button id="delete_button" type="submit" name="action" value="delete">Eliminar usuario</button>
         </form>
       </main>
 

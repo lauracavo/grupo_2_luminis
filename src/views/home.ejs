@@ -140,9 +140,12 @@
                           <!-- <p class="prices">Precio al por mayor: <%= item.wholesalePrice %></p> -->
                         </div>
                         <div class="button_container">
-                          <button class="button">
-                            <span class="button-content">VER MÁS</span>
-                          </button>
+                          <div class="button_container">
+                            <button class="button">
+                              <a class="watch_more" href="/product/productDetail/<%= item.idProduct %>"><span
+                                  class="button-content">VER MÁS</span></a>
+                            </button>
+                          </div>
                         </div>
                         <a href="/Carrito/add/<%= item.idProduct %>" class="add-to-cart" id="icono-carrito">
                           <i class="fas fa-cart-plus" id="carrito-icono"></i>Agregar al carrito
