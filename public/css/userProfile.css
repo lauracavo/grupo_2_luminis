@@ -118,12 +118,14 @@ div#profile_image{
     justify-content: center;
 }
 #delete_button{
+    padding: 1em 1.8em;
     --primary-color: #e46f50;
     --secondary-color: #fff;
     --hover-color: #f2a160;
     
 }
 #edit_button{
+    padding: 1em 1.8em;
     --primary-color: #2a9d8e;
     --secondary-color: #fff;
     --hover-color: #264653;
@@ -134,7 +136,7 @@ button{
   border: 0;
   border-radius: 20px;
   color: var(--secondary-color);
-  padding: 1em 1.8em;
+  
   margin: 10px;
   background: var(--primary-color);
   display: flex;

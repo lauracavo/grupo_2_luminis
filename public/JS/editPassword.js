@@ -114,4 +114,17 @@ form.addEventListener('submit', function (e) {
     })
 });
 
+//Creamos las diferentes opciones que se escribirán en la animación, su orden y velocidad de typeo 
+const options = {
+    strings: ['¿Asi que vas a cambiar la contraseña? 😬',
+    '¿Alguna razón en especial? 🤔',
+    'Espero que recuerdes las condiciones 🙄',
+    'Y sinó, ¡Están justo abajo del campo! 🧐👉',],
+    typeSpeed: 40,
+    backSpeed: 20,
+    backDelay: 2000,
+  };
+  
+//Anclamos la animación a la clase .typed
+  let typed = new Typed('.typed', options);
 

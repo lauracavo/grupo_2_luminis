@@ -145,7 +145,7 @@ input#shipping {
   #table td {
     border-bottom: 1px solid #ddd; /* Agregar bordes inferiores para separar las filas */
     display: block;
-    text-align: right; /* Alineación de texto a la derecha */
+    text-align: center; /* Alineación de texto a la derecha */
   }
 
   /* Estilos para las celdas del contenido de la tabla en pantallas pequeñas */
@@ -203,7 +203,7 @@ input#shipping {
   #table td {
      /* Agregar bordes inferiores para separar las filas */
     display: table-cell;
-    text-align: center; /* Alineación de texto al centro */
+    text-align: right; /* Alineación de texto al centro */
   }
 
   /* Restaurar la visualización normal de las filas de la tabla en pantallas medianas */
