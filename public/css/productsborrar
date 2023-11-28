@@ -97,40 +97,7 @@ img:hover{
   
 
 
-/*-------- SLIDER AUTOMATICO ---------*/
-@keyframes slider {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(-100%);
-    }
-    
-}
-.logos{
-    overflow: hidden;
-    padding: 20px 0;
-    white-space: nowrap;
-    position: relative;
-    margin-top: 10px ;
-    background-color: white;
-    opacity: 0.8;
-}
 
-
-.logos:hover .logo-slide{
-    animation-play-state: paused;
-}
-.logo-slide{
-    display: inline-block;    
-    animation: 10s slider infinite linear;
-   
-}
-.logo-slide img{
-    height: 70px;
-    margin: 0 10px;
-    filter: grayscale(100%);
-}
 .banner{
     display: none;
 }

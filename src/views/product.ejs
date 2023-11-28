@@ -3,64 +3,72 @@
 
 <head>
   <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/products.css" />
-    <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/prod.css">
+  <link rel="stylesheet" href="/css/general.css">
 </head>
 
 <body>
-  <div id="overlay"></div>
+  
   <%- include('./partials/menu') %>
 
-    <% if (userLogged) { %>
-      <!-- Mostrar barra de navegación para usuarios autenticados -->
-      <%- include ('./partials/headerUser') %>
-        <% } else { %>
-          <!-- Mostrar barra de navegación para usuarios no autenticados -->
-          <%- include ('./partials/header') %>
-            <% } %>
+  <% if (userLogged) { %>
+    <!-- Barra de navegación para usuarios autenticados -->
+    <%- include('./partials/headerUser') %>
+  <% } else { %>
+    <!-- Barra de navegación para usuarios no autenticados -->
+    <%- include('./partials/header') %>
+  <% } %>
 
-              <!------   MAIN   ------>
-              <main>
-                <aside>
-                  <!------   BOTONES FILTRAR     ------>
-                  <div class="filters glass_effect">
-                    <a href="#" class="btn">
-                      <span><i class="fa-duotone fa-right-left"></i></span>
-                      ORDENAR POR
-                    </a>
-                    <span class="separator"></span>
-                    <a href="#" class="btn">
-                      <span><i class="fa-solid fa-sliders"></i></span>
-                      FILTRAR
-                    </a>
-                  </div>
-                  <!-- <div class="publicidad">
-            <div class="publi">
-              <img src="img/publicidad1.jpg" alt="">
-            </div>
-       </div> -->
-                </aside>
-                <!------   BANNER DE PROMOCIONES   ------>
-                <section class="banner"></section>
+  <main>
+  <!-- BANNER DE PROMOCIONES Y BOTONES FILTRAR -->
+  <section class="principal">
+    <div class="container-img glass_effect">
+      <img class="img" src="../img/banner2.png" alt="">
+    </div>
 
-                <!------   GRID DE IMAGENES   ------>
+    <div class="filters glass_effect">
+      <a href="#" class="btn">
+        <span><i class="fa-duotone fa-right-left"></i></span> ORDENAR POR
+      </a>
+      <span class="separator"></span>
+      <a href="#" class="btn">
+        <span><i class="fa-solid fa-sliders"></i></span> FILTRAR
+      </a>
+    </div>
+  </section>
 
-                <div class="product_card_item glass_effect">
-                  <% product.map(item=> { %>
-                    <img src="../img/books/<%= item.imgList?.name %>" alt="<%= item.imgList?.name %>" />
-                    <% }); %>
-                </div>
+  <!-- MAIN -->
+ <section class = "grid-container">
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container-image glass_effect">
+      <% product.map(item => { %>
+        <a href="/product/productDetail/<%= item.idProduct %>">
+          <img src="../img/books/<%= item.imgList?.name %>" alt="<%= item.imgList?.name %>" />
+        </a>
+      <% }); %>
+    </div>
 
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">VER MAS PRODUCTOS</span>
-                  </button>
-                </div>
-                <%- include('./partials/slider') %>
-              </main>
+    <div class="button_container">
+      <button class="button">
+        <span class="button-content">VER MAS PRODUCTOS</span>
+      </button>
+    </div>
 
-              <%- include('./partials/footer') %>
-              <script src="/JS/footer.js"></script>
+    <!-- ASIDE -->
+    <aside class="glass_effect">
+      <div class="publicidad">
+        <div class="publi">
+          <img src="img/publicidad1.jpg" alt="">
+        </div>
+      </div>
+    </aside>
+  </section>
+  </main>
+ 
+  <!-- FOOTER -->
+  <%- include('./partials/footer') %>
+  <script src="/JS/footer.js"></script>
 </body>
 
 </html>
