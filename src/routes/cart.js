@@ -4,8 +4,9 @@ const cartController = require ('../controllers/cartController')
 const authMiddleware = require ('../middlewares/authMiddleware')
 
 route.get('/', authMiddleware ,cartController.cart);
-route.get('/add/:id', cartController.addToCart)
+route.get('/add/:id', cartController.addToCart);
+route.post('/delete/:id', cartController.deleteProductCookie);
 
-
+route.get('/buy', cartController.buy)
 
 module.exports=route;
