@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/formCreate.css">
-    <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/formCreate.css">
+        <link rel="stylesheet" href="/css/login.css">
 </head>
+
 <body>
     <div id="overlay"></div>
-    <%- include('./partials/menu') %> <%- include('./partials/header') %>
-    <main class="main_form_create">
-    <section id="form_create" class="glass_effect">
-        <h2>Editar Producto: <%= products.name %></h2>
-    <form action="/admin/edit/<%= products.idProduct %>?_method=PUT" method="POST">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" value="<%= products.name %>" required><br>
-        
-        <label for="brand">Marca:</label>
-        <input type="text" id="brand" name="brand" value="<%= products.brand %>"><br>
+    <%- include('./partials/menu') %> <%- include('./partials/headerAdmin') %>
+            <main class="main_form_create">
+                <section id="form_create" class="glass_effect">
+                    <h2>Editar Producto: <%= products.name %>
+                    </h2>
+                    <form action="/admin/edit/<%= products.idProduct %>?_method=PUT" method="POST">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" value="<%= products.name %>" required><br>
 
-        <label for="editorial">Editorial:</label>
-        <input type="text" id="editorial" name="editorial" value="<%= products.editorial %>"><br>
-        
-        <label for="author">Autor:</label>
-        <input type="text" id="author" name="author" value="<%= products.author %>"><br>
-        
-        <label for="detail">Detalle:</label>
-       
-        <textarea  id="detail" name="detail" cols="30" rows="6"  required><%= products.detail %></textarea>
-    
-       
-        
-        <label for="characteristic">Característica:</label>
-        <input type="text" id="characteristic" name="characteristic" value="<%= products.characteristic %>" required><br>
-        
-        <label for="idCategory">Categoría:</label>
-        <p>
-            <select name="idCategory" id="" required>                
-                <% allCategories.forEach(categorie => { %>
-                <option value="<%= products.idCategory %>" <%= categorie.idCategory == products.idCategory ?  "selected" : null %>  > <%= categorie.name %></option>
-                <% }); %>
-            </select>
-        </p>  
-        
-        <label for="purchasePrice">Precio de compra:</label>
-        <input type="number" id="purchasePrice" name="purchasePrice" step="0.01" value="<%= products.purchasePrice %>" required><br>
-        
-        <label for="salePrice">Precio de venta:</label>
-        <input type="number" id="salePrice" name="salePrice" step="0.01" value="<%= products.salePrice %>" required><br>
+                        <label for="brand">Marca:</label>
+                        <input type="text" id="brand" name="brand" value="<%= products.brand %>"><br>
 
-        <label for="stock">Stock:</label>
-        <input type="number" id="stock" name="stock" step="0.01" value="<%= products.stock %>" required><br>
+                        <label for="editorial">Editorial:</label>
+                        <input type="text" id="editorial" name="editorial" value="<%= products.editorial %>"><br>
 
-        <button class="submit_edit_product" type="submit">Guardar Cambios</button>
-    </form>
-        
-      
-    </section>
-    
-    </main>
-    <%- include('./partials/footer') %> <%- include('./partials/script') %>
-    <script src="/JS/footer.js"></script>
+                        <label for="author">Autor:</label>
+                        <input type="text" id="author" name="author" value="<%= products.author %>"><br>
+
+                        <label for="detail">Detalle:</label>
+
+                        <textarea id="detail" name="detail" cols="30" rows="6"
+                            required><%= products.detail %></textarea>
+
+
+
+                        <label for="characteristic">Característica:</label>
+                        <input type="text" id="characteristic" name="characteristic"
+                            value="<%= products.characteristic %>" required><br>
+
+                        <label for="idCategory">Categoría:</label>
+                        <p>
+                            <select name="idCategory" id="" required>
+                                <% allCategories.forEach(categorie=> { %>
+                                    <option value="<%= products.idCategory %>"
+                                        <%=categorie.idCategory==products.idCategory ? "selected" : null %> > <%=
+                                            categorie.name %>
+                                    </option>
+                                    <% }); %>
+                            </select>
+                        </p>
+
+                        <label for="purchasePrice">Precio de compra:</label>
+                        <input type="number" id="purchasePrice" name="purchasePrice" step="0.01"
+                            value="<%= products.purchasePrice %>" required><br>
+
+                        <label for="salePrice">Precio de venta:</label>
+                        <input type="number" id="salePrice" name="salePrice" step="0.01"
+                            value="<%= products.salePrice %>" required><br>
+
+                        <label for="stock">Stock:</label>
+                        <input type="number" id="stock" name="stock" step="0.01" value="<%= products.stock %>"
+                            required><br>
+
+                        <button class="submit_edit_product" type="submit">Guardar Cambios</button>
+                    </form>
+
+
+                </section>
+
+            </main>
+            <%- include('./partials/footer') %> <%- include('./partials/script') %>
+                    <script src="/JS/footer.js"></script>
 </body>
+
 </html>

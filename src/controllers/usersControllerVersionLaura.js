@@ -72,21 +72,26 @@ const usersControllerVersionLaura = {
       // Busca el usuario en la base de datos por correo electrónico
       const userLogin = await db.User.findOne({ where: { email: email } });
 
-
       if (userLogin) {
-        const correctPassword = bcrypt.compareSync(req.body.password, userLogin.password);
-        if (correctPassword) {
-          // Almacena el usuario en la sesión
-          req.session.successLoginUser = userLogin;
-
-          // Almacena el correo en una cookie
-          res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
-
-          // Redirige a la página de perfil y pasa los datos del usuario
-          res.redirect("/users/userProfile")
-
+        if (userLogin.email === 'perezcarolinasn@gmail.com') {
+          const correctAdminPassword = bcrypt.compareSync(req.body.password, userLogin.password);
+          if (correctAdminPassword) {
+            req.session.successLoginUser = userLogin;
+            res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
+            res.redirect("/admin"); // Ruta para el perfil del administrador
+          } else {
+            res.render("login", { errors: [{ msg: "CONTRASEÑA DE ADMINISTRADOR INCORRECTA" }] });
+          }
         } else {
-          res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
+          const correctPassword = bcrypt.compareSync(req.body.password, userLogin.password);
+          if (correctPassword) {
+            // Resto del código para iniciar sesión normalmente para usuarios no administradores
+            req.session.successLoginUser = userLogin;
+            res.cookie("email", email, { maxAge: ((1000 * 60) * 60) * 24 });
+            res.redirect("/users/userProfile");
+          } else {
+            res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });
+          }
         }
       } else {
         res.render("login", { errors: [{ msg: "CORREO O CONTRASEÑA INCORRECTOS" }] });

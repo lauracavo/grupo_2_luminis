@@ -5,81 +5,72 @@
   <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/cart.css" />
     <link rel="stylesheet" href="/css/login.css" />
-  </head>
+</head>
 
-  <body>
-    <div id="overlay"></div>
-    <%- include('./partials/menu') %> <%- include('./partials/headerUser') %>
+<body>
+  <div id="overlay"></div>
+  <%- include('./partials/menu') %> <%- include('./partials/headerUser') %>
 
-    <main id="cartMain">
-      <p id="title">Carrito de Compras</p>
+      <main id="cartMain">
+        <p id="title">Carrito de Compras</p>
 
-      <table id="table" class="redondeada">
-        <thead id="table_header" class="glass_effect">
-          <tr>
-            <td class="table_titles">Producto</td>
-            <td class="table_titles">Precio Individual</td>
-            <td class="table_titles">Cantidad</td>
-            <td class="table_titles">Precio Total</td>
-          </tr>
-        </thead>
-        <% if(req.cookies.cart && req.cookies.cart.length>0) { %>
-        <tbody id="table_body">
-          <!-- Contenido de la tabla -->
-          <% products.map(product=> { %>
-          <tr>
-            <td class="table_content">
-              <form
-                action="/Carrito/delete/<%= product.idProduct %>"
-                method="POST"
-                class="borrarCart"
-              >
-                <button type="submit" class="login-button">
-                  <i class="fa fa-trash"></i>
-                </button>
-                <%= product.name %>
-              </form>
-              <!-- <button class="login-button deleteProduct" onclick="deleteProduct('<%= product.idProduct %>')">
+        <table id="table" class="redondeada">
+          <thead id="table_header" class="glass_effect">
+            <tr>
+              <td class="table_titles">Producto</td>
+              <td class="table_titles">Precio Individual</td>
+              <td class="table_titles">Cantidad</td>
+              <td class="table_titles">Precio Total</td>
+            </tr>
+          </thead>
+          <% if(req.cookies.cart && req.cookies.cart.length>0) { %>
+            <tbody id="table_body">
+              <!-- Contenido de la tabla -->
+              <% products.map(product=> { %>
+                <tr>
+                  <td class="table_content">
+                    <form action="/Carrito/delete/<%= product.idProduct %>" method="POST" class="borrarCart">
+                      <button type="submit" class="login-button">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                      <%= product.name %>
+                    </form>
+                    <!-- <button class="login-button deleteProduct" onclick="deleteProduct('<%= product.idProduct %>')">
                 <i class="fa fa-trash "></i>
               </button> <%= product.name %> -->
-            </td>
-            <td class="table_content"><%= product.salePrice %></td>
-            <td class="table_content">
-              <input
-                class="product_quantity"
-                type="number"
-                value="<%= product.cant %>"
-                min="1"
-                max="<%= product.stock %>"
-              />
-            </td>
-            <td class="table_content total"></td>
-          </tr>
-        </tbody>
-        <% }); %>
-        <tfoot id="table_footer">
-          <!-- Pie de tabla  -->
-          <tr>
-            <td colspan="3"><strong>Total a pagar:</strong></td>
-            <td><strong class="total_a_pagar"></strong></td>
-          </tr>
-        </tfoot>
-      </table>
-      <% } else {%>
-      <div>
-        <h1>Carrito vacio</h1>
-      </div>
-      <% } %>
-      <div>
-        <div id="buy_button">
-          <a href="/Carrito/buy">
-            <button class="button">
-              <span class="button-content" id="Total">FINALIZAR COMPRA</span>
-            </button>
-          </a>
-        </div>
-      </div>
-    </main>
+                  </td>
+                  <td class="table_content">
+                    <%= product.salePrice %>
+                  </td>
+                  <td class="table_content">
+                    <input class="product_quantity" type="number" value="<%= product.cant %>" min="1"
+                      max="<%= product.stock %>" />
+                  </td>
+                  <td class="table_content total"></td>
+                </tr>
+            </tbody>
+            <% }); %>
+              <tfoot id="table_footer">
+                <!-- Pie de tabla  -->
+                <tr>
+                  <td colspan="3"><strong>Total a pagar:</strong></td>
+                  <td><strong class="total_a_pagar"></strong></td>
+                </tr>
+              </tfoot>
+        </table>
+        <% } else {%>
+          <div>
+            <h1>Carrito vacio</h1>
+          </div>
+          <% } %>
+            <div>
+              <div id="buy_button">
+                <button class="button">
+                  <span class="button-content" id="Total">FINALIZAR COMPRA</span>
+                </button>
+              </div>
+            </div>
+      </main>
 
       <!-- Sección de Seguridad y envios -->
       <section id="prefooter" class="glass_effect">
@@ -94,11 +85,13 @@
           <p>ENTREGA EN 48 HS</p>
         </div>
       </section>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="/JS/cart.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="/JS/cart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <%- include('./partials/footer') %> <%- include('./partials/script') %>
 
-    <%- include('./partials/footer') %> <%- include('./partials/script') %>
+          <script src="/JS/footer.js"></script>
+</body>
 
-    <script src="/JS/footer.js"></script>
-  </body>
 </html>

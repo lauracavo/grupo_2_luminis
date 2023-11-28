@@ -67,3 +67,6 @@ function renderTrolley() {
 
     totalElement.textContent = total.toFixed(2);
 }
+
+
+
