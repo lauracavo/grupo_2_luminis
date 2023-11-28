@@ -54,9 +54,6 @@
 }
 let config = {
     timestamps: false,
-    // createdAt: 'created_at',
-    // updatedAt: 'updated_at',
-    // deletedAt: false,
     tableName: 'products'
     }
 

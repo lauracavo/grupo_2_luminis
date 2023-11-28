@@ -15,16 +15,6 @@ const validateRegister = [
     }
     return true;
   }),
-
-  // body("cellPhone").notEmpty().withMessage("Debe ingresar un numero de telefono"),
-
-  // body("address").notEmpty().withMessage("Debe ingresar una dirección"),
-
-  // body("city").notEmpty().withMessage("Debe ingresar una ciudad"),
-
-  // body("province").notEmpty().withMessage("Debe ingresar una provincia"),
-
-  // body("cp").notEmpty().withMessage("Debe ingresar un codigo postal"),
 ];
 
 module.exports = validateRegister

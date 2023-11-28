@@ -1,66 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <%- include('./partials/head') %>
+  <head>
+    <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/products.css" />
-    <link rel="stylesheet" href="/css/login.css">
-</head>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
 
-<body>
-  <div id="overlay"></div>
-  <%- include('./partials/menu') %>
+  <body>
+    <div id="overlay"></div>
+    <%- include('./partials/menu') %> <% if (userLogged) { %>
+    <!-- Mostrar barra de navegación para usuarios autenticados -->
+    <%- include ('./partials/headerUser') %> <% } else { %>
+    <!-- Mostrar barra de navegación para usuarios no autenticados -->
+    <%- include ('./partials/header') %> <% } %>
 
-    <% if (userLogged) { %>
-      <!-- Mostrar barra de navegación para usuarios autenticados -->
-      <%- include ('./partials/headerUser') %>
-        <% } else { %>
-          <!-- Mostrar barra de navegación para usuarios no autenticados -->
-          <%- include ('./partials/header') %>
-            <% } %>
-
-              <!------   MAIN   ------>
-              <main>
-                <aside>
-                  <!------   BOTONES FILTRAR     ------>
-                  <div class="filters glass_effect">
-                    <a href="#" class="btn">
-                      <span><i class="fa-duotone fa-right-left"></i></span>
-                      ORDENAR POR
-                    </a>
-                    <span class="separator"></span>
-                    <a href="#" class="btn">
-                      <span><i class="fa-solid fa-sliders"></i></span>
-                      FILTRAR
-                    </a>
-                  </div>
-                  <!-- <div class="publicidad">
+    <!------   MAIN   ------>
+    <main>
+      <aside>
+        <!------   BOTONES FILTRAR     ------>
+        <div class="filters glass_effect">
+          <a href="#" class="btn">
+            <span><i class="fa-duotone fa-right-left"></i></span>
+            ORDENAR POR
+          </a>
+          <span class="separator"></span>
+          <a href="#" class="btn">
+            <span><i class="fa-solid fa-sliders"></i></span>
+            FILTRAR
+          </a>
+        </div>
+        <!-- <div class="publicidad">
             <div class="publi">
               <img src="img/publicidad1.jpg" alt="">
             </div>
        </div> -->
-                </aside>
-                <!------   BANNER DE PROMOCIONES   ------>
-                <section class="banner"></section>
+      </aside>
+      <!------   BANNER DE PROMOCIONES   ------>
+      <section class="banner"></section>
 
-                <!------   GRID DE IMAGENES   ------>
+      <!------   GRID DE IMAGENES   ------>
 
-                <div class="product_card_item glass_effect">
-                  <% product.map(item=> { %>
-                    <img src="../img/books/<%= item.imgList?.name %>" alt="<%= item.imgList?.name %>" />
-                    <% }); %>
-                </div>
+      <div class="product_card_item glass_effect">
+        <% product.map(item=> { %>
+        <img
+          src="../img/books/<%= item.imgList?.name %>"
+          alt="<%= item.imgList?.name %>"
+        />
+        <% }); %>
+      </div>
+    </main>
 
-                <div class="button_container">
-                  <button class="button">
-                    <span class="button-content">VER MAS PRODUCTOS</span>
-                  </button>
-                </div>
-                <%- include('./partials/slider') %>
-              </main>
-
-              <%- include('./partials/footer') %>
-              <script src="/JS/footer.js"></script>
-</body>
-
+    <%- include('./partials/footer') %>
+    <script src="/JS/footer.js"></script>
+  </body>
 </html>

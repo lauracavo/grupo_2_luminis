@@ -33,13 +33,14 @@
                 <td class="table_content"><%= item.rol %></td>                
                 <td class="table_content">
                   <form action="/admin/updateUser/<%= item.idUser %>?" class="fcc-btn" >
-                      <button class = "btn-user">VER MAS</button>
+                      <button id="delete_button" class= "btn-user">VER MAS</button>
                   </form>
                 </td>                
               </tr>
             </tbody>
             <% }); %>
           </table>
+        </main>
           <%- include('./partials/footer') %> <%- include('./partials/script') %>
           <script src="/JS/footer.js"></script>
           </body>

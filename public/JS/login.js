@@ -75,22 +75,6 @@ form.addEventListener('submit', function(e) {
   }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Creamos las diferentes opciones que se escribirán en la animación, su orden y velocidad de typeo 
 const options = {
     strings: ['¡HOLA DE NUEVO! 😁',
@@ -104,6 +88,5 @@ const options = {
     backDelay: 2000,
   };
   
-  
-  //Anclamos la animación a la clase .typed
+//Anclamos la animación a la clase .typed
   let typed = new Typed('.typed', options);

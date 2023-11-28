@@ -8,8 +8,8 @@ document.getElementById("delete_button").addEventListener("click", function () {
     });
 
     swalWithBootstrapButtons.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "¿Estás seguro?",
+        text: "¡Esta accion no se puede revertir!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "BORRAR",
@@ -25,7 +25,7 @@ document.getElementById("delete_button").addEventListener("click", function () {
                     if (result.success) {
                         swalWithBootstrapButtons.fire({
                             title: "USUARIO ELIMINADO",
-                            text: "Your user has been deleted.",
+                            text: "El usuario se ha eliminado",
                             icon: "success"
                         }).then(() => {
                             window.location.href = "/";
@@ -42,7 +42,7 @@ document.getElementById("delete_button").addEventListener("click", function () {
                     console.error("Error al eliminar usuario:", error);
                     swalWithBootstrapButtons.fire({
                         title: "ERROR AL ELIMINAR USUARIO",
-                        text: "An error occurred while trying to delete the user.",
+                        text: "Un error ha ocurrido al intentar borrar el usuario",
                         icon: "error"
                     });
                 });
@@ -51,7 +51,7 @@ document.getElementById("delete_button").addEventListener("click", function () {
         ) {
             swalWithBootstrapButtons.fire({
                 title: "CANCELADO",
-                text: "Your user is safe :)",
+                text: "La accion se ha cancelado",
                 icon: "error"
             });
         }
