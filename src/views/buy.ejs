@@ -21,9 +21,9 @@
 					<label for="full_name"> Nombre y apellido</label>
 					<input type="text" name="full_name" id="full_name" value = "<%= user.fullname %>" ><br>
 					<label for="dni"> DNI</label>
-					<input type="text" name="dni" id="DNI" value = "<%= personalData.DNI %>" required ><br>
+					<input type="text" name="dni" id="DNI" value="<%= personalData ? personalData.DNI : '' %>" required><br>" required ><br>
 					<label for="phone_number"> Telefono</label>
-					<input type="text" name="phone_number" id="phone_number" value = "<%= personalData.cellPhone %>" required >
+					<input type="text" name="phone_number" id="phone_number" value = "<%= personalData ? personalData.celPhone : '' %>" required >
 				</div>
 			</form>
 			<br>
