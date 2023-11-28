@@ -1,62 +1,56 @@
-/**
- * 
- * useState: Nos permite manejar estados en el componente, donde al cambiar vuelve a renderizar
- * el componente para reflejar en la interfaz ese  cambio 
- * 
- * useEffect: Ejecutar efectos - Hook que nos permite ejecutar codigo arbitrario ( lo que quieras )
- * cuando se monta el componente en el DOM y/o cambian sus dependencias
- */
-
 import { useEffect, useState } from "react";
 
 function Products() {
   const initialState = {
     page: 1,
     limit: 5,
-    offset: 0,
   };
 
   const [ProductsList, setProductsList] = useState([]);
   const [paging, setPaging] = useState(initialState);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getProducts = async () => {
-    const resp = await fetch('http://localhost:2020/api/products/');
-    const data = await resp.json();
-    return data;
+    try {
+      const resp = await fetch('http://localhost:2020/api/products/');
+      const data = await resp.json();
+      setProductsList(data.data); // Ajusta esto según la estructura real de tus datos
+    } catch (error) {
+      console.error('Error al obtener productos:', error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
-    getProducts().then(({ data }) => setProductsList(data));
+    setIsLoading(true);
+    getProducts();
   }, [paging.page]);
 
-  const handleNext = () => {
-    setPaging({
-      page: paging.page + 1,
-      limit: paging.limit || 5,
-      offset: paging.limit * (paging.page),
-    });
-  };
-
-  if (ProductsList.length === 0) {
+  if (isLoading) {
     return <h2>Cargando</h2>;
   }
+
+  if (!ProductsList || ProductsList.length === 0) {
+    return <h2>No hay productos disponibles</h2>;
+  }
+
+  const startIndex = (paging.page - 1) * paging.limit;
+  const slicedProducts = ProductsList.slice(startIndex, startIndex + paging.limit);
 
   return (
     <div id="content-wrapper" className="d-flex flex-column">
       <ul>
-        {ProductsList.map((elem, i) => {
-          return (
-            i >= paging.offset &&
-            i < paging.offset + paging.limit && (
-              <li key={i}>{elem.title}</li>
-            )
-          );
-        })}
+        {slicedProducts.map((elem, i) => (
+          <li key={i}>{elem.title}</li>
+        ))}
       </ul>
       <div>
         <span>{paging.page}</span>
       </div>
-      <button onClick={handleNext}>Siguiente</button>
+      <button onClick={() => setPaging(prevState => ({ ...prevState, page: prevState.page + 1 }))}>
+        Siguiente
+      </button>
     </div>
   );
 }
